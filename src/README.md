@@ -61,5 +61,3 @@ Feel free to customize the project structure and code according to your specific
 ## Additional Notes
 
 - Adjust the scraping logic and database handling to fit the requirements of other websites.
-
-Happy coding!
