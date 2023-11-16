@@ -1,4 +1,5 @@
-from scraping.scraper1 import Scraper1
+# from scraping.scraper1 import Scraper1
+from scraping.scraper3 import Scraper3
 from database.database_handler import DatabaseHandler
 from config.db_config import DB_CONFIG
 from log.logger_config import configure_logger
@@ -13,7 +14,7 @@ def main():
     
     try:
         # Instantiate scraper
-        scraper1 = Scraper1()
+        scraper1 = Scraper3()
         
         # Text file with all the refCodes to rotate
         refcodes_file = '/root/projects/corey/src/refcodes.txt'
@@ -42,4 +43,3 @@ def main():
         
 if __name__ == "__main__":
     main()
-        

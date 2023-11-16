@@ -468,3 +468,394 @@ KeyError: 1
 2023-11-16 10:30:58,573 [INFO]: plugin_name: mysql_native_password
 2023-11-16 10:30:58,573 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
 2023-11-16 10:30:58,583 [INFO]: Scraping and storing data completed successfully.
+2023-11-16 15:22:02,532 [INFO]: package: mysql.connector.plugins
+2023-11-16 15:22:02,533 [INFO]: plugin_name: caching_sha2_password
+2023-11-16 15:22:02,533 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-16 15:22:02,534 [INFO]: package: mysql.connector.plugins
+2023-11-16 15:22:02,534 [INFO]: plugin_name: mysql_native_password
+2023-11-16 15:22:02,534 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-16 15:22:02,547 [INFO]: Scraping and storing data completed successfully.
+2023-11-16 16:22:41,568 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper2.py", line 109, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper2.py", line 46, in scrape_single
+    first_name_el = soup.select_one("#firstName")['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 16:23:11,993 [ERROR]: An error occurred: Invalid leading whitespace, reserved character(s), or returncharacter(s) in header name: ':authority'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 111, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 35, in scrape_single
+    response = requests.post(url, headers=headers, data=data, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 369, in prepare
+    self.prepare_headers(headers)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 491, in prepare_headers
+    check_header_validity(header)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/utils.py", line 1039, in check_header_validity
+    _validate_header_part(header, name, 0)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/utils.py", line 1056, in _validate_header_part
+    raise InvalidHeader(
+requests.exceptions.InvalidHeader: Invalid leading whitespace, reserved character(s), or returncharacter(s) in header name: ':authority'
+2023-11-16 16:23:31,118 [ERROR]: An error occurred: Invalid leading whitespace, reserved character(s), or returncharacter(s) in header name: ':authority'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 111, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 35, in scrape_single
+    response = requests.post(url, headers=headers, data=data, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 369, in prepare
+    self.prepare_headers(headers)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 491, in prepare_headers
+    check_header_validity(header)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/utils.py", line 1039, in check_header_validity
+    _validate_header_part(header, name, 0)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/utils.py", line 1056, in _validate_header_part
+    raise InvalidHeader(
+requests.exceptions.InvalidHeader: Invalid leading whitespace, reserved character(s), or returncharacter(s) in header name: ':authority'
+2023-11-16 16:32:41,969 [ERROR]: An error occurred: Invalid leading whitespace, reserved character(s), or returncharacter(s) in header name: ':authority'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 115, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 39, in scrape_single
+    response = requests.post(url, headers=headers, data=data, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 369, in prepare
+    self.prepare_headers(headers)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 491, in prepare_headers
+    check_header_validity(header)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/utils.py", line 1039, in check_header_validity
+    _validate_header_part(header, name, 0)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/utils.py", line 1056, in _validate_header_part
+    raise InvalidHeader(
+requests.exceptions.InvalidHeader: Invalid leading whitespace, reserved character(s), or returncharacter(s) in header name: ':authority'
+2023-11-16 16:34:59,917 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 109, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 43, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 16:43:37,734 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 110, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 44, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 16:56:05,608 [ERROR]: An error occurred: 'Response' object has no attribute 'header'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 112, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 35, in scrape_single
+    redirect_url = response.header['Location']
+                   ^^^^^^^^^^^^^^^
+AttributeError: 'Response' object has no attribute 'header'. Did you mean: 'headers'?
+2023-11-16 16:56:28,219 [ERROR]: An error occurred: 'location'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 112, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 35, in scrape_single
+    redirect_url = response.headers['Location']
+                   ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'location'
+2023-11-16 16:57:11,265 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 112, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 46, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 16:58:18,626 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 112, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 46, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 17:04:17,928 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 113, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 47, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 17:05:03,972 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 113, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 47, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 17:20:48,915 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 116, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 50, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 17:21:24,353 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 117, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 51, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 17:27:40,451 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 117, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 51, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 17:29:10,556 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 114, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 48, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 17:31:25,821 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 114, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 48, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 17:41:34,966 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 118, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 52, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 17:56:45,530 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 108, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 42, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 17:57:05,786 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 108, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 42, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 18:08:22,932 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 113, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 47, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 18:09:11,792 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 113, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 47, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 18:10:45,775 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 113, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 47, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 18:12:03,399 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 113, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 47, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 18:24:37,965 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 111, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 45, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 18:25:28,105 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 111, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 45, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 18:25:59,854 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 111, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 45, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable

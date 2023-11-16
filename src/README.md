@@ -30,11 +30,11 @@ project_name/
 
 `scraper1.py` contains the first web scraper class (`Scraper1`) that is designed to extract information from a specific website (`https://mobilendloan.com/`). It includes methods to scrape data using reference codes and handle cases where information is not found.
 
-### 2. Scraper2
+### 2. Scraper2 (soon)
 
 `scraper2.py` introduces the second web scraper class (`Scraper2`) for the website `https://myonlineloanpro.com/`. Similar to Scraper1, it includes methods to scrape data using reference codes and handles cases where information is not found. The HTML parsing logic is adjusted to match the structure of the new website.
 
-### 3. Scraper3
+### 3. Scraper3 (soon)
 
 `scraper3.py` includes the third web scraper class (`Scraper3`) for the website `https://xmydebt.com/`. This class follows a similar structure to Scraper1 and Scraper2, with methods to scrape data using reference codes and handle cases where information is not found.
 
@@ -61,5 +61,3 @@ Feel free to customize the project structure and code according to your specific
 ## Additional Notes
 
 - Adjust the scraping logic and database handling to fit the requirements of other websites.
-
-Happy coding!
