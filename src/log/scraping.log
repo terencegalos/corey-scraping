@@ -1,0 +1,258 @@
+2023-11-15 17:23:29,975 [ERROR]: An error occurred: [Errno 2] No such file or directory: 'refcodes.txt'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 25, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 68, in scrape_with_refcodes
+    with open(refcodes_file,'r') as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'refcodes.txt'
+2023-11-15 17:24:08,961 [ERROR]: An error occurred: 'Scraper1' object has no attribute 'url'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 25, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 77, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+                                ^^^^^^^^
+AttributeError: 'Scraper1' object has no attribute 'url'
+2023-11-15 17:24:38,086 [ERROR]: An error occurred: 'NoneType' object has no attribute 'text'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 25, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 77, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 37, in scrape_single
+    first_name = soup.find('div',{'class':'first-name'}).text.strip()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'text'
+2023-11-15 17:24:59,862 [ERROR]: An error occurred: 'NoneType' object has no attribute 'text'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 25, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 77, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 37, in scrape_single
+    first_name = soup.find('div',{'class':'first-name'}).text.strip()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'text'
+2023-11-15 17:30:50,656 [ERROR]: An error occurred: 'NoneType' object has no attribute 'text'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 25, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 77, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 37, in scrape_single
+    first_name = soup.find('div',{'class':'first-name'}).text.strip()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'text'
+2023-11-15 17:41:01,449 [ERROR]: An error occurred: ResultSet object has no attribute 'text'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 25, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 106, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 51, in scrape_single
+    first_name = first_name_el.text.strip()
+                 ^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/bs4/element.py", line 2428, in __getattr__
+    raise AttributeError(
+AttributeError: ResultSet object has no attribute 'text'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+2023-11-15 17:47:19,951 [INFO]: package: mysql.connector.plugins
+2023-11-15 17:47:19,951 [INFO]: plugin_name: caching_sha2_password
+2023-11-15 17:47:19,952 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-15 17:47:19,954 [ERROR]: An error occurred: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AUTOINCREMENT,
+                                first_name VARCHAR(255),
+        ' at line 2
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 28, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/database/database_handler.py", line 16, in __init__
+    self.cursor.execute('''
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/cursor.py", line 617, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/connection.py", line 1069, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/connection.py", line 846, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AUTOINCREMENT,
+                                first_name VARCHAR(255),
+        ' at line 2
+2023-11-15 17:49:13,074 [INFO]: package: mysql.connector.plugins
+2023-11-15 17:49:13,075 [INFO]: plugin_name: caching_sha2_password
+2023-11-15 17:49:13,076 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-15 17:49:13,109 [ERROR]: An error occurred: 'firstname'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 37, in main
+    db_handler.store_data(data1)
+  File "/root/projects/corey/src/database/database_handler.py", line 38, in store_data
+    ''', (data['firstname'], data['last_name'], data['address'], data['city'], data['state'], data['zip_code']))
+          ~~~~^^^^^^^^^^^^^
+KeyError: 'firstname'
+2023-11-15 17:50:13,096 [INFO]: package: mysql.connector.plugins
+2023-11-15 17:50:13,096 [INFO]: plugin_name: caching_sha2_password
+2023-11-15 17:50:13,097 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-15 17:50:13,111 [INFO]: Scraping and storing data completed successfully.
+2023-11-15 17:51:05,400 [INFO]: package: mysql.connector.plugins
+2023-11-15 17:51:05,401 [INFO]: plugin_name: caching_sha2_password
+2023-11-15 17:51:05,401 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-15 17:51:05,414 [INFO]: Scraping and storing data completed successfully.
+2023-11-15 17:59:32,010 [INFO]: package: mysql.connector.plugins
+2023-11-15 17:59:32,011 [INFO]: plugin_name: caching_sha2_password
+2023-11-15 17:59:32,011 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-15 17:59:32,024 [INFO]: Scraping and storing data completed successfully.
+2023-11-15 18:38:21,721 [ERROR]: An error occurred: Authentication plugin 'caching_sha2_password' is not supported
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 29, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/database/database_handler.py", line 6, in __init__
+    self.conn = mysql.connector.connect(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/__init__.py", line 179, in connect
+    return MySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection.py", line 95, in __init__
+    self.connect(**kwargs)
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/abstracts.py", line 716, in connect
+    self._open_connection()
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection.py", line 208, in _open_connection
+    self._do_auth(self._user, self._password,
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection.py", line 137, in _do_auth
+    packet = self._protocol.make_auth(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/protocol.py", line 99, in make_auth
+    packet += self._auth_response(client_flags, username, password,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/protocol.py", line 58, in _auth_response
+    auth = get_auth_plugin(auth_plugin)(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/authentication.py", line 190, in get_auth_plugin
+    raise errors.NotSupportedError(
+mysql.connector.errors.NotSupportedError: Authentication plugin 'caching_sha2_password' is not supported
+2023-11-15 18:38:43,037 [ERROR]: An error occurred: Authentication plugin 'caching_sha2_password' is not supported
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 29, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/database/database_handler.py", line 6, in __init__
+    self.conn = mysql.connector.connect(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/__init__.py", line 179, in connect
+    return MySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection.py", line 95, in __init__
+    self.connect(**kwargs)
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/abstracts.py", line 716, in connect
+    self._open_connection()
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection.py", line 208, in _open_connection
+    self._do_auth(self._user, self._password,
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection.py", line 137, in _do_auth
+    packet = self._protocol.make_auth(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/protocol.py", line 99, in make_auth
+    packet += self._auth_response(client_flags, username, password,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/protocol.py", line 58, in _auth_response
+    auth = get_auth_plugin(auth_plugin)(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/authentication.py", line 190, in get_auth_plugin
+    raise errors.NotSupportedError(
+mysql.connector.errors.NotSupportedError: Authentication plugin 'caching_sha2_password' is not supported
+2023-11-15 18:41:36,095 [ERROR]: An error occurred: Authentication plugin 'caching_sha2_password' is not supported
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 29, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/database/database_handler.py", line 6, in __init__
+    self.conn = mysql.connector.connect(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/__init__.py", line 179, in connect
+    return MySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection.py", line 95, in __init__
+    self.connect(**kwargs)
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/abstracts.py", line 716, in connect
+    self._open_connection()
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection.py", line 208, in _open_connection
+    self._do_auth(self._user, self._password,
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection.py", line 137, in _do_auth
+    packet = self._protocol.make_auth(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/protocol.py", line 99, in make_auth
+    packet += self._auth_response(client_flags, username, password,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/protocol.py", line 58, in _auth_response
+    auth = get_auth_plugin(auth_plugin)(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/authentication.py", line 190, in get_auth_plugin
+    raise errors.NotSupportedError(
+mysql.connector.errors.NotSupportedError: Authentication plugin 'caching_sha2_password' is not supported
+2023-11-15 18:42:55,182 [ERROR]: An error occurred: Authentication plugin 'caching_sha2_password' is not supported
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 29, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/database/database_handler.py", line 6, in __init__
+    self.conn = mysql.connector.connect(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/__init__.py", line 179, in connect
+    return MySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection.py", line 95, in __init__
+    self.connect(**kwargs)
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/abstracts.py", line 716, in connect
+    self._open_connection()
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection.py", line 208, in _open_connection
+    self._do_auth(self._user, self._password,
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection.py", line 137, in _do_auth
+    packet = self._protocol.make_auth(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/protocol.py", line 99, in make_auth
+    packet += self._auth_response(client_flags, username, password,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/protocol.py", line 58, in _auth_response
+    auth = get_auth_plugin(auth_plugin)(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/authentication.py", line 190, in get_auth_plugin
+    raise errors.NotSupportedError(
+mysql.connector.errors.NotSupportedError: Authentication plugin 'caching_sha2_password' is not supported
+2023-11-15 18:45:05,663 [INFO]: Scraping and storing data completed successfully.
+2023-11-15 19:05:35,285 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 25, in main
+    data1 = scraper2.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper2.py", line 107, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper2.py", line 44, in scrape_single
+    first_name_el = soup.select("body > section > div.position-relative > div > div > div > div > div.pt-5.fs-3.text-dark > a")[0]
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-11-15 19:18:14,921 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 24, in main
+    data1 = scraper3.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 107, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 44, in scrape_single
+    first_name_el = soup.select("body > section > div.position-relative > div > div > div > div > div.pt-5.fs-3.text-dark > a")[0]
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
