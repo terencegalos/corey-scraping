@@ -859,3 +859,512 @@ Traceback (most recent call last):
     first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
 TypeError: 'NoneType' object is not subscriptable
+2023-11-16 20:41:52,482 [INFO]: Starting Chromium download.
+2023-11-16 20:42:23,637 [INFO]: Beginning extraction
+2023-11-16 20:42:25,489 [INFO]: Chromium extracted to: /root/.local/share/pyppeteer/local-chromium/588429
+2023-11-16 20:42:25,800 [INFO]: Browser listening on: ws://127.0.0.1:43131/devtools/browser/a9d855d5-19f9-435d-ad9d-5b06ce3280f3
+2023-11-16 20:42:30,009 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 115, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 49, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 20:42:30,011 [INFO]: terminate chrome process...
+2023-11-16 20:45:04,780 [INFO]: Browser listening on: ws://127.0.0.1:43375/devtools/browser/a64d8c9c-fdab-4dd4-84c2-896fbaf26c63
+2023-11-16 20:45:10,945 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 115, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 49, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 20:45:10,947 [INFO]: terminate chrome process...
+2023-11-16 20:48:38,029 [INFO]: Browser listening on: ws://127.0.0.1:46737/devtools/browser/065861ec-5d42-4327-bb47-d9b9b1002074
+2023-11-16 20:48:41,964 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 115, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 49, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 20:48:41,966 [INFO]: terminate chrome process...
+2023-11-16 21:10:20,904 [INFO]: Browser listening on: ws://127.0.0.1:58309/devtools/browser/ad398b31-18a5-473f-a5fb-b7eb43abf104
+2023-11-16 21:10:24,886 [ERROR]: An error occurred: 'list' object has no attribute 'find'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 120, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 39, in scrape_single
+    form.find('input=[name="wpforms[fields][1]"]',first=True).attrs['value'] = data['refCode']
+    ^^^^^^^^^
+AttributeError: 'list' object has no attribute 'find'
+2023-11-16 21:10:24,889 [INFO]: terminate chrome process...
+2023-11-16 21:12:57,184 [INFO]: Browser listening on: ws://127.0.0.1:52593/devtools/browser/4455ea81-8f7f-4113-840c-4af9b71af0ba
+2023-11-16 21:13:01,965 [ERROR]: An error occurred: 'list' object has no attribute 'find'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 120, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 39, in scrape_single
+    form.find('input=[name="wpforms[fields][1]"]',first=True).attrs['value'] = data['refCode']
+    ^^^^^^^^^
+AttributeError: 'list' object has no attribute 'find'
+2023-11-16 21:13:01,966 [INFO]: terminate chrome process...
+2023-11-16 21:14:10,225 [INFO]: Browser listening on: ws://127.0.0.1:33365/devtools/browser/2b599bdf-14aa-457d-8ab3-4d0eb78f62dd
+2023-11-16 21:14:13,868 [ERROR]: An error occurred: Expected selector, got <DELIM '=' at 5>
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 120, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 39, in scrape_single
+    form.find('input=[name="wpforms[fields][1]"]',first=True).attrs['value'] = data['refCode']
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests_html.py", line 212, in find
+    for found in self.pq(selector)
+                 ^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/pyquery/pyquery.py", line 256, in __call__
+    result = self._copy(*args, parent=self, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/pyquery/pyquery.py", line 242, in _copy
+    return self.__class__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/pyquery/pyquery.py", line 227, in __init__
+    xpath = self._css_to_xpath(selector)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/pyquery/pyquery.py", line 238, in _css_to_xpath
+    return self._translator.css_to_xpath(selector, prefix)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/cssselect/xpath.py", line 224, in css_to_xpath
+    for selector in parse(css)
+                    ^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/cssselect/parser.py", line 543, in parse
+    return list(parse_selector_group(stream))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/cssselect/parser.py", line 558, in parse_selector_group
+    yield Selector(*parse_selector(stream))
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/cssselect/parser.py", line 567, in parse_selector
+    result, pseudo_element = parse_simple_selector(stream)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/cssselect/parser.py", line 700, in parse_simple_selector
+    raise SelectorSyntaxError("Expected selector, got %s" % (peek,))
+cssselect.parser.SelectorSyntaxError: Expected selector, got <DELIM '=' at 5>
+2023-11-16 21:14:13,871 [INFO]: terminate chrome process...
+2023-11-16 21:16:47,049 [INFO]: Browser listening on: ws://127.0.0.1:49713/devtools/browser/059dc3c0-4d46-4fb8-959c-ba39cfec2870
+2023-11-16 21:16:50,447 [ERROR]: An error occurred: 'Element' object has no attribute 'submit'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 120, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 41, in scrape_single
+    response = form.submit()
+               ^^^^^^^^^^^
+AttributeError: 'Element' object has no attribute 'submit'
+2023-11-16 21:16:50,450 [INFO]: terminate chrome process...
+2023-11-16 21:24:02,257 [INFO]: Browser listening on: ws://127.0.0.1:41945/devtools/browser/f884f73d-f256-4b79-873a-a962b76546c9
+2023-11-16 21:24:06,316 [ERROR]: An error occurred: 'value'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 125, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 43, in scrape_single
+    e.attrs['name'] : e.attrs['value'] for e in form.find('input')
+                      ~~~~~~~^^^^^^^^^
+KeyError: 'value'
+2023-11-16 21:24:06,317 [INFO]: terminate chrome process...
+2023-11-16 21:27:01,379 [INFO]: Browser listening on: ws://127.0.0.1:47361/devtools/browser/a95721c1-7edb-4a60-b366-fe22f675bfe9
+2023-11-16 21:27:05,841 [ERROR]: An error occurred: Invalid URL '/': No scheme supplied. Perhaps you meant https:///?
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 122, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 43, in scrape_single
+    response = session.post(post_url)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 439, in prepare_url
+    raise MissingSchema(
+requests.exceptions.MissingSchema: Invalid URL '/': No scheme supplied. Perhaps you meant https:///?
+2023-11-16 21:27:05,844 [INFO]: terminate chrome process...
+2023-11-16 21:28:08,068 [INFO]: Browser listening on: ws://127.0.0.1:39659/devtools/browser/dd222181-ab5a-48d7-b97a-0e7d0c72aded
+2023-11-16 21:28:13,342 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 55, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 21:28:13,344 [INFO]: terminate chrome process...
+2023-11-16 21:28:46,368 [INFO]: Browser listening on: ws://127.0.0.1:55173/devtools/browser/742bae92-b46b-47e2-a126-426d289cf920
+2023-11-16 21:28:50,814 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 55, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 21:28:50,816 [INFO]: terminate chrome process...
+2023-11-16 21:29:54,586 [INFO]: Browser listening on: ws://127.0.0.1:34707/devtools/browser/a9ed0081-50a9-4e0e-accc-e5de85f5384d
+2023-11-16 21:29:59,337 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 55, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-16 21:29:59,339 [INFO]: terminate chrome process...
+2023-11-16 21:34:09,444 [INFO]: Browser listening on: ws://127.0.0.1:46921/devtools/browser/1a17da75-bcba-40cb-9660-79afb008fb3c
+2023-11-16 21:34:12,928 [ERROR]: An error occurred: 'Element' object has no attribute 'input'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 39, in scrape_single
+    form.input({'wpforms[fields][1]':data['refCode']})
+    ^^^^^^^^^^
+AttributeError: 'Element' object has no attribute 'input'
+2023-11-16 21:34:12,930 [INFO]: terminate chrome process...
+2023-11-16 21:36:15,433 [INFO]: Browser listening on: ws://127.0.0.1:35847/devtools/browser/52df5a1d-6b37-460f-b506-d20435269bfb
+2023-11-16 21:36:19,519 [ERROR]: An error occurred: 'Element' object has no attribute 'input'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 39, in scrape_single
+    form.input({'wpforms[fields][1]':data['refCode']})
+    ^^^^^^^^^^
+AttributeError: 'Element' object has no attribute 'input'
+2023-11-16 21:36:19,522 [INFO]: terminate chrome process...
+2023-11-16 21:38:36,370 [INFO]: Browser listening on: ws://127.0.0.1:52297/devtools/browser/0b7764f2-fe0f-4ca1-a407-e0ed9ce0caa3
+2023-11-16 21:38:39,661 [ERROR]: An error occurred: 'Element' object has no attribute 'form'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 38, in scrape_single
+    form = response.html.find('#wpforms-form-4251', first=True).form
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Element' object has no attribute 'form'
+2023-11-16 21:38:39,662 [INFO]: terminate chrome process...
+2023-11-16 21:43:58,235 [INFO]: Browser listening on: ws://127.0.0.1:44459/devtools/browser/b7bf8e31-b1d9-4e34-8727-17e3fe7eb14f
+2023-11-16 21:44:02,186 [ERROR]: An error occurred: BaseParser.find() got an unexpected keyword argument 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 39, in scrape_single
+    form.find(attrs={'name':'wpforms[fields][1]'})['value'] = data['refCode']
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseParser.find() got an unexpected keyword argument 'attrs'
+2023-11-16 21:44:02,188 [INFO]: terminate chrome process...
+2023-11-16 21:44:47,469 [INFO]: Browser listening on: ws://127.0.0.1:39835/devtools/browser/b9358fe7-6c4e-4331-b00c-99c243925a90
+2023-11-16 21:44:51,027 [ERROR]: An error occurred: Expected ']', got <EOF at 31>
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 39, in scrape_single
+    form.find('input[name="wpforms[fields][1]"')['value'] = data['refCode']
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests_html.py", line 212, in find
+    for found in self.pq(selector)
+                 ^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/pyquery/pyquery.py", line 256, in __call__
+    result = self._copy(*args, parent=self, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/pyquery/pyquery.py", line 242, in _copy
+    return self.__class__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/pyquery/pyquery.py", line 227, in __init__
+    xpath = self._css_to_xpath(selector)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/pyquery/pyquery.py", line 238, in _css_to_xpath
+    return self._translator.css_to_xpath(selector, prefix)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/cssselect/xpath.py", line 224, in css_to_xpath
+    for selector in parse(css)
+                    ^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/cssselect/parser.py", line 543, in parse
+    return list(parse_selector_group(stream))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/cssselect/parser.py", line 558, in parse_selector_group
+    yield Selector(*parse_selector(stream))
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/cssselect/parser.py", line 567, in parse_selector
+    result, pseudo_element = parse_simple_selector(stream)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/cssselect/parser.py", line 634, in parse_simple_selector
+    result = parse_attrib(result, stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/cssselect/parser.py", line 802, in parse_attrib
+    raise SelectorSyntaxError("Expected ']', got %s" % (next,))
+cssselect.parser.SelectorSyntaxError: Expected ']', got <EOF at 31>
+2023-11-16 21:44:51,030 [INFO]: terminate chrome process...
+2023-11-16 21:46:46,368 [INFO]: Browser listening on: ws://127.0.0.1:39231/devtools/browser/25167be1-c4c1-4263-8789-e21e66e34554
+2023-11-16 21:46:49,704 [ERROR]: An error occurred: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 39, in scrape_single
+    form.find('input[name="wpforms[fields][1]"]')['value'] = data['refCode']
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2023-11-16 21:46:49,706 [INFO]: terminate chrome process...
+2023-11-16 21:47:39,731 [INFO]: Browser listening on: ws://127.0.0.1:42159/devtools/browser/6d4780ff-544b-44ce-9a9f-fca5202c7411
+2023-11-16 21:47:43,271 [ERROR]: An error occurred: 'Element' object has no attribute 'submit'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 42, in scrape_single
+    response = form.submit()
+               ^^^^^^^^^^^
+AttributeError: 'Element' object has no attribute 'submit'
+2023-11-16 21:47:43,279 [INFO]: terminate chrome process...
+2023-11-16 21:50:13,971 [INFO]: Browser listening on: ws://127.0.0.1:48893/devtools/browser/dab3472e-419d-49f8-8915-4f8ef1f29c3c
+2023-11-16 21:50:18,022 [ERROR]: An error occurred: 'Element' object has no attribute 'input'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 39, in scrape_single
+    form.input({'input[name="wpforms[fields][1]"]':data['refCode']})
+    ^^^^^^^^^^
+AttributeError: 'Element' object has no attribute 'input'
+2023-11-16 21:50:18,024 [INFO]: terminate chrome process...
+2023-11-16 21:56:09,119 [INFO]: Browser listening on: ws://127.0.0.1:43535/devtools/browser/980dd5e1-7e61-4df6-97ef-6c38ccf87354
+2023-11-16 21:56:12,641 [ERROR]: An error occurred: 'Element' object has no attribute 'input'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 120, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 39, in scrape_single
+    form.input({'wpforms[fields][1]': data['refCode']})
+    ^^^^^^^^^^
+AttributeError: 'Element' object has no attribute 'input'
+2023-11-16 21:56:12,643 [INFO]: terminate chrome process...
+2023-11-16 21:57:56,028 [INFO]: Browser listening on: ws://127.0.0.1:56633/devtools/browser/cda93083-a21e-4ff4-a08d-d34e200922bf
+2023-11-16 21:57:59,432 [ERROR]: An error occurred: 'Element' object has no attribute 'input'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 40, in scrape_single
+    form.input({'wpforms[fields][1]': data['refCode']})
+    ^^^^^^^^^^
+AttributeError: 'Element' object has no attribute 'input'
+2023-11-16 21:57:59,434 [INFO]: terminate chrome process...
+2023-11-16 21:58:21,114 [INFO]: Browser listening on: ws://127.0.0.1:58709/devtools/browser/bb969dc2-f084-47c4-b176-0f80e6207cf6
+2023-11-16 21:58:25,219 [ERROR]: An error occurred: 'Element' object has no attribute 'input'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 40, in scrape_single
+    form.input({'wpforms[fields][1]': data['refCode']})
+    ^^^^^^^^^^
+AttributeError: 'Element' object has no attribute 'input'
+2023-11-16 21:58:25,221 [INFO]: terminate chrome process...
+2023-11-16 22:00:50,569 [INFO]: Browser listening on: ws://127.0.0.1:41955/devtools/browser/006738c1-3f8a-449d-82f3-22e0ab32ceb9
+2023-11-16 22:00:54,621 [ERROR]: An error occurred: 'Element' object has no attribute 'input'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 40, in scrape_single
+    form.input({'wpforms[fields][1]': data['refCode']})
+    ^^^^^^^^^^
+AttributeError: 'Element' object has no attribute 'input'
+2023-11-16 22:00:54,623 [INFO]: terminate chrome process...
+2023-11-16 22:06:23,424 [INFO]: Browser listening on: ws://127.0.0.1:43367/devtools/browser/25c7f503-9f30-47d8-a868-39e4ade55fe7
+2023-11-16 22:06:27,060 [ERROR]: An error occurred: 'FormElement' object has no attribute 'input'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 122, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 41, in scrape_single
+    form.input({'wpforms[fields][1]': data['refCode']})
+    ^^^^^^^^^^
+AttributeError: 'FormElement' object has no attribute 'input'. Did you mean: 'inputs'?
+2023-11-16 22:06:27,065 [INFO]: terminate chrome process...
+2023-11-16 22:09:40,493 [INFO]: Browser listening on: ws://127.0.0.1:40237/devtools/browser/557a630c-276a-4ae3-917e-6240b06cec5d
+2023-11-16 22:09:43,931 [ERROR]: An error occurred: 'Element' object has no attribute 'inputs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 39, in scrape_single
+    inputs = form_el.inputs
+             ^^^^^^^^^^^^^^
+AttributeError: 'Element' object has no attribute 'inputs'
+2023-11-16 22:09:43,934 [INFO]: terminate chrome process...
+2023-11-17 15:55:03,544 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 23, in main
+    data1 = scraper1.scrape_with_refcodes(refcodes_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 120, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 54, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-17 16:17:37,123 [ERROR]: An error occurred: 2003 (HY000): Can't connect to MySQL server on '103.40.3.37:3306' (110)
+Traceback (most recent call last):
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 308, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on '103.40.3.37:3306' (110)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 25, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/database/database_handler.py", line 6, in __init__
+    self.conn = mysql.connector.connect(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/pooling.py", line 293, in connect
+    return CMySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 129, in __init__
+    self.connect(**kwargs)
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/abstracts.py", line 1237, in connect
+    self._open_connection()
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 313, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on '103.40.3.37:3306' (110)
+2023-11-17 16:21:02,866 [INFO]: Scraping and storing data completed successfully.
+2023-11-17 19:01:39,489 [INFO]: package: mysql.connector.plugins
+2023-11-17 19:01:39,489 [INFO]: plugin_name: caching_sha2_password
+2023-11-17 19:01:39,491 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-17 19:01:41,318 [ERROR]: An error occurred: Scraper1.generate_code() takes 2 positional arguments but 3 were given
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 31, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper1.py", line 104, in scrape_with_refcodes
+    refcodes = self.generate_code(2,222000)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scraper1.generate_code() takes 2 positional arguments but 3 were given
+2023-11-17 19:02:35,629 [INFO]: package: mysql.connector.plugins
+2023-11-17 19:02:35,630 [INFO]: plugin_name: caching_sha2_password
+2023-11-17 19:02:35,631 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-17 19:02:41,216 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 31, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper1.py", line 112, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 51, in scrape_single
+    state_el = soup.select("#state option[selected]")[1].text
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-11-17 19:04:11,659 [INFO]: package: mysql.connector.plugins
+2023-11-17 19:04:11,660 [INFO]: plugin_name: caching_sha2_password
+2023-11-17 19:04:11,664 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-17 19:15:04,206 [INFO]: package: mysql.connector.plugins
+2023-11-17 19:15:04,206 [INFO]: plugin_name: caching_sha2_password
+2023-11-17 19:15:04,208 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin

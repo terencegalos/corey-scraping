@@ -1,5 +1,4 @@
-# from scraping.scraper1 import Scraper1
-from scraping.scraper3 import Scraper3
+from scraping.scraper1 import Scraper1
 from database.database_handler import DatabaseHandler
 from config.db_config import DB_CONFIG
 from log.logger_config import configure_logger
@@ -14,13 +13,11 @@ def main():
     
     try:
         # Instantiate scraper
-        scraper1 = Scraper3()
+        scraper1 = Scraper1()
         
         # Text file with all the refCodes to rotate
-        refcodes_file = '/root/projects/corey/src/refcodes.txt'
+        # refcodes_file = '/root/projects/corey/src/refcodes.txt'
         
-        # Scrape data
-        data1 = scraper1.scrape_with_refcodes(refcodes_file)
         
         # Store data in the database
         db_handler = DatabaseHandler(
@@ -30,9 +27,12 @@ def main():
             database=DB_CONFIG['DBNAME']
         )
         
-        # Store data in the db
-        print(data1)
-        db_handler.store_data(data1)
+        # Scrape data in batches
+        for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+            # Store data in the db
+            print(batch_results)
+            print("Storing batch to database...")
+            db_handler.store_data(batch_results)
         
         logger.info("Scraping and storing data completed successfully.")
     except Exception as e:
