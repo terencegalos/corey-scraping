@@ -16,7 +16,7 @@ class Scraper1:
             "Connection": "keep-alive",
             "Content-Length": "17",
             "Content-Type": "application/x-www-form-urlencoded",
-            "Cookie": "wc_visitor=78875-e5884253-c2d3-bcbd-4ec7-48aa6b78f87a; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-e5884253-c2d3-bcbd-4ec7-48aa6b78f87a+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-e5884253-c2d3-bcbd-4ec7-48aa6b78f87a+..+; mailer-sessions=s%3AD6Z2JuOGvHHyKy8pU4S-uDtshy7Lus0t.7tnXcSvNpr3ysXg79vJnXtRW3JB%2FJM%2FT0gjNK7LCQgY",
+            "Cookie": "mailer-sessions=s%3AloN03AiI7DSgkrmnafWG1Zo4C1d6yCt9.0YgnuBnt4BbhEOhIsWW1PVVPDS8BdyuFGXIIx4xMsO8; wc_visitor=78875-0ea354ba-8c18-f549-83e5-7820260cefc9; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-0ea354ba-8c18-f549-83e5-7820260cefc9+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-0ea354ba-8c18-f549-83e5-7820260cefc9+..+",
             "Host": "mobilendloan.com",
             "Origin": "https://mobilendloan.com",
             "Referer": "https://mobilendloan.com/",
@@ -30,6 +30,7 @@ class Scraper1:
             "Upgrade-Insecure-Requests": "1",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
         }
+
 
 
                 
@@ -108,14 +109,14 @@ class Scraper1:
         # with open(refcodes_file,'r') as file:
         #     refcodes = [line.strip() for line in file]
             
-        refcodes = self.generate_code(2,222000)
+        refcodes = self.generate_code(5239,222000)
         print(f"There are {len(refcodes)} refcodes to rotate!")
         results = []
         
         for i, refcode in enumerate(refcodes,start=1):
             print(f"Refcode : {refcode}")
             data = {'refCode':refcode}
-            time.sleep(0.5)
+            time.sleep(0.3)
             result = self.scrape_single(self.url,data)
             print(result)
             if result is not None:

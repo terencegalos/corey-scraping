@@ -1368,3 +1368,45 @@ IndexError: list index out of range
 2023-11-17 19:15:04,206 [INFO]: package: mysql.connector.plugins
 2023-11-17 19:15:04,206 [INFO]: plugin_name: caching_sha2_password
 2023-11-17 19:15:04,208 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-17 19:54:46,324 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 31, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper1.py", line 119, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 49, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-17 20:02:32,798 [INFO]: package: mysql.connector.plugins
+2023-11-17 20:02:32,800 [INFO]: plugin_name: caching_sha2_password
+2023-11-17 20:02:32,807 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-17 20:57:19,732 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 31, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper1.py", line 118, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 48, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-17 20:59:57,344 [INFO]: package: mysql.connector.plugins
+2023-11-17 20:59:57,345 [INFO]: plugin_name: caching_sha2_password
+2023-11-17 20:59:57,349 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-17 21:57:45,607 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 31, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper1.py", line 119, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 49, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-18 19:28:48,167 [INFO]: package: mysql.connector.plugins
+2023-11-18 19:28:48,168 [INFO]: plugin_name: caching_sha2_password
+2023-11-18 19:28:48,172 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
