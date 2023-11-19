@@ -9,27 +9,29 @@ class Scraper2:
     def scrape_single(self,url,data):
         
         headers = {
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Accept-Language": "en-US,en;q=0.9",
-            "Cache-Control": "max-age=0",
-            "Connection": "keep-alive",
-            "Content-Length": "17",
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Cookie": "mailer-sessions=s%3Anekucr5mNytthlU9sQ9wpnJv3iMvFMuM.6lIR3tZTYXb8i8%2FYkgm2FPs4MzktdniyXDNsgFfq8MY; wc_visitor=78875-63846948-ead0-5f06-7ec5-15f09a9239ab; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-63846948-ead0-5f06-7ec5-15f09a9239ab+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-63846948-ead0-5f06-7ec5-15f09a9239ab+..+",
-            "Host": "myonlineloanpro.com",
-            "Origin": "https://myonlineloanpro.com",
-            "Referer": "https://myonlineloanpro.com/",
-            "Sec-Ch-Ua": "\"Microsoft Edge\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\"",
-            "Sec-Ch-Ua-Mobile": "?0",
-            "Sec-Ch-Ua-Platform": "\"Windows\"",
-            "Sec-Fetch-Dest": "document",
-            "Sec-Fetch-Mode": "navigate",
-            "Sec-Fetch-Site": "same-origin",
-            "Sec-Fetch-User": "?1",
-            "Upgrade-Insecure-Requests": "1",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Accept-Language': 'en-US,en;q=0.9',
+            'Cache-Control': 'max-age=0',
+            'Connection': 'keep-alive',
+            'Content-Length': '17',
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Cookie': 'wc_visitor=78875-0c5aaef4-6080-ce03-fcef-8a4a88356818; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-0c5aaef4-6080-ce03-fcef-8a4a88356818+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-0c5aaef4-6080-ce03-fcef-8a4a88356818+..+; mailer-sessions=s%3AbCTKFIchsG52c_WfT3_SKFfI74T8jZ9s.m1PoGbhsYYhogSwm92gi5X6QjuYzdY%2Bu76S8iWQpLOs',
+            'Host': 'myonlineloanpro.com',
+            'Origin': 'https://myonlineloanpro.com',
+            'Referer': 'https://myonlineloanpro.com/',
+            'Sec-Ch-Ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+            'Sec-Ch-Ua-Mobile': '?0',
+            'Sec-Ch-Ua-Platform': '"Windows"',
+            'Sec-Fetch-Dest': 'document',
+            'Sec-Fetch-Mode': 'navigate',
+            'Sec-Fetch-Site': 'same-origin',
+            'Sec-Fetch-User': '?1',
+            'Upgrade-Insecure-Requests': '1',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0'
         }
+
+
 
 
                 
@@ -48,7 +50,7 @@ class Scraper2:
         last_name_el = soup.select_one("#lastName")['value'] if soup.select_one("#lastName") else None
         address_el = soup.select_one("#address")['value'] if soup.select_one("#address") else None
         city_el = soup.select_one("#city")['value'] if soup.select_one("#city") else None
-        state_el = soup.select("#state option[selected]")[1].text if soup.select("#state option[selected]") else None
+        state_el = soup.select("#state option[selected]")[1].text if len(soup.select("#state option[selected]")) > 1 else None
         zip_code_el = soup.select_one("#zipCode")['value'] if soup.select_one("#zipCode") else None
         
         if first_name_el is not None:
@@ -105,7 +107,7 @@ class Scraper2:
         # with open(refcodes_file,'r') as file:
         #     refcodes = [line.strip() for line in file]
             
-        refcodes = self.generate_code(1,30000)
+        refcodes = self.generate_code(6723,30000)
         print(f"There are {len(refcodes)} refcodes to rotate!")
         results = []
         

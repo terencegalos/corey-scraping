@@ -9,27 +9,30 @@ class Scraper1:
     def scrape_single(self,url,data):
         
         headers = {
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Accept-Language": "en-US,en;q=0.9",
-            "Cache-Control": "max-age=0",
-            "Connection": "keep-alive",
-            "Content-Length": "17",
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Cookie": "mailer-sessions=s%3AloN03AiI7DSgkrmnafWG1Zo4C1d6yCt9.0YgnuBnt4BbhEOhIsWW1PVVPDS8BdyuFGXIIx4xMsO8; wc_visitor=78875-0ea354ba-8c18-f549-83e5-7820260cefc9; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-0ea354ba-8c18-f549-83e5-7820260cefc9+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-0ea354ba-8c18-f549-83e5-7820260cefc9+..+",
-            "Host": "mobilendloan.com",
-            "Origin": "https://mobilendloan.com",
-            "Referer": "https://mobilendloan.com/",
-            "Sec-Ch-Ua": "\"Microsoft Edge\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\"",
-            "Sec-Ch-Ua-Mobile": "?0",
-            "Sec-Ch-Ua-Platform": "\"Windows\"",
-            "Sec-Fetch-Dest": "document",
-            "Sec-Fetch-Mode": "navigate",
-            "Sec-Fetch-Site": "same-origin",
-            "Sec-Fetch-User": "?1",
-            "Upgrade-Insecure-Requests": "1",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Accept-Language': 'en-US,en;q=0.9',
+            'Cache-Control': 'max-age=0',
+            'Connection': 'keep-alive',
+            'Content-Length': '17',
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Cookie': 'wc_visitor=78875-0ea354ba-8c18-f549-83e5-7820260cefc9; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-0ea354ba-8c18-f549-83e5-7820260cefc9+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-0ea354ba-8c18-f549-83e5-7820260cefc9+..+; mailer-sessions=s%3AD3GhMFgLDhW1yWtN_GC1-YT6FMLujAzi.V0awwhD2%2FgEPIcWq0KETroTN760fXmlqRXcWeEUbnBA',
+            'Host': 'mobilendloan.com',
+            'Origin': 'https://mobilendloan.com',
+            'Referer': 'https://mobilendloan.com/',
+            'Sec-Ch-Ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+            'Sec-Ch-Ua-Mobile': '?0',
+            'Sec-Ch-Ua-Platform': '"Windows"',
+            'Sec-Fetch-Dest': 'document',
+            'Sec-Fetch-Mode': 'navigate',
+            'Sec-Fetch-Site': 'same-origin',
+            'Sec-Fetch-User': '?1',
+            'Upgrade-Insecure-Requests': '1',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0'
         }
+
+
+
 
 
 
@@ -109,7 +112,7 @@ class Scraper1:
         # with open(refcodes_file,'r') as file:
         #     refcodes = [line.strip() for line in file]
             
-        refcodes = self.generate_code(5239,222000)
+        refcodes = self.generate_code(12824,222000)
         print(f"There are {len(refcodes)} refcodes to rotate!")
         results = []
         

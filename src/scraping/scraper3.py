@@ -1,10 +1,18 @@
 import requests, time
 from bs4 import BeautifulSoup
 
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 class Scraper3:
     def __init__(self):
         print("***Scraping xmydebt.com")
         self.url = 'https://xmydebt.com/'
+        self.br = self.get_browser()
         # self.url = 'https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d'
     
     
@@ -30,25 +38,26 @@ class Scraper3:
 
                 
         
-        # session = HTMLSession()
-        # response = session.get(url)
-        # response.html.render()
+        # response = requests.post(url, headers=headers, data=data, allow_redirects=True)
+        # print(response.text)
         
-        # form_el = response.html.find('#wpforms-form-4251', first=True)
-        # inputs = form_el.inputs
-        # inputs['wpforms[fields][1]'] = data['refCode']
+        # Go to url using selenium browser automation
+        self.br.get(url)
+        time.sleep(0.5)
         
-        # response = form_el.submit()
-        response = requests.post(url, headers=headers, data=data, allow_redirects=True)
-        # print(response.headers)
-        # response = requests.post(redirect_url)
-        print(response.text)
+        # Enter code
+        self.br.find_element(By.NAME,"wpforms[fields][1]").send_keys(data['refCode'])
+        self.br.find_element(By.NAME,"wpforms[fields][1]").send_keys(Keys.ENTER)
+        time.sleep(0.5)
+        
+        # Wait for the page with info to load
+        WebDriverWait(self.br,5).until(EC.presence_of_element_located((By.NAME,"wpforms[fields][1][first]")))
         
         
         # if response.status_code == 200:
         # Parse the HTML content with BeautifulSoup
         
-        soup = BeautifulSoup(response.content, 'html.parser')
+        soup = BeautifulSoup(self.br.page_source, 'html.parser')
         
         #Extract relevant data from the HTML using BeautifulSoup methods
         first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
@@ -107,17 +116,55 @@ class Scraper3:
         # else :
         #     raise Exception(f"Failed to retrieve data. Status code: {response.status_code}")
     
-    def scrape_with_refcodes(self,refcodes_file):
-        with open(refcodes_file,'r') as file:
-            refcodes = [line.strip() for line in file]
+    def scrape_with_refcodes(self,batch_size=100):
+        # with open(refcodes_file,'r') as file:
+        #     refcodes = [line.strip() for line in file]
             
+        refcodes = self.generate_code(1,20000)
+        print(f"There are {len(refcodes)} refcodes to rotate!")
         results = []
         
-        for refcode in refcodes:
+        for i,refcode in enumerate(refcodes,start=1):
             print(f"Refcode : {refcode}")
             data = {'refCode':refcode}
             time.sleep(0.5)
             result = self.scrape_single(self.url,data)
-            results.append(result)
+            print(result)
+            if result is not None:
+                results.append(result)
+            else:
+                print("Skipping 'None' values")
+                
+            # Yield results in batches
+            if i % batch_size == 0:
+                yield results
+                results = [] # clear the results list after yielding
             
-        return results
+        # Yield any remaining results
+        if result:
+            yield results
+    
+    # Generate code
+    def generate_code(self,start,end):
+        codes = []
+        
+        for num in range(start, end+1):
+            # Generate zero-padded numeric component
+            numeric_component = f"{num:07d}"
+            
+            # Create the invite code by combining the prefix "HA" and the numeric component
+            invite_code = f"RD{numeric_component}"
+            
+            codes.append(invite_code)
+            
+        return codes
+    
+    
+    # Use selenium browser automation
+    def get_browser(self):
+        chrome_options = Options()
+        # chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--no-sandbox")
+
+        browser = webdriver.Chrome(options=chrome_options)
+        return browser
