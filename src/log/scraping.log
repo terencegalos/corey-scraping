@@ -2260,3 +2260,794 @@ Traceback (most recent call last):
     return self.attrs[key]
            ~~~~~~~~~~^^^^^
 KeyError: 'value'
+2023-11-19 15:53:28,221 [INFO]: package: mysql.connector.plugins
+2023-11-19 15:53:28,223 [INFO]: plugin_name: caching_sha2_password
+2023-11-19 15:53:28,230 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-19 15:53:31,593 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 31, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper1.py", line 124, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 54, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-19 15:53:57,672 [INFO]: package: mysql.connector.plugins
+2023-11-19 15:53:57,672 [INFO]: plugin_name: caching_sha2_password
+2023-11-19 15:53:57,674 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-19 15:54:01,049 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 31, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper1.py", line 125, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 55, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-19 15:56:19,285 [INFO]: package: mysql.connector.plugins
+2023-11-19 15:56:19,285 [INFO]: plugin_name: caching_sha2_password
+2023-11-19 15:56:19,293 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-19 16:15:14,815 [INFO]: package: mysql.connector.plugins
+2023-11-19 16:15:14,816 [INFO]: plugin_name: caching_sha2_password
+2023-11-19 16:15:14,820 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-19 16:15:14,834 [INFO]: package: mysql.connector.plugins
+2023-11-19 16:15:14,834 [INFO]: plugin_name: mysql_native_password
+2023-11-19 16:15:14,837 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-19 16:15:30,561 [ERROR]: An error occurred: 'value'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 131, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 63, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 'value'
+2023-11-19 16:16:13,982 [ERROR]: An error occurred: 'value'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 131, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 63, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 'value'
+2023-11-19 16:27:09,544 [ERROR]: An error occurred: 'value'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 132, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 63, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value'] if soup.find(attrs={'name':'wpforms[fields][1][first]'}) else None
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 'value'
+2023-11-19 16:28:49,722 [ERROR]: An error occurred: 'value'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 132, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 64, in scrape_single
+    last_name_el = soup.find(attrs={'name':'wpforms[fields][1][last]'})['value'] if soup.find(attrs={'name':'wpforms[fields][1][last]'}) else None
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 'value'
+2023-11-19 16:32:15,643 [ERROR]: An error occurred: 'value'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 133, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 64, in scrape_single
+    first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value'] if soup.find(attrs={'name':'wpforms[fields][1][first]'}) else None
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 'value'
+2023-11-19 16:43:09,625 [ERROR]: An error occurred: 'value'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 133, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 65, in scrape_single
+    last_name_el = soup.find(attrs={'name':'wpforms[fields][1][last]'})['value'] if soup.find(attrs={'name':'wpforms[fields][1][last]'}) else None
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 'value'
+2023-11-19 16:46:04,675 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 133, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 68, in scrape_single
+    state_el = soup.select('select[name="wpforms[fields][4][state]"] option[selected]')[1].text if soup.select('select[name="wpforms[fields][4][state]"] option[selected]')[1] else None
+                                                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-11-19 16:50:42,490 [ERROR]: An error occurred: Message: 
+Stacktrace:
+#0 0x560fa44bb5e3 <unknown>
+#1 0x560fa417e0b7 <unknown>
+#2 0x560fa41cbf53 <unknown>
+#3 0x560fa41cc051 <unknown>
+#4 0x560fa42119c4 <unknown>
+#5 0x560fa41f2f1d <unknown>
+#6 0x560fa420eb3d <unknown>
+#7 0x560fa41f2cc3 <unknown>
+#8 0x560fa41be0e4 <unknown>
+#9 0x560fa41bf0ae <unknown>
+#10 0x560fa4481ce1 <unknown>
+#11 0x560fa4485b7e <unknown>
+#12 0x560fa446f4b5 <unknown>
+#13 0x560fa44867d6 <unknown>
+#14 0x560fa4452dbf <unknown>
+#15 0x560fa44a9748 <unknown>
+#16 0x560fa44a9917 <unknown>
+#17 0x560fa44ba773 <unknown>
+#18 0x7f08e0f90ac3 <unknown>
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 133, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 54, in scrape_single
+    WebDriverWait(self.br,5).until(EC.presence_of_element_located((By.NAME,"wpforms[fields][1][first]")))
+  File "/root/venv/corey/lib/python3.12/site-packages/selenium/webdriver/support/wait.py", line 101, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+#0 0x560fa44bb5e3 <unknown>
+#1 0x560fa417e0b7 <unknown>
+#2 0x560fa41cbf53 <unknown>
+#3 0x560fa41cc051 <unknown>
+#4 0x560fa42119c4 <unknown>
+#5 0x560fa41f2f1d <unknown>
+#6 0x560fa420eb3d <unknown>
+#7 0x560fa41f2cc3 <unknown>
+#8 0x560fa41be0e4 <unknown>
+#9 0x560fa41bf0ae <unknown>
+#10 0x560fa4481ce1 <unknown>
+#11 0x560fa4485b7e <unknown>
+#12 0x560fa446f4b5 <unknown>
+#13 0x560fa44867d6 <unknown>
+#14 0x560fa4452dbf <unknown>
+#15 0x560fa44a9748 <unknown>
+#16 0x560fa44a9917 <unknown>
+#17 0x560fa44ba773 <unknown>
+#18 0x7f08e0f90ac3 <unknown>
+
+2023-11-19 16:54:20,990 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 31, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper1.py", line 118, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 48, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-19 17:07:21,026 [INFO]: package: mysql.connector.plugins
+2023-11-19 17:07:21,027 [INFO]: plugin_name: caching_sha2_password
+2023-11-19 17:07:21,030 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-19 17:07:37,090 [ERROR]: An error occurred: 'str' object has no attribute 'items'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 31, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper1.py", line 118, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 36, in scrape_single
+    response = requests.post(url, headers=headers, data=data, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 369, in prepare
+    self.prepare_headers(headers)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 489, in prepare_headers
+    for header in headers.items():
+                  ^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'items'
+2023-11-19 17:08:36,269 [INFO]: package: mysql.connector.plugins
+2023-11-19 17:08:36,269 [INFO]: plugin_name: caching_sha2_password
+2023-11-19 17:08:36,272 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-19 17:20:45,824 [ERROR]: An error occurred: '>' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 133, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 69, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs > 1 else None
+                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '>' not supported between instances of 'dict' and 'int'
+2023-11-19 17:25:15,842 [ERROR]: An error occurred: Message: 
+Stacktrace:
+#0 0x558dd84675e3 <unknown>
+#1 0x558dd812a0b7 <unknown>
+#2 0x558dd8177f53 <unknown>
+#3 0x558dd8178051 <unknown>
+#4 0x558dd81bd9c4 <unknown>
+#5 0x558dd819ef1d <unknown>
+#6 0x558dd81bab3d <unknown>
+#7 0x558dd819ecc3 <unknown>
+#8 0x558dd816a0e4 <unknown>
+#9 0x558dd816b0ae <unknown>
+#10 0x558dd842dce1 <unknown>
+#11 0x558dd8431b7e <unknown>
+#12 0x558dd841b4b5 <unknown>
+#13 0x558dd84327d6 <unknown>
+#14 0x558dd83fedbf <unknown>
+#15 0x558dd8455748 <unknown>
+#16 0x558dd8455917 <unknown>
+#17 0x558dd8466773 <unknown>
+#18 0x7f5bbde64ac3 <unknown>
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 133, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 54, in scrape_single
+    WebDriverWait(self.br,5).until(EC.presence_of_element_located((By.NAME,"wpforms[fields][1][first]")))
+  File "/root/venv/corey/lib/python3.12/site-packages/selenium/webdriver/support/wait.py", line 101, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+#0 0x558dd84675e3 <unknown>
+#1 0x558dd812a0b7 <unknown>
+#2 0x558dd8177f53 <unknown>
+#3 0x558dd8178051 <unknown>
+#4 0x558dd81bd9c4 <unknown>
+#5 0x558dd819ef1d <unknown>
+#6 0x558dd81bab3d <unknown>
+#7 0x558dd819ecc3 <unknown>
+#8 0x558dd816a0e4 <unknown>
+#9 0x558dd816b0ae <unknown>
+#10 0x558dd842dce1 <unknown>
+#11 0x558dd8431b7e <unknown>
+#12 0x558dd841b4b5 <unknown>
+#13 0x558dd84327d6 <unknown>
+#14 0x558dd83fedbf <unknown>
+#15 0x558dd8455748 <unknown>
+#16 0x558dd8455917 <unknown>
+#17 0x558dd8466773 <unknown>
+#18 0x7f5bbde64ac3 <unknown>
+
+2023-11-19 17:26:58,623 [ERROR]: An error occurred: Message: 
+Stacktrace:
+#0 0x5602ed37b5e3 <unknown>
+#1 0x5602ed03e0b7 <unknown>
+#2 0x5602ed08bf53 <unknown>
+#3 0x5602ed08c051 <unknown>
+#4 0x5602ed0d19c4 <unknown>
+#5 0x5602ed0b2f1d <unknown>
+#6 0x5602ed0ceb3d <unknown>
+#7 0x5602ed0b2cc3 <unknown>
+#8 0x5602ed07e0e4 <unknown>
+#9 0x5602ed07f0ae <unknown>
+#10 0x5602ed341ce1 <unknown>
+#11 0x5602ed345b7e <unknown>
+#12 0x5602ed32f4b5 <unknown>
+#13 0x5602ed3467d6 <unknown>
+#14 0x5602ed312dbf <unknown>
+#15 0x5602ed369748 <unknown>
+#16 0x5602ed369917 <unknown>
+#17 0x5602ed37a773 <unknown>
+#18 0x7f8e23f1aac3 <unknown>
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 133, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 55, in scrape_single
+    WebDriverWait(self.br,5).until(EC.presence_of_element_located((By.NAME,"wpforms[fields][1][first]")))
+  File "/root/venv/corey/lib/python3.12/site-packages/selenium/webdriver/support/wait.py", line 101, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+#0 0x5602ed37b5e3 <unknown>
+#1 0x5602ed03e0b7 <unknown>
+#2 0x5602ed08bf53 <unknown>
+#3 0x5602ed08c051 <unknown>
+#4 0x5602ed0d19c4 <unknown>
+#5 0x5602ed0b2f1d <unknown>
+#6 0x5602ed0ceb3d <unknown>
+#7 0x5602ed0b2cc3 <unknown>
+#8 0x5602ed07e0e4 <unknown>
+#9 0x5602ed07f0ae <unknown>
+#10 0x5602ed341ce1 <unknown>
+#11 0x5602ed345b7e <unknown>
+#12 0x5602ed32f4b5 <unknown>
+#13 0x5602ed3467d6 <unknown>
+#14 0x5602ed312dbf <unknown>
+#15 0x5602ed369748 <unknown>
+#16 0x5602ed369917 <unknown>
+#17 0x5602ed37a773 <unknown>
+#18 0x7f8e23f1aac3 <unknown>
+
+2023-11-19 17:28:56,925 [ERROR]: An error occurred: Message: 
+Stacktrace:
+#0 0x56308621a5e3 <unknown>
+#1 0x563085edd0b7 <unknown>
+#2 0x563085f2af53 <unknown>
+#3 0x563085f2b051 <unknown>
+#4 0x563085f709c4 <unknown>
+#5 0x563085f51f1d <unknown>
+#6 0x563085f6db3d <unknown>
+#7 0x563085f51cc3 <unknown>
+#8 0x563085f1d0e4 <unknown>
+#9 0x563085f1e0ae <unknown>
+#10 0x5630861e0ce1 <unknown>
+#11 0x5630861e4b7e <unknown>
+#12 0x5630861ce4b5 <unknown>
+#13 0x5630861e57d6 <unknown>
+#14 0x5630861b1dbf <unknown>
+#15 0x563086208748 <unknown>
+#16 0x563086208917 <unknown>
+#17 0x563086219773 <unknown>
+#18 0x7fe893fa8ac3 <unknown>
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 133, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 55, in scrape_single
+    WebDriverWait(self.br,5).until(EC.presence_of_element_located((By.NAME,"wpforms[fields][1][first]")))
+  File "/root/venv/corey/lib/python3.12/site-packages/selenium/webdriver/support/wait.py", line 101, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+#0 0x56308621a5e3 <unknown>
+#1 0x563085edd0b7 <unknown>
+#2 0x563085f2af53 <unknown>
+#3 0x563085f2b051 <unknown>
+#4 0x563085f709c4 <unknown>
+#5 0x563085f51f1d <unknown>
+#6 0x563085f6db3d <unknown>
+#7 0x563085f51cc3 <unknown>
+#8 0x563085f1d0e4 <unknown>
+#9 0x563085f1e0ae <unknown>
+#10 0x5630861e0ce1 <unknown>
+#11 0x5630861e4b7e <unknown>
+#12 0x5630861ce4b5 <unknown>
+#13 0x5630861e57d6 <unknown>
+#14 0x5630861b1dbf <unknown>
+#15 0x563086208748 <unknown>
+#16 0x563086208917 <unknown>
+#17 0x563086219773 <unknown>
+#18 0x7fe893fa8ac3 <unknown>
+
+2023-11-19 17:30:50,165 [ERROR]: An error occurred: Message: 
+Stacktrace:
+#0 0x562f62dd95e3 <unknown>
+#1 0x562f62a9c0b7 <unknown>
+#2 0x562f62ae9f53 <unknown>
+#3 0x562f62aea051 <unknown>
+#4 0x562f62b2f9c4 <unknown>
+#5 0x562f62b10f1d <unknown>
+#6 0x562f62b2cb3d <unknown>
+#7 0x562f62b10cc3 <unknown>
+#8 0x562f62adc0e4 <unknown>
+#9 0x562f62add0ae <unknown>
+#10 0x562f62d9fce1 <unknown>
+#11 0x562f62da3b7e <unknown>
+#12 0x562f62d8d4b5 <unknown>
+#13 0x562f62da47d6 <unknown>
+#14 0x562f62d70dbf <unknown>
+#15 0x562f62dc7748 <unknown>
+#16 0x562f62dc7917 <unknown>
+#17 0x562f62dd8773 <unknown>
+#18 0x7f993c85eac3 <unknown>
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 133, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 55, in scrape_single
+    WebDriverWait(self.br,5).until(EC.presence_of_element_located((By.NAME,"wpforms[fields][1][first]")))
+  File "/root/venv/corey/lib/python3.12/site-packages/selenium/webdriver/support/wait.py", line 101, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+#0 0x562f62dd95e3 <unknown>
+#1 0x562f62a9c0b7 <unknown>
+#2 0x562f62ae9f53 <unknown>
+#3 0x562f62aea051 <unknown>
+#4 0x562f62b2f9c4 <unknown>
+#5 0x562f62b10f1d <unknown>
+#6 0x562f62b2cb3d <unknown>
+#7 0x562f62b10cc3 <unknown>
+#8 0x562f62adc0e4 <unknown>
+#9 0x562f62add0ae <unknown>
+#10 0x562f62d9fce1 <unknown>
+#11 0x562f62da3b7e <unknown>
+#12 0x562f62d8d4b5 <unknown>
+#13 0x562f62da47d6 <unknown>
+#14 0x562f62d70dbf <unknown>
+#15 0x562f62dc7748 <unknown>
+#16 0x562f62dc7917 <unknown>
+#17 0x562f62dd8773 <unknown>
+#18 0x7f993c85eac3 <unknown>
+
+2023-11-19 17:31:21,677 [ERROR]: An error occurred: Message: 
+Stacktrace:
+#0 0x55b9e3c655e3 <unknown>
+#1 0x55b9e39280b7 <unknown>
+#2 0x55b9e3975f53 <unknown>
+#3 0x55b9e3976051 <unknown>
+#4 0x55b9e39bb9c4 <unknown>
+#5 0x55b9e399cf1d <unknown>
+#6 0x55b9e39b8b3d <unknown>
+#7 0x55b9e399ccc3 <unknown>
+#8 0x55b9e39680e4 <unknown>
+#9 0x55b9e39690ae <unknown>
+#10 0x55b9e3c2bce1 <unknown>
+#11 0x55b9e3c2fb7e <unknown>
+#12 0x55b9e3c194b5 <unknown>
+#13 0x55b9e3c307d6 <unknown>
+#14 0x55b9e3bfcdbf <unknown>
+#15 0x55b9e3c53748 <unknown>
+#16 0x55b9e3c53917 <unknown>
+#17 0x55b9e3c64773 <unknown>
+#18 0x7f4517f11ac3 <unknown>
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 133, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 55, in scrape_single
+    WebDriverWait(self.br,5).until(EC.presence_of_element_located((By.NAME,"wpforms[fields][1][first]")))
+  File "/root/venv/corey/lib/python3.12/site-packages/selenium/webdriver/support/wait.py", line 101, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+#0 0x55b9e3c655e3 <unknown>
+#1 0x55b9e39280b7 <unknown>
+#2 0x55b9e3975f53 <unknown>
+#3 0x55b9e3976051 <unknown>
+#4 0x55b9e39bb9c4 <unknown>
+#5 0x55b9e399cf1d <unknown>
+#6 0x55b9e39b8b3d <unknown>
+#7 0x55b9e399ccc3 <unknown>
+#8 0x55b9e39680e4 <unknown>
+#9 0x55b9e39690ae <unknown>
+#10 0x55b9e3c2bce1 <unknown>
+#11 0x55b9e3c2fb7e <unknown>
+#12 0x55b9e3c194b5 <unknown>
+#13 0x55b9e3c307d6 <unknown>
+#14 0x55b9e3bfcdbf <unknown>
+#15 0x55b9e3c53748 <unknown>
+#16 0x55b9e3c53917 <unknown>
+#17 0x55b9e3c64773 <unknown>
+#18 0x7f4517f11ac3 <unknown>
+
+2023-11-19 17:40:10,267 [ERROR]: An error occurred: module 'selenium.webdriver.support.expected_conditions' has no attribute 'visibility_of_of_element_located'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 133, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 55, in scrape_single
+    WebDriverWait(self.br,5).until(EC.visibility_of_of_element_located((By.NAME,"wpforms[fields][1][first]")))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'selenium.webdriver.support.expected_conditions' has no attribute 'visibility_of_of_element_located'. Did you mean: 'visibility_of_element_located'?
+2023-11-19 18:05:17,754 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 31, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper1.py", line 119, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 49, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-19 18:08:41,946 [INFO]: package: mysql.connector.plugins
+2023-11-19 18:08:41,947 [INFO]: plugin_name: caching_sha2_password
+2023-11-19 18:08:41,954 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-19 19:01:52,142 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 31, in main
+    db_handler.store_data(batch_results)
+  File "/root/projects/corey/src/scraping/scraper1.py", line 120, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 50, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-19 19:57:28,649 [INFO]: package: mysql.connector.plugins
+2023-11-19 19:57:28,650 [INFO]: plugin_name: caching_sha2_password
+2023-11-19 19:57:28,653 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-19 19:58:36,944 [INFO]: package: mysql.connector.plugins
+2023-11-19 19:58:36,945 [INFO]: plugin_name: caching_sha2_password
+2023-11-19 19:58:36,946 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-19 20:00:28,182 [ERROR]: An error occurred: HTTPSConnectionPool(host='mobilendloan.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc4c95ce7b0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fc4c95ce7b0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='mobilendloan.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc4c95ce7b0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 27, in main
+    for batch_results in scraper1.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 39, in scrape_single
+    response = requests.post(url, headers=headers, data=data, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='mobilendloan.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc4c95ce7b0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-11-19 20:03:12,634 [INFO]: package: mysql.connector.plugins
+2023-11-19 20:03:12,634 [INFO]: plugin_name: caching_sha2_password
+2023-11-19 20:03:12,636 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-19 20:55:19,952 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 27, in main
+    for batch_results in scraper1.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 51, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-19 21:00:58,330 [INFO]: package: mysql.connector.plugins
+2023-11-19 21:00:58,331 [INFO]: plugin_name: caching_sha2_password
+2023-11-19 21:00:58,334 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-19 21:59:09,098 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 27, in main
+    for batch_results in scraper1.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 122, in scrape_with_refcodes
+    data = {'refCode':refcode}
+             ^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 52, in scrape_single
+    last_name_el = soup.select_one("#lastName")['value'] if soup.select_one("#lastName") else None
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-19 22:12:24,534 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper1.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 50, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-19 23:12:32,245 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper1.py", line 122, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 51, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-20 23:02:21,229 [INFO]: package: mysql.connector.plugins
+2023-11-20 23:02:21,230 [INFO]: plugin_name: caching_sha2_password
+2023-11-20 23:02:21,232 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-20 23:49:17,836 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 27, in main
+    for batch_results in scraper1.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 123, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 52, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-20 23:51:25,732 [INFO]: package: mysql.connector.plugins
+2023-11-20 23:51:25,733 [INFO]: plugin_name: caching_sha2_password
+2023-11-20 23:51:25,740 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-20 23:51:28,969 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 27, in main
+    for batch_results in scraper1.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 123, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 52, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-20 23:51:51,878 [INFO]: package: mysql.connector.plugins
+2023-11-20 23:51:51,879 [INFO]: plugin_name: caching_sha2_password
+2023-11-20 23:51:51,888 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-20 23:51:55,230 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 27, in main
+    for batch_results in scraper1.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 124, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 53, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-20 23:53:58,955 [INFO]: package: mysql.connector.plugins
+2023-11-20 23:53:58,956 [INFO]: plugin_name: caching_sha2_password
+2023-11-20 23:53:58,959 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-21 00:52:26,252 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 27, in main
+    for batch_results in scraper1.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 50, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-21 00:52:26,263 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper1.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 50, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-21 00:59:50,539 [INFO]: package: mysql.connector.plugins
+2023-11-21 00:59:50,540 [INFO]: plugin_name: caching_sha2_password
+2023-11-21 00:59:50,546 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-21 00:59:53,824 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 27, in main
+    for batch_results in scraper1.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 50, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-21 01:00:39,446 [INFO]: package: mysql.connector.plugins
+2023-11-21 01:00:39,447 [INFO]: plugin_name: caching_sha2_password
+2023-11-21 01:00:39,449 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-21 01:00:42,724 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 27, in main
+    for batch_results in scraper1.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 122, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 51, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-21 01:02:10,594 [INFO]: package: mysql.connector.plugins
+2023-11-21 01:02:10,594 [INFO]: plugin_name: caching_sha2_password
+2023-11-21 01:02:10,597 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-21 01:31:29,501 [INFO]: Scraping and storing data completed successfully.
+2023-11-21 02:01:00,644 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 27, in main
+    for batch_results in scraper1.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 123, in scrape_with_refcodes
+    time.sleep(0.3)
+             ^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 52, in scrape_single
+    last_name_el = soup.select_one("#lastName")['value'] if soup.select_one("#lastName") else None
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-21 02:01:00,791 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper1.py", line 124, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 53, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-21 02:05:25,978 [INFO]: package: mysql.connector.plugins
+2023-11-21 02:05:25,980 [INFO]: plugin_name: caching_sha2_password
+2023-11-21 02:05:25,986 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-21 02:11:15,094 [INFO]: Scraping and storing data completed successfully.

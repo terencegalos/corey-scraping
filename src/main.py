@@ -13,11 +13,7 @@ def main():
     
     try:
         # Instantiate scraper
-        scraper1 = Scraper1()
-        
-        # Text file with all the refCodes to rotate
-        # refcodes_file = '/root/projects/corey/src/refcodes.txt'
-        
+        scraper1 = Scraper1()        
         
         # Store data in the database
         db_handler = DatabaseHandler(
@@ -28,7 +24,7 @@ def main():
         )
         
         # Scrape data in batches
-        for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+        for batch_results in scraper1.scrape_with_refcodes():
             # Store data in the db
             print(batch_results)
             print("Storing batch to database...")

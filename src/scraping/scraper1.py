@@ -1,5 +1,6 @@
 import requests, time
 from bs4 import BeautifulSoup
+from scraping import code_generator
 
 class Scraper1:
     def __init__(self):
@@ -16,7 +17,7 @@ class Scraper1:
             'Connection': 'keep-alive',
             'Content-Length': '17',
             'Content-Type': 'application/x-www-form-urlencoded',
-            'Cookie': 'wc_visitor=78875-0ea354ba-8c18-f549-83e5-7820260cefc9; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-0ea354ba-8c18-f549-83e5-7820260cefc9+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-0ea354ba-8c18-f549-83e5-7820260cefc9+..+; mailer-sessions=s%3AD3GhMFgLDhW1yWtN_GC1-YT6FMLujAzi.V0awwhD2%2FgEPIcWq0KETroTN760fXmlqRXcWeEUbnBA',
+            'Cookie': 'wc_visitor=78875-7239091b-c953-0f56-353c-eebb1935e1ea; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-7239091b-c953-0f56-353c-eebb1935e1ea+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-7239091b-c953-0f56-353c-eebb1935e1ea+..+; mailer-sessions=s%3AUnPzkDMTsGSv-ROXm43GXA0NswCiFC5e.sUT2UM%2BfYRSrEj8fVcDR08cFL%2Fm%2FYZCSqwti3HCuonI',
             'Host': 'mobilendloan.com',
             'Origin': 'https://mobilendloan.com',
             'Referer': 'https://mobilendloan.com/',
@@ -37,7 +38,7 @@ class Scraper1:
 
 
                 
-        
+        # headers = input("Enter http headers (dictionary format): ")
         response = requests.post(url, headers=headers, data=data, allow_redirects=True)
         # print(response.text)
         
@@ -47,7 +48,7 @@ class Scraper1:
         
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        #Extract relevant data from the HTML using BeautifulSoup methods
+        # Extract relevant data from the HTML using BeautifulSoup methods
         first_name_el = soup.select_one("#firstName")['value'] if soup.select_one("#firstName") else None
         last_name_el = soup.select_one("#lastName")['value'] if soup.select_one("#lastName") else None
         address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
@@ -58,35 +59,35 @@ class Scraper1:
             state_el = None
         zip_code_el = soup.select_one("#zipCode")['value'] if soup.select_one("#zipCode") else None
         
-        if first_name_el is not None:
-            first_name = first_name_el
-        else:
-            first_name = 'NA'
+        # if first_name_el is not None:
+        #     first_name = first_name_el
+        # else:
+        #     first_name = 'NA'
             
-        if last_name_el is not None:
-            last_name = last_name_el
-        else:
-            last_name = 'NA'
+        # if last_name_el is not None:
+        #     last_name = last_name_el
+        # else:
+        #     last_name = 'NA'
         
-        if address_el is not None:
-            address = address_el
-        else:
-            address = 'NA'
+        # if address_el is not None:
+        #     address = address_el
+        # else:
+        #     address = 'NA'
             
-        if city_el is not None:
-            city = city_el
-        else:
-            city = 'NA'
+        # if city_el is not None:
+        #     city = city_el
+        # else:
+        #     city = 'NA'
             
-        if state_el is not None:
-            state = state_el
-        else:
-            state = 'NA'
+        # if state_el is not None:
+        #     state = state_el
+        # else:
+        #     state = 'NA'
         
-        if zip_code_el is not None:
-            zip_code = zip_code_el
-        else:
-            zip_code = 'NA'
+        # if zip_code_el is not None:
+        #     zip_code = zip_code_el
+        # else:
+        #     zip_code = 'NA'
         
         
         
@@ -97,12 +98,12 @@ class Scraper1:
             
         # Return the scraped data as dictionary        
         return {
-            'first_name' : first_name,
-            'last_name' : last_name,
-            'address' : address,
-            'city' : city,
-            'state' : state,
-            'zip_code' : zip_code
+            'first_name' : first_name_el,
+            'last_name' : last_name_el,
+            'address' : address_el,
+            'city' : city_el,
+            'state' : state_el,
+            'zip_code' : zip_code_el
         }
             
         # else :
@@ -112,7 +113,8 @@ class Scraper1:
         # with open(refcodes_file,'r') as file:
         #     refcodes = [line.strip() for line in file]
             
-        refcodes = self.generate_code(12824,222000)
+        refcodes = code_generator.invite_codes_with_prefix # last code before error JO0000013
+        # refcodes = code_generator.generate_code(33583,222000)
         print(f"There are {len(refcodes)} refcodes to rotate!")
         results = []
         
@@ -124,6 +126,7 @@ class Scraper1:
             print(result)
             if result is not None:
                 results.append(result)
+                
             else:
                 print("Skipping 'None' values.")
             
@@ -137,16 +140,3 @@ class Scraper1:
             yield results
     
     
-    def generate_code(self,start,end):
-        codes = []
-        
-        for num in range(start, end+1):
-            # Generate zero-padded numeric component
-            numeric_component = f"{num:07d}"
-            
-            # Create the invite code by combining the prefix "HA" and the numeric component
-            invite_code = f"HA{numeric_component}"
-            
-            codes.append(invite_code)
-            
-        return codes

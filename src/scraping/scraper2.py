@@ -1,5 +1,6 @@
 import requests, time
 from bs4 import BeautifulSoup
+from scraping import code_generator
 
 class Scraper2:
     def __init__(self):
@@ -41,8 +42,7 @@ class Scraper2:
         
         
         # if response.status_code == 200:
-        # Parse the HTML content with BeautifulSoup
-        
+        # Parse the HTML content with BeautifulSoup        
         soup = BeautifulSoup(response.content, 'html.parser')
         
         #Extract relevant data from the HTML using BeautifulSoup methods
@@ -53,35 +53,35 @@ class Scraper2:
         state_el = soup.select("#state option[selected]")[1].text if len(soup.select("#state option[selected]")) > 1 else None
         zip_code_el = soup.select_one("#zipCode")['value'] if soup.select_one("#zipCode") else None
         
-        if first_name_el is not None:
-            first_name = first_name_el
-        else:
-            first_name = 'NA'
+        # if first_name_el is not None:
+        #     first_name = first_name_el
+        # else:
+        #     first_name = 'NA'
             
-        if last_name_el is not None:
-            last_name = last_name_el
-        else:
-            last_name = 'NA'
+        # if last_name_el is not None:
+        #     last_name = last_name_el
+        # else:
+        #     last_name = 'NA'
         
-        if address_el is not None:
-            address = address_el
-        else:
-            address = 'NA'
+        # if address_el is not None:
+        #     address = address_el
+        # else:
+        #     address = 'NA'
             
-        if city_el is not None:
-            city = city_el
-        else:
-            city = 'NA'
+        # if city_el is not None:
+        #     city = city_el
+        # else:
+        #     city = 'NA'
             
-        if state_el is not None:
-            state = state_el
-        else:
-            state = 'NA'
+        # if state_el is not None:
+        #     state = state_el
+        # else:
+        #     state = 'NA'
         
-        if zip_code_el is not None:
-            zip_code = zip_code_el
-        else:
-            zip_code = 'NA'
+        # if zip_code_el is not None:
+        #     zip_code = zip_code_el
+        # else:
+        #     zip_code = 'NA'
         
         
         
@@ -92,12 +92,12 @@ class Scraper2:
         
         # Return the scraped data as dictionary        
         return {
-            'first_name' : first_name,
-            'last_name' : last_name,
-            'address' : address,
-            'city' : city,
-            'state' : state,
-            'zip_code' : zip_code
+            'first_name' : first_name_el,
+            'last_name' : last_name_el,
+            'address' : address_el,
+            'city' : city_el,
+            'state' : state_el,
+            'zip_code' : zip_code_el
         }
             
         # else :
@@ -130,19 +130,3 @@ class Scraper2:
         # Yield any remaining results
         if results:
             yield results
-            
-            
-    
-    def generate_code(self,start,end):
-        codes = []
-        
-        for num in range(start, end+1):
-            # Generate zero-padded numeric component
-            numeric_component = f"{num:07d}"
-            
-            # Create the invite code by combining the prefix "HA" and the numeric component
-            invite_code = f"NA{numeric_component}"
-            
-            codes.append(invite_code)
-            
-        return codes

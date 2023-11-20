@@ -8,6 +8,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from scraping import code_generator
+
 class Scraper3:
     def __init__(self):
         print("***Scraping xmydebt.com")
@@ -47,11 +49,13 @@ class Scraper3:
         
         # Enter code
         self.br.find_element(By.NAME,"wpforms[fields][1]").send_keys(data['refCode'])
-        self.br.find_element(By.NAME,"wpforms[fields][1]").send_keys(Keys.ENTER)
+        self.br.find_element(By.CSS_SELECTOR,"button[type='submit']").click()
         time.sleep(0.5)
         
+        # print(self.br.page_source)
+        
         # Wait for the page with info to load
-        WebDriverWait(self.br,5).until(EC.presence_of_element_located((By.NAME,"wpforms[fields][1][first]")))
+        WebDriverWait(self.br,5).until(EC.visibility_of_element_located((By.NAME,"wpforms[fields][1][first]")))
         
         
         # if response.status_code == 200:
@@ -60,57 +64,58 @@ class Scraper3:
         soup = BeautifulSoup(self.br.page_source, 'html.parser')
         
         #Extract relevant data from the HTML using BeautifulSoup methods
-        first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value']
-        last_name_el = soup.find(attrs={'name':'wpforms[fields][1][last]'})['value']
-        address_el = soup.find(attrs={'name':'wpforms[fields][4][address1]'})['value']
-        city_el = soup.find(attrs={'name':'wpforms[fields][4][city]'})['value']
-        try:
-            state_el = soup.select('select[name="wpforms[fields][4][state]"] option[selected]')[1].text
-        except:
-            state_el = 'not indicated'
-        zip_code_el = soup.select_one("#zipCode")['value']
+        first_name_el = soup.find(attrs={'name':'wpforms[fields][1][first]'})['value'] if soup.find(attrs={'name':'wpforms[fields][1][first]'}) and 'value' in soup.find(attrs={'name':'wpforms[fields][1][first]'}).attrs  else None
+        last_name_el = soup.find(attrs={'name':'wpforms[fields][1][last]'})['value'] if soup.find(attrs={'name':'wpforms[fields][1][last]'}) and 'value' in soup.find(attrs={'name':'wpforms[fields][1][last]'}).attrs else None
+        address_el = soup.find(attrs={'name':'wpforms[fields][4][address1]'})['value'] if soup.find(attrs={'name':'wpforms[fields][4][address1]'}) and 'value' in soup.find(attrs={'name':'wpforms[fields][4][address1]'}).attrs else None
+        city_el = soup.find(attrs={'name':'wpforms[fields][4][city]'})['value'] if soup.find(attrs={'name':'wpforms[fields][4][city]'}) and 'value' in soup.find(attrs={'name':'wpforms[fields][4][city]'}).attrs else None
+        state_el = soup.select('select[name="wpforms[fields][4][state]"] option[selected]')[1].text if len(soup.select('select[name="wpforms[fields][4][state]"] option[selected]')) > 1 else None
+        zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
         
-        if first_name_el is not None:
-            first_name = first_name_el
-        else:
-            first_name = 'NA'
+        # if first_name_el is not None:
+        #     first_name = first_name_el
+        # else:
+        #     first_name = 'NA'
             
-        if last_name_el is not None:
-            last_name = last_name_el
-        else:
-            last_name = 'NA'
+        # if last_name_el is not None:
+        #     last_name = last_name_el
+        # else:
+        #     last_name = 'NA'
         
-        if address_el is not None:
-            address = address_el
-        else:
-            address = 'NA'
+        # if address_el is not None:
+        #     address = address_el
+        # else:
+        #     address = 'NA'
             
-        if city_el is not None:
-            city = city_el
-        else:
-            city = 'NA'
+        # if city_el is not None:
+        #     city = city_el
+        # else:
+        #     city = 'NA'
             
-        if state_el is not None:
-            state = state_el
-        else:
-            state = 'NA'
+        # if state_el is not None:
+        #     state = state_el
+        # else:
+        #     state = 'NA'
         
-        if zip_code_el is not None:
-            zip_code = zip_code_el
-        else:
-            zip_code = 'NA'
+        # if zip_code_el is not None:
+        #     zip_code = zip_code_el
+        # else:
+        #     zip_code = 'NA'
         
         
         
-        # Return the scraped data as dictionary
+        # Check if any value is None, if yes, return None
+        if any(value is None for value in [first_name_el,last_name_el,address_el,city_el,state_el,zip_code_el]):
+            return None
         
+        
+        # Return the scraped data as dictionary        
         return {
-            'first_name' : first_name,
-            'last_name' : last_name,
-            'address' : address,
-            'city' : city,
-            'state' : state,
-            'zip_code' : zip_code
+            'first_name' : first_name_el,
+            'last_name' : last_name_el,
+            'address' : address_el,
+            'city' : city_el,
+            'state' : state_el,
+            'zip_code' : zip_code_el
         }
             
         # else :
@@ -120,14 +125,14 @@ class Scraper3:
         # with open(refcodes_file,'r') as file:
         #     refcodes = [line.strip() for line in file]
             
-        refcodes = self.generate_code(1,20000)
+        refcodes = self.generate_code(8,20000)
         print(f"There are {len(refcodes)} refcodes to rotate!")
         results = []
         
         for i,refcode in enumerate(refcodes,start=1):
             print(f"Refcode : {refcode}")
             data = {'refCode':refcode}
-            time.sleep(0.5)
+            time.sleep(0.3)
             result = self.scrape_single(self.url,data)
             print(result)
             if result is not None:
@@ -144,27 +149,14 @@ class Scraper3:
         if result:
             yield results
     
-    # Generate code
-    def generate_code(self,start,end):
-        codes = []
-        
-        for num in range(start, end+1):
-            # Generate zero-padded numeric component
-            numeric_component = f"{num:07d}"
-            
-            # Create the invite code by combining the prefix "HA" and the numeric component
-            invite_code = f"RD{numeric_component}"
-            
-            codes.append(invite_code)
-            
-        return codes
-    
     
     # Use selenium browser automation
     def get_browser(self):
         chrome_options = Options()
-        # chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--headless")
         chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--window-size=1920,924")
+        chrome_options.add_argument('--user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"')
 
         browser = webdriver.Chrome(options=chrome_options)
         return browser
