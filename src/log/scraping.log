@@ -3051,3 +3051,2579 @@ TypeError: 'NoneType' object is not subscriptable
 2023-11-21 02:05:25,980 [INFO]: plugin_name: caching_sha2_password
 2023-11-21 02:05:25,986 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
 2023-11-21 02:11:15,094 [INFO]: Scraping and storing data completed successfully.
+2023-11-21 03:03:25,988 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 27, in main
+    for batch_results in scraper1.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 125, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 54, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-21 03:03:26,542 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper1.scrape_with_refcodes():#refcodes_file)
+  File "/root/projects/corey/src/scraping/scraper1.py", line 125, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 54, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-21 03:08:45,523 [INFO]: package: mysql.connector.plugins
+2023-11-21 03:08:45,524 [INFO]: plugin_name: caching_sha2_password
+2023-11-21 03:08:45,524 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-21 03:20:57,938 [INFO]: Scraping and storing data completed successfully.
+2023-11-21 04:05:10,000 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 27, in main
+  File "/root/projects/corey/src/scraping/scraper1.py", line 120, in scrape_with_refcodes
+    data = {'refCode':refcode}
+             ^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 49, in scrape_single
+    first_name_el = soup.select_one("#firstName")['value'] if soup.select_one("#firstName") else None
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-21 04:05:10,658 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    # Store data in the db
+  File "/root/projects/corey/src/scraping/scraper1.py", line 121, in scrape_with_refcodes
+    time.sleep(0.3)
+             ^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 50, in scrape_single
+    last_name_el = soup.select_one("#lastName")['value'] if soup.select_one("#lastName") else None
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-21 04:08:13,795 [INFO]: package: mysql.connector.plugins
+2023-11-21 04:08:13,796 [INFO]: plugin_name: caching_sha2_password
+2023-11-21 04:08:13,798 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-21 04:08:32,454 [INFO]: package: mysql.connector.plugins
+2023-11-21 04:08:32,455 [INFO]: plugin_name: caching_sha2_password
+2023-11-21 04:08:32,456 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-21 04:09:37,509 [INFO]: package: mysql.connector.plugins
+2023-11-21 04:09:37,509 [INFO]: plugin_name: caching_sha2_password
+2023-11-21 04:09:37,510 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-21 05:06:29,025 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 29, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 122, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 51, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-21 05:23:54,408 [INFO]: package: mysql.connector.plugins
+2023-11-21 05:23:54,410 [INFO]: plugin_name: caching_sha2_password
+2023-11-21 05:23:54,413 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-21 06:22:00,537 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 29, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 122, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 51, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-21 23:02:14,751 [INFO]: package: mysql.connector.plugins
+2023-11-21 23:02:14,757 [INFO]: plugin_name: caching_sha2_password
+2023-11-21 23:02:14,759 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-21 23:37:54,846 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 29, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 123, in scrape_with_refcodes
+  File "/root/projects/corey/src/scraping/scraper1.py", line 52, in scrape_single
+TypeError: 'NoneType' object is not subscriptable
+2023-11-22 00:04:18,455 [ERROR]: An error occurred: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 971, in json
+    return complexjson.loads(self.text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 17, in main
+    scraper = Scraper1()
+      ^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 9, in __init__
+    self.proxies = self.get_proxies()
+                   ^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 16, in get_proxies
+    proxies = response.json()
+              ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 975, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2023-11-22 00:06:44,158 [ERROR]: An error occurred: name 'respose' is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 17, in main
+    scraper = Scraper1()
+      ^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 9, in __init__
+    self.proxies = self.get_proxies()
+                   ^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 16, in get_proxies
+    print(respose.content)
+          ^^^^^^^
+NameError: name 'respose' is not defined. Did you mean: 'response'?
+2023-11-22 00:07:11,962 [ERROR]: An error occurred: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 971, in json
+    return complexjson.loads(self.text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 17, in main
+    scraper = Scraper1()
+      ^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 9, in __init__
+    self.proxies = self.get_proxies()
+                   ^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 17, in get_proxies
+    proxies = response.json()
+              ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 975, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2023-11-22 00:12:16,178 [INFO]: package: mysql.connector.plugins
+2023-11-22 00:12:16,179 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 00:12:16,180 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 00:51:34,294 [INFO]: package: mysql.connector.plugins
+2023-11-22 00:51:34,295 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 00:51:34,298 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 00:53:01,977 [INFO]: package: mysql.connector.plugins
+2023-11-22 00:53:01,978 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 00:53:01,984 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 01:02:20,624 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 29, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 123, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 52, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-22 01:06:56,188 [INFO]: package: mysql.connector.plugins
+2023-11-22 01:06:56,190 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 01:06:56,193 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 02:05:16,068 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 29, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 124, in scrape_with_refcodes
+  File "/root/projects/corey/src/scraping/scraper1.py", line 53, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-22 02:07:04,682 [ERROR]: An error occurred: byte indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 17, in main
+    scraper = Scraper1()
+      ^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_wproxy.py", line 9, in __init__
+    self.proxies = self.get_proxies()
+                   ^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_wproxy.py", line 20, in get_proxies
+    return [{'http': f'http://{proxy["ip"]}:{proxy["port"]}', 'https': f'https://{proxy["ip"]}:{proxy["port"]}'} for proxy in proxies]
+                               ~~~~~^^^^^^
+TypeError: byte indices must be integers or slices, not str
+2023-11-22 02:07:57,229 [ERROR]: An error occurred: byte indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 17, in main
+    scraper = Scraper1()
+      ^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_wproxy.py", line 9, in __init__
+    self.proxies = self.get_proxies()
+                   ^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_wproxy.py", line 20, in get_proxies
+    return [{'http': f'http://{proxy["ip"]}:{proxy["port"]}', 'https': f'https://{proxy["ip"]}:{proxy["port"]}'} for proxy in proxies]
+                               ~~~~~^^^^^^
+TypeError: byte indices must be integers or slices, not str
+2023-11-22 02:09:18,012 [ERROR]: An error occurred: byte indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 17, in main
+    scraper = Scraper1()
+      ^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_wproxy.py", line 9, in __init__
+    self.proxies = self.get_proxies()
+                   ^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_wproxy.py", line 20, in get_proxies
+    return [{'http': f'http://{proxy["ip"]}:{proxy["port"]}', 'https': f'https://{proxy["ip"]}:{proxy["port"]}'} for proxy in proxies]
+                               ~~~~~^^^^^^
+TypeError: byte indices must be integers or slices, not str
+2023-11-22 02:09:47,862 [ERROR]: An error occurred: byte indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 17, in main
+    scraper = Scraper1()
+      ^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_wproxy.py", line 9, in __init__
+    self.proxies = self.get_proxies()
+                   ^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_wproxy.py", line 21, in get_proxies
+    return [{'http': f'http://{proxy["ip"]}:{proxy["port"]}', 'https': f'https://{proxy["ip"]}:{proxy["port"]}'} for proxy in proxies]
+                               ~~~~~^^^^^^
+TypeError: byte indices must be integers or slices, not str
+2023-11-22 02:10:32,928 [ERROR]: An error occurred: byte indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 17, in main
+    scraper = Scraper1()
+      ^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_wproxy.py", line 9, in __init__
+    self.proxies = self.get_proxies()
+                   ^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_wproxy.py", line 21, in get_proxies
+    return [{'http': f'http://{proxy["ip"]}:{proxy["port"]}', 'https': f'https://{proxy["ip"]}:{proxy["port"]}'} for proxy in proxies]
+                               ~~~~~^^^^^^
+TypeError: byte indices must be integers or slices, not str
+2023-11-22 02:10:56,066 [ERROR]: An error occurred: byte indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 17, in main
+    scraper = Scraper1()
+      ^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_wproxy.py", line 9, in __init__
+    self.proxies = self.get_proxies()
+                   ^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_wproxy.py", line 21, in get_proxies
+    return [{'http': f'http://{proxy["ip"]}:{proxy["port"]}', 'https': f'https://{proxy["ip"]}:{proxy["port"]}'} for proxy in proxies]
+                               ~~~~~^^^^^^
+TypeError: byte indices must be integers or slices, not str
+2023-11-22 02:11:33,112 [ERROR]: An error occurred: byte indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 17, in main
+    scraper = Scraper1()
+      ^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_wproxy.py", line 9, in __init__
+    self.proxies = self.get_proxies()
+                   ^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_wproxy.py", line 22, in get_proxies
+    return [{'http': f'http://{proxy["ip"]}:{proxy["port"]}', 'https': f'https://{proxy["ip"]}:{proxy["port"]}'} for proxy in proxies]
+                               ~~~~~^^^^^^
+TypeError: byte indices must be integers or slices, not str
+2023-11-22 02:12:20,348 [INFO]: package: mysql.connector.plugins
+2023-11-22 02:12:20,348 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 02:12:20,349 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 02:12:22,142 [ERROR]: An error occurred: generate_code() missing 1 required positional argument: 'prefix'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 29, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1_wproxy.py", line 106, in scrape_with_refcodes
+    refcodes = code_generator.generate_code(51274,222000)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: generate_code() missing 1 required positional argument: 'prefix'
+2023-11-22 02:14:50,637 [INFO]: package: mysql.connector.plugins
+2023-11-22 02:14:50,637 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 02:14:50,638 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 02:14:52,442 [ERROR]: An error occurred: generate_code() missing 1 required positional argument: 'prefix'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 29, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1_wproxy.py", line 105, in scrape_with_refcodes
+    refcodes = code_generator.generate_code(51274,222000)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: generate_code() missing 1 required positional argument: 'prefix'
+2023-11-22 02:15:07,682 [INFO]: package: mysql.connector.plugins
+2023-11-22 02:15:07,682 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 02:15:07,683 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 02:19:30,825 [INFO]: package: mysql.connector.plugins
+2023-11-22 02:19:30,825 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 02:19:30,826 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 03:15:02,713 [ERROR]: An error occurred: 2055: Lost connection to MySQL server at '45.77.98.126:3306', system error: 104 Connection reset by peer
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/network.py", line 233, in recv
+    header = self._recv_chunk(sock, size=PACKET_HEADER_LENGTH)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/network.py", line 178, in _recv_chunk
+    read = sock.recv_into(pkt_view, size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 20, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/database/database_handler.py", line 6, in __init__
+    self.conn = mysql.connector.connect(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/pooling.py", line 294, in connect
+    return MySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/connection.py", line 169, in __init__
+    self.connect(**kwargs)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/abstracts.py", line 1217, in connect
+    self._open_connection()
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/connection.py", line 578, in _open_connection
+    self._do_handshake()
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/connection.py", line 198, in _do_handshake
+    packet = self._socket.recv()
+             ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/network.py", line 614, in recv
+    return self._netbroker.recv(self.sock, self.address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/network.py", line 244, in recv
+    raise OperationalError(
+mysql.connector.errors.OperationalError: 2055: Lost connection to MySQL server at '45.77.98.126:3306', system error: 104 Connection reset by peer
+2023-11-22 03:16:55,204 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:16:55,205 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 03:16:55,211 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 03:16:55,212 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:16:55,212 [INFO]: plugin_name: mysql_native_password
+2023-11-22 03:16:55,213 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-22 03:17:00,720 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 108, in scrape_with_refcodes
+    batch_results = list(executor.map(scrape_single_thread,refcodes[i:i+batch_size]))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 97, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 54, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-22 03:21:25,733 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:21:25,734 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 03:21:25,735 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 03:21:25,735 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:21:25,735 [INFO]: plugin_name: mysql_native_password
+2023-11-22 03:21:25,736 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-22 03:21:31,111 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 108, in scrape_with_refcodes
+    batch_results = list(executor.map(scrape_single_thread,refcodes[i:i+batch_size]))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 97, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 54, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-22 03:36:15,019 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:36:15,020 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 03:36:15,021 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 03:36:15,021 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:36:15,021 [INFO]: plugin_name: mysql_native_password
+2023-11-22 03:36:15,022 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-22 03:36:17,933 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 108, in scrape_with_refcodes
+    batch_results = list(executor.map(scrape_single_thread,refcodes[i:i+batch_size]))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 97, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 54, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-22 03:37:36,027 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:37:36,028 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 03:37:36,028 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 03:37:36,029 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:37:36,029 [INFO]: plugin_name: mysql_native_password
+2023-11-22 03:37:36,029 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-22 03:37:38,977 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 108, in scrape_with_refcodes
+    batch_results = list(executor.map(scrape_single_thread,refcodes[i:i+batch_size]))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 97, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 54, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-22 03:38:40,194 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:38:40,195 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 03:38:40,196 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 03:38:44,898 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 29, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 108, in scrape_with_refcodes
+    batch_results = list(executor.map(scrape_single_thread,refcodes[i:i+batch_size]))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 97, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 54, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-22 03:38:56,649 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:38:56,649 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 03:38:56,649 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 03:38:59,937 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 29, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 97, in scrape_with_refcodes
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 53, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-22 03:41:13,147 [ERROR]: An error occurred: 2055: Lost connection to MySQL server at '45.77.98.126:3306', system error: 104 Connection reset by peer
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/network.py", line 233, in recv
+    header = self._recv_chunk(sock, size=PACKET_HEADER_LENGTH)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/network.py", line 178, in _recv_chunk
+    read = sock.recv_into(pkt_view, size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 20, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/database/database_handler.py", line 6, in __init__
+    self.conn = mysql.connector.connect(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/pooling.py", line 294, in connect
+    return MySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/connection.py", line 169, in __init__
+    self.connect(**kwargs)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/abstracts.py", line 1217, in connect
+    self._open_connection()
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/connection.py", line 578, in _open_connection
+    self._do_handshake()
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/connection.py", line 198, in _do_handshake
+    packet = self._socket.recv()
+             ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/network.py", line 614, in recv
+    return self._netbroker.recv(self.sock, self.address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/network.py", line 244, in recv
+    raise OperationalError(
+mysql.connector.errors.OperationalError: 2055: Lost connection to MySQL server at '45.77.98.126:3306', system error: 104 Connection reset by peer
+2023-11-22 03:41:40,215 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:41:40,215 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 03:41:40,216 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 03:41:40,216 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:41:40,216 [INFO]: plugin_name: mysql_native_password
+2023-11-22 03:41:40,217 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-22 03:42:00,943 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:42:00,943 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 03:42:00,944 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 03:42:00,944 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:42:00,944 [INFO]: plugin_name: mysql_native_password
+2023-11-22 03:42:00,945 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-22 03:42:32,406 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:42:32,406 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 03:42:32,406 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 03:42:32,407 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:42:32,407 [INFO]: plugin_name: mysql_native_password
+2023-11-22 03:42:32,408 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-22 03:43:10,241 [ERROR]: An error occurred: DatabaseHandler.store_data() takes 2 positional arguments but 3 were given
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+TypeError: DatabaseHandler.store_data() takes 2 positional arguments but 3 were given
+2023-11-22 03:46:08,099 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:46:08,099 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 03:46:08,100 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 03:46:08,100 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:46:08,101 [INFO]: plugin_name: mysql_native_password
+2023-11-22 03:46:08,101 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-22 03:46:42,510 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/root/projects/corey/src/database/database_handler_local.py", line 38, in store_data
+    ''', (data['first_name'], data['last_name'], data['address'], data['city'], data['state'], data['zip_code']))
+          ~~~~^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-22 03:48:16,328 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:48:16,329 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 03:48:16,329 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 03:48:16,330 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:48:16,330 [INFO]: plugin_name: mysql_native_password
+2023-11-22 03:48:16,331 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-22 03:48:51,992 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/root/projects/corey/src/database/database_handler_local.py", line 38, in store_data
+    ''', (data['first_name'], data['last_name'], data['address'], data['city'], data['state'], data['zip_code']))
+          ~~~~^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-22 03:50:08,938 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:50:08,939 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 03:50:08,939 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 03:50:08,940 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:50:08,940 [INFO]: plugin_name: mysql_native_password
+2023-11-22 03:50:08,940 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-22 03:53:44,266 [ERROR]: An error occurred: DatabaseHandler.__init__() missing 1 required positional argument: 'table_names'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 25, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+TypeError: DatabaseHandler.__init__() missing 1 required positional argument: 'table_names'
+2023-11-22 03:54:01,983 [ERROR]: An error occurred: DatabaseHandler.__init__() missing 1 required positional argument: 'table_names'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 25, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+TypeError: DatabaseHandler.__init__() missing 1 required positional argument: 'table_names'
+2023-11-22 03:54:24,463 [ERROR]: An error occurred: DatabaseHandler.__init__() missing 1 required positional argument: 'table_names'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 25, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+TypeError: DatabaseHandler.__init__() missing 1 required positional argument: 'table_names'
+2023-11-22 03:56:00,960 [ERROR]: An error occurred: 2055: Lost connection to MySQL server at '45.77.98.126:3306', system error: 104 Connection reset by peer
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/network.py", line 233, in recv
+    header = self._recv_chunk(sock, size=PACKET_HEADER_LENGTH)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/network.py", line 178, in _recv_chunk
+    read = sock.recv_into(pkt_view, size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 20, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/database/database_handler.py", line 6, in __init__
+    self.conn = mysql.connector.connect(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/pooling.py", line 294, in connect
+    return MySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/connection.py", line 169, in __init__
+    self.connect(**kwargs)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/abstracts.py", line 1217, in connect
+    self._open_connection()
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/connection.py", line 578, in _open_connection
+    self._do_handshake()
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/connection.py", line 198, in _do_handshake
+    packet = self._socket.recv()
+             ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/network.py", line 614, in recv
+    return self._netbroker.recv(self.sock, self.address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/network.py", line 244, in recv
+    raise OperationalError(
+mysql.connector.errors.OperationalError: 2055: Lost connection to MySQL server at '45.77.98.126:3306', system error: 104 Connection reset by peer
+2023-11-22 03:57:21,329 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:57:21,330 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 03:57:21,332 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 03:59:24,040 [INFO]: package: mysql.connector.plugins
+2023-11-22 03:59:24,040 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 03:59:24,041 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 04:09:32,001 [INFO]: package: mysql.connector.plugins
+2023-11-22 04:09:32,002 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 04:09:32,003 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 04:34:10,525 [INFO]: package: mysql.connector.plugins
+2023-11-22 04:34:10,526 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 04:34:10,530 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 04:35:06,247 [INFO]: package: mysql.connector.plugins
+2023-11-22 04:35:06,248 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 04:35:06,251 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 04:39:17,925 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 29, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 116, in scrape_with_refcodes
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 105, in scrape_single_thread
+    else:
+          
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 62, in scrape_single
+    state_el = None
+                    
+TypeError: 'NoneType' object is not subscriptable
+2023-11-22 04:43:28,362 [INFO]: package: mysql.connector.plugins
+2023-11-22 04:43:28,363 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 04:43:28,364 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 05:41:35,553 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 29, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 112, in scrape_with_refcodes
+    batch_results = [result for result in list(executor.map(scrape_single_thread,refcodes[i:i+batch_size])) if result is not None]
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 101, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 58, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-22 05:44:51,335 [INFO]: package: mysql.connector.plugins
+2023-11-22 05:44:51,336 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 05:44:51,336 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 16:19:39,466 [INFO]: package: mysql.connector.plugins
+2023-11-22 16:19:39,467 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 16:19:39,470 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 16:19:39,472 [INFO]: package: mysql.connector.plugins
+2023-11-22 16:19:39,472 [INFO]: plugin_name: mysql_native_password
+2023-11-22 16:19:39,484 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-22 16:19:42,689 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 111, in scrape_with_refcodes
+    batch_results = [result for result in list(executor.map(scrape_single_thread,refcodes[i:i+batch_size])) if result is not None]
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 100, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 57, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-22 23:59:28,510 [INFO]: package: mysql.connector.plugins
+2023-11-22 23:59:28,510 [INFO]: plugin_name: caching_sha2_password
+2023-11-22 23:59:28,511 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-22 23:59:28,511 [INFO]: package: mysql.connector.plugins
+2023-11-22 23:59:28,512 [INFO]: plugin_name: mysql_native_password
+2023-11-22 23:59:28,512 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-22 23:59:28,525 [ERROR]: An error occurred: 'Scraper3' object has no attribute 'generate_code'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper3.py", line 82, in scrape_with_refcodes
+    refcodes = self.generate_code(8,20000,'RD')
+               ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper3' object has no attribute 'generate_code'
+2023-11-23 00:00:04,008 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:00:04,008 [INFO]: plugin_name: caching_sha2_password
+2023-11-23 00:00:04,009 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-23 00:00:04,010 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:00:04,010 [INFO]: plugin_name: mysql_native_password
+2023-11-23 00:00:04,010 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-23 00:00:06,691 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper3.py", line 99, in scrape_with_refcodes
+    batch_results = [result for result in executor.map(scrape_single_thread,refcodes[i:i+batch_size]) if result is not None ]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 89, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 50, in scrape_single
+    for script in scripts:
+TypeError: 'NoneType' object is not iterable
+2023-11-23 00:02:13,939 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:02:13,939 [INFO]: plugin_name: caching_sha2_password
+2023-11-23 00:02:13,939 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-23 00:02:13,940 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:02:13,940 [INFO]: plugin_name: mysql_native_password
+2023-11-23 00:02:13,940 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-23 00:02:15,003 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 98, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 89, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 50, in scrape_single
+    for script in scripts:
+TypeError: 'NoneType' object is not iterable
+2023-11-23 00:03:09,279 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:03:09,280 [INFO]: plugin_name: caching_sha2_password
+2023-11-23 00:03:09,280 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-23 00:03:09,281 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:03:09,281 [INFO]: plugin_name: mysql_native_password
+2023-11-23 00:03:09,281 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-23 00:03:10,346 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 99, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 90, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 51, in scrape_single
+    for script in scripts:
+TypeError: 'NoneType' object is not iterable
+2023-11-23 00:06:09,541 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:06:09,541 [INFO]: plugin_name: caching_sha2_password
+2023-11-23 00:06:09,542 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-23 00:06:09,542 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:06:09,542 [INFO]: plugin_name: mysql_native_password
+2023-11-23 00:06:09,543 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-23 00:06:10,712 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 98, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 89, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 50, in scrape_single
+    for script in scripts:
+TypeError: 'NoneType' object is not iterable
+2023-11-23 00:06:50,718 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:06:50,719 [INFO]: plugin_name: caching_sha2_password
+2023-11-23 00:06:50,719 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-23 00:06:50,720 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:06:50,720 [INFO]: plugin_name: mysql_native_password
+2023-11-23 00:06:50,721 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-23 00:06:51,863 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 98, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 89, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 50, in scrape_single
+    for script in scripts:
+TypeError: 'NoneType' object is not iterable
+2023-11-23 00:09:58,026 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:09:58,027 [INFO]: plugin_name: caching_sha2_password
+2023-11-23 00:09:58,027 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-23 00:09:58,028 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:09:58,028 [INFO]: plugin_name: mysql_native_password
+2023-11-23 00:09:58,029 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-23 00:09:59,147 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 98, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 89, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 50, in scrape_single
+    for script in scripts:
+TypeError: 'NoneType' object is not iterable
+2023-11-23 00:13:16,507 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:13:16,507 [INFO]: plugin_name: caching_sha2_password
+2023-11-23 00:13:16,508 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-23 00:13:16,509 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:13:16,509 [INFO]: plugin_name: mysql_native_password
+2023-11-23 00:13:16,510 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-23 00:13:21,347 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 98, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 89, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 59, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 00:15:07,254 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 98, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 89, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 59, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 00:17:23,345 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 98, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 89, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 59, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 00:18:00,745 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 98, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 89, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 59, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 00:18:11,660 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 98, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 89, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 59, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 00:30:50,566 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:30:50,566 [INFO]: plugin_name: caching_sha2_password
+2023-11-23 00:30:50,567 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-23 00:30:50,567 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:30:50,568 [INFO]: plugin_name: mysql_native_password
+2023-11-23 00:30:50,568 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-23 00:30:52,279 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 112, in scrape_with_refcodes
+    batch_results = [result for result in list(executor.map(scrape_single_thread,refcodes[i:i+batch_size])) if result is not None]
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 101, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 58, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-23 00:30:57,097 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 112, in scrape_with_refcodes
+    batch_results = [result for result in list(executor.map(scrape_single_thread,refcodes[i:i+batch_size])) if result is not None]
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 101, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 58, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-23 00:31:17,679 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 112, in scrape_with_refcodes
+    batch_results = [result for result in list(executor.map(scrape_single_thread,refcodes[i:i+batch_size])) if result is not None]
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 101, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 58, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-23 00:42:53,646 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:42:53,646 [INFO]: plugin_name: caching_sha2_password
+2023-11-23 00:42:53,647 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-23 00:42:53,650 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:42:53,650 [INFO]: plugin_name: mysql_native_password
+2023-11-23 00:42:53,651 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-23 00:42:55,334 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 112, in scrape_with_refcodes
+    batch_results = [result for result in list(executor.map(scrape_single_thread,refcodes[i:i+batch_size])) if result is not None]
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 101, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 58, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-23 00:43:03,583 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:43:03,584 [INFO]: plugin_name: caching_sha2_password
+2023-11-23 00:43:03,584 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-23 00:43:03,585 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:43:03,585 [INFO]: plugin_name: mysql_native_password
+2023-11-23 00:43:03,585 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-23 00:43:07,676 [ERROR]: An error occurred: Invalid URL '/': No scheme supplied. Perhaps you meant https:///?
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 106, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 97, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 56, in scrape_single
+    resubmit_response = requests.post(action, headers=headers, data=data, allow_redirects=True)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 439, in prepare_url
+    raise MissingSchema(
+requests.exceptions.MissingSchema: Invalid URL '/': No scheme supplied. Perhaps you meant https:///?
+2023-11-23 00:44:05,802 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:44:05,803 [INFO]: plugin_name: caching_sha2_password
+2023-11-23 00:44:05,804 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-23 00:44:05,804 [INFO]: package: mysql.connector.plugins
+2023-11-23 00:44:05,805 [INFO]: plugin_name: mysql_native_password
+2023-11-23 00:44:05,805 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-23 00:44:09,396 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 106, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 97, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 67, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 00:44:30,096 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 106, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 97, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 67, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 00:45:20,516 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 106, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 97, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 67, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 00:58:21,750 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 97, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 88, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 58, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 01:02:48,230 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 98, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 89, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 59, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 01:07:36,020 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 101, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 92, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 62, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 01:11:15,806 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 110, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 101, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 71, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 01:46:11,286 [ERROR]: An error occurred: cannot use a string pattern on a bytes-like object
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 122, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 113, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 50, in scrape_single
+    match = re.search(pattern,js_code)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/re/__init__.py", line 177, in search
+    return _compile(pattern, flags).search(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot use a string pattern on a bytes-like object
+2023-11-23 01:46:34,503 [ERROR]: An error occurred: cannot use a string pattern on a bytes-like object
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 123, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 114, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 50, in scrape_single
+    match = re.search(pattern,js_code)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/re/__init__.py", line 177, in search
+    return _compile(pattern, flags).search(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot use a string pattern on a bytes-like object
+2023-11-23 01:50:43,030 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 124, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 115, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 85, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 01:52:12,137 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 124, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 115, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 85, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 01:57:01,328 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 125, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 116, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 86, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 02:10:00,194 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 125, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 116, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 86, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 02:13:54,549 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 126, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 117, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 87, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 02:14:40,770 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 126, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 117, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 87, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 02:16:36,845 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 128, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 119, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 89, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 02:17:03,435 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 128, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 119, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 89, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 02:20:48,242 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 128, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 119, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 89, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 02:23:24,878 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 128, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 119, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 89, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 02:25:30,156 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 128, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 119, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 89, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 02:25:56,034 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 129, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 120, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 90, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 02:28:53,327 [ERROR]: An error occurred: name 'response' is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 130, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 49, in scrape_single
+    print(response.headers)
+          ^^^^^^^^
+NameError: name 'response' is not defined
+2023-11-23 02:29:08,556 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 130, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 91, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 02:29:42,355 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 130, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 121, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 91, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 02:46:53,150 [ERROR]: An error occurred: name 'url' is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 18, in main
+    scraper = Scraper()
+              ^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 11, in __init__
+    print(f'{url}?RefCode={data['refCode']}')
+             ^^^
+NameError: name 'url' is not defined
+2023-11-23 03:05:14,118 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 134, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 125, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 95, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 03:05:37,634 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 134, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 125, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 95, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 03:07:02,970 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 135, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 126, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 96, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 03:08:44,055 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 135, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 126, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 96, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 03:18:08,774 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 133, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 124, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 94, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 03:18:48,541 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 133, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 124, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 94, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 03:19:20,104 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 133, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 124, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 94, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 03:19:38,192 [ERROR]: An error occurred: name 'source_valu' is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 133, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 124, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 59, in scrape_single
+    print(source_valu/e)
+          ^^^^^^^^^^^
+NameError: name 'source_valu' is not defined. Did you mean: 'source_value'?
+2023-11-23 03:19:47,651 [ERROR]: An error occurred: name 'source_valu' is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 133, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 124, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 59, in scrape_single
+    print(source_valu/e)
+          ^^^^^^^^^^^
+NameError: name 'source_valu' is not defined. Did you mean: 'source_value'?
+2023-11-23 03:20:02,376 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 133, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 124, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 94, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 03:23:11,327 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 135, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 126, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 96, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-11-23 03:41:04,583 [ERROR]: An error occurred: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Traceback (most recent call last):
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+                       ^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1411, in getresponse
+    response.begin()
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 324, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 293, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+                       ^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1411, in getresponse
+    response.begin()
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 324, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 293, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 135, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 126, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 49, in scrape_single
+    response = session.post(f'{url}?RefCode={data['refCode']}',headers=headers,allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2023-11-23 03:47:06,846 [ERROR]: An error occurred: 'Scraper4' object has no attribute 'scrape_with_refcodes'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper4' object has no attribute 'scrape_with_refcodes'
+2023-11-23 03:48:02,006 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scraped_with_names():
+TypeError: 'NoneType' object is not iterable
+2023-11-23 03:48:26,998 [ERROR]: An error occurred: 'First Name'
+Traceback (most recent call last):
+  File "/root/venv/corey/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3790, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'First Name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scraped_with_names():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 77, in scraped_with_names
+    names = self.generate_names()
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 110, in generate_names
+    first_names = df_first_names['First Name'].tolist()
+                  ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3797, in get_loc
+    raise KeyError(key) from err
+KeyError: 'First Name'
+2023-11-23 03:51:14,474 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scraped_with_names():
+TypeError: 'NoneType' object is not iterable
+2023-11-23 03:51:50,472 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scraped_with_names():
+TypeError: 'NoneType' object is not iterable
+2023-11-23 06:21:18,643 [ERROR]: An error occurred: generate_names() missing 1 required positional argument: 'self'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scraped_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 78, in scraped_with_names
+    names = name_generator.generate_names()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: generate_names() missing 1 required positional argument: 'self'
+2023-11-23 06:22:12,651 [INFO]: package: mysql.connector.plugins
+2023-11-23 06:22:12,651 [INFO]: plugin_name: caching_sha2_password
+2023-11-23 06:22:12,652 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-23 06:22:16,141 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main.py", line 29, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 112, in scrape_with_refcodes
+    batch_results = [result for result in list(executor.map(scrape_single_thread,refcodes[i:i+batch_size])) if result is not None]
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 101, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1_threading.py", line 58, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-23 06:22:53,434 [ERROR]: An error occurred: cannot access local variable 'name' where it is not associated with a value
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scraped_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 79, in scraped_with_names
+    print(f"There {len(name)} names to rotate!")
+                       ^^^^
+UnboundLocalError: cannot access local variable 'name' where it is not associated with a value
+2023-11-23 06:27:20,957 [ERROR]: An error occurred: name 'Scraper' is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 19, in main
+    scraper = Scraper()
+              ^^^^^^^
+NameError: name 'Scraper' is not defined. Did you mean: 'Scraperpip'?
+2023-11-23 06:27:41,728 [ERROR]: An error occurred: cannot access local variable 'name' where it is not associated with a value
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scraped_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 79, in scraped_with_names
+    print(f"There {len(name)} names to rotate!")
+                       ^^^^
+UnboundLocalError: cannot access local variable 'name' where it is not associated with a value
+2023-11-24 02:57:13,800 [INFO]: package: mysql.connector.plugins
+2023-11-24 02:57:13,804 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 02:57:13,807 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 02:57:13,813 [INFO]: package: mysql.connector.plugins
+2023-11-24 02:57:13,813 [INFO]: plugin_name: mysql_native_password
+2023-11-24 02:57:13,817 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 02:57:13,959 [ERROR]: An error occurred: 'Scraper4' object has no attribute 'scraped_with_names'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scraped_with_names():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper4' object has no attribute 'scraped_with_names'. Did you mean: 'scrape_with_names'?
+2023-11-24 02:57:45,258 [INFO]: package: mysql.connector.plugins
+2023-11-24 02:57:45,259 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 02:57:45,259 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 02:57:45,260 [INFO]: package: mysql.connector.plugins
+2023-11-24 02:57:45,260 [INFO]: plugin_name: mysql_native_password
+2023-11-24 02:57:45,260 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 02:57:45,844 [ERROR]: An error occurred: cannot access local variable 'name' where it is not associated with a value
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 73, in scrape_with_names
+    print(f"There {len(name)} names to rotate!")
+                       ^^^^
+UnboundLocalError: cannot access local variable 'name' where it is not associated with a value
+2023-11-24 02:58:04,405 [INFO]: package: mysql.connector.plugins
+2023-11-24 02:58:04,405 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 02:58:04,406 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 02:58:04,408 [INFO]: package: mysql.connector.plugins
+2023-11-24 02:58:04,409 [INFO]: plugin_name: mysql_native_password
+2023-11-24 02:58:04,409 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 02:58:06,998 [ERROR]: An error occurred: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //('James',%20'SMITH')1.moneyladdernow.com (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f3f105764b0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f3f105764b0>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //('James',%20'SMITH')1.moneyladdernow.com (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f3f105764b0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 85, in scrape_with_names
+    result = executor.submit(scrape_single_with_increment,name,count).result()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 78, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 36, in scrape_single
+    response = requests.post(f"https://{url}", headers=headers, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //('James',%20'SMITH')1.moneyladdernow.com (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f3f105764b0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-11-24 03:01:58,218 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:01:58,219 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:01:58,219 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:01:58,220 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:01:58,220 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:01:58,220 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:04:47,651 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:04:47,651 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:04:47,652 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:04:47,652 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:04:47,653 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:04:47,653 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:04:48,155 [ERROR]: An error occurred: object of type 'generator' has no len()
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 73, in scrape_with_names
+    print(f"There {len(names)} names to rotate!")
+                   ^^^^^^^^^^
+TypeError: object of type 'generator' has no len()
+2023-11-24 03:05:35,782 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:05:35,783 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:05:35,784 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:05:35,784 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:05:35,784 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:05:35,785 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:05:36,387 [ERROR]: An error occurred: str.join() takes exactly one argument (2 given)
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 72, in scrape_with_names
+    names = name_generator.generate_names()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/name_generator.py", line 23, in generate_names
+    all_name_combinations = [''.join(pair[0],pair[1]).lower() for pair in list(product(first_names[start_index:],last_names))]
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: str.join() takes exactly one argument (2 given)
+2023-11-24 03:06:55,096 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:06:55,096 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:06:55,097 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:06:55,098 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:06:55,098 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:06:55,098 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:08:01,735 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:08:01,736 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:08:01,736 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:08:01,737 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:08:01,737 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:08:01,738 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:08:04,489 [ERROR]: An error occurred: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //jamessmith1.moneyladdernow.com (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fe6ccfe28a0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fe6ccfe28a0>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //jamessmith1.moneyladdernow.com (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fe6ccfe28a0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 85, in scrape_with_names
+    result = executor.submit(scrape_single_with_increment,name,count).result()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 78, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 36, in scrape_single
+    response = requests.post(f"https://{url}", headers=headers, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //jamessmith1.moneyladdernow.com (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fe6ccfe28a0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-11-24 03:09:02,906 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:09:02,906 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:09:02,907 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:09:02,907 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:09:02,907 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:09:02,908 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:09:05,745 [ERROR]: An error occurred: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //jamessmith1.moneyladdernow.com (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fed4122a7b0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fed4122a7b0>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //jamessmith1.moneyladdernow.com (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fed4122a7b0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 86, in scrape_with_names
+    result = executor.submit(scrape_single_with_increment,name,count).result()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 79, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 36, in scrape_single
+    response = requests.post(f"https://{url}", headers=headers, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //jamessmith1.moneyladdernow.com (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fed4122a7b0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-11-24 03:12:32,063 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:12:32,063 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:12:32,064 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:12:32,064 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:12:32,065 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:12:32,065 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:12:32,745 [ERROR]: An error occurred: Header part (('purl_visitor=eyJpdiI6IllTR1hab0ZITHAxTm9sM2JpOW5aQ1E9PSIsInZhbHVlIjoieHRXTVFsUldZMDBBSmQzYmxrYTdyYUVBeUJvbEErTE8rK25kaE0vS2g1ZGhacU1pWU10WXU5VVFiMEJxUzNRVDdOSnhIUVdqWWV3eHFWVy8xZXJ2dmwyZ0J3dVdkR1VLNEpJdnM5OGJsWWtJeElMTEpyNkhObnhUWkxoWDcwUXVpaXh0UFNNZGtUclpxUTVZblVXQ3RUNExZMmkxaEtsS1pqZnZuWDczL25nPSIsIm1hYyI6IjQ2ZDE4MDExY2U1ZWRjOWMyNTJjYTZmZDRjYTU3OTYwYzdhOWQxMDMyMWMyZWNiMWRiMzNjNjdjYWMzNzFiYTUiLCJ0YWciOiIifQ%3D%3D; leadid_token-8AB3EFE0-1097-22B0-3825-76FA271DC046-E3C5F1E1-D995-07DC-7419-327C3CD5CF3F=D1F0C806-930D-F2B3-291B-AA23499108C7',)) from ('Cookie', ('purl_visitor=eyJpdiI6IllTR1hab0ZITHAxTm9sM2JpOW5aQ1E9PSIsInZhbHVlIjoieHRXTVFsUldZMDBBSmQzYmxrYTdyYUVBeUJvbEErTE8rK25kaE0vS2g1ZGhacU1pWU10WXU5VVFiMEJxUzNRVDdOSnhIUVdqWWV3eHFWVy8xZXJ2dmwyZ0J3dVdkR1VLNEpJdnM5OGJsWWtJeElMTEpyNkhObnhUWkxoWDcwUXVpaXh0UFNNZGtUclpxUTVZblVXQ3RUNExZMmkxaEtsS1pqZnZuWDczL25nPSIsIm1hYyI6IjQ2ZDE4MDExY2U1ZWRjOWMyNTJjYTZmZDRjYTU3OTYwYzdhOWQxMDMyMWMyZWNiMWRiMzNjNjdjYWMzNzFiYTUiLCJ0YWciOiIifQ%3D%3D; leadid_token-8AB3EFE0-1097-22B0-3825-76FA271DC046-E3C5F1E1-D995-07DC-7419-327C3CD5CF3F=D1F0C806-930D-F2B3-291B-AA23499108C7',)) must be of type str or bytes, not <class 'tuple'>
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 88, in scrape_with_names
+    result = executor.submit(scrape_single_with_increment,name,count).result()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 81, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 38, in scrape_single
+    response = requests.post(f"https://{url}", headers=headers, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 369, in prepare
+    self.prepare_headers(headers)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 491, in prepare_headers
+    check_header_validity(header)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/utils.py", line 1040, in check_header_validity
+    _validate_header_part(header, value, 1)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/utils.py", line 1049, in _validate_header_part
+    raise InvalidHeader(
+requests.exceptions.InvalidHeader: Header part (('purl_visitor=eyJpdiI6IllTR1hab0ZITHAxTm9sM2JpOW5aQ1E9PSIsInZhbHVlIjoieHRXTVFsUldZMDBBSmQzYmxrYTdyYUVBeUJvbEErTE8rK25kaE0vS2g1ZGhacU1pWU10WXU5VVFiMEJxUzNRVDdOSnhIUVdqWWV3eHFWVy8xZXJ2dmwyZ0J3dVdkR1VLNEpJdnM5OGJsWWtJeElMTEpyNkhObnhUWkxoWDcwUXVpaXh0UFNNZGtUclpxUTVZblVXQ3RUNExZMmkxaEtsS1pqZnZuWDczL25nPSIsIm1hYyI6IjQ2ZDE4MDExY2U1ZWRjOWMyNTJjYTZmZDRjYTU3OTYwYzdhOWQxMDMyMWMyZWNiMWRiMzNjNjdjYWMzNzFiYTUiLCJ0YWciOiIifQ%3D%3D; leadid_token-8AB3EFE0-1097-22B0-3825-76FA271DC046-E3C5F1E1-D995-07DC-7419-327C3CD5CF3F=D1F0C806-930D-F2B3-291B-AA23499108C7',)) from ('Cookie', ('purl_visitor=eyJpdiI6IllTR1hab0ZITHAxTm9sM2JpOW5aQ1E9PSIsInZhbHVlIjoieHRXTVFsUldZMDBBSmQzYmxrYTdyYUVBeUJvbEErTE8rK25kaE0vS2g1ZGhacU1pWU10WXU5VVFiMEJxUzNRVDdOSnhIUVdqWWV3eHFWVy8xZXJ2dmwyZ0J3dVdkR1VLNEpJdnM5OGJsWWtJeElMTEpyNkhObnhUWkxoWDcwUXVpaXh0UFNNZGtUclpxUTVZblVXQ3RUNExZMmkxaEtsS1pqZnZuWDczL25nPSIsIm1hYyI6IjQ2ZDE4MDExY2U1ZWRjOWMyNTJjYTZmZDRjYTU3OTYwYzdhOWQxMDMyMWMyZWNiMWRiMzNjNjdjYWMzNzFiYTUiLCJ0YWciOiIifQ%3D%3D; leadid_token-8AB3EFE0-1097-22B0-3825-76FA271DC046-E3C5F1E1-D995-07DC-7419-327C3CD5CF3F=D1F0C806-930D-F2B3-291B-AA23499108C7',)) must be of type str or bytes, not <class 'tuple'>
+2023-11-24 03:16:44,502 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:16:44,503 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:16:44,503 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:16:44,504 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:16:44,504 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:16:44,505 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:16:47,293 [ERROR]: An error occurred: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //jamessmith1.moneyladdernow.com (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc52d553140>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fc52d553140>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //jamessmith1.moneyladdernow.com (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc52d553140>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 88, in scrape_with_names
+    result = executor.submit(scrape_single_with_increment,name,count).result()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 81, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 38, in scrape_single
+    response = requests.post(f"https://{url}", headers=headers, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //jamessmith1.moneyladdernow.com (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc52d553140>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-11-24 03:19:15,373 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:19:15,374 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:19:15,374 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:19:15,375 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:19:15,375 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:19:15,375 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:20:23,425 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:20:23,425 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:20:23,426 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:20:23,426 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:20:23,426 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:20:23,427 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:37:44,794 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:37:44,794 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:37:44,795 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:37:44,795 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:37:44,796 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:37:44,796 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:38:41,231 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:38:41,231 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:38:41,232 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:38:41,232 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:38:41,232 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:38:41,233 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:40:56,410 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:40:56,411 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:40:56,411 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:40:56,412 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:40:56,412 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:40:56,413 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:41:53,442 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:41:53,443 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:41:53,444 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:41:53,444 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:41:53,444 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:41:53,445 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:45:06,783 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:45:06,784 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:45:06,784 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:45:06,785 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:45:06,785 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:45:06,786 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:45:19,525 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:45:19,525 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:45:19,526 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:45:19,527 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:45:19,527 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:45:19,527 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:50:34,244 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:50:34,245 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:50:34,246 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:50:34,246 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:50:34,246 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:50:34,247 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:50:35,977 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 88, in scrape_with_names
+    result = scrape_single_with_increment(name,count)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 80, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 50, in scrape_single
+    state_el = soup.select("#state")[1].text if soup.select("#state") else 'NA'
+               ~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-11-24 03:51:03,978 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:51:03,979 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:51:03,980 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:51:03,980 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:51:03,980 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:51:03,981 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 03:51:26,741 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:51:26,741 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 03:51:26,742 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 03:51:26,743 [INFO]: package: mysql.connector.plugins
+2023-11-24 03:51:26,743 [INFO]: plugin_name: mysql_native_password
+2023-11-24 03:51:26,745 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 04:03:43,406 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:03:43,407 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 04:03:43,408 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 04:03:43,408 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:03:43,408 [INFO]: plugin_name: mysql_native_password
+2023-11-24 04:03:43,409 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 04:04:24,078 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:04:24,078 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 04:04:24,079 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 04:04:24,079 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:04:24,079 [INFO]: plugin_name: mysql_native_password
+2023-11-24 04:04:24,080 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 04:04:25,814 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 88, in scrape_with_names
+    result = scrape_single_with_increment(name,count)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 80, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 50, in scrape_single
+    state_el = soup.select("#state option:checked")[1].text if soup.select("#state") else 'NA'
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-11-24 04:13:13,447 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:13:13,448 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 04:13:13,448 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 04:13:13,449 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:13:13,449 [INFO]: plugin_name: mysql_native_password
+2023-11-24 04:13:13,450 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 04:13:15,400 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 89, in scrape_with_names
+    result = scrape_single_with_increment(name,count)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 81, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 50, in scrape_single
+    state_el = soup.select("#state option:checked")[1].text if soup.select("#state") else 'NA'
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-11-24 04:13:50,779 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:13:50,780 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 04:13:50,780 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 04:13:50,781 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:13:50,781 [INFO]: plugin_name: mysql_native_password
+2023-11-24 04:13:50,782 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 04:13:52,470 [ERROR]: An error occurred: ResultSet object has no attribute 'decode_contents'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 89, in scrape_with_names
+    result = scrape_single_with_increment(name,count)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 81, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 50, in scrape_single
+    print(soup.select("#state").decode_contents())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/bs4/element.py", line 2428, in __getattr__
+    raise AttributeError(
+AttributeError: ResultSet object has no attribute 'decode_contents'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+2023-11-24 04:14:43,312 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:14:43,312 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 04:14:43,313 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 04:14:43,314 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:14:43,314 [INFO]: plugin_name: mysql_native_password
+2023-11-24 04:14:43,314 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 04:14:45,065 [ERROR]: An error occurred: 'NoneType' object has no attribute 'decode_contents'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 89, in scrape_with_names
+    result = scrape_single_with_increment(name,count)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 81, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 50, in scrape_single
+    print(soup.find("#state").decode_contents())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'decode_contents'
+2023-11-24 04:17:02,001 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:17:02,001 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 04:17:02,002 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 04:17:02,003 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:17:02,003 [INFO]: plugin_name: mysql_native_password
+2023-11-24 04:17:02,003 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 04:17:03,776 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 89, in scrape_with_names
+    result = scrape_single_with_increment(name,count)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 81, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 51, in scrape_single
+    state_el = soup.select("#state option:checked")[1].text if soup.select("#state") else 'NA'
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-11-24 04:29:48,605 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:29:48,607 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 04:29:48,607 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 04:29:48,608 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:29:48,608 [INFO]: plugin_name: mysql_native_password
+2023-11-24 04:29:48,609 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 04:29:50,423 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 89, in scrape_with_names
+    result = scrape_single_with_increment(name,count)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 81, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 51, in scrape_single
+    state_el = soup.select("#state option:checked")[1].text if soup.select("#state") else 'NA'
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-11-24 04:55:33,901 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:55:33,901 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 04:55:33,902 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 04:55:33,904 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:55:33,904 [INFO]: plugin_name: mysql_native_password
+2023-11-24 04:55:33,904 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 04:56:00,551 [ERROR]: An error occurred: 1146 (42S02): Table 'scraped_data.scraper4_info' doesn't exist
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 38, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/root/projects/corey/src/database/database_handler_local.py", line 35, in store_data
+    self.cursor.execute(f'''
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/cursor.py", line 617, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/connection.py", line 1069, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/mysql/connector/connection.py", line 846, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'scraped_data.scraper4_info' doesn't exist
+2023-11-24 04:57:13,609 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:57:13,609 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 04:57:13,610 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 04:57:13,611 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:57:13,611 [INFO]: plugin_name: mysql_native_password
+2023-11-24 04:57:13,612 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 04:59:34,918 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:59:34,919 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 04:59:34,919 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 04:59:34,920 [INFO]: package: mysql.connector.plugins
+2023-11-24 04:59:34,920 [INFO]: plugin_name: mysql_native_password
+2023-11-24 04:59:34,921 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 05:07:15,039 [INFO]: package: mysql.connector.plugins
+2023-11-24 05:07:15,039 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 05:07:15,040 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 05:07:15,040 [INFO]: package: mysql.connector.plugins
+2023-11-24 05:07:15,040 [INFO]: plugin_name: mysql_native_password
+2023-11-24 05:07:15,041 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 05:08:17,872 [INFO]: package: mysql.connector.plugins
+2023-11-24 05:08:17,872 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 05:08:17,873 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 05:08:17,874 [INFO]: package: mysql.connector.plugins
+2023-11-24 05:08:17,874 [INFO]: plugin_name: mysql_native_password
+2023-11-24 05:08:17,874 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin

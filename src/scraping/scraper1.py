@@ -1,10 +1,19 @@
-import requests, time
+import requests
 from bs4 import BeautifulSoup
+import concurrent.futures
+from fake_useragent import UserAgent
 from scraping import code_generator
 
 class Scraper1:
     def __init__(self):
         self.url = 'https://mobilendloan.com/'
+        self.table_name = "scraped_info"
+        self.session = requests.Session()
+        self.ua = UserAgent()
+        self.extracted_cookies = 'wc_visitor=78875-7f9506f5-4ac3-7501-33de-d2b84859219c; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-7f9506f5-4ac3-7501-33de-d2b84859219c+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-7f9506f5-4ac3-7501-33de-d2b84859219c+..+; mailer-sessions=s%3ApR75nH-loAfc52rLUkPp0Fr4n0eLbo_x.s5%2FrsPxg9qfVN4OcHU9YRkMoN%2FcPX066MCdHSc0UqWM'
+        print(f"Scraping: {self.url}")
+        
+    
     
     
     def scrape_single(self,url,data):
@@ -12,12 +21,12 @@ class Scraper1:
         headers = {
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
             'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Language': 'en-US,en;q=0.9',
+            'Accept-Languffage': 'en-US,en;q=0.9',
             'Cache-Control': 'max-age=0',
             'Connection': 'keep-alive',
             'Content-Length': '17',
             'Content-Type': 'application/x-www-form-urlencoded',
-            'Cookie': 'wc_visitor=78875-7239091b-c953-0f56-353c-eebb1935e1ea; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-7239091b-c953-0f56-353c-eebb1935e1ea+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-7239091b-c953-0f56-353c-eebb1935e1ea+..+; mailer-sessions=s%3AUnPzkDMTsGSv-ROXm43GXA0NswCiFC5e.sUT2UM%2BfYRSrEj8fVcDR08cFL%2Fm%2FYZCSqwti3HCuonI',
+            'Cookie': self.extracted_cookies,
             'Host': 'mobilendloan.com',
             'Origin': 'https://mobilendloan.com',
             'Referer': 'https://mobilendloan.com/',
@@ -29,19 +38,15 @@ class Scraper1:
             'Sec-Fetch-Site': 'same-origin',
             'Sec-Fetch-User': '?1',
             'Upgrade-Insecure-Requests': '1',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0'
+            'User-Agent': self.ua.random
         }
 
 
-
-
-
-
                 
-        # headers = input("Enter http headers (dictionary format): ")
-        response = requests.post(url, headers=headers, data=data, allow_redirects=True)
-        # print(response.text)
-        
+        response = self.session.post(url, headers=headers, data=data, allow_redirects=True)
+        print(response.text)
+        # raise for failed requests
+        response.raise_for_status()
         
         # if response.status_code == 200:
         # Parse the HTML content with BeautifulSoup
@@ -59,36 +64,7 @@ class Scraper1:
             state_el = None
         zip_code_el = soup.select_one("#zipCode")['value'] if soup.select_one("#zipCode") else None
         
-        # if first_name_el is not None:
-        #     first_name = first_name_el
-        # else:
-        #     first_name = 'NA'
-            
-        # if last_name_el is not None:
-        #     last_name = last_name_el
-        # else:
-        #     last_name = 'NA'
-        
-        # if address_el is not None:
-        #     address = address_el
-        # else:
-        #     address = 'NA'
-            
-        # if city_el is not None:
-        #     city = city_el
-        # else:
-        #     city = 'NA'
-            
-        # if state_el is not None:
-        #     state = state_el
-        # else:
-        #     state = 'NA'
-        
-        # if zip_code_el is not None:
-        #     zip_code = zip_code_el
-        # else:
-        #     zip_code = 'NA'
-        
+    
         
         
         # Check if any value is None, if yes, return None
@@ -109,34 +85,27 @@ class Scraper1:
         # else :
         #     raise Exception(f"Failed to retrieve data. Status code: {response.status_code}")
     
-    def scrape_with_refcodes(self,batch_size=100):#,refcodes_file):
-        # with open(refcodes_file,'r') as file:
-        #     refcodes = [line.strip() for line in file]
+    
+    
+    
+    def scrape_with_refcodes(self,batch_size=100,num_threads=3):
+
             
-        refcodes = code_generator.invite_codes_with_prefix # last code before error JO0000013
-        # refcodes = code_generator.generate_code(33583,222000)
+        # refcodes = code_generator.invite_codes_with_prefix # last code before error JO0000013
+        refcodes = code_generator.generate_code(728110,900000,'HA')
         print(f"There are {len(refcodes)} refcodes to rotate!")
-        results = []
+        # results = []
         
-        for i, refcode in enumerate(refcodes,start=1):
+        def scrape_single_thread(refcode):
             print(f"Refcode : {refcode}")
             data = {'refCode':refcode}
-            time.sleep(0.3)
             result = self.scrape_single(self.url,data)
             print(result)
-            if result is not None:
-                results.append(result)
-                
-            else:
+            if result is None:
                 print("Skipping 'None' values.")
+            return result
             
-            # Yield results in batches
-            if i % batch_size == 0:
-                yield results
-                results = [] # clear the results list after yielding
-
-        # Yield any remaining results
-        if results:
-            yield results
-    
-    
+        with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads) as executor:
+            for i in range(0,len(refcodes),batch_size):
+                batch_results = [result for result in list(executor.map(scrape_single_thread,refcodes[i:i+batch_size])) if result is not None]
+                yield batch_results

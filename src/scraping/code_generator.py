@@ -20,7 +20,7 @@ def generate_codes_with_prefix(start_prefix='EW',start=1, end=10):
     return codes
 
 
-def generate_code(start,end):
+def generate_code(start,end,prefix):
         codes = []
         
         for num in range(start, end+1):
@@ -28,7 +28,8 @@ def generate_code(start,end):
             numeric_component = f"{num:07d}"
             
             # Create the invite code by combining the prefix "HA" and the numeric component
-            invite_code = f"HA{numeric_component}"
+            invite_code = f"{prefix}{numeric_component}" # mobilendloan
+            # invite_code = f"NA{numeric_component}" # myonlineloanpro
             
             codes.append(invite_code)
             
@@ -39,7 +40,8 @@ def generate_code(start,end):
 
 
 # Example: Generate 10 invite codes with permutations of 2 characters from the alphabet
-invite_codes_with_prefix = generate_codes_with_prefix('AA',20,25)
+# invite_codes_with_prefix = generate_codes_with_prefix('AA',25,30) # mobilendloan
+invite_codes_with_prefix = generate_codes_with_prefix('BY',28,35) # myonlineloanpro
 
-print(f"Total number of codes: {len(invite_codes_with_prefix)}")
+# print(f"Total number of codes: {len(invite_codes_with_prefix)}")
 

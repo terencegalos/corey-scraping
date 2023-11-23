@@ -28,11 +28,11 @@ class DatabaseHandler:
         # Commit
         self.conn.commit()
         
-    def store_data(self,data_list):
+    def store_data(self,table_name="scraped_info_1",data_list=[]):
         
         # Insert data into the database
         for data in data_list:
-            self.cursor.execute('''
+            self.cursor.execute(f'''
                                 INSERT INTO scraped_info_1 (first_name,last_name,address,city,state,zip_code)
                                 VALUES (%s,%s,%s,%s,%s,%s)
                                 ''', (data['first_name'], data['last_name'], data['address'], data['city'], data['state'], data['zip_code']))
