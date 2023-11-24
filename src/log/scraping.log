@@ -5627,3 +5627,564 @@ mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'scraped_data.scrap
 2023-11-24 05:08:17,874 [INFO]: package: mysql.connector.plugins
 2023-11-24 05:08:17,874 [INFO]: plugin_name: mysql_native_password
 2023-11-24 05:08:17,874 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 19:44:12,164 [INFO]: package: mysql.connector.plugins
+2023-11-24 19:44:12,165 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 19:44:12,165 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 19:44:12,166 [INFO]: package: mysql.connector.plugins
+2023-11-24 19:44:12,166 [INFO]: plugin_name: mysql_native_password
+2023-11-24 19:44:12,167 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-24 19:46:05,672 [INFO]: package: mysql.connector.plugins
+2023-11-24 19:46:05,673 [INFO]: plugin_name: caching_sha2_password
+2023-11-24 19:46:05,674 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-24 19:46:05,674 [INFO]: package: mysql.connector.plugins
+2023-11-24 19:46:05,674 [INFO]: plugin_name: mysql_native_password
+2023-11-24 19:46:05,675 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 00:05:54,352 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:05:54,352 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 00:05:54,353 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 00:05:54,353 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:05:54,353 [INFO]: plugin_name: mysql_native_password
+2023-11-25 00:05:54,354 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 00:05:55,048 [ERROR]: An error occurred: 'Future' object is not iterable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 97, in scrape_with_names
+    for future in concurrent.futures.as_completed(futures):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 220, in as_completed
+    fs = set(fs)
+         ^^^^^^^
+TypeError: 'Future' object is not iterable
+2023-11-25 00:07:56,261 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:07:56,262 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 00:07:56,262 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 00:07:56,263 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:07:56,263 [INFO]: plugin_name: mysql_native_password
+2023-11-25 00:07:56,263 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 00:07:56,927 [ERROR]: An error occurred: 'Future' object is not iterable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 97, in scrape_with_names
+    for future in concurrent.futures.as_completed(futures):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 220, in as_completed
+    fs = set(fs)
+         ^^^^^^^
+TypeError: 'Future' object is not iterable
+2023-11-25 00:11:41,072 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:11:41,072 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 00:11:41,073 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 00:11:41,073 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:11:41,073 [INFO]: plugin_name: mysql_native_password
+2023-11-25 00:11:41,074 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 00:11:41,743 [ERROR]: An error occurred: Scraper4.scrape_with_names.<locals>.scrape_single_with_increment() got an unexpected keyword argument 'setofthree'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 98, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scraper4.scrape_with_names.<locals>.scrape_single_with_increment() got an unexpected keyword argument 'setofthree'
+2023-11-25 00:12:09,750 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:12:09,750 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 00:12:09,751 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 00:12:09,752 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:12:09,752 [INFO]: plugin_name: mysql_native_password
+2023-11-25 00:12:09,752 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 00:12:10,425 [ERROR]: An error occurred: Failed to parse: https://jamessmith[0, 1, 2].moneyladdernow.com
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 434, in prepare_url
+    scheme, auth, host, port, path, query, fragment = parse_url(url)
+                                                      ^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/util/url.py", line 397, in parse_url
+    return six.raise_from(LocationParseError(source_url), None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 3, in raise_from
+urllib3.exceptions.LocationParseError: Failed to parse: https://jamessmith[0, 1, 2].moneyladdernow.com
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 98, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 80, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 37, in scrape_single
+    response = requests.get(f"https://{url}", headers=headers, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/models.py", line 436, in prepare_url
+    raise InvalidURL(*e.args)
+requests.exceptions.InvalidURL: Failed to parse: https://jamessmith[0, 1, 2].moneyladdernow.com
+2023-11-25 00:17:57,511 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:17:57,511 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 00:17:57,512 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 00:17:57,513 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:17:57,513 [INFO]: plugin_name: mysql_native_password
+2023-11-25 00:17:57,513 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 00:18:59,707 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:18:59,707 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 00:18:59,707 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 00:18:59,708 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:18:59,708 [INFO]: plugin_name: mysql_native_password
+2023-11-25 00:18:59,709 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 00:19:00,409 [ERROR]: An error occurred: 'generator' object is not callable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 95, in scrape_with_names
+    futures = [executor.submit(scrape_single_with_increment, name, num) for num in [next(num_generator()) for _ in range(3)] ]
+                                                                                         ^^^^^^^^^^^^^^^
+TypeError: 'generator' object is not callable
+2023-11-25 00:19:11,514 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:19:11,515 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 00:19:11,516 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 00:19:11,516 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:19:11,516 [INFO]: plugin_name: mysql_native_password
+2023-11-25 00:19:11,517 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 00:19:49,991 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:19:49,992 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 00:19:49,993 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 00:19:49,993 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:19:49,993 [INFO]: plugin_name: mysql_native_password
+2023-11-25 00:19:49,994 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 00:22:00,221 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:22:00,221 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 00:22:00,222 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 00:22:00,222 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:22:00,223 [INFO]: plugin_name: mysql_native_password
+2023-11-25 00:22:00,223 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 00:26:33,761 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:26:33,761 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 00:26:33,762 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 00:26:33,763 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:26:33,763 [INFO]: plugin_name: mysql_native_password
+2023-11-25 00:26:33,763 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 00:27:01,969 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:27:01,970 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 00:27:01,970 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 00:27:01,971 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:27:01,971 [INFO]: plugin_name: mysql_native_password
+2023-11-25 00:27:01,972 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 00:27:22,718 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:27:22,718 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 00:27:22,719 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 00:27:22,720 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:27:22,720 [INFO]: plugin_name: mysql_native_password
+2023-11-25 00:27:22,720 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 00:28:07,367 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:28:07,368 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 00:28:07,368 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 00:28:07,369 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:28:07,369 [INFO]: plugin_name: mysql_native_password
+2023-11-25 00:28:07,369 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 00:55:16,033 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:55:16,033 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 00:55:16,034 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 00:55:16,034 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:55:16,035 [INFO]: plugin_name: mysql_native_password
+2023-11-25 00:55:16,035 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 00:55:42,339 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:55:42,340 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 00:55:42,341 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 00:55:42,341 [INFO]: package: mysql.connector.plugins
+2023-11-25 00:55:42,341 [INFO]: plugin_name: mysql_native_password
+2023-11-25 00:55:42,342 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 01:32:48,090 [ERROR]: An error occurred: SearchEngine.__init__() got an unexpected keyword argument 'simple_zipcode'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 102, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 82, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 52, in scrape_single
+    state = get_us_state.get_state(city_el,zip_code_el)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/get_us_state.py", line 4, in get_state
+    search = SearchEngine(simple_zipcode=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SearchEngine.__init__() got an unexpected keyword argument 'simple_zipcode'
+2023-11-25 01:53:35,865 [ERROR]: An error occurred: get_state() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 102, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 82, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper4.py", line 52, in scrape_single
+    state = get_us_state.get_state(city_el,zip_code_el)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: get_state() takes 1 positional argument but 2 were given
+2023-11-25 02:06:04,774 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 33, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 110, in scrape_with_refcodes
+    batch_results = [result for result in list(executor.map(scrape_single_thread,refcodes[i:i+batch_size])) if result is not None]
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 102, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 59, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-25 02:16:28,139 [INFO]: package: mysql.connector.plugins
+2023-11-25 02:16:28,139 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 02:16:28,140 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 02:16:28,140 [INFO]: package: mysql.connector.plugins
+2023-11-25 02:16:28,140 [INFO]: plugin_name: mysql_native_password
+2023-11-25 02:16:28,141 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 02:16:28,147 [ERROR]: An error occurred: 'Scraper5' object has no attribute 'scrape_with_refcodes'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 34, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper5' object has no attribute 'scrape_with_refcodes'. Did you mean: 'scrape_with_names'?
+2023-11-25 02:16:38,627 [INFO]: package: mysql.connector.plugins
+2023-11-25 02:16:38,627 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 02:16:38,628 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 02:16:38,628 [INFO]: package: mysql.connector.plugins
+2023-11-25 02:16:38,628 [INFO]: plugin_name: mysql_native_password
+2023-11-25 02:16:38,629 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 02:16:40,022 [WARNING]: Certificate did not match expected hostname: jamessmith0.jonjones1.mylibertyone.com. Certificate: {'subject': ((('commonName', 'mylibertyone.com'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R3'),)), 'version': 3, 'serialNumber': '0434B274C2AE48505986E3A02DF77F28AD06', 'notBefore': 'Sep 23 16:43:43 2023 GMT', 'notAfter': 'Dec 22 16:43:42 2023 GMT', 'subjectAltName': (('DNS', '*.mylibertyone.com'), ('DNS', 'mylibertyone.com')), 'OCSP': ('http://r3.o.lencr.org',), 'caIssuers': ('http://r3.i.lencr.org/',)}
+2023-11-25 02:16:40,164 [WARNING]: Certificate did not match expected hostname: jamessmith1.jonjones1.mylibertyone.com. Certificate: {'subject': ((('commonName', 'mylibertyone.com'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R3'),)), 'version': 3, 'serialNumber': '0434B274C2AE48505986E3A02DF77F28AD06', 'notBefore': 'Sep 23 16:43:43 2023 GMT', 'notAfter': 'Dec 22 16:43:42 2023 GMT', 'subjectAltName': (('DNS', '*.mylibertyone.com'), ('DNS', 'mylibertyone.com')), 'OCSP': ('http://r3.o.lencr.org',), 'caIssuers': ('http://r3.i.lencr.org/',)}
+2023-11-25 02:16:40,322 [WARNING]: Certificate did not match expected hostname: jamessmith2.jonjones1.mylibertyone.com. Certificate: {'subject': ((('commonName', 'mylibertyone.com'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R3'),)), 'version': 3, 'serialNumber': '0434B274C2AE48505986E3A02DF77F28AD06', 'notBefore': 'Sep 23 16:43:43 2023 GMT', 'notAfter': 'Dec 22 16:43:42 2023 GMT', 'subjectAltName': (('DNS', '*.mylibertyone.com'), ('DNS', 'mylibertyone.com')), 'OCSP': ('http://r3.o.lencr.org',), 'caIssuers': ('http://r3.i.lencr.org/',)}
+2023-11-25 02:16:40,323 [ERROR]: An error occurred: HTTPSConnectionPool(host='jamessmith0.jonjones1.mylibertyone.com', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'jamessmith0.jonjones1.mylibertyone.com' doesn't match either of '*.mylibertyone.com', 'mylibertyone.com'")))
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connection.py", line 472, in connect
+    _match_hostname(cert, self.assert_hostname or server_hostname)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connection.py", line 545, in _match_hostname
+    match_hostname(cert, asserted_hostname)
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/util/ssl_match_hostname.py", line 150, in match_hostname
+    raise CertificateError(
+urllib3.util.ssl_match_hostname.CertificateError: hostname 'jamessmith0.jonjones1.mylibertyone.com' doesn't match either of '*.mylibertyone.com', 'mylibertyone.com'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='jamessmith0.jonjones1.mylibertyone.com', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'jamessmith0.jonjones1.mylibertyone.com' doesn't match either of '*.mylibertyone.com', 'mylibertyone.com'")))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 35, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper5.py", line 102, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper5.py", line 82, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper5.py", line 38, in scrape_single
+    response = requests.get(f"https://{url}", headers=headers, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/site-packages/requests/adapters.py", line 517, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='jamessmith0.jonjones1.mylibertyone.com', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'jamessmith0.jonjones1.mylibertyone.com' doesn't match either of '*.mylibertyone.com', 'mylibertyone.com'")))
+2023-11-25 02:17:01,415 [INFO]: package: mysql.connector.plugins
+2023-11-25 02:17:01,415 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 02:17:01,415 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 02:17:01,416 [INFO]: package: mysql.connector.plugins
+2023-11-25 02:17:01,416 [INFO]: plugin_name: mysql_native_password
+2023-11-25 02:17:01,417 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 02:17:23,687 [INFO]: Scraping and storing data completed successfully.
+2023-11-25 02:35:57,545 [ERROR]: An error occurred: 'Scraper6' object has no attribute 'scrape_with_refcodes'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper6' object has no attribute 'scrape_with_refcodes'. Did you mean: 'scrape_with_names'?
+2023-11-25 03:21:07,163 [INFO]: package: mysql.connector.plugins
+2023-11-25 03:21:07,163 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 03:21:07,164 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 03:21:07,164 [INFO]: package: mysql.connector.plugins
+2023-11-25 03:21:07,164 [INFO]: plugin_name: mysql_native_password
+2023-11-25 03:21:07,165 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 03:21:07,172 [ERROR]: An error occurred: 'Scraper1' object has no attribute 'scrape_with_names'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_names():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper1' object has no attribute 'scrape_with_names'. Did you mean: 'scrape_with_refcodes'?
+2023-11-25 03:22:15,479 [INFO]: package: mysql.connector.plugins
+2023-11-25 03:22:15,479 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 03:22:15,480 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 03:22:15,480 [INFO]: package: mysql.connector.plugins
+2023-11-25 03:22:15,480 [INFO]: plugin_name: mysql_native_password
+2023-11-25 03:22:15,481 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 03:48:50,556 [INFO]: package: mysql.connector.plugins
+2023-11-25 03:48:50,556 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 03:48:50,557 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 03:48:50,557 [INFO]: package: mysql.connector.plugins
+2023-11-25 03:48:50,558 [INFO]: plugin_name: mysql_native_password
+2023-11-25 03:48:50,558 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 03:57:13,650 [INFO]: package: mysql.connector.plugins
+2023-11-25 03:57:13,650 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 03:57:13,651 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 03:57:13,652 [INFO]: package: mysql.connector.plugins
+2023-11-25 03:57:13,652 [INFO]: plugin_name: mysql_native_password
+2023-11-25 03:57:13,652 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 04:18:54,577 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 110, in scrape_with_refcodes
+    batch_results = [result for result in list(executor.map(scrape_single_thread,refcodes[i:i+batch_size])) if result is not None]
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 102, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 59, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-25 04:25:27,706 [INFO]: package: mysql.connector.plugins
+2023-11-25 04:25:27,707 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 04:25:27,707 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 04:25:27,708 [INFO]: package: mysql.connector.plugins
+2023-11-25 04:25:27,708 [INFO]: plugin_name: mysql_native_password
+2023-11-25 04:25:27,708 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 05:24:56,526 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 110, in scrape_with_refcodes
+    batch_results = [result for result in list(executor.map(scrape_single_thread,refcodes[i:i+batch_size])) if result is not None]
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 102, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 59, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-25 05:31:14,290 [INFO]: package: mysql.connector.plugins
+2023-11-25 05:31:14,290 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 05:31:14,291 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 05:31:14,291 [INFO]: package: mysql.connector.plugins
+2023-11-25 05:31:14,291 [INFO]: plugin_name: mysql_native_password
+2023-11-25 05:31:14,292 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 06:12:34,849 [ERROR]: An error occurred: 'Scraper8' object has no attribute 'scrape_with_refcodes'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper8' object has no attribute 'scrape_with_refcodes'. Did you mean: 'scrape_with_names'?
+2023-11-25 06:30:23,046 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 36, in main
+    # Scrape data in batches
+  File "/root/projects/corey/src/scraping/scraper1.py", line 110, in scrape_with_refcodes
+    batch_results = [result for result in list(executor.map(scrape_single_thread,refcodes[i:i+batch_size])) if result is not None]
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 102, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 59, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-25 06:33:22,526 [INFO]: package: mysql.connector.plugins
+2023-11-25 06:33:22,526 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 06:33:22,527 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 06:33:22,528 [INFO]: package: mysql.connector.plugins
+2023-11-25 06:33:22,528 [INFO]: plugin_name: mysql_native_password
+2023-11-25 06:33:22,528 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 06:33:40,049 [INFO]: package: mysql.connector.plugins
+2023-11-25 06:33:40,049 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 06:33:40,050 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 06:33:40,050 [INFO]: package: mysql.connector.plugins
+2023-11-25 06:33:40,051 [INFO]: plugin_name: mysql_native_password
+2023-11-25 06:33:40,051 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 06:33:40,057 [ERROR]: An error occurred: 'Scraper1' object has no attribute 'scrape_with_names'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper1' object has no attribute 'scrape_with_names'. Did you mean: 'scrape_with_refcodes'?
+2023-11-25 06:33:49,712 [INFO]: package: mysql.connector.plugins
+2023-11-25 06:33:49,712 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 06:33:49,713 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 06:33:49,713 [INFO]: package: mysql.connector.plugins
+2023-11-25 06:33:49,714 [INFO]: plugin_name: mysql_native_password
+2023-11-25 06:33:49,714 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 06:53:27,328 [INFO]: Scraping and storing data completed successfully.
+2023-11-25 06:55:25,554 [INFO]: Scraping and storing data completed successfully.
+2023-11-25 06:55:43,291 [INFO]: Scraping and storing data completed successfully.
+2023-11-25 06:56:00,383 [INFO]: Scraping and storing data completed successfully.
+2023-11-25 07:02:37,642 [ERROR]: An error occurred: generate_names() takes from 0 to 2 positional arguments but 3 were given
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper8.py", line 76, in scrape_with_names
+    names = name_generator.generate_names('/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','Davis')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: generate_names() takes from 0 to 2 positional arguments but 3 were given
+2023-11-25 07:04:01,892 [ERROR]: An error occurred: cannot access local variable 'start_index_last' where it is not associated with a value
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper8.py", line 76, in scrape_with_names
+    names = name_generator.generate_names('/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','Davis')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/name_generator.py", line 24, in generate_names
+    all_name_combinations = [''.join(pair).lower() for pair in list(product(first_names[start_index:],last_names[start_index_last:]))]
+                                                                                                                 ^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'start_index_last' where it is not associated with a value
+2023-11-25 07:04:57,457 [ERROR]: An error occurred: cannot access local variable 'start_index_last' where it is not associated with a value
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper8.py", line 76, in scrape_with_names
+    names = name_generator.generate_names('/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','Davis')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/name_generator.py", line 24, in generate_names
+    all_name_combinations = [''.join(pair).lower() for pair in list(product(first_names[start_index:],last_names[start_index_last:]))]
+                                                                                                                 ^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'start_index_last' where it is not associated with a value

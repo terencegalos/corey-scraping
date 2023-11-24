@@ -5,7 +5,7 @@ from string import ascii_uppercase
 
 
 # Generate invite codes using all upper case permutations of the first two characters
-def generate_codes_with_prefix(start_prefix='EW',start=1, end=10):
+def generate_codes_with_prefix(start_prefix='',start=500, end=1000):
     codes = []
     alphabet_permutations = [''.join(pair) for pair in product(ascii_uppercase, repeat=2)]
     index = alphabet_permutations.index(start_prefix)
@@ -40,8 +40,8 @@ def generate_code(start,end,prefix):
 
 
 # Example: Generate 10 invite codes with permutations of 2 characters from the alphabet
-# invite_codes_with_prefix = generate_codes_with_prefix('AA',25,30) # mobilendloan
-invite_codes_with_prefix = generate_codes_with_prefix('BY',28,35) # myonlineloanpro
+invite_codes_with_prefix = generate_codes_with_prefix('AA',253,500) # mobilendloan
+# invite_codes_with_prefix = generate_codes_with_prefix('AA',100,500) # myonlineloanpro
 
 # print(f"Total number of codes: {len(invite_codes_with_prefix)}")
 

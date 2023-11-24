@@ -6,12 +6,11 @@ from fake_useragent import UserAgent
 from scraping import name_generator
 from scraping import get_us_state
 
-class Scraper4:
+class Scraper6:
     def __init__(self):
         
-        # https://johnsmith1.moneyladdernow.com
-        self.url = 'moneyladdernow.com'
-        self.table_name = 'scraper4_info'
+        self.url = 'advtrelief.com'
+        self.table_name = 'scraper6_info'
         self.ua = UserAgent()
         print(f"Scraping: {self.url}")
     
@@ -50,6 +49,7 @@ class Scraper4:
         city_el = soup.find(attrs={'name':'city'})['value'] if soup.find(attrs={'name':'city'}) else None
         zip_code_el = soup.find(attrs={'name':'zip_code'})['value'] if soup.find(attrs={'name':'zip_code'}) else None
         state = get_us_state.get_state(str(zip_code_el))
+        print(state)
         state_el = soup.select("#state option[selected]")[1].text if len(soup.select("#state")) > 1 else (state if state else 'NA')
         
         

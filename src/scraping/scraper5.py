@@ -6,12 +6,11 @@ from fake_useragent import UserAgent
 from scraping import name_generator
 from scraping import get_us_state
 
-class Scraper4:
+class Scraper5:
     def __init__(self):
         
-        # https://johnsmith1.moneyladdernow.com
-        self.url = 'moneyladdernow.com'
-        self.table_name = 'scraper4_info'
+        self.url = 'mylibertyone.com'
+        self.table_name = 'scraper5_info'
         self.ua = UserAgent()
         print(f"Scraping: {self.url}")
     
