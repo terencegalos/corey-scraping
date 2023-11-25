@@ -14,6 +14,7 @@ def generate_names(file_path='/root/projects/corey/src/scraping/CommonFirstandLa
         last_names = df_last_names[0].tolist()
         
         start_index = 0
+        start_index_last = 0
         if last_interrupted:
             try:
                 start_index = first_names.index(last_interrupted)

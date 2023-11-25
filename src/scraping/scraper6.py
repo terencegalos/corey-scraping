@@ -77,7 +77,7 @@ class Scraper6:
         results = []
         
         def scrape_single_with_increment(name,num=''):
-            base_url = f"{"".join([text.lower() for text in name.split()])}{num}.{self.url}"
+            base_url = f"{"".join([text.lower() for text in name.split()])}{num if num > 0 else ''}.{self.url}"
             print(base_url)
             result = self.scrape_single(base_url)
             return result
@@ -110,11 +110,11 @@ class Scraper6:
                                 results = []  # Clear the results list after yielding
                         else:
                             print(f'Not available. Stopping...')
-                            # continue_to_next_name = True
+                            continue_to_next_name = True
                             break
                         
-                    # if continue_to_next_name:
-                    if next(num_generator) > 100:
+                    if continue_to_next_name:
+                    # if next(num_generator) > 100:
                         break
                         
         # Yield any remaining results

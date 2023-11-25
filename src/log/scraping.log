@@ -6188,3 +6188,106 @@ Traceback (most recent call last):
     all_name_combinations = [''.join(pair).lower() for pair in list(product(first_names[start_index:],last_names[start_index_last:]))]
                                                                                                                  ^^^^^^^^^^^^^^^^
 UnboundLocalError: cannot access local variable 'start_index_last' where it is not associated with a value
+2023-11-25 07:32:36,438 [ERROR]: An error occurred: cannot access local variable 'start_index_last' where it is not associated with a value
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper8.py", line 76, in scrape_with_names
+    names = name_generator.generate_names()#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/name_generator.py", line 24, in generate_names
+    all_name_combinations = [''.join(pair).lower() for pair in list(product(first_names[start_index:],last_names[start_index_last:]))]
+                                                                                                                 ^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'start_index_last' where it is not associated with a value
+2023-11-25 07:32:53,656 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    # for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 110, in scrape_with_refcodes
+    batch_results = [result for result in list(executor.map(scrape_single_thread,refcodes[i:i+batch_size])) if result is not None]
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 102, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 59, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-11-25 07:48:13,957 [INFO]: package: mysql.connector.plugins
+2023-11-25 07:48:13,958 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 07:48:13,959 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 07:48:13,959 [INFO]: package: mysql.connector.plugins
+2023-11-25 07:48:13,960 [INFO]: plugin_name: mysql_native_password
+2023-11-25 07:48:13,960 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 07:48:26,087 [INFO]: package: mysql.connector.plugins
+2023-11-25 07:48:26,087 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 07:48:26,088 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 07:48:26,089 [INFO]: package: mysql.connector.plugins
+2023-11-25 07:48:26,089 [INFO]: plugin_name: mysql_native_password
+2023-11-25 07:48:26,089 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 07:48:26,095 [ERROR]: An error occurred: 'Scraper1' object has no attribute 'scrape_with_names'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper1' object has no attribute 'scrape_with_names'. Did you mean: 'scrape_with_refcodes'?
+2023-11-25 07:48:35,806 [INFO]: package: mysql.connector.plugins
+2023-11-25 07:48:35,807 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 07:48:35,807 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 07:48:35,808 [INFO]: package: mysql.connector.plugins
+2023-11-25 07:48:35,808 [INFO]: plugin_name: mysql_native_password
+2023-11-25 07:48:35,809 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 07:50:19,879 [INFO]: package: mysql.connector.plugins
+2023-11-25 07:50:19,879 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 07:50:19,880 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 07:50:19,880 [INFO]: package: mysql.connector.plugins
+2023-11-25 07:50:19,881 [INFO]: plugin_name: mysql_native_password
+2023-11-25 07:50:19,881 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 07:59:02,004 [INFO]: package: mysql.connector.plugins
+2023-11-25 07:59:02,004 [INFO]: plugin_name: caching_sha2_password
+2023-11-25 07:59:02,005 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-11-25 07:59:02,005 [INFO]: package: mysql.connector.plugins
+2023-11-25 07:59:02,006 [INFO]: plugin_name: mysql_native_password
+2023-11-25 07:59:02,006 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-11-25 08:47:48,376 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/root/projects/corey/src/scraping/scraper1.py", line 110, in scrape_with_refcodes
+    batch_results = [result for result in list(executor.map(scrape_single_thread,refcodes[i:i+batch_size])) if result is not None]
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 102, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper1.py", line 59, in scrape_single
+    address_el = soup.select_one("#address")['value'] if soup.select_one("#address")['value'] else None
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable

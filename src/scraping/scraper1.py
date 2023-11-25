@@ -10,7 +10,7 @@ class Scraper1:
         self.table_name = "scraped_info"
         self.session = requests.Session()
         self.ua = UserAgent()
-        self.extracted_cookies = 'wc_visitor=78875-0d7b6431-042c-e488-c1aa-48cb92e0d053; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-0d7b6431-042c-e488-c1aa-48cb92e0d053+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-0d7b6431-042c-e488-c1aa-48cb92e0d053+..+; mailer-sessions=s%3AuP5KD1GHwy-tFfXJEr-eKCMABYK9B4WN.6wd4DsxqmiRz9FnQMfmYw4H2Cf7Awupx3LpA0W%2BhIrs'
+        self.extracted_cookies = 'wc_visitor=78875-8e58ea76-7881-1226-5972-32e0d616e201; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2FSimonYarandiN1+..+78875-8e58ea76-7881-1226-5972-32e0d616e201+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-8e58ea76-7881-1226-5972-32e0d616e201+..+; mailer-sessions=s%3A9ySGC3RftATNus3QtBfbZsyeey6wC8pm.f%2BMr49%2FLEfDPJXs5itrGaDP1el4UWdjJO4Yx7QKyLaU'
         print(f"Scraping: {self.url}")
         
     
