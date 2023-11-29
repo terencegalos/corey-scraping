@@ -19,19 +19,18 @@ class Scraper7:
     def scrape_single(self,url):
         
         headers = {
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Language': 'en-US,en;q=0.9',
-            'Sec-Ch-Ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
-            'Sec-Ch-Ua-Mobile': '?0',
-            'Sec-Ch-Ua-Platform': '"Windows"',
-            'Sec-Fetch-Dest': 'document',
-            'Sec-Fetch-Mode': 'navigate',
-            'Sec-Fetch-Site': 'none',
-            'Sec-Fetch-User': '?1',
-            'Upgrade-Insecure-Requests': '1',
-            'User-Agent': self.ua.random
-        }
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "en-US,en;q=0.5",
+        "Connection": "keep-alive",
+        # "Host": "jamesjohnson.24hrwire.com",
+        "Sec-Fetch-Dest": "document",
+        "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-Site": "none",
+        "Sec-Fetch-User": "?1",
+        "Upgrade-Insecure-Requests": "1",
+        "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0"
+    }
 
     
         
@@ -78,7 +77,7 @@ class Scraper7:
         results = []
         
         def scrape_single_with_increment(name,num=''):
-            base_url = f"{"".join([text.lower() for text in name.split()])}{num}.{self.url}"
+            base_url = f"{"".join([text.lower() for text in name.split()])}{num if num > 0 else ''}.{self.url}"
             print(base_url)
             result = self.scrape_single(base_url)
             return result
@@ -94,7 +93,7 @@ class Scraper7:
                
             for name in names:
                 num_generator = generate_numbers()
-                # continue_to_next_name = False
+                continue_to_next_name = False
                 
                 while True:
                     futures = [executor.submit(scrape_single_with_increment, name, num) for num in [next(num_generator) for _ in range(3)] ]
@@ -111,11 +110,11 @@ class Scraper7:
                                 results = []  # Clear the results list after yielding
                         else:
                             print(f'Not available. Stopping...')
-                            # continue_to_next_name = True
+                            continue_to_next_name = True
                             break
                         
-                    # if continue_to_next_name:
-                    if next(num_generator) > 100:
+                    if continue_to_next_name:
+                    # if next(num_generator) > 100:
                         break
                         
         # Yield any remaining results

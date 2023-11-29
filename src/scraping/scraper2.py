@@ -11,7 +11,7 @@ class Scraper2:
         self.table_name = 'scraper2_info'
         self.prefix = 'NA'
         self.ua = UserAgent()
-        self.extracted_cookies = 'wc_visitor=78875-74448616-9a9c-14ef-35ed-2204eeb45d50; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-74448616-9a9c-14ef-35ed-2204eeb45d50+..+; mailer-sessions=s%3ABSA5rvEbbxS9BFcr1Q2YfNtFFt3ESOnO.X9DREjyPnGiKCcyXpPGQGJ7pNRlRjWKlDnqrzaL%2BnbU; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-74448616-9a9c-14ef-35ed-2204eeb45d50+..+'
+        self.extracted_cookies = 'c_visitor=78875-74932f4a-5c70-8ab9-62b3-4f35114ba2d6; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-74932f4a-5c70-8ab9-62b3-4f35114ba2d6+..+; mailer-sessions=s%3A16MCbsGDkLS4ZtlUuWt3tZMO8z6bIDmY.FQFutDm8BmY%2F6iPLSuE91f9B7ZUinUEKYP3Z6hZ2x40; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-74932f4a-5c70-8ab9-62b3-4f35114ba2d6+..+'
         print(f"Scraping: {self.url}")
     
     
@@ -79,7 +79,7 @@ class Scraper2:
     
     def scrape_with_refcodes(self,batch_size=100):
             
-        refcodes = code_generator.generate_code(14773,30000,'NA')
+        refcodes = code_generator.generate_code(34390,200000,'NA')
         print(f"There are {len(refcodes)} refcodes to rotate!")
         # results = []
         

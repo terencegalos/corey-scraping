@@ -10,7 +10,7 @@ class Scraper1:
         self.table_name = "scraped_info"
         self.session = requests.Session()
         self.ua = UserAgent()
-        self.extracted_cookies = 'wc_visitor=78875-8e58ea76-7881-1226-5972-32e0d616e201; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2FSimonYarandiN1+..+78875-8e58ea76-7881-1226-5972-32e0d616e201+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-8e58ea76-7881-1226-5972-32e0d616e201+..+; mailer-sessions=s%3A9ySGC3RftATNus3QtBfbZsyeey6wC8pm.f%2BMr49%2FLEfDPJXs5itrGaDP1el4UWdjJO4Yx7QKyLaU'
+        self.extracted_cookies = 'mailer-sessions=s%3A-xmOYnkEUpr5_faMgi-HKzN7AhNZNnUc.fgKPMZ%2B3eKVo%2Br4%2FUUYO%2FyVxUHLjk5Z43CnLjxXq5PU; wc_visitor=78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+'
         print(f"Scraping: {self.url}")
         
     
@@ -92,7 +92,7 @@ class Scraper1:
 
             
         refcodes = code_generator.invite_codes_with_prefix # last code before error JO0000013
-        # refcodes = code_generator.generate_code(728110,900000,'HA')
+        # refcodes = code_generator.generate_code(1,200000,'HA')
         print(f"There are {len(refcodes)} refcodes to rotate!")
         # results = []
         

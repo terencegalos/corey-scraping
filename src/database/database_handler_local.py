@@ -1,7 +1,7 @@
 import mysql.connector
 
 class DatabaseHandler:
-    def __init__(self,host,user,password,database):
+    def __init__(self,host,user,password,database,table_name):
         # Connection to the database
         self.conn = mysql.connector.connect(
             host=host,
@@ -13,8 +13,8 @@ class DatabaseHandler:
         self.cursor = self.conn.cursor()
         
         # Create a table
-        self.cursor.execute('''
-                            CREATE TABLE IF NOT EXISTS scraped_info_1 (
+        self.cursor.execute(f'''
+                            CREATE TABLE IF NOT EXISTS {table_name} (
                                 id INT PRIMARY KEY AUTO_INCREMENT,
                                 first_name VARCHAR(255),
                                 last_name VARCHAR(255),
@@ -28,12 +28,12 @@ class DatabaseHandler:
         # Commit
         self.conn.commit()
         
-    def store_data(self,table_name="scraped_info_1",data_list=[]):
+    def store_data(self,table_name,data_list=[]):
         
         # Insert data into the database
         for data in data_list:
             self.cursor.execute(f'''
-                                INSERT INTO scraped_info_1 (first_name,last_name,address,city,state,zip_code)
+                                INSERT INTO {table_name} (first_name,last_name,address,city,state,zip_code)
                                 VALUES (%s,%s,%s,%s,%s,%s)
                                 ''', (data['first_name'], data['last_name'], data['address'], data['city'], data['state'], data['zip_code']))
 

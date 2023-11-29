@@ -6,11 +6,12 @@ from fake_useragent import UserAgent
 from scraping import name_generator
 from scraping import get_us_state
 
-class Scraper6:
+class Scraper12:
     def __init__(self):
         
-        self.url = 'advtrelief.com'
-        self.table_name = 'scraper6_info'
+        self.url = 'advrelief.com'
+        self.table_name = 'scraper12_info'
+        
         self.ua = UserAgent()
         print(f"Scraping: {self.url}")
     
@@ -45,9 +46,9 @@ class Scraper6:
         #Extract relevant data from the HTML using BeautifulSoup methods
         first_name_el = soup.find(attrs={'name':'first_name'})['value'] if soup.find(attrs={'name':'first_name'}) else None
         last_name_el = soup.find(attrs={'name':'last_name'})['value'] if soup.find(attrs={'name':'last_name'}) else None
-        address_el = soup.find(attrs={'name':'address'})['value'] if soup.find(attrs={'name':'address'}) else None
+        address_el = soup.find(attrs={'name':'street'})['value'] if soup.find(attrs={'name':'street'}) else None
         city_el = soup.find(attrs={'name':'city'})['value'] if soup.find(attrs={'name':'city'}) else None
-        zip_code_el = soup.find(attrs={'name':'zip_code'})['value'] if soup.find(attrs={'name':'zip_code'}) else None
+        zip_code_el = soup.find(attrs={'name':'zip'})['value'] if soup.find(attrs={'name':'zip'}) else None
         state = get_us_state.get_state(str(zip_code_el))
         print(state)
         state_el = soup.select("#state option[selected]")[1].text if len(soup.select("#state")) > 1 else (state if state else 'NA')
@@ -72,13 +73,14 @@ class Scraper6:
     
     def scrape_with_names(self,batch_size=100,num_threads=3):
         
-        names = name_generator.generate_names()
+        names = name_generator.generate_names()#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
+        # print(names)
         print(f"There {len(names)} names to rotate!")
         results = []
         
         def scrape_single_with_increment(name,num=''):
             base_url = f"{"".join([text.lower() for text in name.split()])}{num if num > 0 else ''}.{self.url}"
-            print(base_url)
+            print(f"Base url: {base_url}")
             result = self.scrape_single(base_url)
             return result
         

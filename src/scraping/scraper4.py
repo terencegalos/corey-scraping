@@ -35,7 +35,7 @@ class Scraper4:
 
     
         
-        response = requests.get(f"https://{url}", headers=headers, allow_redirects=True)
+        response = requests.get(f"https://{url}",headers=headers, allow_redirects=True)
         # print(response.text)
         
         

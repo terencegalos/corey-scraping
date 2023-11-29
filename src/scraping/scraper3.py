@@ -1,20 +1,25 @@
 import requests, time, re
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
-from requests_html import HTMLSession
+# from requests_html import HTMLSession
 import concurrent.futures
+from fake_useragent import UserAgent
 
 from scraping import code_generator
 
 class Scraper3:
     def __init__(self):
-        print("***Scraping xmydebt.com")
         
         # self.url = 'https://xmydebt.com/'
+        # self.url = 'https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011'
         self.url = 'https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d'
         self.table_name = 'scraper3_info'
         self.session = requests.Session()
         self.ua = UserAgent()
+        self.extracted_cookie = 'AWSALB=2m8HZWBCTk7XvHr+D4oAg84MSY0oruJ3KXSoFGSUTovL8rhmyAw2u6fO7Iyj9JZRDNNtvDSd42d9w0+95tyT1eTgifCfffcZuV9HjGZsuAElnnTR+jwtvsRsvy2M; AWSALBCORS=2m8HZWBCTk7XvHr+D4oAg84MSY0oruJ3KXSoFGSUTovL8rhmyAw2u6fO7Iyj9JZRDNNtvDSd42d9w0+95tyT1eTgifCfffcZuV9HjGZsuAElnnTR+jwtvsRsvy2M; cbParamList=90T6662Z4CVGSY58JMQOX2MPRU80PX8WHT8ZZEH8W1354A4FH95V2XU4JR8DF5H62Q7F0S7D591F8S6I370YXTBDQ029O63YQL024Z6446O2S2DW875XN366IHM79073; cbCookieAccepted=1'
+        self.ua = UserAgent()
+
+        print(self.url)
         
     
     
@@ -23,31 +28,38 @@ class Scraper3:
     
         
         headers = {
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Language': 'en-US,en;q=0.9',
-            'Cache-Control': 'max-age=0',
-            'Content-Length': '550',
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Cookie': 'cbCookieAccepted=1; cbParamList=11MZI7C6436FO5TEAG334BXBC8VDFVGP9504KB492I24JCBM337K94061O8549WF43YUSS3C2W94JC78J09SH8C76W42FC72RQ4XQUMXRC72UMP96QE016390HD8B64F; AWSALB=qLXTAEvN2wHYJM8Lg5PsZGUXBDtExFr2MV0c06QSKt0PeDOHGJIVHqP4ufy4woi5dN0WM0j0x5lA8A2ZNwePoX9gmfNO675E/x76L/oXSshhFjV+8J0liuBcWzEb; AWSALBCORS=qLXTAEvN2wHYJM8Lg5PsZGUXBDtExFr2MV0c06QSKt0PeDOHGJIVHqP4ufy4woi5dN0WM0j0x5lA8A2ZNwePoX9gmfNO675E/x76L/oXSshhFjV+8J0liuBcWzEb',
-            'Origin': 'https://c0hcb177.caspio.com',
-            'Referer': 'https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011',
-            'Sec-Ch-Ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
-            'Sec-Ch-Ua-Mobile': '?0',
-            'Sec-Ch-Ua-Platform': '"Windows"',
-            'Sec-Fetch-Dest': 'document',
-            'Sec-Fetch-Mode': 'navigate',
-            'Sec-Fetch-Site': 'same-origin',
-            'Upgrade-Insecure-Requests': '1',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0'
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Accept-Language": "en-US,en;q=0.5",
+            "Connection": "keep-alive",
+            "Cookie": self.extracted_cookie,
+            "DNT": "1",
+            "Host": "c0hcb177.caspio.com",
+            "Origin": "https://c0hcb177.caspio.com",
+            "Referer": f'{self.url}?RefCode={data['refCode']}',
+            "Sec-Fetch-Dest": "document",
+            "Sec-Fetch-Mode": "navigate",
+            "Sec-Fetch-Site": "same-origin",
+            "Sec-Fetch-User" :"?1",
+            "Sec-GPC": "1",
+            "TE": "trailers",
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0"
         }
 
 
 
 
-        session = HTMLSession()
-        response = session.post(f'{url}?RefCode={data['refCode']}',headers=headers,allow_redirects=True)
+        # session = HTMLSession()
+        response = self.session.get(f'{url}?RefCode={data['refCode']}',headers=headers,allow_redirects=True)
         print(response.headers)
+        print("***")
+        print(response.text)
+
+        
+        response = self.session.post(f'{url}?RefCode={data['refCode']}',headers=headers,allow_redirects=True)
+        print(response.headers)
+        print("***")
         print(response.text)
         
         # print(f'{url}?RefCode={data['refCode']}')
