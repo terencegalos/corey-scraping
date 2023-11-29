@@ -1,4 +1,5 @@
-import requests
+import requests, time
+from requests.cookies import RequestsCookieJar
 from itertools import cycle
 from bs4 import BeautifulSoup
 import concurrent.futures
@@ -11,10 +12,24 @@ class Scraper2:
         self.table_name = 'scraper2_info'
         self.prefix = 'NA'
         self.ua = UserAgent()
-        self.extracted_cookies = 'c_visitor=78875-74932f4a-5c70-8ab9-62b3-4f35114ba2d6; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-74932f4a-5c70-8ab9-62b3-4f35114ba2d6+..+; mailer-sessions=s%3A16MCbsGDkLS4ZtlUuWt3tZMO8z6bIDmY.FQFutDm8BmY%2F6iPLSuE91f9B7ZUinUEKYP3Z6hZ2x40; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-74932f4a-5c70-8ab9-62b3-4f35114ba2d6+..+'
+        self.extracted_cookies = 'mailer-sessions=s%3A4HotEr_jjJqS4IPaHUs6-XQGeTj99zYu.TQwCDAJPl4It4s1qOY8zm5xsjIQ7xTK7dO3%2BOWjXXTw; wc_visitor=78875-ca344adb-bd39-5fa8-84c6-f7dfbfa90607; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-ca344adb-bd39-5fa8-84c6-f7dfbfa90607+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-ca344adb-bd39-5fa8-84c6-f7dfbfa90607+..+'
+        self.jar = RequestsCookieJar()
         print(f"Scraping: {self.url}")
     
-    
+
+    def str_to_cookies(self,cookie_str):
+        cookies = cookie_str.split(';')
+        for cookie in cookies:
+            name,value = cookie.strip().split("=")
+            self.jar.set(name,value)
+
+
+    def renew_cookies(self):
+        response = requests.get(self.url)
+        for name,value in response.cookies.items:
+            self.jar.set(name,value)
+
+
     def scrape_single(self,url,data):
         
         headers = {
@@ -22,7 +37,7 @@ class Scraper2:
             'Accept-Encoding': 'gzip, deflate, br',
             'Accept-Language': 'en-US,en;q=0.9',
             'Connection': 'keep-alive',
-            'Cookie': self.extracted_cookies,
+            # 'Cookie': self.extracted_cookies,
             'Host': 'myonlineloanpro.com',
             'If-Modified-Since': 'Tue, 12 Sep 2023 23:46:34 GMT',
             'If-None-Match': 'W/"f5-18a8bca20f1"',
@@ -36,12 +51,20 @@ class Scraper2:
             'User-Agent': self.ua.random
         }
 
+        self.str_to_cookies(self.extracted_cookies)
+
+        # Check cookies
+        for cookie in self.jar:
+            if cookie.expires and cookie.expires < time.time():
+                self.renew_cookies()
+                break
+
 
 
 
                 
         
-        response = requests.post(url, headers=headers, data=data, allow_redirects=True)
+        response = requests.post(url, headers=headers,cookies=self.jar, data=data, allow_redirects=True)
         # print(response.text)
         
         
@@ -79,7 +102,7 @@ class Scraper2:
     
     def scrape_with_refcodes(self,batch_size=100):
             
-        refcodes = code_generator.generate_code(34390,200000,'NA')
+        refcodes = code_generator.generate_code(1,200000,'NA')
         print(f"There are {len(refcodes)} refcodes to rotate!")
         # results = []
         

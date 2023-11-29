@@ -17,20 +17,23 @@ class Scraper7:
     
     
     def scrape_single(self,url):
-        
+
         headers = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Encoding": "gzip, deflate, br",
         "Accept-Language": "en-US,en;q=0.5",
         "Connection": "keep-alive",
-        # "Host": "jamesjohnson.24hrwire.com",
+        "DNT": "1",
+        "Host": f"{url.split('.')[0]}.24hrwire.com",
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
+        "Sec-GPC": "1",
         "Upgrade-Insecure-Requests": "1",
-        "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0"
+        "User-Agent": self.ua.random
     }
+
 
     
         
@@ -50,13 +53,15 @@ class Scraper7:
         zip_code_el = soup.find(attrs={'name':'zip'})['value'] if soup.find(attrs={'name':'zip'}) else None
         state = get_us_state.get_state(str(zip_code_el))
         print(state)
-        state_el = soup.select("#state option[selected]")[1].text if len(soup.select("#state")) > 1 else (state if state else 'NA')
+        # state_el = soup.select("#state option[selected]")[1].text if len(soup.select("#state option")) > 1 else (state if state else 'NA')
+
+        print(first_name_el,last_name_el,address_el,city_el,zip_code_el,state)
         
         
     
         # Check if any value is None, if yes, return None
-        if any(value is None for value in [first_name_el, last_name_el, address_el, city_el, state_el, zip_code_el]):
-            return None        
+        if any(value is None for value in [first_name_el, last_name_el, address_el, city_el, zip_code_el]):
+            return None
         
         
         # Return the scraped data as dictionary        
@@ -65,7 +70,7 @@ class Scraper7:
             'last_name' : last_name_el,
             'address' : address_el,
             'city' : city_el,
-            'state' : state_el,
+            'state' : state,
             'zip_code' : zip_code_el
         }
         

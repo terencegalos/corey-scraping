@@ -66,7 +66,7 @@ class Scraper11:
             'last_name' : last_name_el,
             'address' : address_el,
             'city' : city_el,
-            'state' : state_el,
+            'state' : state,
             'zip_code' : zip_code_el
         }
         

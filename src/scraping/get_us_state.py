@@ -175,7 +175,7 @@ def get_state(zip_string):
         print('No state found matching', zip_code)
 
     # Return `state` for the full name or `st` for the postal abbreviation
-    return st
+    return state
 
 # Example usage:
 # zipcode_input = "33716"

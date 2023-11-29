@@ -10,9 +10,9 @@ from scraping import code_generator
 class Scraper3:
     def __init__(self):
         
-        # self.url = 'https://xmydebt.com/'
+        self.url = 'https://xmydebt.com/'
         # self.url = 'https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011'
-        self.url = 'https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d'
+        # self.url = 'https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d'
         self.table_name = 'scraper3_info'
         self.session = requests.Session()
         self.ua = UserAgent()
@@ -25,39 +25,29 @@ class Scraper3:
     
     def scrape_single(self,url,data):
         
-    
-        
         headers = {
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
             "Accept-Encoding": "gzip, deflate, br",
             "Accept-Language": "en-US,en;q=0.5",
             "Connection": "keep-alive",
-            "Cookie": self.extracted_cookie,
             "DNT": "1",
             "Host": "c0hcb177.caspio.com",
-            "Origin": "https://c0hcb177.caspio.com",
-            "Referer": f'{self.url}?RefCode={data['refCode']}',
+            "Referer": "https://xmydebt.com/",
             "Sec-Fetch-Dest": "document",
             "Sec-Fetch-Mode": "navigate",
-            "Sec-Fetch-Site": "same-origin",
-            "Sec-Fetch-User" :"?1",
+            "Sec-Fetch-Site": "cross-site",
+            "Sec-Fetch-User": "?1",
             "Sec-GPC": "1",
-            "TE": "trailers",
             "Upgrade-Insecure-Requests": "1",
-            "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0"
+            "User-Agent": self.ua.random
         }
+
 
 
 
 
         # session = HTMLSession()
         response = self.session.get(f'{url}?RefCode={data['refCode']}',headers=headers,allow_redirects=True)
-        print(response.headers)
-        print("***")
-        print(response.text)
-
-        
-        response = self.session.post(f'{url}?RefCode={data['refCode']}',headers=headers,allow_redirects=True)
         print(response.headers)
         print("***")
         print(response.text)

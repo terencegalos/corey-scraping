@@ -50,12 +50,12 @@ class Scraper4:
         city_el = soup.find(attrs={'name':'city'})['value'] if soup.find(attrs={'name':'city'}) else None
         zip_code_el = soup.find(attrs={'name':'zip_code'})['value'] if soup.find(attrs={'name':'zip_code'}) else None
         state = get_us_state.get_state(str(zip_code_el))
-        state_el = soup.select("#state option[selected]")[1].text if len(soup.select("#state")) > 1 else (state if state else 'NA')
+        # state_el = soup.select("#state option[selected]")[1].text if len(soup.select("#state")) > 1 else (state if state else 'NA')
         
         
     
         # Check if any value is None, if yes, return None
-        if any(value is None for value in [first_name_el, last_name_el, address_el, city_el, state_el, zip_code_el]):
+        if any(value is None for value in [first_name_el, last_name_el, address_el, city_el, zip_code_el]):
             return None        
         
         
@@ -65,7 +65,7 @@ class Scraper4:
             'last_name' : last_name_el,
             'address' : address_el,
             'city' : city_el,
-            'state' : state_el,
+            'state' : state,
             'zip_code' : zip_code_el
         }
         

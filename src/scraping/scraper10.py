@@ -46,9 +46,9 @@ class Scraper10:
         #Extract relevant data from the HTML using BeautifulSoup methods
         first_name_el = soup.find(attrs={'name':'first_name'})['value'] if soup.find(attrs={'name':'first_name'}) else None
         last_name_el = soup.find(attrs={'name':'last_name'})['value'] if soup.find(attrs={'name':'last_name'}) else None
-        address_el = soup.find(attrs={'name':'street'})['value'] if soup.find(attrs={'name':'street'}) else None
+        address_el = soup.find(attrs={'name':'address'})['value'] if soup.find(attrs={'name':'address'}) else None
         city_el = soup.find(attrs={'name':'city'})['value'] if soup.find(attrs={'name':'city'}) else None
-        zip_code_el = soup.find(attrs={'name':'zip'})['value'] if soup.find(attrs={'name':'zip'}) else None
+        zip_code_el = soup.find(attrs={'name':'zip_code'})['value'] if soup.find(attrs={'name':'zip_code'}) else None
         state = get_us_state.get_state(str(zip_code_el))
         print(state)
         state_el = soup.select("#state option[selected]")[1].text if len(soup.select("#state")) > 1 else (state if state else 'NA')
@@ -56,7 +56,7 @@ class Scraper10:
         
     
         # Check if any value is None, if yes, return None
-        if any(value is None for value in [first_name_el, last_name_el, address_el, city_el, state_el, zip_code_el]):
+        if any(value is None for value in [first_name_el, last_name_el, address_el, city_el, zip_code_el]):
             return None        
         
         
@@ -66,7 +66,7 @@ class Scraper10:
             'last_name' : last_name_el,
             'address' : address_el,
             'city' : city_el,
-            'state' : state_el,
+            'state' : state,
             'zip_code' : zip_code_el
         }
         
