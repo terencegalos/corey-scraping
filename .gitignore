@@ -2,3 +2,4 @@
 db_config.py
 db_config_local.py
 main_test.py
+proxy_config.py
