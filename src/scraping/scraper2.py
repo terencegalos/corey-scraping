@@ -5,6 +5,9 @@ from bs4 import BeautifulSoup
 import concurrent.futures
 from fake_useragent import UserAgent
 from scraping import code_generator
+from config import proxies
+
+proxies = proxies.proxy_dict
 
 class Scraper2:
     def __init__(self):
@@ -12,7 +15,7 @@ class Scraper2:
         self.table_name = 'scraper2_info'
         self.prefix = 'NA'
         self.ua = UserAgent()
-        self.extracted_cookies = 'mailer-sessions=s%3A4HotEr_jjJqS4IPaHUs6-XQGeTj99zYu.TQwCDAJPl4It4s1qOY8zm5xsjIQ7xTK7dO3%2BOWjXXTw; wc_visitor=78875-ca344adb-bd39-5fa8-84c6-f7dfbfa90607; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-ca344adb-bd39-5fa8-84c6-f7dfbfa90607+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-ca344adb-bd39-5fa8-84c6-f7dfbfa90607+..+'
+        self.extracted_cookies = 'mailer-sessions=s%3AhmqlDOakqu4qpvvxcMLdpdwfcKRVT33Q.Hd%2Bf0A6xIZ53HHdc54oZ5LuBstAdcH4cVVbkAQzBR1A; wc_visitor=78875-380d3f17-fbaa-1a78-0931-f4889472a8c1; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-380d3f17-fbaa-1a78-0931-f4889472a8c1+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-380d3f17-fbaa-1a78-0931-f4889472a8c1+..+'
         self.jar = RequestsCookieJar()
         print(f"Scraping: {self.url}")
     
@@ -54,17 +57,17 @@ class Scraper2:
         self.str_to_cookies(self.extracted_cookies)
 
         # Check cookies
-        for cookie in self.jar:
-            if cookie.expires and cookie.expires < time.time():
-                self.renew_cookies()
-                break
+        # for cookie in self.jar:
+        #     if cookie.expires and cookie.expires < time.time():
+        #         self.renew_cookies()
+        #         break
 
 
 
 
                 
         
-        response = requests.post(url, headers=headers,cookies=self.jar, data=data, allow_redirects=True)
+        response = requests.post(url, headers=headers,cookies=self.jar, data=data, proxies=proxies, allow_redirects=True)
         # print(response.text)
         
         
