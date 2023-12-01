@@ -80,6 +80,7 @@ class Scraper18:
     def scrape_with_names(self,batch_size=100,num_threads=3):
         
         names = name_generator.generate_names()#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
+        # names_foreign = name_generator.generate_names('/root/scraping/corey-scraping/src/scraping/ForeignFirstandLast.ods')
         # print(names)
         print(f"There {len(names)} names to rotate!")
         results = []
