@@ -1,6 +1,14 @@
-# from scraping.scraper1_threading import Scraper1 as Scraper
-from scraping.scraper1_threading import Scraper4 as Scraper
-# from scraping.scraper2 import Scraper2
+import sys,importlib
+
+num_scraper = sys.argv[1]
+
+module_name = f'scraping.scraper{num_scraper}'
+Scraper = getattr(importlib.import_module(module_name),f'Scraper{num_scraper}')
+
+# from scraping.scraper1 import Scraper1 as Scraper
+# from scraping.scraper2 import Scraper2 as Scraper
+# from scraping.scraper4 import Scraper4 as Scraper
+
 from database.database_handler import DatabaseHandler
 from config.db_config import DB_CONFIG
 from log.logger_config import configure_logger
@@ -12,6 +20,8 @@ def main():
     # Configure logger
     configure_logger()
     logger = logging.getLogger(__name__)
+
+    last_sent_refcode = None
     
     try:
         # Instantiate scraper
@@ -27,7 +37,9 @@ def main():
         )
         
         # Scrape data in batches
+        # for batch_results in scraper.scrape():
         for batch_results in scraper.scrape_with_refcodes():
+        # for batch_results in scraper.scrape_with_names():
             # Store data in the db
             print(batch_results)
             print("Storing batch to database...")
@@ -36,6 +48,7 @@ def main():
         logger.info("Scraping and storing data completed successfully.")
     except Exception as e:
         logger.error(f"An error occurred: {str(e)}",exc_info=True)
+        print(f'Last sent refcode before the error: {last_sent_refcode}')
     finally:
         # Close the db connection
         db_handler.close_connection()

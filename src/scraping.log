@@ -370,3 +370,118 @@ Traceback (most recent call last):
     cookiejar.set_cookie(create_cookie(name, cookie_dict[name]))
                                              ~~~~~~~~~~~^^^^^^
 TypeError: string indices must be integers, not 'str'
+2023-11-30 18:45:51,017 [ERROR]: An error occurred: 'Scraper4' object has no attribute 'scrape_with_refcodes'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper4' object has no attribute 'scrape_with_refcodes'. Did you mean: 'scrape_with_names'?
+2023-11-30 18:46:02,414 [INFO]: Scraping and storing data completed successfully.
+2023-11-30 19:56:35,181 [INFO]: Scraping and storing data completed successfully.
+2023-11-30 20:01:05,199 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 42, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_local.py", line 34, in store_data
+    for data in data_list:
+TypeError: 'NoneType' object is not iterable
+2023-12-01 18:58:58,557 [ERROR]: An error occurred: 'Scraper2' object has no attribute 'scrape_with_names'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 46, in main
+    for batch_results in scraper.scrape_with_names():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper2' object has no attribute 'scrape_with_names'. Did you mean: 'scrape_with_refcodes'?
+2023-12-01 18:59:37,811 [ERROR]: An error occurred: 'Scraper2' object has no attribute 'scrape'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 47, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^
+AttributeError: 'Scraper2' object has no attribute 'scrape'. Did you mean: 'scraper'?
+2023-12-01 18:59:51,488 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 47, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2023-12-01 19:15:14,397 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 47, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2023-12-01 19:39:48,426 [ERROR]: An error occurred: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 51, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_local.py", line 38, in store_data
+    ''', (data['first_name'], data['last_name'], data['address'], data['city'], data['state'], data['zip_code']))
+          ~~~~^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2023-12-01 19:55:12,416 [ERROR]: An error occurred: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 51, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_local.py", line 38, in store_data
+    ''', (data['first_name'], data['last_name'], data['address'], data['city'], data['state'], data['zip_code']))
+          ~~~~^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2023-12-01 20:00:23,745 [ERROR]: An error occurred: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 51, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_local.py", line 38, in store_data
+    ''', (data['first_name'], data['last_name'], data['address'], data['city'], data['state'], data['zip_code']))
+          ~~~~^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2023-12-01 20:29:55,737 [ERROR]: An error occurred: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 51, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_local.py", line 38, in store_data
+    ''', (data['first_name'], data['last_name'], data['address'], data['city'], data['state'], data['zip_code']))
+          ~~~~^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2023-12-01 20:41:30,801 [ERROR]: An error occurred: 'method' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 33, in main
+    scraper = Scraper()
+              ^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 24, in __init__
+    self.renew_cookies()
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 37, in renew_cookies
+    for name,value in response.cookies.items:
+TypeError: 'method' object is not iterable
+2023-12-01 20:42:22,293 [ERROR]: An error occurred: 'method' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 33, in main
+    scraper = Scraper()
+              ^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 24, in __init__
+    self.renew_cookies()
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 38, in renew_cookies
+    for name,value in response.cookies.items:
+TypeError: 'method' object is not iterable
+2023-12-01 20:42:57,639 [ERROR]: An error occurred: 'method' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 33, in main
+    scraper = Scraper()
+              ^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 24, in __init__
+    self.renew_cookies()
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 38, in renew_cookies
+    for name,value in response.cookies.items:
+TypeError: 'method' object is not iterable
+2023-12-01 20:44:06,853 [ERROR]: An error occurred: 'method' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 33, in main
+    scraper = Scraper()
+              ^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 25, in __init__
+    self.renew_cookies()
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 39, in renew_cookies
+    for name,value in response.cookies.items:
+TypeError: 'method' object is not iterable
+2023-12-01 20:44:32,330 [ERROR]: An error occurred: object of type 'generator' has no len()
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 51, in main
+    if len(batch_results) == 0:
+       ^^^^^^^^^^^^^^^^^^
+TypeError: object of type 'generator' has no len()

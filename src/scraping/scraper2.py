@@ -1,4 +1,7 @@
 import requests, time
+from requests.exceptions import ConnectTimeout
+from requests.exceptions import SSLError
+from requests.exceptions import HTTPError
 from requests.cookies import RequestsCookieJar
 from itertools import cycle
 from bs4 import BeautifulSoup
@@ -12,12 +15,15 @@ proxies = proxies.proxy_dict
 class Scraper2:
     def __init__(self):
         self.url = 'https://myonlineloanpro.com/'
+        print(f"Scraping: {self.url}")
         self.table_name = 'scraper2_info'
         self.prefix = 'NA'
         self.ua = UserAgent()
-        self.extracted_cookies = 'mailer-sessions=s%3AhmqlDOakqu4qpvvxcMLdpdwfcKRVT33Q.Hd%2Bf0A6xIZ53HHdc54oZ5LuBstAdcH4cVVbkAQzBR1A; wc_visitor=78875-380d3f17-fbaa-1a78-0931-f4889472a8c1; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-380d3f17-fbaa-1a78-0931-f4889472a8c1+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-380d3f17-fbaa-1a78-0931-f4889472a8c1+..+'
-        self.jar = RequestsCookieJar()
-        print(f"Scraping: {self.url}")
+        self.session = requests.Session()
+        # self.extracted_cookies = 'mailer-sessions=s%3AuB3PbvKyVRwJqFWh-8ZxfOIfxB_RKcGH.kZc8Aau6zKLPy24aDSW%2F63C1eOwm%2FTCs3ghQJOSgmTA; wc_visitor=78875-a3f785a4-f143-dbcd-e9b1-72d2a0c381d2; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-a3f785a4-f143-dbcd-e9b1-72d2a0c381d2+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmyonlineloanpro.com%2F+..+78875-a3f785a4-f143-dbcd-e9b1-72d2a0c381d2+..+'
+        self.jar = RequestsCookieJar()        
+        self.renew_cookies()
+        self.last_time_check = time.time()
     
 
     def str_to_cookies(self,cookie_str):
@@ -28,8 +34,10 @@ class Scraper2:
 
 
     def renew_cookies(self):
-        response = requests.get(self.url)
-        for name,value in response.cookies.items:
+        print(f'Renewing cookies...')
+        response = self.session.get(self.url)
+        print(f'Cookies: {response.cookies.items()}')
+        for name,value in response.cookies.items():
             self.jar.set(name,value)
 
 
@@ -54,7 +62,7 @@ class Scraper2:
             'User-Agent': self.ua.random
         }
 
-        self.str_to_cookies(self.extracted_cookies)
+        # self.str_to_cookies(self.extracted_cookies)
 
         # Check cookies
         # for cookie in self.jar:
@@ -65,9 +73,20 @@ class Scraper2:
 
 
 
-                
-        
-        response = requests.post(url, headers=headers,cookies=self.jar, data=data, proxies=proxies, allow_redirects=True)
+        max_attempts = 5
+
+        for attempt in range(max_attempts):
+            try:
+                response = self.session.post(url, headers=headers,cookies=self.jar, data=data, proxies=proxies, allow_redirects=True)
+                response.raise_for_status() # Raises a HTTPError if the status if 4xx, 5xx
+                break
+            except (ConnectTimeout,ConnectionError,SSLError,HTTPError) as e:
+                print(f'Connecting to {url} failed. Pausing for 20 sec before reconnecting...')
+                time.sleep(1)
+                if attempt < max_attempts -1:
+                    continue
+                else:
+                    raise
         # print(response.text)
         
         
@@ -105,13 +124,14 @@ class Scraper2:
     
     def scrape_with_refcodes(self,batch_size=100):
             
-        refcodes = code_generator.generate_code(1,200000,'NA')
+        refcodes = code_generator.generate_code(1,1000000,'NA') #207593
         print(f"There are {len(refcodes)} refcodes to rotate!")
         # results = []
         
         def scrape_single_thread(refcode):
             print(f"Refcode : {refcode}")
             data = {'refCode':refcode}
+            last_sent_refcode = refcode
             result = self.scrape_single(self.url,data)
             print(result)
             if result is not None:
@@ -122,5 +142,13 @@ class Scraper2:
             
         with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
             for i in range(0,len(refcodes),batch_size):
+                now = time.time()
+                if now-self.last_time_check > 180:
+                    print('Cookies expired.')
+                    self.renew_cookies()
+                    time.sleep(1)
                 batch_results = [result for result in executor.map(scrape_single_thread,refcodes[i:i+batch_size]) if result is not None]
                 yield batch_results
+
+    def scrape(self):
+        yield self.scrape_with_refcodes()

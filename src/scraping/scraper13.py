@@ -1,4 +1,4 @@
-import requests
+import requests, time
 from bs4 import BeautifulSoup
 import concurrent.futures
 from fake_useragent import UserAgent
@@ -9,7 +9,7 @@ from scraping import get_us_state
 class Scraper13:
     def __init__(self):
         
-        self.url = 'advtrelief.com'
+        self.url = 'advworks4u.com'
         self.table_name = 'scraper13_info'
         
         self.ua = UserAgent()
@@ -35,7 +35,13 @@ class Scraper13:
 
     
         
-        response = requests.get(f"https://{url}", headers=headers, allow_redirects=True)
+        try:
+            response = requests.get(f"https://{url}", headers=headers, allow_redirects=True)
+        except ConnectionError as e:
+            print(f'Connecting failed to {url}. Error: {e}\nReconnecting in 20 secs...')
+            time.sleep(20)
+            response = requests.get(f"https://{url}", headers=headers, allow_redirects=True)
+
         # print(response.text)
         
         
