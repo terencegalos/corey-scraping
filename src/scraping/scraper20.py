@@ -1,4 +1,5 @@
 import requests, time
+from requests.exceptions import ConnectionError
 from bs4 import BeautifulSoup
 import concurrent.futures
 from fake_useragent import UserAgent

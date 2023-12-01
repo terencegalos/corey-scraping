@@ -7,11 +7,11 @@ from fake_useragent import UserAgent
 from scraping import name_generator
 from scraping import get_us_state
 
-class Scraper19:
+class Scraper24:
     def __init__(self):
         
-        self.url = 'getadgnow.com'
-        self.table_name = 'scraper19_info'
+        self.url = 'getbenefit1st.com'
+        self.table_name = 'scraper24_info'
         
         self.ua = UserAgent()
         print(f"Scraping: {self.url}")
