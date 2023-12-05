@@ -1,4 +1,5 @@
 import requests, time, re
+from requests.cookies import RequestsCookieJar
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 # from requests_html import HTMLSession
@@ -10,21 +11,34 @@ from scraping import code_generator
 class Scraper3:
     def __init__(self):
         
-        self.url = 'https://xmydebt.com/'
-        # self.url = 'https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011'
-        # self.url = 'https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d'
+        # self.url = 'xmydebt.com'
+        self.url = 'https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d'
+        self.bridge = 'https://c0hcb177.caspio.com'
         self.table_name = 'scraper3_info'
         self.session = requests.Session()
+        self.jar = RequestsCookieJar()
         self.ua = UserAgent()
         self.extracted_cookie = 'AWSALB=2m8HZWBCTk7XvHr+D4oAg84MSY0oruJ3KXSoFGSUTovL8rhmyAw2u6fO7Iyj9JZRDNNtvDSd42d9w0+95tyT1eTgifCfffcZuV9HjGZsuAElnnTR+jwtvsRsvy2M; AWSALBCORS=2m8HZWBCTk7XvHr+D4oAg84MSY0oruJ3KXSoFGSUTovL8rhmyAw2u6fO7Iyj9JZRDNNtvDSd42d9w0+95tyT1eTgifCfffcZuV9HjGZsuAElnnTR+jwtvsRsvy2M; cbParamList=90T6662Z4CVGSY58JMQOX2MPRU80PX8WHT8ZZEH8W1354A4FH95V2XU4JR8DF5H62Q7F0S7D591F8S6I370YXTBDQ029O63YQL024Z6446O2S2DW875XN366IHM79073; cbCookieAccepted=1'
         self.ua = UserAgent()
 
         print(self.url)
-        
+
+    def str_to_cookies(self,cookie_str):
+        cookies = cookie_str.split(";")
+        for cookie in cookies:
+            name,value = cookie.strip().split("=")
+            self.jar.set(name,value)
+
+    def renew_cookies(self):
+        print(f'Renewing cookies...')
+        response = self.session.get(self.url)
+        print(f'{response.cookies.items()}')
+        for name,value in response.cookies.items():
+            self.jar.set(name,value)
     
     
     def scrape_single(self,url,data):
-        
+
         headers = {
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
             "Accept-Encoding": "gzip, deflate, br",
@@ -32,25 +46,21 @@ class Scraper3:
             "Connection": "keep-alive",
             "DNT": "1",
             "Host": "c0hcb177.caspio.com",
-            "Referer": "https://xmydebt.com/",
             "Sec-Fetch-Dest": "document",
             "Sec-Fetch-Mode": "navigate",
-            "Sec-Fetch-Site": "cross-site",
+            "Sec-Fetch-Site": "none",
             "Sec-Fetch-User": "?1",
             "Sec-GPC": "1",
             "Upgrade-Insecure-Requests": "1",
-            "User-Agent": self.ua.random
+            "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0"
         }
+        
 
-
-
-
-
-        # session = HTMLSession()
-        response = self.session.get(f'{url}?RefCode={data['refCode']}',headers=headers,allow_redirects=True)
+        response = self.session.post(f'https://{url}',data=data, headers=headers, allow_redirects=True)
+        print(response.status_code)
         print(response.headers)
-        print("***")
-        print(response.text)
+        # print("***")
+        # print(response.text)
         
         # print(f'{url}?RefCode={data['refCode']}')
         # response = requests.post(f'{url}?RefCode={data['refCode']}',allow_redirects=True)

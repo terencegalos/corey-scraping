@@ -485,3 +485,829 @@ Traceback (most recent call last):
     if len(batch_results) == 0:
        ^^^^^^^^^^^^^^^^^^
 TypeError: object of type 'generator' has no len()
+2023-12-04 08:24:27,315 [ERROR]: An error occurred: 'Scraper29' object has no attribute 'scrape_with_refcodes'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 45, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper29' object has no attribute 'scrape_with_refcodes'. Did you mean: 'scrape_with_names'?
+2023-12-04 09:00:09,677 [ERROR]: An error occurred: 'Scraper2' object has no attribute 'scrape_with_names'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_names():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper2' object has no attribute 'scrape_with_names'. Did you mean: 'scrape_with_refcodes'?
+2023-12-04 09:01:05,721 [ERROR]: An error occurred: Invalid URL 'xmydebt.com?RefCode=RD0000011': No scheme supplied. Perhaps you meant https://xmydebt.com?RefCode=RD0000011?
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 151, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 142, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 64, in scrape_single
+    response = self.session.get(f'{url}?RefCode={data['refCode']}',allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/models.py", line 439, in prepare_url
+    raise MissingSchema(
+requests.exceptions.MissingSchema: Invalid URL 'xmydebt.com?RefCode=RD0000011': No scheme supplied. Perhaps you meant https://xmydebt.com?RefCode=RD0000011?
+2023-12-04 09:01:32,078 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 151, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 142, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 112, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-04 09:01:37,370 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 151, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 142, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 112, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-04 09:02:08,291 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 151, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 142, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 112, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-04 09:02:22,691 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 151, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 142, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 112, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-04 09:18:39,518 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 166, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 157, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 127, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-04 09:31:58,598 [ERROR]: An error occurred: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f713d3f6cc0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f713d3f6cc0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f713d3f6cc0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 168, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 159, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 80, in scrape_single
+    response = self.session.get(f'https://{url}',headers=headers_caspio, allow_redirects=True) # '?RefCode={data['refCode']}
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f713d3f6cc0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-12-04 09:33:21,259 [ERROR]: An error occurred: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc2bfb9f800>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fc2bfb9f800>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc2bfb9f800>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 168, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 159, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 80, in scrape_single
+    response = self.session.get(f'https://{url}?RefCode={data['refCode']}',headers=headers_caspio, allow_redirects=True) # ?RefCode={data['refCode']}
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc2bfb9f800>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-12-04 09:42:56,561 [ERROR]: An error occurred: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f35d57a0e00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f35d57a0e00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f35d57a0e00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 189, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 180, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 101, in scrape_single
+    response = self.session.post(f'https://{url}?RefCode={data['refCode']}',headers=headers_caspio, allow_redirects=True) # ?RefCode={data['refCode']}
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f35d57a0e00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-12-04 09:48:06,422 [ERROR]: An error occurred: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fccc5a045f0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fccc5a045f0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fccc5a045f0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 189, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 180, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 101, in scrape_single
+    response = self.session.get(f'https://{url}?RefCode={data['refCode']}', allow_redirects=True) # ?RefCode={data['refCode']}
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fccc5a045f0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-12-04 09:49:35,728 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 192, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 183, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 153, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-04 09:50:05,438 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 192, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 183, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 153, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-04 09:50:15,477 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 192, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 183, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 153, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-04 09:50:19,120 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 192, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 183, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 153, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-04 09:51:58,566 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 195, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 186, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 156, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-04 09:53:51,176 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 196, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 187, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 157, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-04 09:54:54,790 [ERROR]: An error occurred: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ff0ce47d520>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7ff0ce47d520>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ff0ce47d520>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 198, in scrape_with_refcodes
+    #     for i in range(0,len(refcodes),batch_size):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 189, in scrape_single_thread
+    if result is not None:
+             ^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 108, in scrape_single
+    response = self.session.get(f'https://{url}?RefCode={data['refCode']}', cookies=self.jar, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ff0ce47d520>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-12-04 10:00:50,859 [ERROR]: An error occurred: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f84f5bfee10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f84f5bfee10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f84f5bfee10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 198, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 189, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 110, in scrape_single
+    response = self.session.get(f'https://{url}?RefCode={data['refCode']}', headers=headers_caspio, cookies=self.jar, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f84f5bfee10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-12-04 10:01:37,445 [ERROR]: An error occurred: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc1e6b3aa50>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fc1e6b3aa50>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc1e6b3aa50>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 198, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 189, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 110, in scrape_single
+    response = self.session.post(f'https://{url}?RefCode={data['refCode']}', headers=headers_caspio, cookies=self.jar, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc1e6b3aa50>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-12-04 10:25:24,234 [ERROR]: An error occurred: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fdf18fa3950>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fdf18fa3950>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fdf18fa3950>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 147, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 138, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 59, in scrape_single
+    response = self.session.get(f'https://{url}?RefCode={data['refCode']}', headers=headers, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode=RD0000011 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fdf18fa3950>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-12-04 10:27:13,906 [ERROR]: An error occurred: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f35fd9f8cb0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f35fd9f8cb0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f35fd9f8cb0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 147, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 138, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 59, in scrape_single
+    response = self.session.post(f'https://{url}',data=data, headers=headers, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f35fd9f8cb0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-12-05 02:34:49,570 [ERROR]: An error occurred: 'Scraper35' object has no attribute 'scrape_with_refcodes'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper35' object has no attribute 'scrape_with_refcodes'. Did you mean: 'scrape_with_names'?
+2023-12-05 02:35:31,049 [WARNING]: Certificate did not match expected hostname: jamessmith2.goadvloan.com. Certificate: {'subject': ((('commonName', '24hrwire.com'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R3'),)), 'version': 3, 'serialNumber': '0320EA253F223168A3341B75AC5D118EC0D0', 'notBefore': 'Oct 12 13:29:42 2023 GMT', 'notAfter': 'Jan 10 13:29:41 2024 GMT', 'subjectAltName': (('DNS', '*.24hrwire.com'), ('DNS', '24hrwire.com')), 'OCSP': ('http://r3.o.lencr.org',), 'caIssuers': ('http://r3.i.lencr.org/',)}
+2023-12-05 02:35:31,088 [WARNING]: Certificate did not match expected hostname: jamessmith.goadvloan.com. Certificate: {'subject': ((('commonName', '24hrwire.com'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R3'),)), 'version': 3, 'serialNumber': '0320EA253F223168A3341B75AC5D118EC0D0', 'notBefore': 'Oct 12 13:29:42 2023 GMT', 'notAfter': 'Jan 10 13:29:41 2024 GMT', 'subjectAltName': (('DNS', '*.24hrwire.com'), ('DNS', '24hrwire.com')), 'OCSP': ('http://r3.o.lencr.org',), 'caIssuers': ('http://r3.i.lencr.org/',)}
+2023-12-05 02:35:31,089 [WARNING]: Certificate did not match expected hostname: jamessmith1.goadvloan.com. Certificate: {'subject': ((('commonName', '24hrwire.com'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R3'),)), 'version': 3, 'serialNumber': '0320EA253F223168A3341B75AC5D118EC0D0', 'notBefore': 'Oct 12 13:29:42 2023 GMT', 'notAfter': 'Jan 10 13:29:41 2024 GMT', 'subjectAltName': (('DNS', '*.24hrwire.com'), ('DNS', '24hrwire.com')), 'OCSP': ('http://r3.o.lencr.org',), 'caIssuers': ('http://r3.i.lencr.org/',)}
+2023-12-05 02:35:51,850 [WARNING]: Certificate did not match expected hostname: jamessmith.goadvloan.com. Certificate: {'subject': ((('commonName', '24hrwire.com'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R3'),)), 'version': 3, 'serialNumber': '0320EA253F223168A3341B75AC5D118EC0D0', 'notBefore': 'Oct 12 13:29:42 2023 GMT', 'notAfter': 'Jan 10 13:29:41 2024 GMT', 'subjectAltName': (('DNS', '*.24hrwire.com'), ('DNS', '24hrwire.com')), 'OCSP': ('http://r3.o.lencr.org',), 'caIssuers': ('http://r3.i.lencr.org/',)}
+2023-12-05 02:35:51,862 [WARNING]: Certificate did not match expected hostname: jamessmith2.goadvloan.com. Certificate: {'subject': ((('commonName', '24hrwire.com'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R3'),)), 'version': 3, 'serialNumber': '0320EA253F223168A3341B75AC5D118EC0D0', 'notBefore': 'Oct 12 13:29:42 2023 GMT', 'notAfter': 'Jan 10 13:29:41 2024 GMT', 'subjectAltName': (('DNS', '*.24hrwire.com'), ('DNS', '24hrwire.com')), 'OCSP': ('http://r3.o.lencr.org',), 'caIssuers': ('http://r3.i.lencr.org/',)}
+2023-12-05 02:35:51,863 [WARNING]: Certificate did not match expected hostname: jamessmith1.goadvloan.com. Certificate: {'subject': ((('commonName', '24hrwire.com'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R3'),)), 'version': 3, 'serialNumber': '0320EA253F223168A3341B75AC5D118EC0D0', 'notBefore': 'Oct 12 13:29:42 2023 GMT', 'notAfter': 'Jan 10 13:29:41 2024 GMT', 'subjectAltName': (('DNS', '*.24hrwire.com'), ('DNS', '24hrwire.com')), 'OCSP': ('http://r3.o.lencr.org',), 'caIssuers': ('http://r3.i.lencr.org/',)}
