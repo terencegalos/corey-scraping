@@ -50,17 +50,45 @@ class Scraper2:
             'Connection': 'keep-alive',
             # 'Cookie': self.extracted_cookies,
             'Host': 'myonlineloanpro.com',
-            'If-Modified-Since': 'Tue, 12 Sep 2023 23:46:34 GMT',
-            'If-None-Match': 'W/"f5-18a8bca20f1"',
+            # 'If-Modified-Since': 'Tue, 12 Sep 2023 23:46:34 GMT',
+            # 'If-None-Match': 'W/"f5-18a8bca20f1"',
             'Referer': 'https://myonlineloanpro.com/',
-            'Sec-Ch-Ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
-            'Sec-Ch-Ua-Mobile': '?0',
-            'Sec-Ch-Ua-Platform': '"Windows"',
+            # 'Sec-Ch-Ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+            # 'Sec-Ch-Ua-Mobile': '?0',
+            # 'Sec-Ch-Ua-Platform': '"Windows"',
             'Sec-Fetch-Dest': 'style',
             'Sec-Fetch-Mode': 'no-cors',
             'Sec-Fetch-Site': 'same-origin',
             'User-Agent': self.ua.random
         }
+
+        def extract_data(response):
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            #Extract relevant data from the HTML using BeautifulSoup methods
+            first_name_el = soup.select_one("#firstName")['value'] if soup.select_one("#firstName") else None
+            last_name_el = soup.select_one("#lastName")['value'] if soup.select_one("#lastName") else None
+            address_el = soup.select_one("#address")['value'] if soup.select_one("#address") else None
+            city_el = soup.select_one("#city")['value'] if soup.select_one("#city") else None
+            state_el = soup.select("#state option[selected]")[1].text if len(soup.select("#state option[selected]")) > 1 else None
+            zip_code_el = soup.select_one("#zipCode")['value'] if soup.select_one("#zipCode") else None
+        
+        
+        
+            # Check if any value is None, if yes, return None
+            if any(value is None for value in [first_name_el, last_name_el, address_el, city_el, state_el, zip_code_el]):
+                return None        
+            
+            
+            # Return the scraped data as dictionary        
+            return {
+                'first_name' : first_name_el,
+                'last_name' : last_name_el,
+                'address' : address_el,
+                'city' : city_el,
+                'state' : state_el,
+                'zip_code' : zip_code_el
+            }
 
         # self.str_to_cookies(self.extracted_cookies)
 
@@ -73,54 +101,69 @@ class Scraper2:
 
 
 
-        max_attempts = 5
+        # max_attempts = 5
 
-        for attempt in range(max_attempts):
-            try:
-                response = self.session.post(url, headers=headers,cookies=self.jar, data=data, proxies=proxies, allow_redirects=True)
-                response.raise_for_status() # Raises a HTTPError if the status if 4xx, 5xx
-                break
-            except (ConnectTimeout,ConnectionError,SSLError,HTTPError) as e:
-                print(f'Connecting to {url} failed. Pausing for 20 sec before reconnecting...')
-                time.sleep(1)
-                if attempt < max_attempts -1:
-                    continue
-                else:
-                    raise
+        # for attempt in range(max_attempts):
+        #     try:
+        #         response = self.session.post(url, headers=headers,cookies=self.jar, data=data, proxies=proxies, allow_redirects=True)
+        #         response.raise_for_status() # Raises a HTTPError if the status if 4xx, 5xx
+        #         break
+        #     except (ConnectTimeout,ConnectionError,SSLError,HTTPError) as e:
+        #         print(f'Connecting to {url} failed. Pausing for 20 sec before reconnecting...')
+        #         time.sleep(1)
+        #         if attempt < max_attempts -1:
+        #             continue
+        #         else:
+        #             raise
         # print(response.text)
         
-        
-        # if response.status_code == 200:
+        response = self.session.post(url, headers=headers,cookies=self.jar, proxies=proxies, data=data, allow_redirects=True)
+        print(f'Origin: {response.headers.items()}')
+
+        if response.status_code == 201:
         # Parse the HTML content with BeautifulSoup        
-        soup = BeautifulSoup(response.content, 'html.parser')
-        
-        #Extract relevant data from the HTML using BeautifulSoup methods
-        first_name_el = soup.select_one("#firstName")['value'] if soup.select_one("#firstName") else None
-        last_name_el = soup.select_one("#lastName")['value'] if soup.select_one("#lastName") else None
-        address_el = soup.select_one("#address")['value'] if soup.select_one("#address") else None
-        city_el = soup.select_one("#city")['value'] if soup.select_one("#city") else None
-        state_el = soup.select("#state option[selected]")[1].text if len(soup.select("#state option[selected]")) > 1 else None
-        zip_code_el = soup.select_one("#zipCode")['value'] if soup.select_one("#zipCode") else None
-        
-        
-        
-        # Check if any value is None, if yes, return None
-        if any(value is None for value in [first_name_el, last_name_el, address_el, city_el, state_el, zip_code_el]):
-            return None        
-        
-        
-        # Return the scraped data as dictionary        
-        return {
-            'first_name' : first_name_el,
-            'last_name' : last_name_el,
-            'address' : address_el,
-            'city' : city_el,
-            'state' : state_el,
-            'zip_code' : zip_code_el
-        }
+            extracted_data = extract_data(response)
+            return extracted_data
             
-        # else :
-        #     raise Exception(f"Failed to retrieve data. Status code: {response.status_code}")
+        elif response.status_code == 429:
+            print(f'Headers: {response.headers.items()}')
+            retry_after = response.headers.get('Retry-After',0)
+            remaining_requests = int(response.headers.get('X-RateLimit-Remaining',0))
+
+            if retry_after:
+                sleep_time = max(0,int(retry_after)+1)
+                print(f'Rate limit exceeded. Waiting for {sleep_time} seconds.')
+                time.sleep(sleep_time)
+
+                response = self.session.post(url, headers=headers,cookies=self.jar, data=data, proxies=proxies, allow_redirects=True)
+
+                if response.status_code == 201:
+                    print('Request successful after rate limit reset!')
+                    data = extract_data(response)
+                    return extracted_data
+                else:
+                    raise Exception(f"Error: {response.status_code} - {response.text}")
+                
+            elif remaining_requests == 0:
+                reset_time = response.headers.get('X-RateLimit-Reset',0)
+                sleep_time = max(0,reset_time - int(time.time())+1)
+                print(f'Rate limit exceeded. Waiting for {sleep_time} seconds.')
+                time.sleep(sleep_time)
+
+                response = self.session.post(url, headers=headers,cookies=self.jar, data=data, proxies=proxies, allow_redirects=True)
+
+                if response.status_code == 201:
+                    print('Request successful after rate limit reset!')
+                    data = extract_data(response)
+                    return extracted_data
+                else:
+                    raise Exception(f"Error: {response.status_code} - {response.text}")
+                
+            else:
+                raise Exception(f"Error: {response.status_code} - {response.text}")
+
+        else:
+            raise Exception(f"Error: {response.status_code} - {response.text}")
     
     def scrape_with_refcodes(self,batch_size=100):
             

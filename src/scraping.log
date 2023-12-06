@@ -1311,3 +1311,1052 @@ AttributeError: 'Scraper35' object has no attribute 'scrape_with_refcodes'. Did 
 2023-12-05 02:35:51,850 [WARNING]: Certificate did not match expected hostname: jamessmith.goadvloan.com. Certificate: {'subject': ((('commonName', '24hrwire.com'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R3'),)), 'version': 3, 'serialNumber': '0320EA253F223168A3341B75AC5D118EC0D0', 'notBefore': 'Oct 12 13:29:42 2023 GMT', 'notAfter': 'Jan 10 13:29:41 2024 GMT', 'subjectAltName': (('DNS', '*.24hrwire.com'), ('DNS', '24hrwire.com')), 'OCSP': ('http://r3.o.lencr.org',), 'caIssuers': ('http://r3.i.lencr.org/',)}
 2023-12-05 02:35:51,862 [WARNING]: Certificate did not match expected hostname: jamessmith2.goadvloan.com. Certificate: {'subject': ((('commonName', '24hrwire.com'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R3'),)), 'version': 3, 'serialNumber': '0320EA253F223168A3341B75AC5D118EC0D0', 'notBefore': 'Oct 12 13:29:42 2023 GMT', 'notAfter': 'Jan 10 13:29:41 2024 GMT', 'subjectAltName': (('DNS', '*.24hrwire.com'), ('DNS', '24hrwire.com')), 'OCSP': ('http://r3.o.lencr.org',), 'caIssuers': ('http://r3.i.lencr.org/',)}
 2023-12-05 02:35:51,863 [WARNING]: Certificate did not match expected hostname: jamessmith1.goadvloan.com. Certificate: {'subject': ((('commonName', '24hrwire.com'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R3'),)), 'version': 3, 'serialNumber': '0320EA253F223168A3341B75AC5D118EC0D0', 'notBefore': 'Oct 12 13:29:42 2023 GMT', 'notAfter': 'Jan 10 13:29:41 2024 GMT', 'subjectAltName': (('DNS', '*.24hrwire.com'), ('DNS', '24hrwire.com')), 'OCSP': ('http://r3.o.lencr.org',), 'caIssuers': ('http://r3.i.lencr.org/',)}
+2023-12-06 02:12:59,938 [ERROR]: An error occurred: 'Scraper2' object has no attribute 'scrape_with_names'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_names():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper2' object has no attribute 'scrape_with_names'. Did you mean: 'scrape_with_refcodes'?
+2023-12-06 02:13:44,597 [ERROR]: An error occurred: Error: 201 - <!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- Favicon -->
+	<link href="/campaigns/loanpro/images/loanpro-favicon.png" rel="shortcut icon">
+	<!-- meta View port tag -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Title -->
+	<title>Online Loan Pro</title>
+	<!-- Bootstrap Css -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<!-- Common & Responsive CSS -->
+	<link href="/common/css/index.css" rel="stylesheet" type="text/css">
+	<link href="/campaigns/loanpro/css/index.css" rel="stylesheet" type="text/css">
+	<link href="/campaigns/loanpro/css/responsive.css" rel="stylesheet" type="text/css">
+	<!-- Google Icons -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+	<!-- Iconnode JS -->
+	<script src="//scripts.iconnode.com/78875.js"></script>
+	
+
+</head>
+
+<body>
+	
+<div class="spinner-container"  style="display:none;">
+    <div class="loading-spinner">
+         <div style="text-align:center;position:fixed;top:0;left:0;right:0;bottom:0;z-index:100;background:rgba(0,0,0,0.7);">
+            <div style="height:100%;width:100%;background:url('/common/icons/loading.gif') no-repeat center;margin-top:-233px;"></div>
+        </div>
+    </div>
+</div>
+<div>
+	<section class="survey">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-8 col-sm-offset-1 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-1">
+					<form id="surveyForm" method="POST" action="/form/survey/">
+						<div class="form-group">
+							<p><strong>First Name</strong></p>
+							<input type="text" id="firstName" name="firstName" value="" class="form-control" placeholder="First Name" required />
+						</div>
+						<div class="form-group">
+							<p><strong>Last Name</strong></p>
+							<input type="text" name="lastName" value="" class="form-control" placeholder="Last Name" required id="lastName" />
+						</div>
+						<div class="form-group">
+							<p><strong>Date of Birth</strong></p>
+							<input 
+								type="date" 
+								id="dateOfBirth" 
+								name="dateOfBirth" 
+								class="form-control"
+								required 
+							/>
+						</div>
+						<div class="form-group">
+							<p><strong>Email Address</strong></p>
+							<input type="email" name="email" value="" class="form-control" placeholder="Email Address" required id="email" />
+						</div>
+						<div class="form-group">
+							<p><strong>Re-Enter Email Address</strong></p>
+							<input type="email" value="" class="form-control" placeholder="Re-Enter Email Address" required id="confirmEmail" name="confirmEmail" />
+						</div>
+						<div class="form-group">
+							<p><strong>Street Address</strong></p>
+							<input type="text" name="address" value="" class="form-control" placeholder="Street Address" required id="address" />
+						</div>
+						<div class="form-group">
+							<p><strong>City</strong></p>
+							<input type="text" name="city" value="" class="form-control" placeholder="City" required id="city" />
+						</div>
+						<div class="form-group">
+							<p><strong>State</strong></p>
+							<select class="form-control" id="state" name="state">
+								<option selected disabled>Select your State</option>
+								
+								<option value="AL" >Alabama</option>
+								
+								<option value="AK" >Alaska</option>
+								
+								<option value="AZ" >Arizona</option>
+								
+								<option value="AR" >Arkansas</option>
+								
+								<option value="CA" >California</option>
+								
+								<option value="CO" >Colorado</option>
+								
+								<option value="CT" >Connecticut</option>
+								
+								<option value="DE" >Delaware</option>
+								
+								<option value="DC" >District of Columbia</option>
+								
+								<option value="FL" >Florida</option>
+								
+								<option value="GA" >Georgia</option>
+								
+								<option value="HI" >Hawaii</option>
+								
+								<option value="ID" >Idaho</option>
+								
+								<option value="IL" >Illinois</option>
+								
+								<option value="IN" >Indiana</option>
+								
+								<option value="IA" >Iowa</option>
+								
+								<option value="KS" >Kansas</option>
+								
+								<option value="KY" >Kentucky</option>
+								
+								<option value="LA" >Louisiana</option>
+								
+								<option value="ME" >Maine</option>
+								
+								<option value="MD" >Maryland</option>
+								
+								<option value="MA" >Massachusetts</option>
+								
+								<option value="MI" >Michigan</option>
+								
+								<option value="MN" >Minnesota</option>
+								
+								<option value="MS" >Mississippi</option>
+								
+								<option value="MO" >Missouri</option>
+								
+								<option value="MT" >Montana</option>
+								
+								<option value="NE" >Nebraska</option>
+								
+								<option value="NV" >Nevada</option>
+								
+								<option value="NH" >New Hampshire</option>
+								
+								<option value="NJ" >New Jersey</option>
+								
+								<option value="NM" >New Mexico</option>
+								
+								<option value="NY" >New York</option>
+								
+								<option value="NC" >North Carolina</option>
+								
+								<option value="ND" >North Dakota</option>
+								
+								<option value="OH" >Ohio</option>
+								
+								<option value="OK" >Oklahoma</option>
+								
+								<option value="OR" >Oregon</option>
+								
+								<option value="PA" >Pennsylvania</option>
+								
+								<option value="RI" >Rhode Island</option>
+								
+								<option value="SC" >South Carolina</option>
+								
+								<option value="SD" >South Dakota</option>
+								
+								<option value="TN" >Tennessee</option>
+								
+								<option value="TX" >Texas</option>
+								
+								<option value="UT" >Utah</option>
+								
+								<option value="VT" >Vermont</option>
+								
+								<option value="VA" >Virginia</option>
+								
+								<option value="WA" >Washington</option>
+								
+								<option value="WV" >West Virginia</option>
+								
+								<option value="WI" >Wisconsin</option>
+								
+								<option value="WY" >Wyoming</option>
+								
+							</select>
+						</div>
+						<div class="form-group">
+							<p><strong>Zip Code</strong></p>
+							<input type="text" name="zipCode" value="" class="form-control" placeholder="Zip Code" required id="zipCode" />
+						</div>
+						<div class="form-group">
+							<p><strong>Requested Loan Amount</strong></p>
+							<div id="loanamount-box" class="input-group">
+								<span class="input-group-text fs-4">$</span>
+								<input type="text" name="loanAmount" value="" class="form-control text-start" placeholder="Requested Loan Amount" required id="loanAmount" />
+							</div>
+						</div>
+						<div class="form-group">
+							<p><strong>Mobile Phone</strong></p>
+							<input type="text" name="phone" value="" class="form-control phone-format" placeholder="Mobile Phone" id="phone" required />
+						</div>
+						<div class="form-group">
+							<p><strong>Invite Code</strong></p>
+							<input type="text" name="refCode" value="" class="form-control" placeholder="Invite Code" id="refCode" />
+						</div>
+						<div class="form-group" id="terms-box">
+							<input name="terms" id="terms" type="checkbox" />
+							<label for="terms" style="display:inline;cursor:pointer;">I agree to be contacted by Online Loan Pro at the email address and phone number I provided.</label>
+						</div>
+						<br/>
+						<button id="submitButton" class="btn bg-primary-color text-white hover-effect w-100 p-4" type="submit">
+							<span class="text-white fs-3 fw-bold">Continue</span>
+						</button>
+						<label class="server-error error mt-3"></label>
+					</form>
+					<input id="campaign" class="d-none" type="text" name="campaign" value="loanpro" disabled>
+				</div>
+				<div class="col-xs-12 col-md-8 d-flex flex-column align-items-center justify-content-start mt-5 mt-md-0">
+					<img class="img-responsive py-5" width="250" src="/campaigns/loanpro/images/loanpro-logo.png" />
+					</br>
+					<h3>Have any questions?</h3>
+					<h3>Call us <a href="tel:1-877-864-5191" style="color:#100F0D">(877) 864-5191</a></h3>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="h-auto">
+		<div class="container">
+			<div class="d-flex flex-column gap-5 flex-lg-row-reverse align-items-center align-items-md-start justify-content-center">
+				<div>
+					<p class="fs-5">
+						This correspondence is for a debt consolidation loan referred by Online Loan Pro</span>.
+						All loan requests are funded by a third party. Online Loan Pro has no
+						control over participating lender creditworthiness eligibility criteria. APR/Interest
+						rates will vary depending on individual lender terms.
+					</p>
+					<p class="fs-5">
+						Online Loan Pro does not endorse any participating lenders or brokers, and will
+						not charge you for referring you to a participating lender. Online Loan Pro does
+						not act as a loan broker. Online Loan Pro research and refers you to
+						participating lenders, to whom you deal directly. For details, questions, or concerns
+						regarding your requested loan, please contact your lender directly. Lenders may
+						perform credit checks in order to evaluate your eligibility. By submitting a request
+						to a participating lender, you are authorizing the lender to independently verify the
+						information you submitted and your creditworthiness. This service and qualified
+						participating lenders are not available in all states. This service does not constitute
+						an offer or solicitation for loan products, which are prohibited by any state law. Void
+						where prohibited.
+					</p>
+					<p class="fs-5">
+						Lenders we refer to you may be unable to extend credit if the lender determines
+						that you do not meet their lending criteria. Account approval is subject to
+						verification and confirmation of your credit history and acceptance by the lender.
+						We, or the lender, may request verification of income and employment, or obtain a
+						consumer credit report to verify your creditworthiness and identity. Upon request,
+						you will be informed of the name and address of the credit reporting agency
+						furnishing any such report. Subsequent consumer credit reports may be requested
+						and used in connection with an update, renewal, or extension of credit. Interest
+						rates will vary and are based on lender terms. Your APR will be determined based
+						on your credit at time of application.
+					</p>
+					<p class="fs-5">
+						Loans are offered by Online Loan Pro affiliates. Kuber Financial, LLC dba
+						Mobilend is an affiliate of Online Loan Pro. Loans are not offered in all states.
+					</p>
+					<p class="fs-5">
+						Loans are offered in Alabama, California, Idaho, Missouri, and Utah.
+					</p>
+					<p class="fs-5">
+						Arkansas: All loans made to Arkansas residents must qualify for an annual
+						percentage rate (APR) of 17% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						Georgia: All loans made to Georgia residents must qualify for an annual
+						percentage rate (APR) of 7% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						Illinois: All loans made to Illinois residents must qualify for an annual
+						percentage rate (APR) of 9% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						Iowa: All loans made to Iowa residents must qualify for an annual
+						percentage rate (APR) of 5% or less to be considered for an approval, and loan
+						amount cannot be greater than $25,000.
+					</p>
+					<p class="fs-5">
+						Kansas: All loans made to Kansas residents must qualify for an annual
+						percentage rate (APR) of 12% or less to be considered for an approval, and loan
+						amount cannot be greater than $25,000.
+					</p>
+					<p class="fs-5">
+						Kentucky: All loans made to Kentucky residents must qualify for an annual
+						percentage rate (APR) of 8% or less to be considered for an approval, and loan
+						amount cannot be greater than $15,000.
+					</p>
+					<p class="fs-5">
+						Massachusetts: All loans made to Massachusetts residents must qualify for an
+						annual percentage rate (APR) of 12% or less to be considered for an approval, and loan
+						amount cannot be greater than $6,000.
+					</p>
+					<p class="fs-5">
+						Michigan: All loans made to Michigan residents must qualify for an annual
+						percentage rate (APR) of 7% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						Minnesota: All loans made to Minnesota residents must qualify for an annual
+						percentage rate (APR) of 8% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						Nebraska: Residents of Nebraska must be 19 years old to apply for credit. All loans
+						made to Nebraska residents must qualify for an annual percentage rate (APR) of
+						16% or less and loan amount cannot be greater than $25,000 to be considered for
+						approval.
+					</p>
+					<p class="fs-5">
+						New Jersey: All loans made to New Jersey residents must qualify for an annual
+						percentage rate (APR) of 8% or less and loan amount must be greater than $50,000
+						to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						New Mexico: All loans made to New Mexico residents must qualify for an annual
+						percentage rate (APR) of 15% or less and loan amount must be greater than $2501
+						to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						New York: All loans made to New York residents must qualify for an annual
+						percentage rate (APR) of 16% or less and loan amount cannot be greater than
+						$25,000 to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						North Carolina: All loans made to North Carolina residents must qualify for an
+						annual percentage rate (APR) of 8% or less and loan amount cannot be greater than
+						$25,000 to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						South Carolina: All loans made to South Carolina residents must qualify for an annual
+						percentage rate (APR) of 12% or less and loan amount cannot be greater than $90,000.
+					</p>
+					<p class="fs-5">
+						South Dakota: All loans made to South Dakota residents must qualify for an annual
+						percentage rate (APR) of 36% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						Tennessee: All loans made to Tennessee residents must qualify for an annual
+						percentage rate (APR) of 7.52% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						Texas: All loans made to Texas residents must qualify for an annual percentage rate
+						(APR) of 10% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						Virginia: All loans made to Virginia residents must qualify for an annual percentage rate
+						(APR) of 10% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">Online Loan Pro is not a banking or lending institution in itself. The information you provide on this
+						website and to our advisors is solely used to suggest suitable financial institutions from our network based
+						on your individual needs and credit profile. We will refrain from sending you any promotional or marketing
+						materials. Please be aware that submitting your documents does not guarantee approval; however, qualified
+						lenders will review your paperwork during the approval process. There is no charge or additional fee for this
+						service. Please note that we will share information about financial institutions within our business network
+						so that you can directly engage with lenders, as we do not act on your behalf in any financial matters or
+						transactions with lenders. By using this website and our services, you agree to our terms, conditions, and
+						policies. Additionally, it’s important to understand that some moneylenders in our network may not offer their
+						services in certain states. We strongly advise you to familiarize yourself with our privacy practices and
+						other disclaimers before utilizing our services.
+					</p>
+					<p class="fs-5">Address : United States Email : <a class="text-reset" href="mailto:contact@onlineloanpro.com">contact@onlineloanpro.com</a></p>
+					<p class="fs-5">© Copyright 2023  <a class="text-reset text-decoration-underline" target="_blank" href="https://onlineloanpro.com">onlineloanpro.com</a> - Online Loan Pro LLC. All Rights Reserved.</p>
+				</div>
+				<div class="d-none d-md-block line"></div>
+				<div class="d-flex flex-column align-items-center">
+					<img class="img-responsive pb-5" width="150" src="/campaigns/loanpro/images/loanpro-logo.png" />
+					<a class="d-flex align-items-center text-reset text-decoration-none fs-4" href="tel:1-877-864-5191">
+						<span class="material-symbols-outlined phone-icon">phone_iphone</span>
+						<span class="fw-bold fs-4">(877) 864-5191</span>
+					</a>
+					<div class="vl"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
+
+	<script src="/common/js/inputmask.min.js" type="text/javascript"></script>
+	<!-- Custom JS -->
+	<script src="/common/js/form-submission.js" type="text/javascript"></script>
+	<script src="/common/js/validate.js" type="text/javascript"></script>
+	<script src="/common/js/loading.js" type="text/javascript"></script>
+	
+	
+</body>
+
+</html>
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 175, in scrape_with_refcodes
+    batch_results = [result for result in executor.map(scrape_single_thread,refcodes[i:i+batch_size]) if result is not None]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 160, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 148, in scrape_single
+    raise Exception(f"Error: {response.status_code} - {response.text}")
+Exception: Error: 201 - <!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- Favicon -->
+	<link href="/campaigns/loanpro/images/loanpro-favicon.png" rel="shortcut icon">
+	<!-- meta View port tag -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Title -->
+	<title>Online Loan Pro</title>
+	<!-- Bootstrap Css -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<!-- Common & Responsive CSS -->
+	<link href="/common/css/index.css" rel="stylesheet" type="text/css">
+	<link href="/campaigns/loanpro/css/index.css" rel="stylesheet" type="text/css">
+	<link href="/campaigns/loanpro/css/responsive.css" rel="stylesheet" type="text/css">
+	<!-- Google Icons -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+	<!-- Iconnode JS -->
+	<script src="//scripts.iconnode.com/78875.js"></script>
+	
+
+</head>
+
+<body>
+	
+<div class="spinner-container"  style="display:none;">
+    <div class="loading-spinner">
+         <div style="text-align:center;position:fixed;top:0;left:0;right:0;bottom:0;z-index:100;background:rgba(0,0,0,0.7);">
+            <div style="height:100%;width:100%;background:url('/common/icons/loading.gif') no-repeat center;margin-top:-233px;"></div>
+        </div>
+    </div>
+</div>
+<div>
+	<section class="survey">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-8 col-sm-offset-1 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-1">
+					<form id="surveyForm" method="POST" action="/form/survey/">
+						<div class="form-group">
+							<p><strong>First Name</strong></p>
+							<input type="text" id="firstName" name="firstName" value="" class="form-control" placeholder="First Name" required />
+						</div>
+						<div class="form-group">
+							<p><strong>Last Name</strong></p>
+							<input type="text" name="lastName" value="" class="form-control" placeholder="Last Name" required id="lastName" />
+						</div>
+						<div class="form-group">
+							<p><strong>Date of Birth</strong></p>
+							<input 
+								type="date" 
+								id="dateOfBirth" 
+								name="dateOfBirth" 
+								class="form-control"
+								required 
+							/>
+						</div>
+						<div class="form-group">
+							<p><strong>Email Address</strong></p>
+							<input type="email" name="email" value="" class="form-control" placeholder="Email Address" required id="email" />
+						</div>
+						<div class="form-group">
+							<p><strong>Re-Enter Email Address</strong></p>
+							<input type="email" value="" class="form-control" placeholder="Re-Enter Email Address" required id="confirmEmail" name="confirmEmail" />
+						</div>
+						<div class="form-group">
+							<p><strong>Street Address</strong></p>
+							<input type="text" name="address" value="" class="form-control" placeholder="Street Address" required id="address" />
+						</div>
+						<div class="form-group">
+							<p><strong>City</strong></p>
+							<input type="text" name="city" value="" class="form-control" placeholder="City" required id="city" />
+						</div>
+						<div class="form-group">
+							<p><strong>State</strong></p>
+							<select class="form-control" id="state" name="state">
+								<option selected disabled>Select your State</option>
+								
+								<option value="AL" >Alabama</option>
+								
+								<option value="AK" >Alaska</option>
+								
+								<option value="AZ" >Arizona</option>
+								
+								<option value="AR" >Arkansas</option>
+								
+								<option value="CA" >California</option>
+								
+								<option value="CO" >Colorado</option>
+								
+								<option value="CT" >Connecticut</option>
+								
+								<option value="DE" >Delaware</option>
+								
+								<option value="DC" >District of Columbia</option>
+								
+								<option value="FL" >Florida</option>
+								
+								<option value="GA" >Georgia</option>
+								
+								<option value="HI" >Hawaii</option>
+								
+								<option value="ID" >Idaho</option>
+								
+								<option value="IL" >Illinois</option>
+								
+								<option value="IN" >Indiana</option>
+								
+								<option value="IA" >Iowa</option>
+								
+								<option value="KS" >Kansas</option>
+								
+								<option value="KY" >Kentucky</option>
+								
+								<option value="LA" >Louisiana</option>
+								
+								<option value="ME" >Maine</option>
+								
+								<option value="MD" >Maryland</option>
+								
+								<option value="MA" >Massachusetts</option>
+								
+								<option value="MI" >Michigan</option>
+								
+								<option value="MN" >Minnesota</option>
+								
+								<option value="MS" >Mississippi</option>
+								
+								<option value="MO" >Missouri</option>
+								
+								<option value="MT" >Montana</option>
+								
+								<option value="NE" >Nebraska</option>
+								
+								<option value="NV" >Nevada</option>
+								
+								<option value="NH" >New Hampshire</option>
+								
+								<option value="NJ" >New Jersey</option>
+								
+								<option value="NM" >New Mexico</option>
+								
+								<option value="NY" >New York</option>
+								
+								<option value="NC" >North Carolina</option>
+								
+								<option value="ND" >North Dakota</option>
+								
+								<option value="OH" >Ohio</option>
+								
+								<option value="OK" >Oklahoma</option>
+								
+								<option value="OR" >Oregon</option>
+								
+								<option value="PA" >Pennsylvania</option>
+								
+								<option value="RI" >Rhode Island</option>
+								
+								<option value="SC" >South Carolina</option>
+								
+								<option value="SD" >South Dakota</option>
+								
+								<option value="TN" >Tennessee</option>
+								
+								<option value="TX" >Texas</option>
+								
+								<option value="UT" >Utah</option>
+								
+								<option value="VT" >Vermont</option>
+								
+								<option value="VA" >Virginia</option>
+								
+								<option value="WA" >Washington</option>
+								
+								<option value="WV" >West Virginia</option>
+								
+								<option value="WI" >Wisconsin</option>
+								
+								<option value="WY" >Wyoming</option>
+								
+							</select>
+						</div>
+						<div class="form-group">
+							<p><strong>Zip Code</strong></p>
+							<input type="text" name="zipCode" value="" class="form-control" placeholder="Zip Code" required id="zipCode" />
+						</div>
+						<div class="form-group">
+							<p><strong>Requested Loan Amount</strong></p>
+							<div id="loanamount-box" class="input-group">
+								<span class="input-group-text fs-4">$</span>
+								<input type="text" name="loanAmount" value="" class="form-control text-start" placeholder="Requested Loan Amount" required id="loanAmount" />
+							</div>
+						</div>
+						<div class="form-group">
+							<p><strong>Mobile Phone</strong></p>
+							<input type="text" name="phone" value="" class="form-control phone-format" placeholder="Mobile Phone" id="phone" required />
+						</div>
+						<div class="form-group">
+							<p><strong>Invite Code</strong></p>
+							<input type="text" name="refCode" value="" class="form-control" placeholder="Invite Code" id="refCode" />
+						</div>
+						<div class="form-group" id="terms-box">
+							<input name="terms" id="terms" type="checkbox" />
+							<label for="terms" style="display:inline;cursor:pointer;">I agree to be contacted by Online Loan Pro at the email address and phone number I provided.</label>
+						</div>
+						<br/>
+						<button id="submitButton" class="btn bg-primary-color text-white hover-effect w-100 p-4" type="submit">
+							<span class="text-white fs-3 fw-bold">Continue</span>
+						</button>
+						<label class="server-error error mt-3"></label>
+					</form>
+					<input id="campaign" class="d-none" type="text" name="campaign" value="loanpro" disabled>
+				</div>
+				<div class="col-xs-12 col-md-8 d-flex flex-column align-items-center justify-content-start mt-5 mt-md-0">
+					<img class="img-responsive py-5" width="250" src="/campaigns/loanpro/images/loanpro-logo.png" />
+					</br>
+					<h3>Have any questions?</h3>
+					<h3>Call us <a href="tel:1-877-864-5191" style="color:#100F0D">(877) 864-5191</a></h3>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="h-auto">
+		<div class="container">
+			<div class="d-flex flex-column gap-5 flex-lg-row-reverse align-items-center align-items-md-start justify-content-center">
+				<div>
+					<p class="fs-5">
+						This correspondence is for a debt consolidation loan referred by Online Loan Pro</span>.
+						All loan requests are funded by a third party. Online Loan Pro has no
+						control over participating lender creditworthiness eligibility criteria. APR/Interest
+						rates will vary depending on individual lender terms.
+					</p>
+					<p class="fs-5">
+						Online Loan Pro does not endorse any participating lenders or brokers, and will
+						not charge you for referring you to a participating lender. Online Loan Pro does
+						not act as a loan broker. Online Loan Pro research and refers you to
+						participating lenders, to whom you deal directly. For details, questions, or concerns
+						regarding your requested loan, please contact your lender directly. Lenders may
+						perform credit checks in order to evaluate your eligibility. By submitting a request
+						to a participating lender, you are authorizing the lender to independently verify the
+						information you submitted and your creditworthiness. This service and qualified
+						participating lenders are not available in all states. This service does not constitute
+						an offer or solicitation for loan products, which are prohibited by any state law. Void
+						where prohibited.
+					</p>
+					<p class="fs-5">
+						Lenders we refer to you may be unable to extend credit if the lender determines
+						that you do not meet their lending criteria. Account approval is subject to
+						verification and confirmation of your credit history and acceptance by the lender.
+						We, or the lender, may request verification of income and employment, or obtain a
+						consumer credit report to verify your creditworthiness and identity. Upon request,
+						you will be informed of the name and address of the credit reporting agency
+						furnishing any such report. Subsequent consumer credit reports may be requested
+						and used in connection with an update, renewal, or extension of credit. Interest
+						rates will vary and are based on lender terms. Your APR will be determined based
+						on your credit at time of application.
+					</p>
+					<p class="fs-5">
+						Loans are offered by Online Loan Pro affiliates. Kuber Financial, LLC dba
+						Mobilend is an affiliate of Online Loan Pro. Loans are not offered in all states.
+					</p>
+					<p class="fs-5">
+						Loans are offered in Alabama, California, Idaho, Missouri, and Utah.
+					</p>
+					<p class="fs-5">
+						Arkansas: All loans made to Arkansas residents must qualify for an annual
+						percentage rate (APR) of 17% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						Georgia: All loans made to Georgia residents must qualify for an annual
+						percentage rate (APR) of 7% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						Illinois: All loans made to Illinois residents must qualify for an annual
+						percentage rate (APR) of 9% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						Iowa: All loans made to Iowa residents must qualify for an annual
+						percentage rate (APR) of 5% or less to be considered for an approval, and loan
+						amount cannot be greater than $25,000.
+					</p>
+					<p class="fs-5">
+						Kansas: All loans made to Kansas residents must qualify for an annual
+						percentage rate (APR) of 12% or less to be considered for an approval, and loan
+						amount cannot be greater than $25,000.
+					</p>
+					<p class="fs-5">
+						Kentucky: All loans made to Kentucky residents must qualify for an annual
+						percentage rate (APR) of 8% or less to be considered for an approval, and loan
+						amount cannot be greater than $15,000.
+					</p>
+					<p class="fs-5">
+						Massachusetts: All loans made to Massachusetts residents must qualify for an
+						annual percentage rate (APR) of 12% or less to be considered for an approval, and loan
+						amount cannot be greater than $6,000.
+					</p>
+					<p class="fs-5">
+						Michigan: All loans made to Michigan residents must qualify for an annual
+						percentage rate (APR) of 7% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						Minnesota: All loans made to Minnesota residents must qualify for an annual
+						percentage rate (APR) of 8% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						Nebraska: Residents of Nebraska must be 19 years old to apply for credit. All loans
+						made to Nebraska residents must qualify for an annual percentage rate (APR) of
+						16% or less and loan amount cannot be greater than $25,000 to be considered for
+						approval.
+					</p>
+					<p class="fs-5">
+						New Jersey: All loans made to New Jersey residents must qualify for an annual
+						percentage rate (APR) of 8% or less and loan amount must be greater than $50,000
+						to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						New Mexico: All loans made to New Mexico residents must qualify for an annual
+						percentage rate (APR) of 15% or less and loan amount must be greater than $2501
+						to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						New York: All loans made to New York residents must qualify for an annual
+						percentage rate (APR) of 16% or less and loan amount cannot be greater than
+						$25,000 to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						North Carolina: All loans made to North Carolina residents must qualify for an
+						annual percentage rate (APR) of 8% or less and loan amount cannot be greater than
+						$25,000 to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						South Carolina: All loans made to South Carolina residents must qualify for an annual
+						percentage rate (APR) of 12% or less and loan amount cannot be greater than $90,000.
+					</p>
+					<p class="fs-5">
+						South Dakota: All loans made to South Dakota residents must qualify for an annual
+						percentage rate (APR) of 36% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						Tennessee: All loans made to Tennessee residents must qualify for an annual
+						percentage rate (APR) of 7.52% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						Texas: All loans made to Texas residents must qualify for an annual percentage rate
+						(APR) of 10% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">
+						Virginia: All loans made to Virginia residents must qualify for an annual percentage rate
+						(APR) of 10% or less to be considered for an approval.
+					</p>
+					<p class="fs-5">Online Loan Pro is not a banking or lending institution in itself. The information you provide on this
+						website and to our advisors is solely used to suggest suitable financial institutions from our network based
+						on your individual needs and credit profile. We will refrain from sending you any promotional or marketing
+						materials. Please be aware that submitting your documents does not guarantee approval; however, qualified
+						lenders will review your paperwork during the approval process. There is no charge or additional fee for this
+						service. Please note that we will share information about financial institutions within our business network
+						so that you can directly engage with lenders, as we do not act on your behalf in any financial matters or
+						transactions with lenders. By using this website and our services, you agree to our terms, conditions, and
+						policies. Additionally, it’s important to understand that some moneylenders in our network may not offer their
+						services in certain states. We strongly advise you to familiarize yourself with our privacy practices and
+						other disclaimers before utilizing our services.
+					</p>
+					<p class="fs-5">Address : United States Email : <a class="text-reset" href="mailto:contact@onlineloanpro.com">contact@onlineloanpro.com</a></p>
+					<p class="fs-5">© Copyright 2023  <a class="text-reset text-decoration-underline" target="_blank" href="https://onlineloanpro.com">onlineloanpro.com</a> - Online Loan Pro LLC. All Rights Reserved.</p>
+				</div>
+				<div class="d-none d-md-block line"></div>
+				<div class="d-flex flex-column align-items-center">
+					<img class="img-responsive pb-5" width="150" src="/campaigns/loanpro/images/loanpro-logo.png" />
+					<a class="d-flex align-items-center text-reset text-decoration-none fs-4" href="tel:1-877-864-5191">
+						<span class="material-symbols-outlined phone-icon">phone_iphone</span>
+						<span class="fw-bold fs-4">(877) 864-5191</span>
+					</a>
+					<div class="vl"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
+
+	<script src="/common/js/inputmask.min.js" type="text/javascript"></script>
+	<!-- Custom JS -->
+	<script src="/common/js/form-submission.js" type="text/javascript"></script>
+	<script src="/common/js/validate.js" type="text/javascript"></script>
+	<script src="/common/js/loading.js" type="text/javascript"></script>
+	
+	
+</body>
+
+</html>
+2023-12-06 02:39:16,004 [ERROR]: An error occurred: 'Response' object has no attribute 'header'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 175, in scrape_with_refcodes
+    batch_results = [result for result in executor.map(scrape_single_thread,refcodes[i:i+batch_size]) if result is not None]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 160, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 129, in scrape_single
+    remaining_requests = int(response.header.get('X-RateLimit-Remaining',0))
+                             ^^^^^^^^^^^^^^^
+AttributeError: 'Response' object has no attribute 'header'. Did you mean: 'headers'?
+2023-12-06 02:40:07,964 [ERROR]: An error occurred: Error: 429 - {"statusCode":429,"message":"ThrottlerException: Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 175, in scrape_with_refcodes
+    batch_results = [result for result in executor.map(scrape_single_thread,refcodes[i:i+batch_size]) if result is not None]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 160, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 145, in scrape_single
+    raise Exception(f"Error: {response.status_code} - {response.text}")
+Exception: Error: 429 - {"statusCode":429,"message":"ThrottlerException: Too Many Requests"}
+2023-12-06 02:41:41,250 [ERROR]: An error occurred: Error: 429 - {"statusCode":429,"message":"ThrottlerException: Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 176, in scrape_with_refcodes
+    batch_results = [result for result in executor.map(scrape_single_thread,refcodes[i:i+batch_size]) if result is not None]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 161, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 146, in scrape_single
+    raise Exception(f"Error: {response.status_code} - {response.text}")
+Exception: Error: 429 - {"statusCode":429,"message":"ThrottlerException: Too Many Requests"}
+2023-12-06 03:40:56,641 [ERROR]: An error occurred: 'Scraper2' object has no attribute 'last_time_check'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 188, in scrape_with_refcodes
+    if now-self.last_time_check > 180:
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper2' object has no attribute 'last_time_check'
+2023-12-06 03:48:53,449 [ERROR]: An error occurred: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/models.py", line 971, in json
+    return complexjson.loads(self.text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 193, in scrape_with_refcodes
+    batch_results = [result for result in executor.map(scrape_single_thread,refcodes[i:i+batch_size]) if result is not None]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 178, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 121, in scrape_single
+    print(f'Origin: {response.json()['origin']}')
+                     ^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/models.py", line 975, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2023-12-06 03:53:05,042 [ERROR]: An error occurred: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/models.py", line 971, in json
+    return complexjson.loads(self.text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 193, in scrape_with_refcodes
+    batch_results = [result for result in executor.map(scrape_single_thread,refcodes[i:i+batch_size]) if result is not None]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 178, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 121, in scrape_single
+    print(f'Origin: {response.json()['origin']}')
+                     ^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/models.py", line 975, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2023-12-06 03:53:49,522 [ERROR]: An error occurred: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/models.py", line 971, in json
+    return complexjson.loads(self.text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 36, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 193, in scrape_with_refcodes
+    batch_results = [result for result in executor.map(scrape_single_thread,refcodes[i:i+batch_size]) if result is not None]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 178, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper2.py", line 121, in scrape_single
+    print(f'Origin: {response.json()['headers']['User-Agent']}')
+                     ^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/models.py", line 975, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
