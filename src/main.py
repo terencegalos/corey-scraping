@@ -5,10 +5,6 @@ num_scraper = sys.argv[1]
 module_name = f'scraping.scraper{num_scraper}'
 Scraper = getattr(importlib.import_module(module_name),f'Scraper{num_scraper}')
 
-# from scraping.scraper1 import Scraper1 as Scraper
-# from scraping.scraper2 import Scraper2 as Scraper
-# from scraping.scraper4 import Scraper4 as Scraper
-
 from database.database_handler import DatabaseHandler
 from config.db_config import DB_CONFIG
 from log.logger_config import configure_logger
