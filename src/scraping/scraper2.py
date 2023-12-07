@@ -167,7 +167,7 @@ class Scraper2:
     
     def scrape_with_refcodes(self,batch_size=100):
             
-        refcodes = code_generator.generate_code(1,1000000,'NA') #207593
+        refcodes = code_generator.generate_code(289000,1000000,'NA') #207593
         print(f"There are {len(refcodes)} refcodes to rotate!")
         # results = []
         

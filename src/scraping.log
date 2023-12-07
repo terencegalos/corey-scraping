@@ -2852,3 +2852,33 @@ Traceback (most recent call last):
     state = get_us_state.get_state(str(zip_code_el.split("-")[0]))
                                        ^^^^^^^^^^^^^^^^^
 AttributeError: 'NoneType' object has no attribute 'split'
+2023-12-08 02:10:53,092 [ERROR]: An error occurred: cannot access free variable 'start_index_first' where it is not associated with a value in enclosing scope
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 102, in scrape_with_names
+    names = name_generator_large_file.generate_names()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/name_generator_large_file.py", line 61, in generate_names
+    for batch in generate_batches(first_names,last_names):
+  File "/home/terence/projects/corey-scraping/src/scraping/name_generator_large_file.py", line 80, in generate_batches
+    for chunk in iter(lambda :list(islice(product(first_names[start_index_first:],last_names[start_index_last:]),batch_size)),[]):
+  File "/home/terence/projects/corey-scraping/src/scraping/name_generator_large_file.py", line 80, in <lambda>
+    for chunk in iter(lambda :list(islice(product(first_names[start_index_first:],last_names[start_index_last:]),batch_size)),[]):
+                                                              ^^^^^^^^^^^^^^^^^
+NameError: cannot access free variable 'start_index_first' where it is not associated with a value in enclosing scope
+2023-12-08 02:11:51,954 [ERROR]: An error occurred: cannot access free variable 'start_index_first' where it is not associated with a value in enclosing scope
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 102, in scrape_with_names
+    names = name_generator_large_file.generate_names()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/name_generator_large_file.py", line 61, in generate_names
+    for batch in generate_batches(first_names,last_names):
+  File "/home/terence/projects/corey-scraping/src/scraping/name_generator_large_file.py", line 80, in generate_batches
+    for chunk in iter(lambda :list(islice(product(first_names[start_index_first:],last_names[start_index_last:]),batch_size)),[]):
+  File "/home/terence/projects/corey-scraping/src/scraping/name_generator_large_file.py", line 80, in <lambda>
+    for chunk in iter(lambda :list(islice(product(first_names[start_index_first:],last_names[start_index_last:]),batch_size)),[]):
+                                                              ^^^^^^^^^^^^^^^^^
+NameError: cannot access free variable 'start_index_first' where it is not associated with a value in enclosing scope
