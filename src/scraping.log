@@ -2366,3 +2366,489 @@ Traceback (most recent call last):
     for batch_results in scraper.scrape_with_refcodes():
                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'Scraper42' object has no attribute 'scrape_with_refcodes'. Did you mean: 'scrape_with_names'?
+2023-12-07 02:00:31,794 [ERROR]: An error occurred: object of type 'NoneType' has no len()
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 92, in scrape_with_names
+    print(f"There {len(names)} names to rotate!")
+                   ^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+2023-12-07 03:24:43,194 [ERROR]: An error occurred: DatabaseHandler.__init__() got an unexpected keyword argument 'table_name'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 28, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+TypeError: DatabaseHandler.__init__() got an unexpected keyword argument 'table_name'
+2023-12-07 03:34:25,319 [ERROR]: An error occurred: DatabaseHandler.__init__() got an unexpected keyword argument 'table_name'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 28, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+TypeError: DatabaseHandler.__init__() got an unexpected keyword argument 'table_name'
+2023-12-07 03:36:59,907 [ERROR]: An error occurred: DatabaseHandler.__init__() missing 1 required positional argument: 'table_names'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 28, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+TypeError: DatabaseHandler.__init__() missing 1 required positional argument: 'table_names'
+2023-12-07 03:41:14,742 [ERROR]: An error occurred: DatabaseHandler.__init__() missing 1 required positional argument: 'table_names'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 28, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+TypeError: DatabaseHandler.__init__() missing 1 required positional argument: 'table_names'
+2023-12-07 03:43:01,976 [ERROR]: An error occurred: DatabaseHandler.__init__() got an unexpected keyword argument 'table_name'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 28, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+TypeError: DatabaseHandler.__init__() got an unexpected keyword argument 'table_name'
+2023-12-07 03:43:05,635 [ERROR]: An error occurred: DatabaseHandler.__init__() got an unexpected keyword argument 'table_name'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 28, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+TypeError: DatabaseHandler.__init__() got an unexpected keyword argument 'table_name'
+2023-12-07 03:45:38,204 [ERROR]: An error occurred: HTTPConnectionPool(host="a'ishaaaberg1.bhgelite.com", port=80): Max retries exceeded with url: /ApplicationA.html?SessionGuid=b1dd4eec-9fd1-44f4-b8f0-1a093e95e2bc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f32080934d0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 244, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1319, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1365, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1314, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1074, in _send_output
+    self.send(msg)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1018, in send
+    self.connect()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+           ^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f3208090e90>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host="a'ishaaaberg1.bhgelite.com", port=80): Max retries exceeded with url: /ApplicationA.html?SessionGuid=b1dd4eec-9fd1-44f4-b8f0-1a093e95e2bc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f3208090e90>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 41, in scrape_single
+    response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host="a'ishaaaberg1.bhgelite.com", port=80): Max retries exceeded with url: /ApplicationA.html?SessionGuid=b1dd4eec-9fd1-44f4-b8f0-1a093e95e2bc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f3208090e90>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 244, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1319, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1365, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1314, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1074, in _send_output
+    self.send(msg)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1018, in send
+    self.connect()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+           ^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f32080934d0>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host="a'ishaaaberg1.bhgelite.com", port=80): Max retries exceeded with url: /ApplicationA.html?SessionGuid=b1dd4eec-9fd1-44f4-b8f0-1a093e95e2bc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f32080934d0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 118, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 98, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 45, in scrape_single
+    response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host="a'ishaaaberg1.bhgelite.com", port=80): Max retries exceeded with url: /ApplicationA.html?SessionGuid=b1dd4eec-9fd1-44f4-b8f0-1a093e95e2bc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f32080934d0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-12-07 04:01:11,289 [ERROR]: An error occurred: HTTPConnectionPool(host="a'ishaaaberg2.bhgelite.com", port=80): Max retries exceeded with url: /ApplicationA.html?SessionGuid=b1dd4eec-9fd1-44f4-b8f0-1a093e95e2bc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb04fa36a80>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 244, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1319, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1365, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1314, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1074, in _send_output
+    self.send(msg)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1018, in send
+    self.connect()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+           ^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fb04fa34b60>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host="a'ishaaaberg2.bhgelite.com", port=80): Max retries exceeded with url: /ApplicationA.html?SessionGuid=b1dd4eec-9fd1-44f4-b8f0-1a093e95e2bc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb04fa34b60>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 42, in scrape_single
+    response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host="a'ishaaaberg2.bhgelite.com", port=80): Max retries exceeded with url: /ApplicationA.html?SessionGuid=b1dd4eec-9fd1-44f4-b8f0-1a093e95e2bc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb04fa34b60>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 244, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1319, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1365, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1314, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1074, in _send_output
+    self.send(msg)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1018, in send
+    self.connect()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+           ^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fb04fa36a80>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host="a'ishaaaberg2.bhgelite.com", port=80): Max retries exceeded with url: /ApplicationA.html?SessionGuid=b1dd4eec-9fd1-44f4-b8f0-1a093e95e2bc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb04fa36a80>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 120, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 100, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 47, in scrape_single
+    response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host="a'ishaaaberg2.bhgelite.com", port=80): Max retries exceeded with url: /ApplicationA.html?SessionGuid=b1dd4eec-9fd1-44f4-b8f0-1a093e95e2bc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb04fa36a80>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-12-07 04:07:53,166 [ERROR]: An error occurred: cannot access local variable 'response' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 125, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 105, in scrape_single_with_increment
+    result = self.scrape_single(base_url)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 55, in scrape_single
+    print(f'response headers: {response.headers}')
+                               ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2023-12-07 04:15:22,672 [ERROR]: An error occurred: 1054 (42S22): Unknown column 'middle_name' in 'field list'
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'middle_name' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 46, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_bhgelite.py", line 39, in store_data
+    self.cursor.execute(f'''
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'middle_name' in 'field list'
+2023-12-07 04:23:50,094 [ERROR]: An error occurred: 'NoneType' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 129, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 109, in scrape_single_with_increment
+    result = self.scrape_single(base_url.replace("'",""))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 74, in scrape_single
+    state = get_us_state.get_state(str(zip_code_el.split("-")[0]))
+                                       ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+2023-12-07 04:24:54,413 [ERROR]: An error occurred: 'NoneType' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 130, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 110, in scrape_single_with_increment
+    result = self.scrape_single(base_url.replace("'",""))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 75, in scrape_single
+    state = get_us_state.get_state(str(zip_code_el.split("-")[0]))
+                                       ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+2023-12-07 04:25:18,459 [ERROR]: An error occurred: 'NoneType' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 130, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 110, in scrape_single_with_increment
+    result = self.scrape_single(base_url.replace("'",""))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper42.py", line 75, in scrape_single
+    state = get_us_state.get_state(str(zip_code_el.split("-")[0]))
+                                       ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'

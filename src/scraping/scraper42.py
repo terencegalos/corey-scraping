@@ -1,10 +1,12 @@
 import requests, time
+import concurrent.futures
+from urllib.parse import quote
 from requests.exceptions import ConnectionError
 from bs4 import BeautifulSoup
-import concurrent.futures
 from fake_useragent import UserAgent
 
 from scraping import name_generator_large_file
+# from scraping import name_generator
 from scraping import get_us_state
 
 class Scraper42:
@@ -39,13 +41,21 @@ class Scraper42:
         
         try:
             response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
-        except ConnectionError as e:
-            print(f'Connecting failed to {url}. Error: {e}\nReconnecting in 20 secs...')
-            time.sleep(20)
-            response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
+            print(f'status code:{response.status_code}')
+        except requests.exceptions.RequestException as e:
+            if isinstance(e,requests.exceptions.ConnectionError):
+                print(f'Connecting failed to {url}. Error: {e}')
+                return None
+            elif isinstance(e,requests.exceptions.HTTPError):
+                print(f'Connecting failed to {url}. Error: {e}\nReconnecting in 20 secs...')
+                time.sleep(20)
+                response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
+            else:
+                print(f'An error occurred:{e}')
+                return None
 
         # print(response.text)
-        print(f'response headers: {response.headers}')
+        # print(f'response headers: {response.headers}')
         
         
         # if response.status_code == 200:
@@ -61,7 +71,8 @@ class Scraper42:
         address_el = soup.find(attrs={'name':'address1'})['value'] if soup.find(attrs={'name':'address1'}) else None
         city_el = soup.find(attrs={'name':'city'})['value'] if soup.find(attrs={'name':'city'}) else None
         zip_code_el = soup.find(attrs={'name':'zip'})['value'] if soup.find(attrs={'name':'zip'}) else None
-        state = get_us_state.get_state(str(zip_code_el.split("-")[0]))
+        print(f'ZIP:{zip_code_el}')
+        state = get_us_state.get_state(str(zip_code_el.split("-")[0] if zip_code_el is not None else 'NA'))
         # print(state)
         # state_el = soup.select("#state option[selected]")[1].text if len(soup.select("#state")) > 1 else (state if state else 'NA')
         
@@ -88,14 +99,13 @@ class Scraper42:
     
     def scrape_with_names(self,batch_size=100,num_threads=3):
         
-        names = name_generator_large_file.generate_names()#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
-        # names_foreign = name_generator.generate_names('/root/scraping/corey-scraping/src/scraping/ForeignFirstandLast.ods')
-        # print(names)
+        names = name_generator_large_file.generate_names()
+        # names = name_generator.generate_names()
         print(f"There {len(names)} names to rotate!")
         results = []
         
         def scrape_single_with_increment(name,num=''):
-            base_url = f"{"".join([text.lower() for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+            base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
             print(f"Base url: {base_url}")
             result = self.scrape_single(base_url)
             return result
