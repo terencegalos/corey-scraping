@@ -2882,3 +2882,580 @@ Traceback (most recent call last):
     for chunk in iter(lambda :list(islice(product(first_names[start_index_first:],last_names[start_index_last:]),batch_size)),[]):
                                                               ^^^^^^^^^^^^^^^^^
 NameError: cannot access free variable 'start_index_first' where it is not associated with a value in enclosing scope
+2023-12-08 12:46:57,781 [ERROR]: An error occurred: DatabaseHandler.__init__() got an unexpected keyword argument 'table_names'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 28, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+TypeError: DatabaseHandler.__init__() got an unexpected keyword argument 'table_names'
+2023-12-08 12:48:37,317 [ERROR]: An error occurred: DatabaseHandler.__init__() got an unexpected keyword argument 'table_names'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 29, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+TypeError: DatabaseHandler.__init__() got an unexpected keyword argument 'table_names'
+2023-12-08 12:48:46,165 [ERROR]: An error occurred: DatabaseHandler.__init__() got an unexpected keyword argument 'table_names'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 29, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+TypeError: DatabaseHandler.__init__() got an unexpected keyword argument 'table_names'
+2023-12-08 13:34:48,721 [INFO]: package: mysql.connector.plugins
+2023-12-08 13:34:48,721 [INFO]: plugin_name: mysql_native_password
+2023-12-08 13:34:48,723 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 13:34:48,893 [ERROR]: An error occurred: object of type 'generator' has no len()
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 104, in scrape_with_names
+    print(f"There {len(names)} names to rotate!")
+                   ^^^^^^^^^^
+TypeError: object of type 'generator' has no len()
+2023-12-08 13:35:12,021 [INFO]: package: mysql.connector.plugins
+2023-12-08 13:35:12,021 [INFO]: plugin_name: mysql_native_password
+2023-12-08 13:35:12,021 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 13:35:18,747 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 130, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 108, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 13:36:01,691 [INFO]: package: mysql.connector.plugins
+2023-12-08 13:36:01,691 [INFO]: plugin_name: mysql_native_password
+2023-12-08 13:36:01,692 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 13:36:07,935 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 131, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 109, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 13:38:16,805 [INFO]: package: mysql.connector.plugins
+2023-12-08 13:38:16,805 [INFO]: plugin_name: caching_sha2_password
+2023-12-08 13:38:16,806 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-08 13:38:16,806 [INFO]: package: mysql.connector.plugins
+2023-12-08 13:38:16,806 [INFO]: plugin_name: mysql_native_password
+2023-12-08 13:38:16,806 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 13:38:16,909 [ERROR]: An error occurred: 'Scraper41' object has no attribute 'scrape_with_refcodes'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 45, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper41' object has no attribute 'scrape_with_refcodes'. Did you mean: 'scrape_with_names'?
+2023-12-08 13:38:31,753 [INFO]: package: mysql.connector.plugins
+2023-12-08 13:38:31,753 [INFO]: plugin_name: caching_sha2_password
+2023-12-08 13:38:31,753 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-08 13:38:31,754 [INFO]: package: mysql.connector.plugins
+2023-12-08 13:38:31,754 [INFO]: plugin_name: mysql_native_password
+2023-12-08 13:38:31,754 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 13:38:31,771 [INFO]: Scraping and storing data completed successfully.
+2023-12-08 13:40:06,843 [INFO]: package: mysql.connector.plugins
+2023-12-08 13:40:06,844 [INFO]: plugin_name: mysql_native_password
+2023-12-08 13:40:06,844 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 13:40:10,389 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 130, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 108, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 13:43:07,962 [INFO]: package: mysql.connector.plugins
+2023-12-08 13:43:07,962 [INFO]: plugin_name: mysql_native_password
+2023-12-08 13:43:07,962 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 13:43:12,802 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 130, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 108, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 13:51:08,795 [INFO]: package: mysql.connector.plugins
+2023-12-08 13:51:08,795 [INFO]: plugin_name: mysql_native_password
+2023-12-08 13:51:08,795 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 13:51:13,526 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 130, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 108, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 13:52:09,909 [INFO]: package: mysql.connector.plugins
+2023-12-08 13:52:09,909 [INFO]: plugin_name: mysql_native_password
+2023-12-08 13:52:09,910 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 13:52:14,678 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 130, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 108, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 13:53:07,663 [INFO]: package: mysql.connector.plugins
+2023-12-08 13:53:07,663 [INFO]: plugin_name: mysql_native_password
+2023-12-08 13:53:07,663 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 13:53:11,404 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 130, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 108, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 13:57:03,692 [INFO]: package: mysql.connector.plugins
+2023-12-08 13:57:03,693 [INFO]: plugin_name: mysql_native_password
+2023-12-08 13:57:03,693 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 13:57:07,824 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 130, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 108, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 14:03:36,023 [INFO]: package: mysql.connector.plugins
+2023-12-08 14:03:36,023 [INFO]: plugin_name: mysql_native_password
+2023-12-08 14:03:36,024 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 14:04:33,864 [INFO]: package: mysql.connector.plugins
+2023-12-08 14:04:33,865 [INFO]: plugin_name: mysql_native_password
+2023-12-08 14:04:33,865 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 14:04:38,983 [INFO]: package: mysql.connector.plugins
+2023-12-08 14:04:38,983 [INFO]: plugin_name: mysql_native_password
+2023-12-08 14:04:38,983 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 14:04:42,304 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 130, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 108, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 14:05:38,575 [INFO]: package: mysql.connector.plugins
+2023-12-08 14:05:38,575 [INFO]: plugin_name: mysql_native_password
+2023-12-08 14:05:38,575 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 14:05:42,901 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 130, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 108, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 14:05:59,101 [INFO]: package: mysql.connector.plugins
+2023-12-08 14:05:59,101 [INFO]: plugin_name: mysql_native_password
+2023-12-08 14:05:59,102 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 14:06:02,503 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 130, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 108, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 14:33:18,296 [INFO]: package: mysql.connector.plugins
+2023-12-08 14:33:18,296 [INFO]: plugin_name: mysql_native_password
+2023-12-08 14:33:18,296 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 14:33:21,518 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 130, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 108, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 14:33:41,302 [INFO]: package: mysql.connector.plugins
+2023-12-08 14:33:41,302 [INFO]: plugin_name: mysql_native_password
+2023-12-08 14:33:41,303 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 14:33:44,727 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 130, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 108, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 14:37:47,014 [INFO]: package: mysql.connector.plugins
+2023-12-08 14:37:47,014 [INFO]: plugin_name: mysql_native_password
+2023-12-08 14:37:47,015 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 14:37:50,801 [ERROR]: An error occurred: 'generator' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 130, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 108, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'generator' object has no attribute 'split'
+2023-12-08 14:38:08,831 [INFO]: package: mysql.connector.plugins
+2023-12-08 14:38:08,831 [INFO]: plugin_name: mysql_native_password
+2023-12-08 14:38:08,832 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 14:38:12,560 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 130, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 108, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 14:39:09,103 [INFO]: package: mysql.connector.plugins
+2023-12-08 14:39:09,103 [INFO]: plugin_name: mysql_native_password
+2023-12-08 14:39:09,103 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 14:39:12,567 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 130, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 108, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 14:39:52,039 [INFO]: package: mysql.connector.plugins
+2023-12-08 14:39:52,039 [INFO]: plugin_name: mysql_native_password
+2023-12-08 14:39:52,039 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 14:39:56,078 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 131, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 109, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 14:40:37,160 [INFO]: package: mysql.connector.plugins
+2023-12-08 14:40:37,160 [INFO]: plugin_name: mysql_native_password
+2023-12-08 14:40:37,160 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 14:40:37,167 [ERROR]: An error occurred: object of type 'generator' has no len()
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 103, in scrape_with_names
+    print(len(names))
+          ^^^^^^^^^^
+TypeError: object of type 'generator' has no len()
+2023-12-08 14:41:28,808 [INFO]: package: mysql.connector.plugins
+2023-12-08 14:41:28,808 [INFO]: plugin_name: mysql_native_password
+2023-12-08 14:41:28,808 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 14:41:32,854 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 131, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 109, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 14:42:00,872 [INFO]: package: mysql.connector.plugins
+2023-12-08 14:42:00,872 [INFO]: plugin_name: mysql_native_password
+2023-12-08 14:42:00,872 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 14:42:04,114 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 131, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 109, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 14:42:53,457 [INFO]: package: mysql.connector.plugins
+2023-12-08 14:42:53,457 [INFO]: plugin_name: mysql_native_password
+2023-12-08 14:42:53,458 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 14:42:57,353 [ERROR]: An error occurred: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 132, in scrape_with_names
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper42.py", line 110, in scrape_single_with_increment
+    base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
+                                                                    ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2023-12-08 14:44:29,328 [INFO]: package: mysql.connector.plugins
+2023-12-08 14:44:29,328 [INFO]: plugin_name: mysql_native_password
+2023-12-08 14:44:29,328 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 14:45:48,459 [INFO]: package: mysql.connector.plugins
+2023-12-08 14:45:48,459 [INFO]: plugin_name: mysql_native_password
+2023-12-08 14:45:48,460 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 14:45:56,135 [INFO]: Scraping and storing data completed successfully.
+2023-12-08 15:23:20,707 [INFO]: package: mysql.connector.plugins
+2023-12-08 15:23:20,707 [INFO]: plugin_name: mysql_native_password
+2023-12-08 15:23:20,708 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 15:23:26,372 [ERROR]: An error occurred: generator raised StopIteration
+Traceback (most recent call last):
+  File "/root/projects/corey/src/scraping/scraper42.py", line 124, in scrape_with_names
+    name = next(names_generator)
+           ^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+RuntimeError: generator raised StopIteration
+2023-12-08 15:24:35,790 [INFO]: package: mysql.connector.plugins
+2023-12-08 15:24:35,791 [INFO]: plugin_name: mysql_native_password
+2023-12-08 15:24:35,791 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 15:24:44,178 [ERROR]: An error occurred: generator raised StopIteration
+Traceback (most recent call last):
+  File "/root/projects/corey/src/scraping/scraper42.py", line 124, in scrape_with_names
+    for name in next(names_generator):
+                ^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+RuntimeError: generator raised StopIteration
+2023-12-08 15:26:27,322 [INFO]: package: mysql.connector.plugins
+2023-12-08 15:26:27,322 [INFO]: plugin_name: mysql_native_password
+2023-12-08 15:26:27,323 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 15:26:34,986 [ERROR]: An error occurred: generator raised StopIteration
+Traceback (most recent call last):
+  File "/root/projects/corey/src/scraping/scraper42.py", line 130, in scrape_with_names
+    for name in next(names_generator):
+                ^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+RuntimeError: generator raised StopIteration
+2023-12-08 15:28:09,609 [INFO]: package: mysql.connector.plugins
+2023-12-08 15:28:09,609 [INFO]: plugin_name: mysql_native_password
+2023-12-08 15:28:09,610 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 15:29:33,434 [INFO]: package: mysql.connector.plugins
+2023-12-08 15:29:33,434 [INFO]: plugin_name: mysql_native_password
+2023-12-08 15:29:33,435 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 15:29:41,467 [ERROR]: An error occurred: name 'names' is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_bhgelite.py", line 39, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper42.py", line 131, in scrape_with_names
+    for name in names:
+                ^^^^^
+NameError: name 'names' is not defined. Did you mean: 'name'?
+2023-12-08 15:30:55,445 [INFO]: package: mysql.connector.plugins
+2023-12-08 15:30:55,445 [INFO]: plugin_name: mysql_native_password
+2023-12-08 15:30:55,446 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin

@@ -87,6 +87,7 @@ class Scraper41:
         results = []
         
         def scrape_single_with_increment(name,num=''):
+            print(f'{name}')
             base_url = f"{"".join([text.lower() for text in name.split()])}{num if num > 0 else ''}.{self.url}"
             print(f"Base url: {base_url}")
             result = self.scrape_single(base_url)

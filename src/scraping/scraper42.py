@@ -99,9 +99,10 @@ class Scraper42:
     
     def scrape_with_names(self,batch_size=100,num_threads=3):
         
-        names = name_generator_large_file.generate_names()
+        names_generator = name_generator_large_file.generate_names()
+
         # names = name_generator.generate_names()
-        print(f"There {len(names)} names to rotate!")
+        # print(f"There {len(names)} names to rotate!")
         results = []
         
         def scrape_single_with_increment(name,num=''):
@@ -118,6 +119,14 @@ class Scraper42:
                 
         
         with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads) as executor:
+            # names = []
+            while True:
+                try:
+                    for name in next(names_generator):
+                        # names.append(name)
+                        print(name)
+                except StopIteration:
+                    break
                
             for name in names:
                 num_generator = generate_numbers()

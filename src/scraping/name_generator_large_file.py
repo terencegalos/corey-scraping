@@ -1,6 +1,5 @@
 from database.database_handler_names import DatabaseHandler
 from config.db_config import DB_CONFIG
-import pandas as pd
 from itertools import product,islice
 
 
@@ -34,35 +33,41 @@ def get_last_names():
     
 
 
-def generate_names(chunk_size=100):
+# def generate_names_test(chunk_size=100):
         
         
         
-        first_names = get_first_names()    
-        last_names = get_last_names()        
+#         first_names = get_first_names()    
+#         last_names = get_last_names()        
         
-        print(f'Generating all name combinations. Please wait...')
+#         print(f'Generating all name combinations. Please wait...')
 
-        all_name_combinations = []
-        # Break up first names into chunks
-        for chunk_start in range(0,len(first_names),chunk_size):
-            chunk_end = min(chunk_start+chunk_size,len(first_names))
-            current_chunk_first_names = first_names[chunk_start:chunk_end]
+#         all_name_combinations = []
+#         # Break up first names into chunks
+#         for chunk_start in range(0,len(first_names),chunk_size):
+#             chunk_end = min(chunk_start+chunk_size,len(first_names))
+#             current_chunk_first_names = first_names[chunk_start:chunk_end]
             
-            # Generate batches for the current chunk
-            for batch in generate_batches(current_chunk_first_names,last_names):
-                name_combinations = [''.join(pair).lower() for pair in batch]
-                print(f'{'\n'.join(name_combinations)}')
-                all_name_combinations.extend(name_combinations)
+#             # Generate batches for the current chunk
+#             for batch in generate_batches(current_chunk_first_names,last_names):
+#                 name_combinations = [''.join(pair).lower() for pair in batch]
+#                 print(f'{'\n'.join(name_combinations)}')
+#                 all_name_combinations.extend(name_combinations)
             
-        print(f'There are {len(all_name_combinations)} names to loop (plus increments in each).')
+#         print(f'There are {len(all_name_combinations)} names to loop (plus increments in each).')
         
-        return all_name_combinations
+#         return all_name_combinations
 
 
 
 
-def generate_batches(first_names,last_names,batch_size=1000,last_interrupted_first=None,last_interrupted_last=None):
+
+
+def generate_names(last_interrupted_first=None,last_interrupted_last=None):
+    first_names = get_first_names()
+    last_names = get_last_names()
+    print(f'Total first names: {len(first_names)}')
+
     # get index of last interrupted names
     start_index_first = 0
     start_index_last = 0
@@ -77,9 +82,13 @@ def generate_batches(first_names,last_names,batch_size=1000,last_interrupted_fir
     # for chunk in iter(lambda :list(islice(product(first_names[start_index_first:],last_names[start_index_last:]),batch_size)),[]):
     #     yield chunk
 
-    it = iter(product(first_names[start_index_first:],last_names[start_index_last:]))
-    while True:
-        chunk = list(islice(it,batch_size))
-        if not chunk:
-            break
-        yield chunk
+    for idx in range(start_index_first,len(first_names)):
+        batch = [" ".join(name) for name in list(iter(product([first_names[idx]],last_names[start_index_last:])))]
+        # print(batch)
+        yield batch
+
+        # while True:
+        #     chunk = list(islice(it,batch_size))
+        #     if not chunk:
+        #         break
+        #     yield chunk
