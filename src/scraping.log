@@ -3459,3 +3459,15 @@ NameError: name 'names' is not defined. Did you mean: 'name'?
 2023-12-08 15:30:55,445 [INFO]: package: mysql.connector.plugins
 2023-12-08 15:30:55,445 [INFO]: plugin_name: mysql_native_password
 2023-12-08 15:30:55,446 [INFO]: AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-12-08 19:53:40,292 [ERROR]: An error occurred: object of type 'generator' has no len()
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper41.py", line 86, in scrape_with_names
+    print(f"There {len(names)} names to rotate!")
+                   ^^^^^^^^^^
+TypeError: object of type 'generator' has no len()
+2023-12-08 19:53:51,410 [INFO]: Scraping and storing data completed successfully.
+2023-12-08 19:54:10,619 [INFO]: Scraping and storing data completed successfully.
+2023-12-08 19:55:14,069 [INFO]: Scraping and storing data completed successfully.
+2023-12-08 19:58:57,560 [INFO]: Scraping and storing data completed successfully.

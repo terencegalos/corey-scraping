@@ -66,7 +66,6 @@ def get_last_names():
 def generate_names(last_interrupted_first=None,last_interrupted_last=None):
     first_names = get_first_names()
     last_names = get_last_names()
-    print(f'Total first names: {len(first_names)}')
 
     # get index of last interrupted names
     start_index_first = 0
@@ -78,17 +77,7 @@ def generate_names(last_interrupted_first=None,last_interrupted_last=None):
         except ValueError:
             print(f"Last interrupted name '{last_interrupted_first} {last_interrupted_last}' not found. Starting from the beginning.")
 
-    # get names by batch_size until exhausted
-    # for chunk in iter(lambda :list(islice(product(first_names[start_index_first:],last_names[start_index_last:]),batch_size)),[]):
-    #     yield chunk
-
     for idx in range(start_index_first,len(first_names)):
+        print(first_names[idx])
         batch = [" ".join(name) for name in list(iter(product([first_names[idx]],last_names[start_index_last:])))]
-        # print(batch)
         yield batch
-
-        # while True:
-        #     chunk = list(islice(it,batch_size))
-        #     if not chunk:
-        #         break
-        #     yield chunk

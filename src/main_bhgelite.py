@@ -4,7 +4,6 @@ num_scraper = sys.argv[1]
 module_name = f'scraping.scraper{num_scraper}'
 Scraper = getattr(importlib.import_module(module_name),f'Scraper{num_scraper}')
 
-
 # from database.database_handler_local import DatabaseHandler
 from database.database_handler_bhgelite import DatabaseHandler
 from config.db_config_local import DB_CONFIG
