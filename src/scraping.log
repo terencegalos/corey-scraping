@@ -3631,3 +3631,25 @@ Traceback (most recent call last):
   File "/root/venv/corey/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
     raise ConnectionError(e, request=request)
 requests.exceptions.ConnectionError: HTTPSConnectionPool(host="a'ishaaaberg.moneyladdernow.com", port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f31f8b73620>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-12-10 16:26:09,528 [ERROR]: An error occurred: name 'old_names' is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 101, in scrape_with_names
+    for name in next(names_generator):
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/name_generator_large_file.py", line 89, in generate_names
+    batch = [" ".join(name) for name in list(iter(product([first_names[idx]],last_names[start_index_last:]))) if " ".join(name) not in old_names]
+                                                                                                                                       ^^^^^^^^^
+NameError: name 'old_names' is not defined
+2023-12-10 16:27:41,458 [ERROR]: An error occurred: name 'old_names' is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/root/projects/corey/src/scraping/scraper4.py", line 101, in scrape_with_names
+    for name in next(names_generator):
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/name_generator_large_file.py", line 89, in generate_names
+    batch = [" ".join(name) for name in list(iter(product([first_names[idx]],last_names[start_index_last:]))) if " ".join(name) not in old_names]
+                                                                                                                                       ^^^^^^^^^
+NameError: name 'old_names' is not defined

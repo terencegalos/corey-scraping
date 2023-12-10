@@ -78,7 +78,7 @@ class Scraper4:
     
     def scrape_with_names(self,batch_size=100,num_threads=3):
         
-        names_generator = name_generator.generate_names('james','smith')
+        names_generator = name_generator.generate_names('john','smith')
         results = []
         
         def scrape_single_with_increment(name,num=''):

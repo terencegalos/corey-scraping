@@ -12,20 +12,20 @@ db_handler = DatabaseHandler(
      
 
 
-def get_first_names():
+def get_first_names(table_name='first_names',col_name='first_name'):
 
     try:
-        first_names = db_handler.read_table('first_names','first_name')
+        first_names = db_handler.read_table(table_name,col_name)
         return first_names
     except Exception as e:
         print(f"Reading table failed. (Error): {e}")
         return []
     
 
-def get_last_names():
+def get_last_names(table_name='last_names',col_name='last_name'):
 
     try:
-        last_names = db_handler.read_table('last_names','last_name')
+        last_names = db_handler.read_table(table_name,col_name)
         return last_names
     except Exception as e:
         print(f"Reading table failed. (Error): {e}")
@@ -62,10 +62,17 @@ def get_last_names():
 
 
 
-
 def generate_names(last_interrupted_first=None,last_interrupted_last=None):
-    first_names = get_first_names()
-    last_names = get_last_names()
+
+    print('Getting first names to exclude.')
+    old_first_names = get_first_names('first_names_old')
+    print('Getting last names to exclude')
+    old_last_names = get_last_names('last_names_old')
+
+
+    # generate names that are not in common names
+    first_names = [fname for fname in get_first_names() if fname not in old_first_names]
+    last_names = [lname for lname in get_last_names() if lname not in old_last_names]
 
     # get index of last interrupted names
     start_index_first = 0
