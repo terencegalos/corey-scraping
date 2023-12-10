@@ -22,6 +22,9 @@ def get_first_names(table_name='first_names',col_name='first_name'):
         return []
     
 
+
+
+
 def get_last_names(table_name='last_names',col_name='last_name'):
 
     try:
@@ -30,34 +33,6 @@ def get_last_names(table_name='last_names',col_name='last_name'):
     except Exception as e:
         print(f"Reading table failed. (Error): {e}")
         return []
-    
-
-
-# def generate_names_test(chunk_size=100):
-        
-        
-        
-#         first_names = get_first_names()    
-#         last_names = get_last_names()        
-        
-#         print(f'Generating all name combinations. Please wait...')
-
-#         all_name_combinations = []
-#         # Break up first names into chunks
-#         for chunk_start in range(0,len(first_names),chunk_size):
-#             chunk_end = min(chunk_start+chunk_size,len(first_names))
-#             current_chunk_first_names = first_names[chunk_start:chunk_end]
-            
-#             # Generate batches for the current chunk
-#             for batch in generate_batches(current_chunk_first_names,last_names):
-#                 name_combinations = [''.join(pair).lower() for pair in batch]
-#                 print(f'{'\n'.join(name_combinations)}')
-#                 all_name_combinations.extend(name_combinations)
-            
-#         print(f'There are {len(all_name_combinations)} names to loop (plus increments in each).')
-        
-#         return all_name_combinations
-
 
 
 
@@ -84,7 +59,8 @@ def generate_names(last_interrupted_first=None,last_interrupted_last=None):
         except ValueError:
             print(f"Last interrupted name '{last_interrupted_first} {last_interrupted_last}' not found. Starting from the beginning.")
 
+    # Generate all name combination from first names and last names
+    # To manage system resources we loop every first name not everything at once
     for idx in range(start_index_first,len(first_names)):
-        # print(first_names[idx])
         batch = [" ".join(name) for name in list(iter(product([first_names[idx]],last_names[start_index_last:])))]
         yield batch
