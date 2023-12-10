@@ -73,11 +73,11 @@ def generate_names(last_interrupted_first=None,last_interrupted_last=None):
     if last_interrupted_first:
         try:
             start_index_first = first_names.index(last_interrupted_first)
-            start_index_last = last_names.index(last_interrupted_last)
+            start_index_last = last_names.index(last_interrupted_last) if last_interrupted_last else 0
         except ValueError:
             print(f"Last interrupted name '{last_interrupted_first} {last_interrupted_last}' not found. Starting from the beginning.")
 
     for idx in range(start_index_first,len(first_names)):
-        print(first_names[idx])
+        # print(first_names[idx])
         batch = [" ".join(name) for name in list(iter(product([first_names[idx]],last_names[start_index_last:])))]
         yield batch
