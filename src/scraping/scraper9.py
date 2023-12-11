@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import concurrent.futures
 from fake_useragent import UserAgent
 
-from scraping import name_generator
+from scraping import name_generator_large_file as name_generator
 from scraping import get_us_state
 
 class Scraper9:
@@ -74,11 +74,11 @@ class Scraper9:
         }
         
     
-    def scrape_with_names(self,batch_size=100,num_threads=3):
+    def scrape_with_names(self,batch_size=10,num_threads=3):
         
-        names = name_generator.generate_names()#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
+        names_generator = name_generator.generate_names()#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
         # print(names)
-        print(f"There {len(names)} names to rotate!")
+        # print(f"There {len(names)} names to rotate!")
         results = []
         
         def scrape_single_with_increment(name,num=''):
@@ -96,31 +96,36 @@ class Scraper9:
         
         with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads) as executor:
                
-            for name in names:
-                num_generator = generate_numbers()
-                continue_to_next_name = False
-                
-                while True:
-                    futures = [executor.submit(scrape_single_with_increment, name, num) for num in [next(num_generator) for _ in range(3)] ]
-                    
-                    for future in concurrent.futures.as_completed(futures):
-                        result = future.result()
-                        if result is not None:
-                            print(result)
-                            results.append(result)
-
-                            # Yield results in batches
-                            if len(results) % batch_size == 0:
-                                yield results
-                                results = []  # Clear the results list after yielding
-                        else:
-                            print(f'Not available. Stopping...')
-                            continue_to_next_name = True
-                            break
+            while True:
+                try:
+                    for name in next(names_generator):
+                        num_generator = generate_numbers()
+                        continue_to_next_name = False
                         
-                    if continue_to_next_name:
-                    # if next(num_generator) > 100:
-                        break
+                        while True:
+                            futures = [executor.submit(scrape_single_with_increment, name.replace("'","").replace("/",""), num) for num in [next(num_generator) for _ in range(3)] ]
+                            
+                            for future in concurrent.futures.as_completed(futures):
+                                result = future.result()
+                                if result is not None:
+                                    print(result)
+                                    results.append(result)
+
+                                    # Yield results in batches
+                                    if len(results) % batch_size == 0:
+                                        yield results
+                                        results = []  # Clear the results list after yielding
+                                else:
+                                    print(f'Not available. Stopping...')
+                                    continue_to_next_name = True
+                                    break
+                                
+                            if continue_to_next_name:
+                            # if next(num_generator) > 100:
+                                break
+                except StopIteration:
+                    print("Scraping successful.")
+                    break
                         
         # Yield any remaining results
         if results:
