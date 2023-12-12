@@ -60,7 +60,7 @@ def generate_names(last_interrupted_first=None,last_interrupted_last=None):
             print(f"Last interrupted name '{last_interrupted_first} {last_interrupted_last}' not found. Starting from the beginning.")
 
     # Generate all name combination from first names and last names
-    # To manage system resources we loop every first name not everything at once
+    # To manage system resources, loop every first name not everything at once
     for idx in range(start_index_first,len(first_names)):
         batch = [" ".join(name) for name in list(iter(product([first_names[idx]],last_names[start_index_last:])))]
         yield batch

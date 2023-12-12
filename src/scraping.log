@@ -3653,3 +3653,1459 @@ Traceback (most recent call last):
     batch = [" ".join(name) for name in list(iter(product([first_names[idx]],last_names[start_index_last:]))) if " ".join(name) not in old_names]
                                                                                                                                        ^^^^^^^^^
 NameError: name 'old_names' is not defined
+2023-12-11 01:41:24,329 [ERROR]: An error occurred: 'Scraper3' object has no attribute 'scrape_with_names'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper3' object has no attribute 'scrape_with_names'. Did you mean: 'scrape_with_refcodes'?
+2023-12-11 01:42:12,891 [ERROR]: An error occurred: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f17a7116000>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+Traceback (most recent call last):
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f17a7116000>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f17a7116000>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 147, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 138, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 59, in scrape_single
+    response = self.session.get(f'https://{url}',data=data, headers=headers, allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f17a7116000>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-12-11 01:45:45,417 [ERROR]: An error occurred: 'Scraper3' object has no attribute 'url'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 21, in main
+    scraper = Scraper()
+              ^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 23, in __init__
+    print(self.url)
+          ^^^^^^^^
+AttributeError: 'Scraper3' object has no attribute 'url'
+2023-12-11 01:46:22,509 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 146, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 137, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 107, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 02:05:27,268 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 146, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 137, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 107, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 02:05:35,550 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 146, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 137, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 107, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 02:44:16,148 [ERROR]: An error occurred: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 194, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 185, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 106, in scrape_single
+    response = self.session.post(f'https://c0hcb177.caspio.com',data=data,cookies=cookies,headers=headers2)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 473, in prepare_request
+    cookies = cookiejar_from_dict(cookies)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/cookies.py", line 537, in cookiejar_from_dict
+    cookiejar.set_cookie(create_cookie(name, cookie_dict[name]))
+                                             ~~~~~~~~~~~^^^^^^
+TypeError: list indices must be integers or slices, not str
+2023-12-11 02:47:42,593 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 195, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 186, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 156, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 02:49:09,784 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 196, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 187, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 157, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 02:49:56,292 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 196, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 187, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 157, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 02:50:28,515 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 197, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 188, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 158, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 02:50:48,726 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 197, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 188, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 158, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 02:57:41,007 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 197, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 188, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 158, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 03:02:02,506 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 198, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 189, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 159, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 03:07:49,574 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 198, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 189, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 159, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 03:08:47,215 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 198, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 189, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 159, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 03:10:46,598 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 198, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 189, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 159, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 03:17:06,796 [ERROR]: An error occurred: name 'cookies' is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 198, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 189, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 109, in scrape_single
+    response = self.session.post(f'https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d',data=data,cookies=cookies,headers=headers2,allow_redirects=True)
+                                                                                                                  ^^^^^^^
+NameError: name 'cookies' is not defined
+2023-12-11 03:23:45,810 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 201, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 192, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 162, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 03:24:04,060 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 201, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 192, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 162, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 03:24:45,012 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 201, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 192, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 162, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 03:24:58,586 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 201, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 192, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 162, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 03:34:07,235 [ERROR]: An error occurred: object of type 'Response' has no len()
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 207, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 198, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 114, in scrape_single
+    soup = BeautifulSoup(response,'html.parser')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/bs4/__init__.py", line 315, in __init__
+    elif len(markup) <= 256 and (
+         ^^^^^^^^^^^
+TypeError: object of type 'Response' has no len()
+2023-12-11 03:34:36,649 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 207, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 198, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 168, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 03:35:07,954 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 207, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 198, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 168, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 03:36:00,370 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 208, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 199, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 169, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 03:37:09,930 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 209, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 200, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 170, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 03:37:45,298 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 210, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 201, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 171, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 03:37:52,736 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 210, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 201, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 171, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 03:41:19,537 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 201, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 192, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 162, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 03:43:49,983 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 211, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 202, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 172, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 03:47:33,959 [ERROR]: An error occurred: ReferenceError: "src" is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 214, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 205, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 127, in scrape_single
+    src_url = context.eval('src')
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_abstract_runtime_context.py", line 27, in eval
+    return self._eval(source)
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_external_runtime.py", line 78, in _eval
+    return self.exec_(code)
+           ^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_abstract_runtime_context.py", line 18, in exec_
+    return self._exec_(source)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_external_runtime.py", line 88, in _exec_
+    return self._extract_result(output)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_external_runtime.py", line 167, in _extract_result
+    raise ProgramError(value)
+execjs._exceptions.ProgramError: ReferenceError: "src" is not defined
+2023-12-11 03:48:44,826 [ERROR]: An error occurred: unsupported operand type(s) for +: 'Tag' and 'str'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 215, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 206, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 127, in scrape_single
+    src_url = context.eval('src')
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_abstract_runtime_context.py", line 27, in eval
+    return self._eval(source)
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_external_runtime.py", line 78, in _eval
+    return self.exec_(code)
+           ^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_abstract_runtime_context.py", line 18, in exec_
+    return self._exec_(source)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_external_runtime.py", line 82, in _exec_
+    source = self._source + '\n' + source
+             ~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'Tag' and 'str'
+2023-12-11 03:49:23,432 [ERROR]: An error occurred: unsupported operand type(s) for +: 'Tag' and 'str'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 215, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 206, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 127, in scrape_single
+    src_url = context.eval('src')
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_abstract_runtime_context.py", line 27, in eval
+    return self._eval(source)
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_external_runtime.py", line 78, in _eval
+    return self.exec_(code)
+           ^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_abstract_runtime_context.py", line 18, in exec_
+    return self._exec_(source)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_external_runtime.py", line 82, in _exec_
+    source = self._source + '\n' + source
+             ~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'Tag' and 'str'
+2023-12-11 03:56:13,498 [ERROR]: An error occurred: AbstractRuntimeContext.eval() missing 1 required positional argument: 'source'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 215, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 206, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 127, in scrape_single
+    result = context.eval()
+             ^^^^^^^^^^^^^^
+TypeError: AbstractRuntimeContext.eval() missing 1 required positional argument: 'source'
+2023-12-11 03:57:18,020 [ERROR]: An error occurred: ReferenceError: "document" is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 215, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 206, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 127, in scrape_single
+    result = context.eval("new requestDataPage('c0hcb177.caspio.com', 'e9ac8000d5813b5789dc4353ad8d', false, '').start();")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_abstract_runtime_context.py", line 27, in eval
+    return self._eval(source)
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_external_runtime.py", line 78, in _eval
+    return self.exec_(code)
+           ^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_abstract_runtime_context.py", line 18, in exec_
+    return self._exec_(source)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_external_runtime.py", line 88, in _exec_
+    return self._extract_result(output)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_external_runtime.py", line 167, in _extract_result
+    raise ProgramError(value)
+execjs._exceptions.ProgramError: ReferenceError: "document" is not defined
+2023-12-11 03:58:11,454 [ERROR]: An error occurred: ReferenceError: "document" is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 215, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 206, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 127, in scrape_single
+    result = context.eval(response.text)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_abstract_runtime_context.py", line 27, in eval
+    return self._eval(source)
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_external_runtime.py", line 78, in _eval
+    return self.exec_(code)
+           ^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_abstract_runtime_context.py", line 18, in exec_
+    return self._exec_(source)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_external_runtime.py", line 88, in _exec_
+    return self._extract_result(output)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_external_runtime.py", line 167, in _extract_result
+    raise ProgramError(value)
+execjs._exceptions.ProgramError: ReferenceError: "document" is not defined
+2023-12-11 04:06:24,548 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 215, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 206, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 176, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 04:07:00,999 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 215, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 206, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 176, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-11 04:08:04,703 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 215, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 206, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 176, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 02:07:37,154 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 216, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 207, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 177, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 02:09:56,929 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 223, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 214, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 184, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 02:10:28,239 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 224, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 215, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 185, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 02:11:23,384 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 225, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 216, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 186, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 02:12:53,089 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 225, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 216, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 186, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 02:15:27,023 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 225, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 216, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 186, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 02:15:41,527 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 225, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 216, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 186, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 02:43:47,318 [ERROR]: An error occurred: cannot access local variable 'cookies' where it is not associated with a value
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 225, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 216, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 107, in scrape_single
+    response = self.session.get(f'https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d',data=data,cookies=cookies, headers=headers1)
+                                                                                                                 ^^^^^^^
+UnboundLocalError: cannot access local variable 'cookies' where it is not associated with a value
+2023-12-12 02:44:00,097 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 225, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 216, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 186, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 02:44:20,491 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 226, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 217, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 187, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 02:52:31,254 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 226, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 217, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 187, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 03:02:43,247 [ERROR]: An error occurred: name 'cookies' is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 226, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 217, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 114, in scrape_single
+    response = self.session.post(f'https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d', data=data, params=params, cookies=cookies,headers=headers1,allow_redirects=True)
+                                                                                                                                   ^^^^^^^
+NameError: name 'cookies' is not defined
+2023-12-12 03:02:57,993 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 226, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 217, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 187, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:13:42,413 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 226, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 217, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 187, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:14:23,662 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 226, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 217, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 187, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:42:12,231 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 228, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 219, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 189, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:42:35,162 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 228, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 219, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 189, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:43:27,471 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 230, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 221, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 191, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:43:55,171 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 228, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 219, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 189, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:44:02,263 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 228, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 219, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 189, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:44:12,941 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 228, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 219, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 189, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:48:04,523 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 228, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 219, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 189, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:48:09,130 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 228, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 219, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 189, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:48:33,729 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 228, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 219, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 189, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:50:22,935 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 228, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 219, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 189, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:50:30,670 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 228, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 219, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 189, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:50:54,489 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 228, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 219, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 189, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:53:00,130 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 231, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 222, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 192, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:53:11,336 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 231, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 222, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 192, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:53:25,511 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 231, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 222, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 192, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:56:05,603 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 232, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 223, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 193, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 04:57:02,525 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 232, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 223, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 193, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 05:11:14,608 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 233, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 224, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 194, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 05:11:30,594 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 233, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 224, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 194, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 13:27:03,919 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 235, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 226, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 196, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 13:28:09,581 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 236, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 227, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 197, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 13:28:36,666 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 237, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 228, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 198, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 13:28:58,764 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 237, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 228, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 198, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 13:29:34,087 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 238, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 229, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 199, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 14:51:25,816 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 238, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 229, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 126, in scrape_single
+    script_src = soup.find('script').get('src')
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2023-12-12 14:52:18,261 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 238, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 229, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 199, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 14:52:37,286 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 239, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 230, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 200, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 14:53:25,170 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 240, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 231, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 201, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 14:53:45,889 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 240, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 231, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 201, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 16:46:19,596 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 241, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 232, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 202, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 16:47:13,130 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 241, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 232, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 202, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 16:59:21,291 [ERROR]: An error occurred: 'Response' object has no attribute 'coockies_items'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 242, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 233, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 127, in scrape_single
+    print(response.coockies_items())
+          ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Response' object has no attribute 'coockies_items'
+2023-12-12 16:59:40,844 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 242, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 233, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 203, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 17:13:32,065 [ERROR]: An error occurred: ReferenceError: "document" is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 246, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 237, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 131, in scrape_single
+    output = context.call(None)
+             ^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_abstract_runtime_context.py", line 37, in call
+    return self._call(name, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_external_runtime.py", line 92, in _call
+    return self._eval("{identifier}.apply(this, {args})".format(identifier=identifier, args=args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_external_runtime.py", line 78, in _eval
+    return self.exec_(code)
+           ^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_abstract_runtime_context.py", line 18, in exec_
+    return self._exec_(source)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_external_runtime.py", line 88, in _exec_
+    return self._extract_result(output)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/execjs/_external_runtime.py", line 167, in _extract_result
+    raise ProgramError(value)
+execjs._exceptions.ProgramError: ReferenceError: "document" is not defined
+2023-12-12 18:20:00,000 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 242, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 233, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 203, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 18:21:28,611 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 242, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 233, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 203, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 18:21:35,864 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 242, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 233, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 203, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 18:33:34,482 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 249, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 240, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 210, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 18:34:10,999 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 251, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/root/projects/corey/src/scraping/scraper3.py", line 242, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper3.py", line 212, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"wpforms[fields][4][postal]"})['value'] if 'value' in soup.find(attrs={"name":"wpforms[fields][4][postal]"}).attrs else None
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
