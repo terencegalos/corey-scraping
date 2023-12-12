@@ -20,12 +20,12 @@ def generate_codes_with_prefix(start_prefix='',start=1000, end=5000):
     return codes
 
 
-def generate_code(start,end,prefix):
+def generate_code(start,end,prefix,width=7):
         codes = []
         
         for num in range(start, end+1):
             # Generate zero-padded numeric component
-            numeric_component = f"{num:07d}"
+            numeric_component = f"{num:0{width}d}"
             
             # Create the invite code by combining the prefix "HA" and the numeric component
             invite_code = f"{prefix}{numeric_component}" # mobilendloan
