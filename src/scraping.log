@@ -3653,3 +3653,372 @@ Traceback (most recent call last):
     batch = [" ".join(name) for name in list(iter(product([first_names[idx]],last_names[start_index_last:]))) if " ".join(name) not in old_names]
                                                                                                                                        ^^^^^^^^^
 NameError: name 'old_names' is not defined
+2023-12-12 23:33:43,275 [ERROR]: An error occurred: 'Scraper3' object has no attribute 'scrape_with_names'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper3' object has no attribute 'scrape_with_names'. Did you mean: 'scrape_with_refcodes'?
+2023-12-12 23:52:13,640 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 206, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 197, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 167, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"EditRecordZip"})['value'] if 'value' in soup.find(attrs={"name":"EditRecordZip"}).attrs else None
+                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 23:52:53,834 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 206, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 197, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 167, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"EditRecordZip"})['value'] if 'value' in soup.find(attrs={"name":"EditRecordZip"}).attrs else None
+                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 23:53:26,932 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 207, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 198, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 168, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"EditRecordZip"})['value'] if 'value' in soup.find(attrs={"name":"EditRecordZip"}).attrs else None
+                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-12 23:54:46,195 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 207, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 198, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 168, in scrape_single
+    zip_code_el = soup.find(attrs={"name":"EditRecordZip"})['value'] if  soup.find(attrs={"name":"EditRecordZip"}).attrs and 'value' in soup.find(attrs={"name":"EditRecordZip"}) else None
+                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-13 00:00:51,545 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 211, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 202, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 146, in scrape_single
+    print(input_element.get('value'))
+          ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2023-12-13 00:11:50,366 [ERROR]: An error occurred: 'NoneType' object has no attribute 'text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 212, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 203, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 146, in scrape_single
+    print(input_element.text)
+          ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'text'
+2023-12-13 00:15:48,554 [ERROR]: An error occurred: expected string or bytes-like object, got 'Tag'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 212, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 203, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 145, in scrape_single
+    match = re.search(r'''<input id='\"EditRecordFirstName\"' name='\"EditRecordFirstName\"' type='\"hidden\"' value='\".?/>''',soup)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/re/__init__.py", line 177, in search
+    return _compile(pattern, flags).search(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'Tag'
+2023-12-13 00:17:50,432 [ERROR]: An error occurred: 'NoneType' object is not callable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 212, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 203, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 145, in scrape_single
+    print(soup.replace("\\",""))
+          ^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not callable
+2023-12-13 00:27:45,075 [ERROR]: An error occurred: 'value'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 216, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 207, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 145, in scrape_single
+    first = soup.find('input',attrs={'name':r'\"EditRecordFirstName\"'}['value'])
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'value'
+2023-12-13 00:35:45,865 [ERROR]: An error occurred: name 'cookies' is not defined
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 203, in scrape_with_refcodes
+    scrape_single_thread(code)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 194, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 123, in scrape_single
+    response = requests.post(f"https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?RefCode={data['refCode']}",params=params,data=data,cookies=cookies,allow_redirects=True)
+                                                                                                                                                      ^^^^^^^
+NameError: name 'cookies' is not defined
+2023-12-13 00:43:39,366 [ERROR]: An error occurred: name 'I' is not defined
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper3.py", line 144, in scrape_with_refcodes
+    batch_result = [result for result in executor.map(scrape_single_thread,refcodes[I:i+batch_size]) if result is not None ]
+                                                                                    ^
+NameError: name 'I' is not defined
+2023-12-13 00:48:19,110 [ERROR]: An error occurred: 'middle_name'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 46, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_bhgelite.py", line 42, in store_data
+    ''', (data['first_name'],data['middle_name'], data['last_name'], data['email'], data['phone'], data['address'], data['city'], data['state'], data['zip_code']))
+                             ~~~~^^^^^^^^^^^^^^^
+KeyError: 'middle_name'
+2023-12-13 03:38:03,579 [ERROR]: An error occurred: object of type 'int' has no len()
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_bizfileonline.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper48.py", line 104, in scrape_with_refcodes
+    for i in range(1,len(codes),batch_size):
+                     ^^^^^^^^^^
+TypeError: object of type 'int' has no len()
+2023-12-13 03:38:38,657 [ERROR]: An error occurred: 'int' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_bizfileonline.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper48.py", line 105, in scrape_with_refcodes
+    batch_results = [results for results in list(executor.map(scrape_single_thread,codes[i:i+batch_size])) if len(results) > 0]
+                                                                                   ~~~~~^^^^^^^^^^^^^^^^
+TypeError: 'int' object is not subscriptable
+2023-12-13 03:57:56,489 [ERROR]: An error occurred: 'Debtor Name'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_bizfileonline.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper48.py", line 110, in scrape_with_refcodes
+    batch_results = [results for results in list(executor.map(scrape_single_thread,list(range(i,i+batch_size)))) if len(results) > 0]
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper48.py", line 102, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper48.py", line 52, in scrape_single
+    print(parsed_data_list[i]['Debtor Name'])
+          ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'Debtor Name'
+2023-12-13 03:58:21,559 [ERROR]: An error occurred: 'Label'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_bizfileonline.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper48.py", line 110, in scrape_with_refcodes
+    batch_results = [results for results in list(executor.map(scrape_single_thread,list(range(i,i+batch_size)))) if len(results) > 0]
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper48.py", line 102, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper48.py", line 52, in scrape_single
+    print(parsed_data_list[i]['Label'])
+          ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'Label'
+2023-12-13 03:59:45,918 [ERROR]: An error occurred: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_bizfileonline.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper48.py", line 112, in scrape_with_refcodes
+    batch_results = [results for results in list(executor.map(scrape_single_thread,list(range(i,i+batch_size)))) if len(results) > 0]
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper48.py", line 104, in scrape_single_thread
+    result = self.scrape_single(self.url,data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper48.py", line 53, in scrape_single
+    name = parsed_data_list['i']['VALUE']
+           ~~~~~~~~~~~~~~~~^^^^^
+TypeError: list indices must be integers or slices, not str
+2023-12-13 05:32:09,421 [ERROR]: An error occurred: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURDATE(),
+                                    time_created TIME DEFAULT CURTIME' at line 7
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURDATE(),
+                                    time_created TIME DEFAULT CURTIME' at line 7
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_bizfileonline.py", line 27, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_bizfileonline.py", line 17, in __init__
+    self.cursor.execute(f'''
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURDATE(),
+                                    time_created TIME DEFAULT CURTIME' at line 7
+2023-12-13 05:37:58,916 [ERROR]: An error occurred: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURRENT_DATE,
+                                    time_created TIME DEFAULT CURR' at line 7
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURRENT_DATE,
+                                    time_created TIME DEFAULT CURR' at line 7
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_bizfileonline.py", line 27, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_bizfileonline.py", line 17, in __init__
+    self.cursor.execute(f'''
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURRENT_DATE,
+                                    time_created TIME DEFAULT CURR' at line 7
+2023-12-13 05:39:40,245 [ERROR]: An error occurred: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURRENT_DATE,
+                                    time_created TIME DEFAULT CURR' at line 7
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURRENT_DATE,
+                                    time_created TIME DEFAULT CURR' at line 7
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_bizfileonline.py", line 27, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_bizfileonline.py", line 17, in __init__
+    self.cursor.execute(f'''
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURRENT_DATE,
+                                    time_created TIME DEFAULT CURR' at line 7
+2023-12-13 05:39:50,017 [ERROR]: An error occurred: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURRENT_DATE,
+                                    time_created TIME DEFAULT CURR' at line 7
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURRENT_DATE,
+                                    time_created TIME DEFAULT CURR' at line 7
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_bizfileonline.py", line 27, in main
+    db_handler = DatabaseHandler(
+                 ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_bizfileonline.py", line 17, in __init__
+    self.cursor.execute(f'''
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURRENT_DATE,
+                                    time_created TIME DEFAULT CURR' at line 7
