@@ -44,8 +44,9 @@ class Scraper48:
 
 
         response = requests.get(f'{url}{data['code']}/false')
+        print(f'{url}{data['code']}/false')
         parsed_data = json.loads(response.text)
-        print(parsed_data)
+        # print(parsed_data)
 
         result_list = []
 
@@ -53,25 +54,29 @@ class Scraper48:
 
         
 
-        for entry in parsed_data['DRAWER_DETAIL_LIST']:
-            label = entry['LABEL']
-            value = entry['VALUE']
+        try:
+            for entry in parsed_data['DRAWER_DETAIL_LIST']:
+                label = entry['LABEL']
+                value = entry['VALUE']
 
-            if label == 'Debtor Name':
-                current_debtor = {'debtor_name' : value}
-            elif label == 'Debtor Address':
-                current_debtor['debtor_address'] = value
-                result_entry = current_debtor.copy()
-                result_entry.update(current_secured_party)
-                result_list.append(result_entry)
-            elif label == 'Secured Party Name':
-                current_secured_party = {'secured_party_name': value}
-            elif label == 'Secured Party Address':
-                current_secured_party['secured_party_address'] = value
-                
-                # insert secured party info to all results
-                for entry in result_list:
-                    entry.update(current_secured_party)
+                if label == 'Debtor Name':
+                    current_debtor = {'debtor_name' : value}
+                elif label == 'Debtor Address':
+                    current_debtor['debtor_address'] = value
+                    result_entry = current_debtor.copy()
+                    result_entry.update(current_secured_party)
+                    result_list.append(result_entry)
+                elif label == 'Secured Party Name':
+                    current_secured_party = {'secured_party_name': value}
+                elif label == 'Secured Party Address':
+                    current_secured_party['secured_party_address'] = value
+                    
+                    # insert secured party info to all results
+                    for entry in result_list:
+                        entry.update(current_secured_party)
+        except KeyError as e:
+            print(f'KeyError: {e}')
+            return
 
 
 
@@ -124,5 +129,5 @@ class Scraper48:
         with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads) as executor:
             for i in range(1,codes,batch_size):
                 # batch_results = [results for results in list(executor.map(scrape_single_thread,list(range(i,i+batch_size)))) if len(results) > 0]
-                batch_results = [item for sublist in executor.map(scrape_single_thread, range(i, i+batch_size)) for item in sublist if len(sublist) > 0]
+                batch_results = [item for sublist in executor.map(scrape_single_thread, range(i, i+batch_size)) if sublist is not None for item in sublist if len(sublist) > 0]
                 yield batch_results

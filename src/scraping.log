@@ -5857,3 +5857,310 @@ Traceback (most recent call last):
   File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
     raise get_mysql_exception(
 mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'date_created' in 'field list'
+2023-12-13 23:57:22,412 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:01:11,862 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:01:25,662 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:03:53,731 [ERROR]: An error occurred: memoryview: a bytes-like object is required, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1038, in send
+    self.sock.sendall(data)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/ssl.py", line 1209, in sendall
+    with memoryview(data) as view, view.cast("B") as byte_view:
+         ^^^^^^^^^^^^^^^^
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 100, in scrape_with_refcodes
+    self.scrape_single(self.url,data)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 47, in scrape_single
+    response = requests.post(f'{url}',data=data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 244, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1319, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1365, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1314, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1113, in _send_output
+    self.send(chunk)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1042, in send
+    self.sock.sendall(d)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/ssl.py", line 1209, in sendall
+    with memoryview(data) as view, view.cast("B") as byte_view:
+         ^^^^^^^^^^^^^^^^
+TypeError: memoryview: a bytes-like object is required, not 'str'
+2023-12-14 00:04:27,364 [ERROR]: An error occurred: memoryview: a bytes-like object is required, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1038, in send
+    self.sock.sendall(data)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/ssl.py", line 1209, in sendall
+    with memoryview(data) as view, view.cast("B") as byte_view:
+         ^^^^^^^^^^^^^^^^
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 100, in scrape_with_refcodes
+    self.scrape_single(self.url,data)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 47, in scrape_single
+    response = requests.post(f'{url}',data=data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 244, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1319, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1365, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1314, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1113, in _send_output
+    self.send(chunk)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1042, in send
+    self.sock.sendall(d)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/ssl.py", line 1209, in sendall
+    with memoryview(data) as view, view.cast("B") as byte_view:
+         ^^^^^^^^^^^^^^^^
+TypeError: memoryview: a bytes-like object is required, not 'str'
+2023-12-14 00:09:55,379 [ERROR]: An error occurred: memoryview: a bytes-like object is required, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1038, in send
+    self.sock.sendall(data)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/ssl.py", line 1209, in sendall
+    with memoryview(data) as view, view.cast("B") as byte_view:
+         ^^^^^^^^^^^^^^^^
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 97, in scrape_with_refcodes
+    self.scrape_single(self.url,data)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 44, in scrape_single
+    response = requests.post(f'{url}',headers=headers, data=data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 244, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1319, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1365, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1314, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1113, in _send_output
+    self.send(chunk)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1042, in send
+    self.sock.sendall(d)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/ssl.py", line 1209, in sendall
+    with memoryview(data) as view, view.cast("B") as byte_view:
+         ^^^^^^^^^^^^^^^^
+TypeError: memoryview: a bytes-like object is required, not 'str'
+2023-12-14 00:10:58,571 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:14:48,866 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:14:56,955 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:15:25,211 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:15:34,833 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:15:54,721 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:19:09,455 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:20:48,302 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:21:00,868 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:35:00,183 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:35:28,498 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:41:28,401 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:49:57,563 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:50:48,904 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:53:08,762 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:53:33,842 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:55:49,846 [ERROR]: An error occurred: 'href'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 105, in scrape_with_refcodes
+    self.scrape_single(self.url,data)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 62, in scrape_single
+    print(td_a['href'])
+          ~~~~^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 'href'
+2023-12-14 00:57:51,853 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:58:31,592 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:59:04,596 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 00:59:38,229 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 01:00:18,294 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 01:00:41,595 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable

@@ -4,25 +4,15 @@ from requests.cookies import RequestsCookieJar
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 import concurrent.futures
-from fake_useragent import UserAgent
-import execjs
 
 from scraping import code_generator
 
 class Scraper3:
     def __init__(self):
-<<<<<<< HEAD
-        
-        self.url = 'xmydebt.com'
-        self.url1 = 'https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d'
-        self.url2 = 'https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?cbqe=QXBwS2V5PWU5YWM4MDAwZDU4MTNiNTc4OWRjNDM1M2FkOGQmanM9dHJ1ZSZjYkVtYkRlcGxveVdpdGg9bmV3X2FzeW5jX2VtYmVkanMmY2JEYXRhcGFnZUFuY2hvcklkPWRwX2FuY2hvcl9pZF84MjIxNDEwMDAwJnBhdGhuYW1lPWh0dHBzOi8vYzBoY2IxNzcuY2FzcGlvLmNvbS9kcC9lOWFjODAwMGQ1ODEzYjU3ODlkYzQzNTNhZDhkJmNiU2NyZWVuV2lkdGg9MTYwMCZjYkVtYlF1ZXJ5U3RyPVJlZkNvZGU9UkQwMDAwMDExJmNiUGFyYW1MaXN0PQ==&cbEmbedTimeStamp=1702325678727'
-        # self.bridge = 'https://c0hcb177.caspio.com'
-=======
        
         self.url = 'xmydebt.com'
         self.url1 = 'https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d'
         self.url2 = 'https://c0hcb177.caspio.com/dp/e9ac8000d5813b5789dc4353ad8d?cbqe=QXBwS2V5PWU5YWM4MDAwZDU4MTNiNTc4OWRjNDM1M2FkOGQmanM9dHJ1ZSZjYkVtYkRlcGxveVdpdGg9bmV3X2FzeW5jX2VtYmVkanMmY2JEYXRhcGFnZUFuY2hvcklkPWRwX2FuY2hvcl9pZF84MjIxNDEwMDAwJnBhdGhuYW1lPWh0dHBzOi8vYzBoY2IxNzcuY2FzcGlvLmNvbS9kcC9lOWFjODAwMGQ1ODEzYjU3ODlkYzQzNTNhZDhkJmNiU2NyZWVuV2lkdGg9MTYwMCZjYkVtYlF1ZXJ5U3RyPVJlZkNvZGU9UkQwMDAwMDExJmNiUGFyYW1MaXN0PQ==&cbEmbedTimeStamp=1702325678727'
->>>>>>> 389b6b38a32bcbcba896cff4de1ac02e38048880
         self.table_name = 'scraper3_info'
         self.session = requests.Session()
         self.jar = RequestsCookieJar()
