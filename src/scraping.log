@@ -7079,3 +7079,15 @@ Traceback (most recent call last):
     for batch_results in scraper.scrape_with_refcodes():
                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: Scraper49.scrape_with_refcodes() missing 1 required positional argument: 'batch_size'
+2023-12-15 04:46:19,033 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 138, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 112, in get_page_links
+    page_results = [f'{tr.find('a')['href']}' for tr in tr_elements[1:-1]]
+                       ~~~~~~~~~~~~^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable

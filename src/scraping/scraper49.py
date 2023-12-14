@@ -43,7 +43,16 @@ class Scraper49:
 
 
         print(f'Extracting info. URL: {url}')
-        response = requests.get(url,headers=headers,proxies=proxy_dict)
+        try:
+            response = requests.get(f"{url}", headers=headers,proxies=proxy_dict)
+        except requests.exceptions.ConnectionError:
+            print(f'Connecting failed to {url}.\nReconnecting in 20 secs...')
+            time.sleep(20)
+            response = requests.get(f"{url}", headers=headers,proxies=proxy_dict)
+        except requests.exceptions.InvalidURL:
+            print("Invalid url")
+            return None
+
         print(f'Status code: {response.status_code}')
 
 
@@ -65,6 +74,7 @@ class Scraper49:
             debtor_info = result_set[7:8]
         else:
             print('Elements not found.')
+            return
 
         # for d in debtor_info:
         #     print(f'info: {d.get_text(separator='\n').split('\n')}')
