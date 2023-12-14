@@ -4,6 +4,7 @@ import concurrent.futures
 from fake_useragent import UserAgent
 from scraping import code_generator
 from string import ascii_uppercase
+from config.proxies import proxy_dict
 
 class Scraper49:
     def __init__(self):
@@ -11,7 +12,7 @@ class Scraper49:
         # https://arc-sos.state.al.us/cgi/uccname.mbr/input
         # self.baseurl = 'https://arc-sos.state.al.us/'
         self.baseurl = 'https://arc-sos.state.al.us/cgi/uccname.mbr/'
-        self.url = 'https://arc-sos.state.al.us/cgi/uccname.mbr/output'
+        self.url = 'https://arc-sos.state.al.us'
         self.table_name = "scraper49_info"
         self.session = requests.Session()
         self.ua = UserAgent()
@@ -42,7 +43,7 @@ class Scraper49:
 
 
         print(f'Extracting info. URL: {url}')
-        response = requests.get(url,headers=headers)
+        response = requests.get(url,headers=headers,proxies=proxy_dict)
         print(f'Status code: {response.status_code}')
 
 
@@ -58,15 +59,15 @@ class Scraper49:
         result_dict = {'debtor_name':'','debtor_address':'','secured_party_name':'','secured_party_address':''}
 
         # Extract debtor info
-        print(f'Content: {soup.get_text()}')
+        # print(f'Content: {soup.get_text()}')
         result_set = soup.find_all('td',class_='aiSosDetailValue')
         if result_set:
             debtor_info = result_set[7:8]
         else:
             print('Elements not found.')
 
-        for d in debtor_info:
-            print(f'info: {d.get_text(separator='\n').split('\n')}')
+        # for d in debtor_info:
+        #     print(f'info: {d.get_text(separator='\n').split('\n')}')
 
         if debtor_info:
             debtor = debtor_info[0].get_text(separator='\n')
@@ -105,11 +106,11 @@ class Scraper49:
     
     
     
-    def scrape_pages(self, batch_size, last_interrupt_char=None):
+    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char=None):
         
         def get_page_links(soup):
             tr_elements = soup.find_all("tr")
-            page_results = [f'{self.baseurl}{tr.find('a')['href']}' for tr in tr_elements[1:-1]]
+            page_results = [f'{self.url}{tr.find('a')['href']}' for tr in tr_elements[1:-1]]
             return page_results
                 
 
@@ -139,12 +140,14 @@ class Scraper49:
                 
                 
                 # scrape info using multithread
-                # with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-                #     batch_results = [results for results in executor.map()]
+                with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+                    batch_results = [results for results in executor.map(self.scrape_single,urls)]
+                    yield batch_results
 
-                for url in urls:
-                    result = self.scrape_single(url)
-                    print(result)
+                # for url in urls:
+                #     result = self.scrape_single(url)
+                #     print(result)
+                #     yield result
                 
                 # add 25 to current_page to get next page
                 current_page += 25
@@ -153,20 +156,13 @@ class Scraper49:
                 if not next_page_link:
                     print('No more pages. Exiting.')
                     break
-            
-
-            # with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-            #     for i in range(len(urls),batch_size):
-            #         batch_results = [results for results in list(executor.map(scrape_single_thread,urls[i,i+batch_size]))]
-            #         yield batch_results
 
 
 
 
 
 
-
-    def scrape_with_refcodes(self,batch_size=10,num_threads=3):
+    # def scrape_with_refcodes(self,batch_size=10,num_threads=3):
 
             
         # results = []
@@ -189,6 +185,6 @@ class Scraper49:
         # for char in ascii_uppercase:
         # data = {"search":"a","type":"ALL"}
 
-        self.scrape_pages(batch_size)
+        # self.scrape_pages(batch_size)
 
         # self.scrape_single(self.url,data)

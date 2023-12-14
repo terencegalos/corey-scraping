@@ -7,16 +7,17 @@ from string import ascii_uppercase
 
 class Scraper50:
     def __init__(self):
+        # ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$OrganizationNameInput
         # https://arc-sos.state.al.us/cgi/uccdetail.mbr/detail?ucc=20-7799272&page=name
         # https://arc-sos.state.al.us/cgi/uccname.mbr/input
         # self.baseurl = 'https://arc-sos.state.al.us/'
         self.baseurl = 'https://arc-sos.state.al.us/cgi/uccname.mbr/'
-        self.url = 'https://arc-sos.state.al.us/cgi/uccname.mbr/output'
+        self.url = 'https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-stand/portal.aspx'
         self.table_name = "scraper50_info"
         self.session = requests.Session()
         self.ua = UserAgent()
         self.extracted_cookies = 'mailer-sessions=s%3A-xmOYnkEUpr5_faMgi-HKzN7AhNZNnUc.fgKPMZ%2B3eKVo%2Br4%2FUUYO%2FyVxUHLjk5Z43CnLjxXq5PU; wc_visitor=78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+'
-        print(f"Scraping: {self.url}")
+        print(f"Scraping: {self.baseurl}")
         
     
     
@@ -122,7 +123,7 @@ class Scraper50:
             current_page = starting_page
             
             while True:
-                current_url = f'{self.baseurl}output?s={current_page}&search={char}&type=ALL&status=&order=default&hld=&dir=&page=Y'
+                current_url = self.baseurl#f'{self.baseurl}output?s={current_page}&search={char}&type=ALL&status=&order=default&hld=&dir=&page=Y'
                 response = requests.get(current_url)
                 print(f'Scraping entries in url: {current_url}')
                 print(f'Status code: {response.status_code}')
