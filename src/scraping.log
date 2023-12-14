@@ -6164,3 +6164,715 @@ Traceback (most recent call last):
   File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
     for batch_results in scraper.scrape_with_refcodes():
 TypeError: 'NoneType' object is not iterable
+2023-12-14 18:31:36,975 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 18:32:50,930 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+TypeError: 'NoneType' object is not iterable
+2023-12-14 18:39:48,040 [ERROR]: An error occurred: name 'chart' is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 167, in scrape_with_refcodes
+    self.scrape_pages(data)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 103, in scrape_pages
+    print(f"Extract search results for '{chart}'.")
+                                         ^^^^^
+NameError: name 'chart' is not defined. Did you mean: 'char'?
+2023-12-14 19:16:44,981 [ERROR]: An error occurred: No connection adapters were found for "['https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=20-7799272&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7482230&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7460752&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=20-7107276&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7123217&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=21-7163545&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7560449&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7485929&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7484048&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=21-7301608&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-0469547&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0134191&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-0423663&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0003545&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0090839&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0496871&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0496888&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7105727&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7105727&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7141524&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7085007&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7086615&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7501796&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7318453&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7109638&page=name']"
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 161, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 110, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 27, in scrape_single
+    response = requests.get(url)
+               ^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 697, in send
+    adapter = self.get_adapter(url=request.url)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 794, in get_adapter
+    raise InvalidSchema(f"No connection adapters were found for {url!r}")
+requests.exceptions.InvalidSchema: No connection adapters were found for "['https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=20-7799272&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7482230&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7460752&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=20-7107276&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7123217&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=21-7163545&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7560449&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7485929&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7484048&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=21-7301608&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-0469547&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0134191&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-0423663&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0003545&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0090839&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0496871&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0496888&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7105727&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7105727&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7141524&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7085007&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7086615&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7501796&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7318453&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7109638&page=name']"
+2023-12-14 19:19:50,649 [ERROR]: An error occurred: No connection adapters were found for "['https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=20-7799272&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7482230&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7460752&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=20-7107276&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7123217&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=21-7163545&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7560449&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7485929&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7484048&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=21-7301608&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-0469547&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0134191&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-0423663&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0003545&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0090839&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0496871&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0496888&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7105727&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7105727&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7141524&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7085007&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7086615&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7501796&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7318453&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7109638&page=name']"
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 178, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 127, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 44, in scrape_single
+    response = requests.get(url,headers=headers)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 697, in send
+    adapter = self.get_adapter(url=request.url)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 794, in get_adapter
+    raise InvalidSchema(f"No connection adapters were found for {url!r}")
+requests.exceptions.InvalidSchema: No connection adapters were found for "['https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=20-7799272&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7482230&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7460752&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=20-7107276&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7123217&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=21-7163545&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7560449&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7485929&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7484048&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=21-7301608&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-0469547&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0134191&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-0423663&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0003545&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0090839&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0496871&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0496888&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7105727&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7105727&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7141524&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7085007&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7086615&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7501796&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7318453&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7109638&page=name']"
+2023-12-14 19:21:40,368 [ERROR]: An error occurred: No connection adapters were found for "['https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=20-7799272&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7482230&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7460752&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=20-7107276&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7123217&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=21-7163545&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7560449&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7485929&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7484048&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=21-7301608&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-0469547&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0134191&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-0423663&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0003545&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0090839&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0496871&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0496888&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7105727&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7105727&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7141524&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7085007&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7086615&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7501796&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7318453&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7109638&page=name']"
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 179, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 128, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 44, in scrape_single
+    response = requests.get(url,headers=headers)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 697, in send
+    adapter = self.get_adapter(url=request.url)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 794, in get_adapter
+    raise InvalidSchema(f"No connection adapters were found for {url!r}")
+requests.exceptions.InvalidSchema: No connection adapters were found for "['https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=20-7799272&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7482230&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7460752&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=20-7107276&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7123217&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=21-7163545&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7560449&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7485929&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=19-7484048&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=21-7301608&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-0469547&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0134191&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-0423663&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0003545&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0090839&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0496871&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-0496888&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7105727&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7105727&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=17-7141524&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7085007&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7086615&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7501796&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=22-7318453&page=name', 'https://arc-sos.state.al.us//cgi/uccdetail.mbr/detail?ucc=23-7109638&page=name']"
+2023-12-14 19:22:56,959 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 179, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 128, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 60, in scrape_single
+    debtor_info = soup.find('html body.not-front main.page div.main-content div.container.main-sidebar div.content.full div div#block-sos-content div.views-element-container div div table tbody tr td.aiSosDetailValue').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-14 19:26:18,192 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 180, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 129, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 61, in scrape_single
+    debtor_info = soup.find('html body.not-front main.page div.main-content div.container.main-sidebar div.content.full div div#block-sos-content div.views-element-container div div table tbody tr td.aiSosDetailValue').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-14 19:27:26,874 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 180, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 129, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 61, in scrape_single
+    debtor_info = soup.find('html body.not-front main.page div.main-content div.container.main-sidebar div.content.full div div#block-sos-content div.views-element-container div div table tbody tr td.aiSosDetailValue').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-14 19:31:29,023 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 180, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 129, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 61, in scrape_single
+    debtor_info = soup.find('html body.not-front main.page div.main-content div.container.main-sidebar div.content.full div div#block-sos-content div.views-element-container div div table tbody tr td.aiSosDetailValue').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-14 19:32:06,662 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 180, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 129, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 61, in scrape_single
+    debtor_info = soup.find('html body.not-front main.page div.main-content div.container.main-sidebar div.content.full div div#block-sos-content div.views-element-container div div table tbody tr td.aiSosDetailValue').contents
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-14 19:33:00,362 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 180, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 129, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 61, in scrape_single
+    debtor_info = soup.find('html body.not-front main.page div.main-content div.container.main-sidebar div.content.full div div#block-sos-content div.views-element-container div div table tbody tr td.aiSosDetailValue')[0].get_text()
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-12-14 19:33:27,236 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 180, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 129, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 61, in scrape_single
+    debtor_info = soup.find('html body.not-front main.page div.main-content div.container.main-sidebar div.content.full div div#block-sos-content div.views-element-container div div table tbody tr td.aiSosDetailValue')[1].get_text()
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-12-14 19:35:09,921 [ERROR]: An error occurred: Couldn't find a tree builder with the features you requested: html.lxml. Do you need to install a parser library?
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 180, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 129, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 55, in scrape_single
+    soup = BeautifulSoup(response.content,'html.lxml')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/bs4/__init__.py", line 250, in __init__
+    raise FeatureNotFound(
+bs4.FeatureNotFound: Couldn't find a tree builder with the features you requested: html.lxml. Do you need to install a parser library?
+2023-12-14 19:36:35,445 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 180, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 129, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 61, in scrape_single
+    debtor_info = soup.find('/html/body/main/div/div[2]/div/div/div/div/div/div/table[2]/tbody/tr[3]/td[2]').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-14 19:38:44,532 [ERROR]: An error occurred: Couldn't find a tree builder with the features you requested: html.parse. Do you need to install a parser library?
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 182, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 131, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 55, in scrape_single
+    soup = BeautifulSoup(response.content,'html.parse')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/bs4/__init__.py", line 250, in __init__
+    raise FeatureNotFound(
+bs4.FeatureNotFound: Couldn't find a tree builder with the features you requested: html.parse. Do you need to install a parser library?
+2023-12-14 19:39:06,536 [ERROR]: An error occurred: Couldn't find a tree builder with the features you requested: html.parse. Do you need to install a parser library?
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 183, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 132, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 55, in scrape_single
+    soup = BeautifulSoup(response.content,'html.parse')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/bs4/__init__.py", line 250, in __init__
+    raise FeatureNotFound(
+bs4.FeatureNotFound: Couldn't find a tree builder with the features you requested: html.parse. Do you need to install a parser library?
+2023-12-14 19:39:25,551 [ERROR]: An error occurred: 'NoneType' object is not callable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 183, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 132, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 65, in scrape_single
+    debtor_address = ' '.join(debtor_info.split("\n")[1:])
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not callable
+2023-12-14 19:40:27,136 [ERROR]: An error occurred: 'NoneType' object is not callable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 183, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 132, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 65, in scrape_single
+    debtor_address = ' '.join(debtor_info.split("\n")[1:])
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not callable
+2023-12-14 19:42:07,486 [ERROR]: An error occurred: ResultSet object has no attribute 'contents'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 185, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 134, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 64, in scrape_single
+    print(debtor_info.contents)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/bs4/element.py", line 2428, in __getattr__
+    raise AttributeError(
+AttributeError: ResultSet object has no attribute 'contents'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+2023-12-14 19:42:49,276 [ERROR]: An error occurred: 'NoneType' object is not callable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 185, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 134, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 74, in scrape_single
+    secured_party_address = ' '.join(secured_party_info.split("\n")[1:])
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not callable
+2023-12-14 19:43:34,631 [ERROR]: An error occurred: 'NoneType' object is not callable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 185, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 134, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 74, in scrape_single
+    secured_party_address = ' '.join(secured_party_info.split("\n")[1:])
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not callable
+2023-12-14 19:53:55,375 [ERROR]: An error occurred: name 'debtor_info' is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 186, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 135, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 64, in scrape_single
+    if debtor_info:
+       ^^^^^^^^^^^
+NameError: name 'debtor_info' is not defined
+2023-12-14 20:00:38,156 [ERROR]: An error occurred: 'list' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 186, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 135, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 65, in scrape_single
+    debtor = debtor_info.get_text(separator='\n')
+             ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get_text'
+2023-12-14 20:02:32,598 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 189, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 138, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 62, in scrape_single
+    secured_party_info = page_info[1]
+                         ~~~~~~~~~^^^
+IndexError: list index out of range
+2023-12-14 20:03:05,962 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 189, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 138, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 74, in scrape_single
+    secured_party_info = page_info[1]
+                         ~~~~~~~~~^^^
+IndexError: list index out of range
+2023-12-14 20:05:20,758 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 188, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 137, in scrape_pages
+    self.scrape_single(url)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 73, in scrape_single
+    secured_party_info = page_info[1]
+                         ~~~~~~~~~^^^
+IndexError: list index out of range
+2023-12-14 20:14:13,432 [ERROR]: An error occurred: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 191, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 146, in scrape_pages
+    response = requests.get(next_url)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 439, in prepare_url
+    raise MissingSchema(
+requests.exceptions.MissingSchema: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+2023-12-14 20:16:10,917 [ERROR]: An error occurred: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 192, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 147, in scrape_pages
+    response = requests.get(next_url)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 439, in prepare_url
+    raise MissingSchema(
+requests.exceptions.MissingSchema: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+2023-12-14 20:17:15,329 [ERROR]: An error occurred: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 193, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 148, in scrape_pages
+    response = requests.get(next_url)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 439, in prepare_url
+    raise MissingSchema(
+requests.exceptions.MissingSchema: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+2023-12-14 20:17:44,931 [ERROR]: An error occurred: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 194, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 149, in scrape_pages
+    response = requests.get(next_url)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 439, in prepare_url
+    raise MissingSchema(
+requests.exceptions.MissingSchema: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+2023-12-14 20:19:06,170 [ERROR]: An error occurred: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 194, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 149, in scrape_pages
+    response = requests.get(next_url)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 439, in prepare_url
+    raise MissingSchema(
+requests.exceptions.MissingSchema: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+2023-12-14 20:22:40,214 [ERROR]: An error occurred: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 194, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 149, in scrape_pages
+    response = requests.get(next_url)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 439, in prepare_url
+    raise MissingSchema(
+requests.exceptions.MissingSchema: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+2023-12-14 20:23:00,728 [ERROR]: An error occurred: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 194, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 149, in scrape_pages
+    response = requests.get(next_url)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 439, in prepare_url
+    raise MissingSchema(
+requests.exceptions.MissingSchema: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+2023-12-14 20:25:17,071 [ERROR]: An error occurred: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 194, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 149, in scrape_pages
+    response = requests.get(next_url)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 439, in prepare_url
+    raise MissingSchema(
+requests.exceptions.MissingSchema: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+2023-12-14 20:25:45,184 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 194, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 147, in scrape_pages
+    next_url = get_next_page_url(soup)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 107, in get_next_page_url
+    next_url = next_button.find_parent('a')['href']
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-12-14 20:25:58,132 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 194, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 147, in scrape_pages
+    next_url = get_next_page_url(soup)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 107, in get_next_page_url
+    next_url = next_button.find_parent('a')['href']
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-12-14 20:26:45,435 [ERROR]: An error occurred: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 195, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 150, in scrape_pages
+    response = requests.get(next_url)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/models.py", line 439, in prepare_url
+    raise MissingSchema(
+requests.exceptions.MissingSchema: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+2023-12-14 20:28:46,776 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 195, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 148, in scrape_pages
+    next_url = get_next_page_url(soup)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 107, in get_next_page_url
+    next_url = next_button.find_parent('a').get('href')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2023-12-14 20:29:32,615 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 196, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 149, in scrape_pages
+    next_url = get_next_page_url(soup)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 108, in get_next_page_url
+    print(next_url.contents)
+          ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-14 20:30:05,186 [ERROR]: An error occurred: cannot access free variable 'next_url' where it is not associated with a value in enclosing scope
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 196, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 149, in scrape_pages
+    next_url = get_next_page_url(soup)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 110, in get_next_page_url
+    return next_url
+           ^^^^^^^^
+NameError: cannot access free variable 'next_url' where it is not associated with a value in enclosing scope
+2023-12-14 20:30:46,943 [ERROR]: An error occurred: cannot access free variable 'next_url' where it is not associated with a value in enclosing scope
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 196, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 149, in scrape_pages
+    next_url = get_next_page_url(soup)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 110, in get_next_page_url
+    return next_url
+           ^^^^^^^^
+NameError: cannot access free variable 'next_url' where it is not associated with a value in enclosing scope
+2023-12-14 20:32:19,851 [ERROR]: An error occurred: name 'page_urls' is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/scraping/scraper49.py", line 195, in scrape_with_refcodes
+    self.scrape_pages(data,batch_size)
+  File "/root/projects/corey/src/scraping/scraper49.py", line 153, in scrape_pages
+    urls.extend(page_urls)
+                ^^^^^^^^^
+NameError: name 'page_urls' is not defined
