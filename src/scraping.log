@@ -6876,3 +6876,162 @@ Traceback (most recent call last):
     urls.extend(page_urls)
                 ^^^^^^^^^
 NameError: name 'page_urls' is not defined
+2023-12-14 23:32:46,444 [ERROR]: An error occurred: cannot access local variable 'url' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 185, in scrape_with_refcodes
+    self.scrape_pages(batch_size)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 131, in scrape_pages
+    print("\n".join(url))
+                    ^^^
+UnboundLocalError: cannot access local variable 'url' where it is not associated with a value
+2023-12-14 23:33:14,446 [ERROR]: An error occurred: cannot access local variable 'url' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 185, in scrape_with_refcodes
+    self.scrape_pages(batch_size)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 131, in scrape_pages
+    print("\n".join(url))
+                    ^^^
+UnboundLocalError: cannot access local variable 'url' where it is not associated with a value
+2023-12-14 23:34:01,531 [ERROR]: An error occurred: cannot access local variable 'url' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 185, in scrape_with_refcodes
+    self.scrape_pages(batch_size)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 131, in scrape_pages
+    print("\n".join(url))
+                    ^^^
+UnboundLocalError: cannot access local variable 'url' where it is not associated with a value
+2023-12-14 23:34:40,095 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 185, in scrape_with_refcodes
+    self.scrape_pages(batch_size)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 139, in scrape_pages
+    result = self.scrape_single(url)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 75, in scrape_single
+    secured_party = secured_party_info[0].get_text(separator='\n')
+                    ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-12-14 23:37:07,288 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 186, in scrape_with_refcodes
+    self.scrape_pages(batch_size)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 140, in scrape_pages
+    result = self.scrape_single(url)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 76, in scrape_single
+    secured_party = secured_party_info[0].get_text(separator='\n')
+                    ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-12-14 23:39:08,491 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 186, in scrape_with_refcodes
+    self.scrape_pages(batch_size)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 140, in scrape_pages
+    result = self.scrape_single(url)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 76, in scrape_single
+    secured_party = secured_party_info[0].get_text(separator='\n')
+                    ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-12-14 23:39:30,575 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 186, in scrape_with_refcodes
+    self.scrape_pages(batch_size)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 140, in scrape_pages
+    result = self.scrape_single(url)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 76, in scrape_single
+    secured_party = secured_party_info[0].get_text(separator='\n')
+                    ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-12-14 23:39:52,751 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 187, in scrape_with_refcodes
+    self.scrape_pages(batch_size)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 141, in scrape_pages
+    result = self.scrape_single(url)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 77, in scrape_single
+    secured_party = secured_party_info[0].get_text(separator='\n')
+                    ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-12-14 23:40:31,573 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 187, in scrape_with_refcodes
+    self.scrape_pages(batch_size)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 141, in scrape_pages
+    result = self.scrape_single(url)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 77, in scrape_single
+    secured_party = secured_party_info[0].get_text(separator='\n')
+                    ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-12-15 00:07:56,436 [ERROR]: An error occurred: cannot access local variable 'debtor_info' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 191, in scrape_with_refcodes
+    self.scrape_pages(batch_size)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 145, in scrape_pages
+    result = self.scrape_single(url)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 67, in scrape_single
+    for d in debtor_info:
+             ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'debtor_info' where it is not associated with a value
+2023-12-15 00:08:26,998 [ERROR]: An error occurred: cannot access local variable 'debtor_info' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 192, in scrape_with_refcodes
+    self.scrape_pages(batch_size)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 146, in scrape_pages
+    result = self.scrape_single(url)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 68, in scrape_single
+    for d in debtor_info:
+             ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'debtor_info' where it is not associated with a value
+2023-12-15 00:09:28,591 [ERROR]: An error occurred: cannot access local variable 'debtor_info' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 192, in scrape_with_refcodes
+    self.scrape_pages(batch_size)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 146, in scrape_pages
+    result = self.scrape_single(url)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 68, in scrape_single
+    for d in debtor_info:
+             ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'debtor_info' where it is not associated with a value

@@ -1,4 +1,4 @@
-import requests,time, json
+import requests,time, json, re
 from bs4 import BeautifulSoup
 import concurrent.futures
 from fake_useragent import UserAgent
@@ -9,7 +9,8 @@ class Scraper49:
     def __init__(self):
         # https://arc-sos.state.al.us/cgi/uccdetail.mbr/detail?ucc=20-7799272&page=name
         # https://arc-sos.state.al.us/cgi/uccname.mbr/input
-        self.baseurl = 'https://arc-sos.state.al.us/'
+        # self.baseurl = 'https://arc-sos.state.al.us/'
+        self.baseurl = 'https://arc-sos.state.al.us/cgi/uccname.mbr/'
         self.url = 'https://arc-sos.state.al.us/cgi/uccname.mbr/output'
         self.table_name = "scraper49_info"
         self.session = requests.Session()
@@ -57,10 +58,15 @@ class Scraper49:
         result_dict = {'debtor_name':'','debtor_address':'','secured_party_name':'','secured_party_address':''}
 
         # Extract debtor info
-        debtor_info = soup.find_all('td',class_='aiSosDetailValue')[7:8]
+        print(f'Content: {soup.get_text()}')
+        result_set = soup.find_all('td',class_='aiSosDetailValue')
+        if result_set:
+            debtor_info = result_set[7:8]
+        else:
+            print('Elements not found.')
 
-        # for d in debtor_info:
-        #     print(f'info: {d.get_text(separator='\n').split('\n')}')
+        for d in debtor_info:
+            print(f'info: {d.get_text(separator='\n').split('\n')}')
 
         if debtor_info:
             debtor = debtor_info[0].get_text(separator='\n')
@@ -69,8 +75,10 @@ class Scraper49:
             result_dict.update({'debtor_name':debtor_name})
             result_dict.update({'debtor_address':debtor_address})
 
+        print(result_dict)
         # Extract secured party info
         secured_party_info = soup.find_all('td',class_='aiSosDetailValue')[8:9]
+        print(f'len: {len(secured_party_info)}')
         secured_party = secured_party_info[0].get_text(separator='\n')
         if secured_party_info:
             secured_party_name = secured_party.split("\n")[0]
@@ -97,18 +105,7 @@ class Scraper49:
     
     
     
-    def scrape_pages(self, data, batch_size, last_interrupt_char=None):
-
-        # Get next page
-        def get_next_page_url(soup):
-            # print(soup.contents)
-            next_button = soup.find('a',text=lambda text : text and '>>' in text.lower())
-            if next_button:
-                next_url = self.url + next_button.get('href')
-                print(f'Next url : {next_url}')
-                return next_url
-            print("Next button n/a. Pagination done? ")
-            return None
+    def scrape_pages(self, batch_size, last_interrupt_char=None):
         
         def get_page_links(soup):
             tr_elements = soup.find_all("tr")
@@ -120,44 +117,43 @@ class Scraper49:
         # 1 letter search; Loop all uppercase
         for char in ascii_uppercase[last_interrupt_char:]:
             print(f"Extract search results for '{char}'")
-            data = {"search":f"{char}","type":"ALL"}
+            starting_page = 1
+
+            current_page = starting_page
             
-            # get page using post request
-            response = requests.post(self.url, data=data)
-            print(f'Scraping entries in url: {self.url}')
-            print(f'Status code: {response.status_code}')
-
-            # Get page results
-            # Parse the HTML content with BeautifulSoup
-            soup = BeautifulSoup(response.content,'html.parser')
-            
-            urls = [] # Page results here
-
-            # Get first page results and store
-            url = get_page_links(soup)
-            urls.extend(url)
-            # print("\n".join(url))
-
-            # print(f'Looping urls and extract their info.')
-            # for url in urls:
-            #     self.scrape_single(url)
-
-            # Loop pagination
             while True:
-                try:
-                    next_url = get_next_page_url(soup)
-                    print(f'next page : {next_url}')
-                    response = requests.get(next_url)
-                    soup = BeautifulSoup(response.text,'html.parser')
-                    # page_urls = get_page_links(soup)
-                    # urls.extend(page_urls)
-                    # print(urls)
-                    # for url in urls:
-                    #     self.scrape_single(url)
-                    # urls = [] # reset urls after processing
-                except Exception as e:
-                    print(f"Error getting page. Pagination done?\nError: {e}")
+                current_url = f'{self.baseurl}output?s={current_page}&search={char}&type=ALL&status=&order=default&hld=&dir=&page=Y'
+                response = requests.get(current_url)
+                print(f'Scraping entries in url: {current_url}')
+                print(f'Status code: {response.status_code}')
+
+                # Get page results
+                # Parse the HTML content with BeautifulSoup
+                soup = BeautifulSoup(response.content,'html.parser')
+                
+                # urls = [] # Page results here
+
+                # Get first page results and store
+                urls = get_page_links(soup)
+                print("\n".join(urls))
+                
+                
+                # scrape info using multithread
+                # with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+                #     batch_results = [results for results in executor.map()]
+
+                for url in urls:
+                    result = self.scrape_single(url)
+                    print(result)
+                
+                # add 25 to current_page to get next page
+                current_page += 25
+                next_page_link = re.search(r'>>',requests.get(current_url).text)
+
+                if not next_page_link:
+                    print('No more pages. Exiting.')
                     break
+            
 
             # with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
             #     for i in range(len(urls),batch_size):
@@ -191,8 +187,8 @@ class Scraper49:
         #         yield batch_results
 
         # for char in ascii_uppercase:
-        data = {"search":"a","type":"ALL"}
+        # data = {"search":"a","type":"ALL"}
 
-        self.scrape_pages(data,batch_size)
+        self.scrape_pages(batch_size)
 
         # self.scrape_single(self.url,data)
