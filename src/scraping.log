@@ -7418,3 +7418,868 @@ Traceback (most recent call last):
   File "/root/venv/corey/lib/python3.12/site-packages/requests/adapters.py", line 501, in send
     raise ConnectionError(err, request=request)
 requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2023-12-15 23:43:11,901 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 192, in scrape_with_refcodes
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 85, in scrape_single
+    secured_party_name = result_set.find('span',id='ctl00_ContentPlaceHolder1_PortalPageControl1_ctl22_uccFilingRepeater_ctl01_uccNamesRepeater_ctl03_NameLabel')
+                         ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find'
+2023-12-15 23:46:15,206 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 119, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 71, in scrape_single
+    print(result_set.contents)
+          ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-15 23:46:45,582 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 119, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 71, in scrape_single
+    print(result_set.contents)
+          ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-15 23:48:09,818 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 119, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 71, in scrape_single
+    print(result_set.contents)
+          ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-15 23:49:34,386 [ERROR]: An error occurred: cannot access local variable 'last_interrupt_char_index' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 130, in scrape_with_refcodes
+    for char in ascii_uppercase[last_interrupt_char_index:]:
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'last_interrupt_char_index' where it is not associated with a value
+2023-12-15 23:50:06,452 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 119, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 86, in scrape_single
+    secured_party_name = soup.find('span',id='ctl00_ContentPlaceHolder1_PortalPageControl1_ctl22_uccFilingRepeater_ctl01_uccNamesRepeater_ctl03_NameLabel').get_text()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-15 23:54:30,142 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 119, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 76, in scrape_single
+    debtor_name = soup.find('div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > span:nth-child(1)').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-15 23:54:41,146 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 119, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 76, in scrape_single
+    debtor_name = soup.find('div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > span:nth-child(1)').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-15 23:55:21,234 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 119, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 76, in scrape_single
+    debtor_name = soup.find('div:nth-child(2) > div:nth-child(3) > span:nth-child(1)').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-15 23:56:05,085 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 119, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 76, in scrape_single
+    debtor_name = result_set.find('div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > span:nth-child(1)').get_text()
+                  ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find'
+2023-12-15 23:56:22,789 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 119, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 76, in scrape_single
+    debtor_name = result_set.find('div:nth-child(2) > div:nth-child(3) > span:nth-child(1)').get_text()
+                  ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find'
+2023-12-15 23:56:35,881 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 119, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 71, in scrape_single
+    print(result_set.contents)
+          ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-15 23:58:07,880 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 119, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 71, in scrape_single
+    print(result_set.contents)
+          ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-15 23:58:28,758 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 119, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 71, in scrape_single
+    print(result_set.contents)
+          ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-16 00:04:07,496 [ERROR]: An error occurred: ResultSet object has no attribute 'find'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 120, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 77, in scrape_single
+    debtor_name = result_set.find('').get_text()
+                  ^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 2428, in __getattr__
+    raise AttributeError(
+AttributeError: ResultSet object has no attribute 'find'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+2023-12-16 00:05:16,382 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 121, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 72, in scrape_single
+    print(f'Content: {result_set.contents}')
+                      ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-16 00:05:41,072 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 122, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 73, in scrape_single
+    print(f'Content: {result_set.contents}')
+                      ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-16 00:07:43,910 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 122, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 73, in scrape_single
+    print(f'Content: {result_set.contents}')
+                      ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-16 00:08:06,183 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 122, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 73, in scrape_single
+    print(f'Content: {result_set.contents}')
+                      ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-16 00:08:45,706 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 122, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 73, in scrape_single
+    print(f'Content: {result_set.contents}')
+                      ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-16 00:09:46,807 [ERROR]: An error occurred: ResultSet object has no attribute 'contents'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 122, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 73, in scrape_single
+    print(f'Content: {result_set.contents}')
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 2428, in __getattr__
+    raise AttributeError(
+AttributeError: ResultSet object has no attribute 'contents'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+2023-12-16 00:10:04,206 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 122, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 73, in scrape_single
+    print(f'Content: {result_set.contents}')
+                      ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-16 00:10:13,467 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 122, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 79, in scrape_single
+    debtor_name = result_set.find('').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-16 00:12:48,314 [ERROR]: An error occurred: object of type 'NoneType' has no len()
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 122, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 72, in scrape_single
+    print(f'Result length: {len(result_set)}')
+                            ^^^^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+2023-12-16 00:18:18,602 [ERROR]: An error occurred: 'list' object has no attribute 'lower'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 128, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 77, in scrape_single
+    if 'namesrepeater' in td.contents.lower():
+                          ^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'lower'
+2023-12-16 00:18:44,629 [ERROR]: An error occurred: 1
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 128, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 77, in scrape_single
+    if 'namesrepeater' in td[1].contents.lower():
+                          ~~^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 1
+2023-12-16 00:18:56,404 [ERROR]: An error occurred: 1
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 129, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 78, in scrape_single
+    if 'namesrepeater' in td[1].contents.lower():
+                          ~~^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 1
+2023-12-16 00:19:40,695 [ERROR]: An error occurred: 'list' object has no attribute 'lower'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 129, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 78, in scrape_single
+    if 'namesrepeater' in td.contents.lower():
+                          ^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'lower'
+2023-12-16 00:20:02,707 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 129, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 86, in scrape_single
+    debtor_name = result_set.find('').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-16 00:20:32,821 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 129, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 86, in scrape_single
+    debtor_name = result_set.find('').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-16 00:21:38,177 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 130, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 87, in scrape_single
+    debtor_name = result_set.find('').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-16 00:22:40,706 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 130, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 87, in scrape_single
+    debtor_name = result_set.find('').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-16 00:23:09,480 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 132, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 89, in scrape_single
+    debtor_name = result_set.find('').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-16 00:24:16,727 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 133, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 90, in scrape_single
+    debtor_name = result_set.find('').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-16 00:24:32,486 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 133, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 90, in scrape_single
+    debtor_name = result_set.find('').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-16 00:29:02,213 [ERROR]: An error occurred: cannot access local variable 'result_set' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 133, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 72, in scrape_single
+    print(f'Result length: {len(result_set)}')
+                                ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'result_set' where it is not associated with a value
+2023-12-16 00:29:19,306 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 133, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 90, in scrape_single
+    debtor_name = result_set.find('.uccFilingRepeater > div:nth-child(1) > div:nth-child(4) > div:nth-child(9) > div:nth-child(2) > div:nth-child(3) > span:nth-child(1)').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-16 00:31:08,422 [ERROR]: An error occurred: name 'div' is not defined
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 136, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 79, in scrape_single
+    print(div)
+          ^^^
+NameError: name 'div' is not defined. Did you mean: 'divs'?
+2023-12-16 00:31:16,962 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 136, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 93, in scrape_single
+    debtor_name = result_set.find('.uccFilingRepeater > div:nth-child(1) > div:nth-child(4) > div:nth-child(9) > div:nth-child(2) > div:nth-child(3) > span:nth-child(1)').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-16 00:31:51,150 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 138, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 95, in scrape_single
+    debtor_name = result_set.find('.uccFilingRepeater > div:nth-child(1) > div:nth-child(4) > div:nth-child(9) > div:nth-child(2) > div:nth-child(3) > span:nth-child(1)').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-16 00:34:02,383 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 138, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 95, in scrape_single
+    debtor_name = divs[8].find('span:nth-child(1)').get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-16 00:35:06,735 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 138, in scrape_with_refcodes
+    result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=f8c2e994-e39c-4098-9ac5-000c83e0906f")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 96, in scrape_single
+    debtor_address = divs[8].find_all('span')[2].get_text()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-12-16 00:35:22,826 [ERROR]: An error occurred: cannot access local variable 'last_interrupt_char_index' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 149, in scrape_with_refcodes
+    for char in ascii_uppercase[last_interrupt_char_index:]:
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'last_interrupt_char_index' where it is not associated with a value
+2023-12-16 00:37:37,638 [ERROR]: An error occurred: cannot access local variable 'last_interrupt_char_index' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 130, in scrape_with_refcodes
+    for char in ascii_uppercase[last_interrupt_char_index:]:
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'last_interrupt_char_index' where it is not associated with a value
+2023-12-16 00:40:23,013 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 196, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls)]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 86, in scrape_single
+    secured_party_name = divs[11].find_all('span')[0].get_text()
+                         ~~~~^^^^
+IndexError: list index out of range
+2023-12-16 00:45:14,819 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 196, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls)]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 86, in scrape_single
+    secured_party_name = divs[11].find_all('span')[0].get_text()
+                         ~~~~^^^^
+IndexError: list index out of range
+2023-12-16 00:48:59,767 [ERROR]: An error occurred: sequence item 1: expected str instance, Tag found
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 197, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls)]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 77, in scrape_single
+    print(['*************************\n'.join(div.contents) for div in divs])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sequence item 1: expected str instance, Tag found
+2023-12-16 00:56:17,210 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 89, in scrape_single
+    secured_party_name = divs[index].find_all('span')[0].get_text()
+                         ~~~~^^^^^^^
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 202, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls)]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 93, in scrape_single
+    secured_party_name = divs[index].find_all('span')[0].get_text()
+                         ~~~~^^^^^^^
+IndexError: list index out of range
+2023-12-16 01:02:09,033 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 89, in scrape_single
+    secured_party_name = divs[index].find_all('span')[0].get_text()
+                         ~~~~^^^^^^^
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 202, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls)]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 93, in scrape_single
+    secured_party_name = divs[index].find_all('span')[0].get_text()
+                         ~~~~^^^^^^^
+IndexError: list index out of range
+2023-12-16 01:15:14,433 [ERROR]: An error occurred: cannot access local variable 'secured_party_name' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 203, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls)]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 96, in scrape_single
+    result_dict.update({'secured_party_name':secured_party_name})
+                                             ^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'secured_party_name' where it is not associated with a value
+2023-12-16 01:24:36,790 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 198, in scrape_with_refcodes
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 84, in scrape_single
+    debtor_address = divs[8].find_all('span')[1].get_text()
+                         ^^^^^^^^
+IndexError: list index out of range
+2023-12-16 01:27:44,316 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 202, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls)]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 86, in scrape_single
+    secured_party_name = divs[11].find_all('span')[0].get_text()
+                         ~~~~^^^^
+IndexError: list index out of range
+2023-12-16 04:04:44,847 [ERROR]: An error occurred: can only concatenate str (not "int") to str
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 164, in scrape_with_refcodes
+    num = next(num_gen)
+          ^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 120, in num_generator
+    num += 1
+TypeError: can only concatenate str (not "int") to str
+2023-12-16 04:08:09,211 [ERROR]: An error occurred: slice(1, -1, None)
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 186, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 114, in get_page_links
+    page_results = [f'{tr.find('a')['href']}' for tr in tr_elements[1:-1] if tr.find('a') and 'https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=' in tr.find('a')['href']]
+                                                        ~~~~~~~~~~~^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: slice(1, -1, None)
+2023-12-16 04:14:33,181 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 187, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 115, in get_page_links
+    page_results = [f'{tr.find('a')['href']}' for tr in tr_elements]
+                       ~~~~~~~~~~~~^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-12-16 04:15:14,307 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 189, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 117, in get_page_links
+    page_results = [f'{tr.find('a')['href']}' for tr in tr_elements]
+                       ~~~~~~~~~~~~^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-12-16 04:16:06,749 [ERROR]: An error occurred: 'NoneType' object is not callable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 189, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 113, in get_page_links
+    tr_elements = table.select_query('tr a')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not callable
+2023-12-16 04:16:22,240 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 189, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 114, in get_page_links
+    for tr in tr_elements:
+TypeError: 'NoneType' object is not iterable
+2023-12-16 04:24:16,986 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 189, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 117, in get_page_links
+    page_results = [f'{tr.find('a')['href']}' for tr in tr_elements]
+                       ~~~~~~~~~~~~^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-12-16 04:24:31,027 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 189, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 117, in get_page_links
+    page_results = [f'{tr.find('a')['href']}' for tr in tr_elements]
+                       ~~~~~~~~~~~~^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-12-16 04:24:52,280 [ERROR]: An error occurred: Invalid URL 'NameDocs?District=500&selectedName=A+%26+M+MOTORS+INC&sort_desc=True': No scheme supplied. Perhaps you meant https://NameDocs?District=500&selectedName=A+%26+M+MOTORS+INC&sort_desc=True?
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 199, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 51, in scrape_single
+    response = requests.get(url)
+               ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/models.py", line 439, in prepare_url
+    raise MissingSchema(
+requests.exceptions.MissingSchema: Invalid URL 'NameDocs?District=500&selectedName=A+%26+M+MOTORS+INC&sort_desc=True': No scheme supplied. Perhaps you meant https://NameDocs?District=500&selectedName=A+%26+M+MOTORS+INC&sort_desc=True?
+2023-12-16 04:25:34,560 [ERROR]: An error occurred: 'NoneType' object has no attribute 'attrs'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 199, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 73, in scrape_single
+    debtor_name = soup.find("div.form-group:nth-child(4) > div:nth-child(2) > input:nth-child(1)").attrs['value']#divs[8].find_all('span')[0].get_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'attrs'

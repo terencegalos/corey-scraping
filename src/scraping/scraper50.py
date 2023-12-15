@@ -2,20 +2,19 @@ import requests,time, json, re
 from bs4 import BeautifulSoup
 import concurrent.futures
 from fake_useragent import UserAgent
-from scraping import code_generator
+# from scraping import code_generator
 from string import ascii_uppercase
 from config.proxies import proxy_dict
 
-class Scraper50:
+class Scraper51:
     def __init__(self):
+        # https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=1521a398-e075-402c-a94b-005ec6badfc2
         # ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$OrganizationNameInput
         # https://arc-sos.state.al.us/cgi/uccdetail.mbr/detail?ucc=20-7799272&page=name
         # https://arc-sos.state.al.us/cgi/uccname.mbr/input
         # self.baseurl = 'https://arc-sos.state.al.us/'
         self.baseurl = 'https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-nonstand/portal.aspx'
-        self.url = 'https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-stand/portal.aspx'
-        self.table_name = "scraper50_info"
-        self.session = requests.Session()
+        self.table_name = "scraper51_info"
         self.ua = UserAgent()
         self.extracted_cookies = 'mailer-sessions=s%3A-xmOYnkEUpr5_faMgi-HKzN7AhNZNnUc.fgKPMZ%2B3eKVo%2Br4%2FUUYO%2FyVxUHLjk5Z43CnLjxXq5PU; wc_visitor=78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+'
         print(f"Scraping: {self.baseurl}")
@@ -51,7 +50,8 @@ class Scraper50:
 
 
         print(f'Extracting info. URL: {url}')
-        response = requests.get(url,headers=headers,proxies=proxy_dict)
+        response = requests.get(url)
+        # print(f'Content: {response.text}')
         print(f'Status code: {response.status_code}')
 
 
@@ -63,36 +63,47 @@ class Scraper50:
         # Parse the HTML content with BeautifulSoup
 
         soup = BeautifulSoup(response.content,'html.parser')
+        # print(soup.contents)
 
+
+        # Extract debtor info from a table tag
+        table = soup.find('table')
+
+        # Loop td tags to get the required data
+        tds = table.find_all('td')
+        result_set = tds[6]
+        divs = result_set.find_all('div', class_='itemRepeater')
+        
+        # define empty result set
         result_dict = {'debtor_name':'','debtor_address':'','secured_party_name':'','secured_party_address':''}
-
-        # Extract debtor info
-        print(f'Content: {soup.get_text()}')
-        result_set = soup.find('.uccFilingRepeater > div:nth-child(1) > div:nth-child(4) > div:nth-child(9)')
-        # if result_set:
-        #     debtor_info = result_set.find(id='ctl00_ContentPlaceHolder1_PortalPageControl1_ctl22_uccFilingRepeater_ctl01_uccNamesRepeater_ctl01_NameLabel')
-        # else:
-        #     print('Elements not found.')
-
-        # for d in debtor_info:
-        #     print(f'info: {d.get_text(separatr='\n').split('\n')}')
-
-        if result_set:
-            # debtor = result_set.find(id='ctl00_ContentPlaceHolder1_PortalPageControl1_ctl22_uccFilingRepeater_ctl01_uccNamesRepeater_ctl01_NameLabel')
-            debtor_name = result_set.find(id='ctl00_ContentPlaceHolder1_PortalPageControl1_ctl22_uccFilingRepeater_ctl01_uccNamesRepeater_ctl01_NameLabel')
-            debtor_address = result_set.find(id='ctl00_ContentPlaceHolder1_PortalPageControl1_ctl22_uccFilingRepeater_ctl01_uccNamesRepeater_ctl01_mailAddressLabel')
-            result_dict.update({'debtor_name':debtor_name})
-            result_dict.update({'debtor_address':debtor_address})
-
         print(result_dict)
-        # Extract secured party info
-        secured_party_info = soup.find('.uccFilingRepeater > div:nth-child(1) > div:nth-child(4) > div:nth-child(9) > div:nth-child(3) > div:nth-child(3)')
-        # print(f'len: {len(secured_party_info)}')
-        if secured_party_info:
-            secured_party_name = secured_party_info.find(id='ctl00_ContentPlaceHolder1_PortalPageControl1_ctl22_uccFilingRepeater_ctl01_uccNamesRepeater_ctl02_NameLabel')
-            secured_party_address = secured_party_info.find(id='ctl00_ContentPlaceHolder1_PortalPageControl1_ctl22_uccFilingRepeater_ctl01_uccNamesRepeater_ctl02_mailAddressLabel')
-            result_dict.update({'secured_party_name':secured_party_name})
-            result_dict.update({'secured_party_address':secured_party_address})
+
+        # get info
+        print(f'URL: {url}')
+        debtor_name = divs[8].find_all('span')[0].get_text()
+        try:
+            debtor_address = divs[8].find_all('span')[1].get_text()
+        except IndexError:
+            debtor_address = 'n/a'
+        try:
+            secured_party_name = divs[11].find_all('span')[0].get_text()
+        except IndexError:
+            secured_party_name = 'n/a'
+        try:
+            secured_party_address = divs[11].find_all('span')[1].get_text()
+        except IndexError:
+            secured_party_address = 'n/a'
+
+        # Update result set dict
+        result_dict.update({'debtor_name':debtor_name})
+        result_dict.update({'debtor_address':debtor_address})
+        result_dict.update({'secured_party_name':secured_party_name})
+        result_dict.update({'secured_party_address':secured_party_address})
+
+        # print(result_dict)
+        
+        # index = 11
+        # # try:
 
         print(result_dict)
 
@@ -122,9 +133,18 @@ class Scraper50:
             return page_results
                 
 
+        result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=be5c804e-19b5-4a5f-bdd4-0065cf431c9e")
+        print(f'Sample result: {result}')
 
+        
         # 1 letter search; Loop all uppercase
-        for char in ascii_uppercase[last_interrupt_char:]:
+        last_interrupt_char_index = 0
+
+
+        if last_interrupt_char:
+            last_interrupt_char_index = ascii_uppercase.index(last_interrupt_char)
+
+        for char in ascii_uppercase[last_interrupt_char_index:]:
             print(f"Extract search results for '{char}'")
 
             headers = {
@@ -147,7 +167,8 @@ class Scraper50:
                 'Upgrade-Insecure-Requests': '1',
                 'User-Agent': self.ua.random
                 }
-            # data = {'ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$OrganizationNameInput':f'{char}'}
+            
+            
             data = {
                 "__EVENTTARGET": "",
                 "__EVENTARGUMENT": "",
@@ -167,12 +188,9 @@ class Scraper50:
                 "ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$MiddleNameTextBox": "",
                 "ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$SearchButton": "Search"
             }
-            # starting_page = 1
-
-            # current_page = starting_page
             
             # while True:
-            current_url = self.baseurl#f'{self.baseurl}output?s={current_page}&search={char}&type=ALL&status=&order=default&hld=&dir=&page=Y'
+            current_url = self.baseurl
             response = requests.post(current_url,data=data,headers=headers)
             print(f'Scraping entries in url: {current_url}')
             print(f'Status code: {response.status_code}')
@@ -182,30 +200,16 @@ class Scraper50:
             # Parse the HTML content with BeautifulSoup
             soup = BeautifulSoup(response.content,'html.parser')
             
-            # urls = [] # Page results here
 
             # Get first page results and store
             urls = get_page_links(soup)
-            # print("\n".join(urls))
             
             
             # scrape info using multithread
             with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-                batch_results = [results for results in executor.map(self.scrape_single,urls)]
-                yield batch_results
-
-            # # for url in urls:
-            # #     result = self.scrape_single(url)
-            # #     print(result)
-            # #     yield result
-            
-            # # add 25 to current_page to get next page
-            # current_page += 25
-            # next_page_link = re.search(r'>>',requests.get(current_url).text)
-
-            # if not next_page_link:
-            #     print('No more pages. Exiting.')
-            #     break
+                for i in range(0,len(urls),batch_size):
+                    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    yield batch_results
 
 
 
