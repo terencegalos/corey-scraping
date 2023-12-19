@@ -29,6 +29,8 @@ class DatabaseHandler:
         self.conn.commit()
         
     def store_data(self, table_name, data_list):
+        for data in data_list:
+            print(data)
     # Insert data into the database with explicit default values
         for data in data_list:
             self.cursor.execute(f'''

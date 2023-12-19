@@ -27,30 +27,26 @@ class Scraper51:
             'Accept-Encoding': 'gzip, deflate, br',
             'Accept-Language': 'en-US,en;q=0.5',
             'Connection': 'keep-alive',
-            'Content-Length': '4098',
-            'Content-Type': 'application/x-www-form-urlencoded',
-            # 'Cookie': 'ASP.NET_SessionId=fong0xk10z1uhuu0irxwkdl1',
-            'DNT': '1',
-            'Host': 'business.sos.ms.gov',
-            'Origin': 'https://business.sos.ms.gov',
-            'Referer': 'https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-nonstand/portal.aspx',
+            # 'Cookie': 'TS017bf281=0102f3c9800d02649b258050b93884db8a3599b3308608681bba68f4a2e90a8acb74ae82dcb8bebcf4f98d680a8cb399793647399e',
+            'Host': 'dnr.alaska.gov',
+            'Referer': 'https://dnr.alaska.gov/ssd/recoff/ucc/search/name',
             'Sec-Fetch-Dest': 'document',
             'Sec-Fetch-Mode': 'navigate',
             'Sec-Fetch-Site': 'same-origin',
             'Sec-Fetch-User': '?1',
-            'Sec-GPC': '1',
             'Upgrade-Insecure-Requests': '1',
-            'User-Agent': self.ua.random
+            'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0'
         }
 
 
 
 
 
-        print(f'Extracting info. URL: {self.searchurl+url}')
-        response = requests.get(self.searchurl+url)
-        # print(f'Content: {response.text}')
+
+        print(f'Extracting doc links from URL: {self.searchurl+url}')
+        response = requests.get(self.searchurl+url,headers=headers)
         print(f'Status code: {response.status_code}')
+        # print(f'Content: {response.text}')
 
 
 
@@ -63,41 +59,97 @@ class Scraper51:
         soup = BeautifulSoup(response.content,'html.parser')
         # print(soup.contents)
 
-        # find all links that contains the info
-        info_links = soup.find_all("tr.table-default > td:nth-child(1) > a:nth-child(2)")
+        # return in no results found
+        soup_table = soup.find('table')
+        if not soup_table:
+            # print(response.text)
+            return
 
+
+
+        # find all links that contains the info
+        info_links = [a.attrs['href'] for a in soup_table.find_all("a") if 'href' in a.attrs and 'selecteddoc' in a.attrs['href'].lower()]
+
+        # print(f'doc links:{info_links}')
+        
         results = [] # store results here
+
+        header = {
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Accept-Language": "en-US,en;q=0.5",
+            "Connection": "keep-alive",
+            # "Cookie": "TS017bf281=0102f3c98045bf1a8fdcb62af56beaf558a84e0a0b599344109ff95baadb34f0ad419e1faf9737cb9024a0540a5eef294ff7a1f42b",
+            "Host": "dnr.alaska.gov",
+            "Sec-Fetch-Dest": "document",
+            "Sec-Fetch-Mode": "navigate",
+            "Sec-Fetch-Site": "none",
+            "Sec-Fetch-User": "?1",
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": self.ua.random
+        }
+
         for link in info_links:
             print(f"Extracting info. URL: {self.searchurl+link}")
-            response = requests.get(self.searchurl+link)
-            tbody = soup.find("#PartiesTable > tbody")
-            tr_elements = tbody.find_all('tr')
+            try:
+                response = requests.get(self.searchurl+link,headers=header)
+            except requests.exceptions.ConnectionError:
+                print(f'Connecting failed to url {self.searchurl+link}. Retrying in 20 secs')
+                time.sleep(20)
+                response = requests.get(self.searchurl+link,headers=header)
+                
+            soup = BeautifulSoup(response.text, 'html.parser')
 
-        
-            # define empty result set
-            result_dict = {'debtor_name':'','debtor_address':'','secured_party_name':'','secured_party_address':''}
-            print(result_dict)
-
-            # get info
-            print(f'URL: {url}')
-            debtor_name = soup.find("div.form-group:nth-child(4) > div:nth-child(2) > input:nth-child(1)").attrs['value']
-            debtor_address = 'n/a'
-            
-            secured_party_name = soup.find('tr.table-default:nth-child(5) > td:nth-child(1)').get_text()
-            secured_party_address = 'n/a'
-
-            # Update result set dict
-            result_dict.update({'debtor_name':debtor_name})
-            result_dict.update({'debtor_address':debtor_address})
-            result_dict.update({'secured_party_name':secured_party_name})
-            result_dict.update({'secured_party_address':secured_party_address})
+            table = soup.find('table')
+            tr_elements = table.find_all('tr')
+            # for tr in tr_elements:
+            #     print("***")
+            #     print(tr.contents)
 
 
-            print(result_dict)
 
-            results.append(result_dict)
+    
+            for tr in tr_elements[1:]:
+                # print(tr.contents)
+                # print(tr.find('span').get_text())
+                
+                # define empty result set 
+                result_dict = {'debtor_name':'','debtor_address':'','secured_party_name':'','secured_party_address':''}
+                # print(result_dict)
+                if 'debtor' in tr.find('span').get_text().lower():
 
-        return result_dict
+                    # get info
+                    # print(tr.contents)
+                    # print(tr.find_all('td')[1].get_text())
+                    debtor_name = " ".join(tr.find_all("td")[1].get_text().split())
+                    try:
+                        debtor_address = " ".join(tr.find_all("td")[2].get_text().split())
+                    except IndexError:
+                        debtor_address = 'N/A'
+                    result_dict.update({'debtor_name':debtor_name})
+                    result_dict.update({'debtor_address':debtor_address})
+                elif 'secured' in tr.find('span').get_text().lower():                
+                    secured_party_name = " ".join(tr.find_all('td')[1].get_text().split())
+                    try:
+                        secured_party_address = " ".join(tr.find_all("td")[2].get_text().split())
+                    except IndexError:
+                        secured_party_address = 'N/A'
+                    result_dict.update({'secured_party_name':secured_party_name})
+                    result_dict.update({'secured_party_address':secured_party_address})
+                    
+                    # update all results dict
+                    for result_dict in results:
+                        result_dict.update({'secured_party_name':secured_party_name})
+                        result_dict.update({'secured_party_address':secured_party_address})
+                else:
+                    pass
+
+
+                print(result_dict)
+
+                results.append(result_dict)
+
+        return results
 
         
         
@@ -119,8 +171,7 @@ class Scraper51:
         def get_page_links(soup):
             table = soup.find("table")
             tr_elements = table.find_all('tr')
-            # for tr in tr_elements:
-            #     print(tr.contents)
+            
             print(f'tr length: {len(tr_elements)}')
             page_results = [f'{tr.find('a')['href']}' for tr in tr_elements if tr.find('a')]
             return page_results
@@ -176,11 +227,12 @@ class Scraper51:
                 num = next(num_gen)
                 print(f'Current page:{num}')
                 data = {
+                    "saved_name": "value?+Model.namesList[Model.namesList.Count+-1]+:+null)",
                     "District": "500",
                     "page_num": f"{num}",
                     "starting_name": f"{char_index}",
-                    "sort_desc": "true",
-                    "Name+Search": ""
+                    "sort_desc": "false",
+                    "Next": ""
                 }
                 current_url = self.baseurl
                 response = requests.post(current_url,data=data,headers=headers)
@@ -195,14 +247,17 @@ class Scraper51:
 
                 # Get first page results and store
                 urls = get_page_links(soup)
-                # print(urls)
 
                 if len(urls) == 0:
                     print("No more pages found. Exiting.")
+                    break
+                else:
+                    for url in urls:
+                        print(f'result url: {url}')
                 
                 
                 # scrape info using multithread
                 with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
                     for i in range(0,len(urls),batch_size):
-                        batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                        batch_results = [item for results in executor.map(self.scrape_single,urls[i:i+batch_size]) for item in results]
                         yield batch_results

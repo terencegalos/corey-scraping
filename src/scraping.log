@@ -8283,3 +8283,1254 @@ Traceback (most recent call last):
     debtor_name = soup.find("div.form-group:nth-child(4) > div:nth-child(2) > input:nth-child(1)").attrs['value']#divs[8].find_all('span')[0].get_text()
                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'NoneType' object has no attribute 'attrs'
+2023-12-19 00:13:39,899 [ERROR]: An error occurred: 'href'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 211, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 63, in scrape_single
+    info_links = [a['href'] for a in soup.find_all("a") if 'selecteddoc' in a['href'].lower()]
+                                                                            ~^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 'href'
+2023-12-19 00:14:26,350 [ERROR]: An error occurred: 'href'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 211, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 63, in scrape_single
+    info_links = [a['href'] for a in soup.find_all("a") if 'selecteddoc' in a['href'].lower()]
+                                                                            ~^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 'href'
+2023-12-19 00:15:28,511 [ERROR]: An error occurred: 'href'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 211, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 63, in scrape_single
+    info_links = [a.attrs['href'] for a in soup.find_all("a") if 'selecteddoc' in a['href'].lower()]
+                                                                                  ~^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 'href'
+2023-12-19 00:17:03,090 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 211, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 73, in scrape_single
+    tr_elements = tbody.find_all('tr')
+                  ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2023-12-19 00:25:31,345 [ERROR]: An error occurred: 'href'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 211, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 63, in scrape_single
+    info_links = [a.attrs['href'] for a in soup.find_all("a")]# if 'href' in a.attrs and 'selecteddoc' in a['href'].lower()]
+                  ~~~~~~~^^^^^^^^
+KeyError: 'href'
+2023-12-19 00:26:49,538 [ERROR]: An error occurred: name 'info_links' is not defined
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 216, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 70, in scrape_single
+    print(f'doc links:{info_links}')
+                       ^^^^^^^^^^
+NameError: name 'info_links' is not defined
+2023-12-19 00:32:41,515 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 214, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 76, in scrape_single
+    tr_elements = tbody.find_all('tr')
+                  ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2023-12-19 00:40:23,633 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 219, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 81, in scrape_single
+    tr_elements = tbody.find_all('tr')
+                  ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2023-12-19 00:42:09,466 [ERROR]: An error occurred: 1
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 219, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 92, in scrape_single
+    debtor_name = debtor.find("td")[1].get_text()
+                  ~~~~~~~~~~~~~~~~~^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 1
+2023-12-19 00:45:18,464 [ERROR]: An error occurred: 1
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 220, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 93, in scrape_single
+    debtor_name = debtor.find("td")[1].get_text()
+                  ~~~~~~~~~~~~~~~~~^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 1
+2023-12-19 00:45:38,771 [ERROR]: An error occurred: 1
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 220, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 93, in scrape_single
+    debtor_name = debtor.find("td")[1].get_text()
+                  ~~~~~~~~~~~~~~~~~^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 1
+2023-12-19 00:48:29,357 [ERROR]: An error occurred: 1
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 221, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 94, in scrape_single
+    debtor_name = debtor.find("td")[1].get_text()
+                  ~~~~~~~~~~~~~~~~~^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 1
+2023-12-19 01:02:53,255 [ERROR]: An error occurred: 1
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 220, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 93, in scrape_single
+    debtor_name = debtor.find("td")[1].get_text()
+                  ~~~~~~~~~~~~~~~~~^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 1
+2023-12-19 01:13:43,245 [ERROR]: An error occurred: 1
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 222, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 95, in scrape_single
+    debtor_name = debtor.find("td")[1].get_text()
+                  ~~~~~~~~~~~~~~~~~^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 1
+2023-12-19 01:16:38,815 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 223, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 80, in scrape_single
+    print(table.contents)
+          ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-19 01:17:17,800 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 223, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 80, in scrape_single
+    print(table.contents)
+          ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-19 01:18:16,552 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 223, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 80, in scrape_single
+    print(table.contents)
+          ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-19 01:39:28,324 [ERROR]: An error occurred: 1
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 221, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 94, in scrape_single
+    debtor_name = tr.find("td")[1].get_text()
+                  ~~~~~~~~~~~~~^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 1
+2023-12-19 01:39:45,753 [ERROR]: An error occurred: 1
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 221, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 94, in scrape_single
+    debtor_name = tr.find("td")[1].get_text()
+                  ~~~~~~~~~~~~~^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 1573, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 1
+2023-12-19 02:02:36,155 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 233, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 100, in scrape_single
+    for tr in tr_elements:
+TypeError: 'NoneType' object is not iterable
+2023-12-19 02:04:00,498 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 233, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 100, in scrape_single
+    for tr in tr_elements:
+TypeError: 'NoneType' object is not iterable
+2023-12-19 02:05:33,267 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 233, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 100, in scrape_single
+    for tr in tr_elements:
+TypeError: 'NoneType' object is not iterable
+2023-12-19 02:07:25,769 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 233, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 96, in scrape_single
+    tr_elements = table.find('tr')
+                  ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find'
+2023-12-19 02:08:31,699 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 233, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 96, in scrape_single
+    tr_elements = table.find('tr')
+                  ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find'
+2023-12-19 02:09:00,438 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 233, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 96, in scrape_single
+    tr_elements = table.find('tr')
+                  ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find'
+2023-12-19 02:10:24,507 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 237, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 96, in scrape_single
+    tr_elements = table.find('tr')
+                  ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find'
+2023-12-19 02:14:15,623 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 234, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 96, in scrape_single
+    print(table.contents)
+          ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-19 02:14:42,698 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 234, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 96, in scrape_single
+    print(table.contents)
+          ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-19 02:15:02,974 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 234, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 96, in scrape_single
+    print(table.contents)
+          ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-19 02:15:24,449 [ERROR]: An error occurred: name 'tr_elements' is not defined
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 234, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 101, in scrape_single
+    for tr in tr_elements:
+              ^^^^^^^^^^^
+NameError: name 'tr_elements' is not defined
+2023-12-19 02:26:43,707 [ERROR]: An error occurred: name 'tr_elements' is not defined
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 234, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 101, in scrape_single
+    for tr in tr_elements:
+              ^^^^^^^^^^^
+NameError: name 'tr_elements' is not defined
+2023-12-19 02:29:26,638 [ERROR]: An error occurred: name 'tr_elements' is not defined
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 235, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 102, in scrape_single
+    for tr in tr_elements:
+              ^^^^^^^^^^^
+NameError: name 'tr_elements' is not defined
+2023-12-19 15:04:22,735 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 235, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 108, in scrape_single
+    debtor_name = tr.find("td")[1].get_text()
+                  ~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-12-19 15:12:39,988 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 245, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 108, in scrape_single
+    if 'debtor' in tr.find('span').get_text():
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-19 15:13:25,846 [ERROR]: An error occurred: 'NoneType' object has no attribute 'contents'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 246, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 108, in scrape_single
+    print(tr.find('span').contents)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'contents'
+2023-12-19 15:13:49,110 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 246, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 109, in scrape_single
+    if 'debtor' in tr.find('span').get_text():
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2023-12-19 15:14:18,068 [ERROR]: An error occurred: cannot access local variable 'result_dict' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 246, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 132, in scrape_single
+    print(result_dict)
+          ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'result_dict' where it is not associated with a value
+2023-12-19 15:18:08,431 [ERROR]: An error occurred: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 40, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 37, in store_data
+    ''', (data['debtor_name'], data['debtor_address'], data['secured_party_name'], data['secured_party_address']))
+          ~~~~^^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2023-12-19 15:30:10,450 [ERROR]: An error occurred: ResultSet object has no attribute 'get_text'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 249, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 122, in scrape_single
+    secured_party_name = tr.find_all('td').get_text()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 2428, in __getattr__
+    raise AttributeError(
+AttributeError: ResultSet object has no attribute 'get_text'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+2023-12-19 15:32:04,328 [ERROR]: An error occurred: ResultSet object has no attribute 'get_text'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 250, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 123, in scrape_single
+    secured_party_name = tr.find_all('td').get_text()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 2428, in __getattr__
+    raise AttributeError(
+AttributeError: ResultSet object has no attribute 'get_text'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+2023-12-19 15:32:39,045 [ERROR]: An error occurred: ResultSet object has no attribute 'get_text'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 250, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 123, in scrape_single
+    secured_party_name = tr.find_all('td').get_text()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/bs4/element.py", line 2428, in __getattr__
+    raise AttributeError(
+AttributeError: ResultSet object has no attribute 'get_text'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+2023-12-19 15:33:20,752 [ERROR]: An error occurred: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 40, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 37, in store_data
+    ''', (data['debtor_name'], data['debtor_address'], data['secured_party_name'], data['secured_party_address']))
+          ~~~~^^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2023-12-19 15:33:42,096 [ERROR]: An error occurred: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 40, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 37, in store_data
+    ''', (data['debtor_name'], data['debtor_address'], data['secured_party_name'], data['secured_party_address']))
+          ~~~~^^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2023-12-19 15:35:28,841 [ERROR]: An error occurred: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 40, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 38, in store_data
+    ''', (data['debtor_name'], data['debtor_address'], data['secured_party_name'], data['secured_party_address']))
+          ~~~~^^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2023-12-19 15:36:30,704 [ERROR]: An error occurred: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 40, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 38, in store_data
+    ''', (data['debtor_name'], data['debtor_address'], data['secured_party_name'], data['secured_party_address']))
+          ~~~~^^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2023-12-19 15:37:33,172 [ERROR]: An error occurred: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 40, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 39, in store_data
+    ''', (data['debtor_name'], data['debtor_address'], data['secured_party_name'], data['secured_party_address']))
+          ~~~~^^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2023-12-19 15:42:32,456 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 250, in scrape_with_refcodes
+    batch_results = [item for results in executor.map(self.scrape_single,urls[i:i+batch_size]) for item in results]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 119, in scrape_single
+    debtor_address = tr.find_all("td")[2].get_text()
+                     ~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-12-19 16:06:03,332 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 250, in scrape_with_refcodes
+    batch_results = [item for results in executor.map(self.scrape_single,urls[i:i+batch_size]) for item in results]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 119, in scrape_single
+    debtor_address = " ".join(tr.find_all("td")[2].get_text().split())
+                              ~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-12-19 16:12:32,050 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 253, in scrape_with_refcodes
+    batch_results = [item for results in executor.map(self.scrape_single,urls[i:i+batch_size]) for item in results]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 127, in scrape_single
+    secured_party_address = " ".join(tr.find_all("td")[2].get_text().split())
+                                     ~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-12-19 16:13:27,854 [ERROR]: An error occurred: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+                       ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1411, in getresponse
+    response.begin()
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 324, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 293, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+                       ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1411, in getresponse
+    response.begin()
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 324, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 293, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 35, in main
+    for batch_results in scraper.scrape_with_refcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 256, in scrape_with_refcodes
+    batch_results = [item for results in executor.map(self.scrape_single,urls[i:i+batch_size]) for item in results]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper51.py", line 94, in scrape_single
+    response = requests.get(self.searchurl+link,headers=header)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
