@@ -35,6 +35,31 @@ def generate_code(start,end,prefix,width=7):
             
         return codes
 
+def generate_code_gen(start,end,prefix,width=7,batch_size=100):
+        
+        print(f'Generating codes.')
+        codes = []
+        
+        for num in range(start, end+1):
+            # Generate zero-padded numeric component
+            numeric_component = f"{num:0{width}d}"
+            
+            # Create the invite code by combining the prefix "HA" and the numeric component
+            invite_code = f"{prefix}{numeric_component}" # mobilendloan
+            # invite_code = f"NA{numeric_component}" # myonlineloanpro
+            print(f'invite code: {invite_code}')
+            
+            codes.append(invite_code)
+
+            if len(codes) % batch_size == 0:
+                 yield codes
+                 codes = []
+            
+        
+        # yield remaining codes
+        if codes:
+            yield codes
+
 
 
 

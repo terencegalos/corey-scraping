@@ -5,8 +5,8 @@ from requests.exceptions import ConnectionError
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 
-from scraping import name_generator_large_file as name_generator
-# from scraping import name_generator
+# from scraping import name_generator_large_file as name_generator
+from scraping import name_generator
 from scraping import get_us_state
 
 class Scraper42:
@@ -100,7 +100,7 @@ class Scraper42:
     def scrape_with_names(self,batch_size=10,num_threads=3):
         
         
-        names_generator = name_generator.generate_names("a'isha")
+        names_generator = name_generator.generate_names()
 
         results = []
         
@@ -122,7 +122,7 @@ class Scraper42:
             while True:
                 try:
                     # Get names from generator function
-                    for name in next(names_generator):
+                    for name in names_generator:
                         num_generator = generate_numbers()
                         continue_to_next_name = False
                         

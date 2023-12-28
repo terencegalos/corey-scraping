@@ -11,6 +11,12 @@ class DatabaseHandler:
         )
         # Create a cursor to interact with the db
         self.cursor = self.conn.cursor()
+
+        # Set the session wait_timeout
+        self.cursor.execute("SET SESSION wait_timeout = 28800000")
+
+        # Set the session interactive_timeout
+        self.cursor.execute("SET SESSION interactive_timeout = 28800000")
         
         for table in table_names:        
             # Create a table

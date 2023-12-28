@@ -1,17 +1,17 @@
-import requests,time, json, re
+import requests,time#, json, re
 from bs4 import BeautifulSoup
 import concurrent.futures
+# from scraping import code_generator
 from fake_useragent import UserAgent
-from scraping import code_generator
 from string import ascii_uppercase
-from config.proxies import proxy_dict
+from config.proxies_1 import proxy_list
 
-class Scraper51:
+class Scraper52:
     def __init__(self):
         
-        self.baseurl = 'https://dnr.alaska.gov/ssd/recoff/ucc/search/Name'
-        self.searchurl = 'https://dnr.alaska.gov/ssd/recoff/ucc/search/'
-        self.table_name = "scraper51_info"
+        self.baseurl = 'https://apps.ilsos.gov/uccsearch/'
+        self.searchurl = 'https://apps.ilsos.gov/uccsearch/'
+        self.table_name = "scraper52_info"
         self.session = requests.Session()
         self.ua = UserAgent()
         self.extracted_cookies = 'mailer-sessions=s%3A-xmOYnkEUpr5_faMgi-HKzN7AhNZNnUc.fgKPMZ%2B3eKVo%2Br4%2FUUYO%2FyVxUHLjk5Z43CnLjxXq5PU; wc_visitor=78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+'
@@ -27,9 +27,6 @@ class Scraper51:
             'Accept-Encoding': 'gzip, deflate, br',
             'Accept-Language': 'en-US,en;q=0.5',
             'Connection': 'keep-alive',
-            # 'Cookie': 'TS017bf281=0102f3c9800d02649b258050b93884db8a3599b3308608681bba68f4a2e90a8acb74ae82dcb8bebcf4f98d680a8cb399793647399e',
-            'Host': 'dnr.alaska.gov',
-            'Referer': 'https://dnr.alaska.gov/ssd/recoff/ucc/search/name',
             'Sec-Fetch-Dest': 'document',
             'Sec-Fetch-Mode': 'navigate',
             'Sec-Fetch-Site': 'same-origin',
@@ -43,20 +40,23 @@ class Scraper51:
 
 
 
-        print(f'Extracting doc links from URL: {self.searchurl+url}')
-        try:
-            response = requests.get(self.searchurl+url,headers=headers,proxies=proxy_dict)
-        except requests.exceptions.ConnectionError:
-            print(f'Connecting failed to url {self.searchurl+url}. Reconnecting in 20 secs')
-            time.sleep(20)
-            response = requests.get(self.searchurl+url,headers=headers)
+        print(f'Extracting doc links from URL: {url}')
+        for proxy in proxy_list:
+            try:
+                response = requests.get(url,headers=headers,proxies=proxy,allow_redirects=True)
+                break
+            except Exception as e:
+                # print(f'Connecting failed to url {url}. Reconnecting in 20 secs')
+                # time.sleep(20)
+                # response = requests.get(url,headers=headers,proxies=proxy_dict)
+                print(e)
         print(f'Status code: {response.status_code}')
-        # print(f'Content: {response.text}')
+        print(f'Content: {response.text}')
 
 
 
         # raise for failed requests
-        response.raise_for_status()
+        # response.raise_for_status()
         
         # if response.status_code == 200:
         # Parse the HTML content with BeautifulSoup
@@ -97,7 +97,7 @@ class Scraper51:
         for link in info_links:
             print(f"Extracting info. URL: {self.searchurl+link}")
             try:
-                response = requests.get(self.searchurl+link,headers=header,proxies=proxy_dict)
+                response = requests.get(self.searchurl+link,headers=header)
             except requests.exceptions.ConnectionError:
                 print(f'Connecting failed to url {self.searchurl+link}. Retrying in 20 secs')
                 time.sleep(20)
@@ -188,8 +188,8 @@ class Scraper51:
                 num += 1
                 
 
-        # result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=be5c804e-19b5-4a5f-bdd4-0065cf431c9e")
-        # print(f'Sample result: {result}')
+        result = self.scrape_single(self.baseurl)
+        print(f'Sample result: {result}')
 
         
         # 1 letter search; Loop all uppercase
@@ -244,7 +244,7 @@ class Scraper51:
                     "Next": ""
                 }
                 current_url = self.baseurl
-                response = requests.post(current_url,data=data,headers=headers,proxies=proxy_dict)
+                response = requests.post(current_url,data=data,headers=headers)
                 print(f'Scraping entries in url: {current_url}')
                 print(f'Status code: {response.status_code}')
                 # print(response.text)

@@ -37,17 +37,20 @@ def get_last_names(table_name='last_names',col_name='last_name'):
 
 
 
-def generate_names(last_interrupted_first=None,last_interrupted_last=None):
+def generate_names(last_interrupted_first=None,last_interrupted_last=None,exclude_old_names=True):
 
-    print('Getting first names to exclude.')
-    old_first_names = get_first_names('first_names_old')
-    print('Getting last names to exclude')
-    old_last_names = get_last_names('last_names_old')
+    if exclude_old_names:
+        print('Getting first names to exclude.')
+        old_first_names = get_first_names('first_names_old')
+        print('Getting last names to exclude')
+        old_last_names = get_last_names('last_names_old')
 
-
-    # generate names that are not in common names
-    first_names = [fname for fname in get_first_names() if fname not in old_first_names]
-    last_names = [lname for lname in get_last_names() if lname not in old_last_names]
+        first_names = [fname for fname in get_first_names() if fname not in old_first_names]
+        last_names = [lname for lname in get_last_names() if lname not in old_last_names]
+    else:
+        # generate names that are not in common names
+        first_names = [fname for fname in get_first_names()]# fname not in old_first_names]
+        last_names = [lname for lname in get_last_names()]# lname not in old_last_names]
 
     # get index of last interrupted names
     start_index_first = 0
@@ -60,7 +63,7 @@ def generate_names(last_interrupted_first=None,last_interrupted_last=None):
             print(f"Last interrupted name '{last_interrupted_first} {last_interrupted_last}' not found. Starting from the beginning.")
 
     # Generate all name combination from first names and last names
-    # To manage system resources, loop every first name not everything at once
+    # To manage system resources we loop every first name not everything at once
     for idx in range(start_index_first,len(first_names)):
         batch = [" ".join(name) for name in list(iter(product([first_names[idx]],last_names[start_index_last:])))]
         yield batch

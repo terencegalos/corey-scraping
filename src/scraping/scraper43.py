@@ -7,6 +7,7 @@ from scraping import code_generator
 class Scraper43:
     def __init__(self):
         self.url = 'https://smallbusinesschoice.com'
+        self.validateform = 'https://www.smallbusinesschoice.com/form_handler/validate'
         self.table_name = "scraper43_info"
         self.session = requests.Session()
         self.ua = UserAgent()
@@ -19,47 +20,47 @@ class Scraper43:
     def scrape_single(self,url,data):
         
         headers = {
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Languffage': 'en-US,en;q=0.9',
-            'Cache-Control': 'max-age=0',
-            'Connection': 'keep-alive',
-            'Content-Length': '17',
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Cookie': self.extracted_cookies,
-            'Host': 'mobilendloan.com',
-            'Origin': 'https://mobilendloan.com',
-            'Referer': 'https://mobilendloan.com/',
-            'Sec-Ch-Ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
-            'Sec-Ch-Ua-Mobile': '?0',
-            'Sec-Ch-Ua-Platform': '"Windows"',
-            'Sec-Fetch-Dest': 'document',
-            'Sec-Fetch-Mode': 'navigate',
-            'Sec-Fetch-Site': 'same-origin',
-            'Sec-Fetch-User': '?1',
-            'Upgrade-Insecure-Requests': '1',
-            'User-Agent': self.ua.random
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Accept-Language": "en-US,en;q=0.5",
+            "Alt-Used": "www.smallbusinesschoice.com",
+            "Connection": "keep-alive",
+            "Content-Length": "185",
+            # "Content-Type": "multipart/form-data; boundary=---------------------------405174275634778339372685771568",
+            # "Cookie": "_gcl_au=1.1.2107904941.1701963805; _ga_Z0XG6WNC0N=GS1.1.1703664016.8.1.1703664214.0.0.0; _ga=GA1.1.1165202017.1701963905",
+            "Host": "www.smallbusinesschoice.com",
+            "Origin": "https://www.smallbusinesschoice.com",
+            "Referer": "https://www.smallbusinesschoice.com/",
+            "Sec-Fetch-Dest": "empty",
+            "Sec-Fetch-Mode": "no-cors",
+            "Sec-Fetch-Site": "same-origin",
+            "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0"
         }
 
 
+
                 
-        response = self.session.post(url, headers=headers, data=data, allow_redirects=True)
-        # print(response.text)
+        response = requests.post(url, data=data, allow_redirects=True)
         # raise for failed requests
-        response.raise_for_status()
+        # response.raise_for_status()
         
-        # if response.status_code == 200:
+        if response.status_code == 404:
+            print("Code invalid.")
+            return
+        
+        # print(response.text)
         # Parse the HTML content with BeautifulSoup
         
         soup = BeautifulSoup(response.content, 'html.parser')
+        print(' '.join(soup.get_text().split()))
         
         # Extract relevant data from the HTML using BeautifulSoup methods
-        first_name_el = soup.find(attrs={'name':'primaryOwnerFirstName'})['value'] if soup.find(attrs={'name':'primaryOwnerFirstName'}) else None
-        last_name_el = soup.find(attrs={'name':'primaryOwnerLastName'})['value'] if soup.find(attrs={'name':'primaryOwnerLastName'}) else None
-        business_el = soup.find(attrs={'name':'businessLegalName'})['value'] if soup.find(attrs={'name':'businessLegalName'}) else None
-        email_el = soup.find(attrs={'name':'primaryOwnerEmail'})['value'] if soup.find(attrs={'name':'primaryOwnerEmail'}) else None
-        phone_el = soup.find(attrs={'name':'primaryOwnerMobile'})['value'] if soup.find(attrs={'name':'primaryOwnerMobile'}) else None
-        rev_el = soup.find(attrs={'name':'annualBusinessRevenue'})['value'] if soup.find(attrs={'name':'annualBusinessRevenue'}) else None
+        first_name_el = soup.find(attrs={'name':'primaryOwnerFirstName'}).get_text() if soup.find(attrs={'name':'primaryOwnerFirstName'}) else None
+        last_name_el = soup.find(attrs={'name':'primaryOwnerLastName'}).get_text() if soup.find(attrs={'name':'primaryOwnerLastName'}) else None
+        business_el = soup.find(attrs={'name':'businessLegalName'}).get_text() if soup.find(attrs={'name':'businessLegalName'}) else None
+        email_el = soup.find(attrs={'name':'primaryOwnerEmail'}).get_text() if soup.find(attrs={'name':'primaryOwnerEmail'}) else None
+        phone_el = soup.find(attrs={'name':'primaryOwnerMobile'}).get_text() if soup.find(attrs={'name':'primaryOwnerMobile'}) else None
+        rev_el = soup.find(attrs={'name':'annualBusinessRevenue'}).get_text() if soup.find(attrs={'name':'annualBusinessRevenue'}) else None
         # try:
         #     state_el = soup.select("#state option[selected]")[1].text
         # except IndexError:
@@ -90,24 +91,31 @@ class Scraper43:
     
     
     
-    def scrape_with_refcodes(self,batch_size=10,num_threads=3):
+    def scrape_with_refcodes(self,batch_size=10,num_threads=5):
 
             
         # refcodes = code_generator.invite_codes_with_prefix # last code before error JO0000013
-        pmfid = code_generator.generate_code(1,200000000,'SC',9)
-        print(f"There are {len(pmfid)} pmfid to rotate!")
+        pmfid_generator = code_generator.generate_code_gen(2064,200000000,'SC',9,batch_size)
+        # print(f"There are {len(pmfid)} pmfid to rotate!")
         # results = []
         
         def scrape_single_thread(pmfid):
             print(f"pmfid : {pmfid}")
-            data = {'pmfid':pmfid}
+            data = {'pmfId':pmfid}
             result = self.scrape_single(self.url,data)
             print(result)
             if result is None:
                 print("Skipping 'None' values.")
             return result
             
-        with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads) as executor:
-            for i in range(0,len(pmfid),batch_size):
-                batch_results = [result for result in list(executor.map(scrape_single_thread,pmfid[i:i+batch_size])) if result is not None]
-                yield batch_results
+        while True:
+            try:
+                codes =  next(pmfid_generator)
+                print(codes)
+                with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads) as executor:
+                    # for i in range(0,len(pmfid),batch_size):
+                    batch_results = [result for result in list(executor.map(scrape_single_thread,codes)) if result is not None]
+                    yield batch_results
+            except StopIteration:
+                print("Scraping successful")
+                break

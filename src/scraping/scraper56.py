@@ -3,14 +3,15 @@ from bs4 import BeautifulSoup
 import concurrent.futures
 from fake_useragent import UserAgent
 
+# from scraping import name_generator
 from scraping import name_generator_large_file as name_generator
 from scraping import get_us_state
 
-class Scraper17:
+class Scraper56:
     def __init__(self):
         
-        self.url = 'callrvf.com'
-        self.table_name = 'scraper17_info'
+        self.url = 'myadvnow.com'
+        self.table_name = 'scraper56_info'
         
         self.ua = UserAgent()
         print(f"Scraping: {self.url}")
@@ -41,6 +42,9 @@ class Scraper17:
             print(f'Connecting failed to {url}. Error: {e}\nReconnecting in 20 secs...')
             time.sleep(20)
             response = requests.get(f"https://{url}", headers=headers, allow_redirects=True)
+        except requests.exceptions.InvalidURL:
+            print("Invalid url")
+            return
 
         # print(response.text)
         
@@ -79,13 +83,12 @@ class Scraper17:
     
     def scrape_with_names(self,batch_size=100,num_threads=3):
         
-        names_generator = name_generator.generate_names()#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
-        # names_foreign = name_generator.generate_names('/root/scraping/corey-scraping/src/scraping/ForeignFirstandLast.ods')
-        # print(names)
-        # print(f"There {len(names)} names to rotate!")
+        names_generator = name_generator.generate_names(exclude_old_names=False)#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
+        
         results = []
         
         def scrape_single_with_increment(name,num=''):
+            print(f'{name}')
             base_url = f"{"".join([text.lower() for text in name.split()])}{num if num > 0 else ''}.{self.url}"
             print(f"Base url: {base_url}")
             result = self.scrape_single(base_url)
@@ -103,11 +106,12 @@ class Scraper17:
             while True:
                 try:
                     for name in next(names_generator):
+
                         num_generator = generate_numbers()
                         continue_to_next_name = False
                         
                         while True:
-                            futures = [executor.submit(scrape_single_with_increment, name, num) for num in [next(num_generator) for _ in range(3)] ]
+                            futures = [executor.submit(scrape_single_with_increment, name.replace("'","").replace("/","").replace(")","").replace("(","").replace("[",""), num) for num in [next(num_generator) for _ in range(3)] ]
                             
                             for future in concurrent.futures.as_completed(futures):
                                 result = future.result()
@@ -127,7 +131,7 @@ class Scraper17:
                             if continue_to_next_name:
                             # if next(num_generator) > 100:
                                 break
-                except StopIteration:
+                except:
                     print("Scraping successful.")
                     break
                         
