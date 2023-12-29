@@ -4,14 +4,15 @@ import concurrent.futures
 # from scraping import code_generator
 from fake_useragent import UserAgent
 from string import ascii_uppercase
+from config.proxies import proxy_dict
 from config.proxies_1 import proxy_list
 
-class Scraper52:
+class Scraper54:
     def __init__(self):
         
-        self.baseurl = 'https://apps.ilsos.gov/uccsearch/'
-        self.searchurl = 'https://apps.ilsos.gov/uccsearch/'
-        self.table_name = "scraper52_info"
+        self.baseurl = 'https://cis.scc.virginia.gov/'
+        self.searchurl = 'https://cis.scc.virginia.gov/'
+        self.table_name = "scraper54_info"
         self.session = requests.Session()
         self.ua = UserAgent()
         self.extracted_cookies = 'mailer-sessions=s%3A-xmOYnkEUpr5_faMgi-HKzN7AhNZNnUc.fgKPMZ%2B3eKVo%2Br4%2FUUYO%2FyVxUHLjk5Z43CnLjxXq5PU; wc_visitor=78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+'
@@ -23,16 +24,15 @@ class Scraper52:
     def scrape_single(self,url):
 
         headers = {
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Language': 'en-US,en;q=0.5',
-            'Connection': 'keep-alive',
-            'Sec-Fetch-Dest': 'document',
-            'Sec-Fetch-Mode': 'navigate',
-            'Sec-Fetch-Site': 'same-origin',
-            'Sec-Fetch-User': '?1',
-            'Upgrade-Insecure-Requests': '1',
-            'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0'
+            "Accept": "application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Accept-Language": "en-US,en;q=0.5",
+            "Connection": "keep-alive",
+            "Host": "https://cis.scc.virginia.gov/",
+            "Sec-Fetch-Dest": "font",
+            "Sec-Fetch-Mode": "cors",
+            "Sec-Fetch-Site": "same-origin",
+            "User-Agent": self.ua.random
         }
 
 
@@ -40,10 +40,12 @@ class Scraper52:
 
 
 
+
         print(f'Extracting doc links from URL: {url}')
+        # response = requests.get(url,headers=headers,proxies=proxy_dict,allow_redirects=True)
         for proxy in proxy_list:
             try:
-                response = requests.get(url,proxies=proxy,allow_redirects=True)
+                response = requests.get(url,headers=headers,proxies=proxy,allow_redirects=True)
                 break
             except Exception as e:
                 # print(f'Connecting failed to url {url}. Reconnecting in 20 secs')
@@ -62,7 +64,7 @@ class Scraper52:
         # Parse the HTML content with BeautifulSoup
 
         soup = BeautifulSoup(response.content,'html.parser')
-        # print(soup.contents)
+        print(soup.contents)
 
         # return in no results found
         soup_table = soup.find('table')

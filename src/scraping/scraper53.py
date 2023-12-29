@@ -6,12 +6,12 @@ from fake_useragent import UserAgent
 from string import ascii_uppercase
 from config.proxies_1 import proxy_list
 
-class Scraper52:
+class Scraper53:
     def __init__(self):
         
-        self.baseurl = 'https://apps.ilsos.gov/uccsearch/'
-        self.searchurl = 'https://apps.ilsos.gov/uccsearch/'
-        self.table_name = "scraper52_info"
+        self.baseurl = 'https://corp.sec.state.ma.us/corpweb/UCCSearch/UCCSearch.aspx'
+        self.searchurl = 'https://corp.sec.state.ma.us/corpweb/UCCSearch/UCCSearch.aspx'
+        self.table_name = "scraper53_info"
         self.session = requests.Session()
         self.ua = UserAgent()
         self.extracted_cookies = 'mailer-sessions=s%3A-xmOYnkEUpr5_faMgi-HKzN7AhNZNnUc.fgKPMZ%2B3eKVo%2Br4%2FUUYO%2FyVxUHLjk5Z43CnLjxXq5PU; wc_visitor=78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+'
@@ -43,7 +43,7 @@ class Scraper52:
         print(f'Extracting doc links from URL: {url}')
         for proxy in proxy_list:
             try:
-                response = requests.get(url,proxies=proxy,allow_redirects=True)
+                response = requests.get(url,headers=headers,proxies=proxy,allow_redirects=True)
                 break
             except Exception as e:
                 # print(f'Connecting failed to url {url}. Reconnecting in 20 secs')
