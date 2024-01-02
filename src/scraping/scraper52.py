@@ -4,7 +4,7 @@ import concurrent.futures
 # from scraping import code_generator
 from fake_useragent import UserAgent
 from string import ascii_uppercase
-from config.proxies_1 import proxy_list
+# from config.proxies_1 import proxy_list
 
 class Scraper52:
     def __init__(self):
@@ -27,12 +27,13 @@ class Scraper52:
             'Accept-Encoding': 'gzip, deflate, br',
             'Accept-Language': 'en-US,en;q=0.5',
             'Connection': 'keep-alive',
+            'Host': 'appas.ilsos.gov',
             'Sec-Fetch-Dest': 'document',
             'Sec-Fetch-Mode': 'navigate',
-            'Sec-Fetch-Site': 'same-origin',
+            'Sec-Fetch-Site': 'none',
             'Sec-Fetch-User': '?1',
             'Upgrade-Insecure-Requests': '1',
-            'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0'
+            'User-Agent': self.ua.random
         }
 
 
@@ -41,15 +42,16 @@ class Scraper52:
 
 
         print(f'Extracting doc links from URL: {url}')
-        for proxy in proxy_list:
-            try:
-                response = requests.get(url,proxies=proxy,allow_redirects=True)
-                break
-            except Exception as e:
-                # print(f'Connecting failed to url {url}. Reconnecting in 20 secs')
-                # time.sleep(20)
-                # response = requests.get(url,headers=headers,proxies=proxy_dict)
-                print(e)
+        response = requests.get(url,headers=headers,allow_redirects=True)
+        # for proxy in proxy_list:
+        #     try:
+        #         response = requests.get(url,proxies=proxy,allow_redirects=True)
+        #         break
+        #     except Exception as e:
+        #         # print(f'Connecting failed to url {url}. Reconnecting in 20 secs')
+        #         # time.sleep(20)
+        #         # response = requests.get(url,headers=headers,proxies=proxy_dict)
+        #         print(e)
         print(f'Status code: {response.status_code}')
         print(f'Content: {response.text}')
 
@@ -79,20 +81,20 @@ class Scraper52:
         
         results = [] # store results here
 
-        header = {
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Accept-Language": "en-US,en;q=0.5",
-            "Connection": "keep-alive",
-            # "Cookie": "TS017bf281=0102f3c98045bf1a8fdcb62af56beaf558a84e0a0b599344109ff95baadb34f0ad419e1faf9737cb9024a0540a5eef294ff7a1f42b",
-            "Host": "dnr.alaska.gov",
-            "Sec-Fetch-Dest": "document",
-            "Sec-Fetch-Mode": "navigate",
-            "Sec-Fetch-Site": "none",
-            "Sec-Fetch-User": "?1",
-            "Upgrade-Insecure-Requests": "1",
-            "User-Agent": self.ua.random
+        headers = {
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Connection': 'keep-alive',
+            'Host': 'apps.ilsos.gov',
+            'Sec-Fetch-Dest': 'document',
+            'Sec-Fetch-Mode': 'navigate',
+            'Sec-Fetch-Site': 'none',
+            'Sec-Fetch-User': '?1',
+            'Upgrade-Insecure-Requests': '1',
+            'User-Agent': self.ua.random
         }
+
 
         for link in info_links:
             print(f"Extracting info. URL: {self.searchurl+link}")
@@ -171,7 +173,7 @@ class Scraper52:
     
     
     
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',end_char = 'U',last_interrupted_page=0):
+    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',end_char = 'Z',last_interrupted_page=1):
         
         def get_page_links(soup):
             table = soup.find("table")
@@ -188,8 +190,8 @@ class Scraper52:
                 num += 1
                 
 
-        result = self.scrape_single(self.baseurl)
-        print(f'Sample result: {result}')
+        # result = self.scrape_single(self.baseurl)
+        # print(f'Sample result: {result}')
 
         
         # 1 letter search; Loop all uppercase
@@ -201,29 +203,24 @@ class Scraper52:
             last_interrupt_char_index = ascii_uppercase.index(last_interrupt_char)
 
         # Start of loop
-        for char_index in ascii_uppercase[last_interrupt_char_index:end_char_index]:
+        for current_char in ascii_uppercase[last_interrupt_char_index:end_char_index]:
             print(f"Extract search results for '{last_interrupt_char}'")
 
             headers = {
-                'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-                'accept-encoding': 'gzip, deflate, br',
-                'accept-language': 'en-us,en;q=0.5',
-                'connection': 'keep-alive',
-                'content-length': '67',
-                'content-type': 'application/x-www-form-urlencoded',
-                # 'cookie': 'ts017bf281=0102f3c9809678bdef7ab014e3b4192411c77bbe220ac8b927584449534b4418cecbbecd22400fc040b26cd04712586475d08e77ea',
-                'dnt': '1',
-                'host': 'dnr.alaska.gov',
-                'origin': 'https://dnr.alaska.gov',
-                'referer': 'https://dnr.alaska.gov/ssd/recoff/ucc/search/namemenu',
-                'sec-fetch-dest': 'document',
-                'sec-fetch-mode': 'navigate',
-                'sec-fetch-site': 'same-origin',
-                'sec-fetch-user': '?1',
-                'sec-gpc': '1',
-                'upgrade-insecure-requests': '1',
-                'user-agent': self.ua.random
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Accept-Language': 'en-US,en;q=0.5',
+                'Connection': 'keep-alive',
+                'Host': 'apps.ilsos.gov',
+                'Sec-Fetch-Dest': 'document',
+                'Sec-Fetch-Mode': 'navigate',
+                'Sec-Fetch-Site': 'none',
+                'Sec-Fetch-User': '?1',
+                'TE': 'trailers',
+                'Upgrade-Insecure-Requests': '1',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0'
             }
+
 
             num_gen = num_generator(last_interrupted_page)
 
@@ -236,18 +233,29 @@ class Scraper52:
                 num = next(num_gen)
                 print(f'Current page:{num}')
                 data = {
-                    "saved_name": "value?+Model.namesList[Model.namesList.Count+-1]+:+null)",
-                    "District": "500",
-                    "page_num": f"{num}",
-                    "starting_name": f"{char_index}",
-                    "sort_desc": "false",
-                    "Next": ""
+                    'command': 'index',
+                    'method': 'index',
+                    'page': 'index.jsp',
+                    'searchType': 'U',
+                    'uccSearch': 'P',
+                    'lastName': f'{current_char}',
+                    'firstName': '',
+                    'middleName': '',
+                    'orgName': '',
+                    'searchWord': '',
+                    'fileNum': '',
+                    'lienNumber': '',
+                    'lienName': '',
+                    'submitIt': ['Submit', 'Submit']
                 }
                 current_url = self.baseurl
-                response = requests.post(current_url,data=data,headers=headers)
+                # response = requests.post(current_url,data=data,headers=headers)
+                response = requests.get('https://apps.ilsos.gov/uccsearch/',headers=headers)
                 print(f'Scraping entries in url: {current_url}')
                 print(f'Status code: {response.status_code}')
-                # print(response.text)
+                print(response.text)
+
+                time.sleep(20)
 
                 # Get page results
                 # Parse the HTML content with BeautifulSoup

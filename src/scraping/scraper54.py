@@ -1,17 +1,21 @@
-import requests,time#, json, re
+import requests, execjs,json#,time, json, re
+# from requests.packages.urllib3.exceptions import InsecureRequestWarning
+
+# requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
 from bs4 import BeautifulSoup
 import concurrent.futures
 # from scraping import code_generator
 from fake_useragent import UserAgent
 from string import ascii_uppercase
 from config.proxies import proxy_dict
-from config.proxies_1 import proxy_list
+# from config.proxies_1 import proxy_list
 
 class Scraper54:
     def __init__(self):
         
         self.baseurl = 'https://cis.scc.virginia.gov/'
-        self.searchurl = 'https://cis.scc.virginia.gov/'
+        self.searchurl = 'https://cis.scc.virginia.gov/UCCOnlineSearch/UCCSearch'
         self.table_name = "scraper54_info"
         self.session = requests.Session()
         self.ua = UserAgent()
@@ -24,137 +28,78 @@ class Scraper54:
     def scrape_single(self,url):
 
         headers = {
-            "Accept": "application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Accept-Language": "en-US,en;q=0.5",
-            "Connection": "keep-alive",
-            "Host": "https://cis.scc.virginia.gov/",
-            "Sec-Fetch-Dest": "font",
-            "Sec-Fetch-Mode": "cors",
-            "Sec-Fetch-Site": "same-origin",
-            "User-Agent": self.ua.random
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Connection': 'keep-alive',
+            'DNT': '1',
+            'Host': 'cis.scc.virginia.gov',
+            'Sec-Fetch-Dest': 'document',
+            'Sec-Fetch-Mode': 'navigate',
+            'Sec-Fetch-Site': 'none',
+            'Sec-Fetch-User': '?1',
+            'Sec-GPC': '1',
+            'Upgrade-Insecure-Requests': '1',
+            'User-Agent': self.ua.random
         }
 
 
-
-
-
-
-
-        print(f'Extracting doc links from URL: {url}')
-        # response = requests.get(url,headers=headers,proxies=proxy_dict,allow_redirects=True)
-        for proxy in proxy_list:
-            try:
-                response = requests.get(url,headers=headers,proxies=proxy,allow_redirects=True)
-                break
-            except Exception as e:
-                # print(f'Connecting failed to url {url}. Reconnecting in 20 secs')
-                # time.sleep(20)
-                # response = requests.get(url,headers=headers,proxies=proxy_dict)
-                print(e)
-        print(f'Status code: {response.status_code}')
-        print(f'Content: {response.text}')
-
-
-
-        # raise for failed requests
-        # response.raise_for_status()
         
-        # if response.status_code == 200:
+
+
+        print(f'Extracting info from url: {url}')
+        response = requests.post(url,headers=headers,allow_redirects=True,verify=False)
+        print(f'Status code: {response.status_code}')
+        # print(f'Content: {response.text}')
+
+
+
         # Parse the HTML content with BeautifulSoup
-
         soup = BeautifulSoup(response.content,'html.parser')
-        print(soup.contents)
-
+        # print(soup.contents)
+# 
         # return in no results found
-        soup_table = soup.find('table')
-        if not soup_table:
-            # print(response.text)
+        soup_table = soup.find_all('table')
+        if len(soup_table) < 1:
             return
 
 
 
-        # find all links that contains the info
-        info_links = [a.attrs['href'] for a in soup_table.find_all("a") if 'href' in a.attrs and 'selecteddoc' in a.attrs['href'].lower()]
-
-        # print(f'doc links:{info_links}')
         
         results = [] # store results here
 
-        header = {
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Accept-Language": "en-US,en;q=0.5",
-            "Connection": "keep-alive",
-            # "Cookie": "TS017bf281=0102f3c98045bf1a8fdcb62af56beaf558a84e0a0b599344109ff95baadb34f0ad419e1faf9737cb9024a0540a5eef294ff7a1f42b",
-            "Host": "dnr.alaska.gov",
-            "Sec-Fetch-Dest": "document",
-            "Sec-Fetch-Mode": "navigate",
-            "Sec-Fetch-Site": "none",
-            "Sec-Fetch-User": "?1",
-            "Upgrade-Insecure-Requests": "1",
-            "User-Agent": self.ua.random
-        }
-
-        for link in info_links:
-            print(f"Extracting info. URL: {self.searchurl+link}")
-            try:
-                response = requests.get(self.searchurl+link,headers=header)
-            except requests.exceptions.ConnectionError:
-                print(f'Connecting failed to url {self.searchurl+link}. Retrying in 20 secs')
-                time.sleep(20)
-                response = requests.get(self.searchurl+link,headers=header)
-                
-            soup = BeautifulSoup(response.text, 'html.parser')
-
-            table = soup.find('table')
-            tr_elements = table.find_all('tr')
-            # for tr in tr_elements:
-            #     print("***")
-            #     print(tr.contents)
-
-
-
+     
     
-            for tr in tr_elements[1:]:
-                # print(tr.contents)
-                # print(tr.find('span').get_text())
-                
-                # define empty result set 
-                result_dict = {'debtor_name':'','debtor_address':'','secured_party_name':'','secured_party_address':''}
-                # print(result_dict)
-                if 'debtor' in tr.find('span').get_text().lower():
+        # for table in soup_table:
+            
+        # define empty result set 
+        result_dict = {'debtor_name':'','debtor_address':'','secured_party_name':'','secured_party_address':''}
 
-                    # get info
-                    # print(tr.contents)
-                    # print(tr.find_all('td')[1].get_text())
-                    debtor_name = " ".join(tr.find_all("td")[1].get_text().split())
-                    try:
-                        debtor_address = " ".join(tr.find_all("td")[2].get_text().split())
-                    except IndexError:
-                        debtor_address = 'N/A'
-                    result_dict.update({'debtor_name':debtor_name})
-                    result_dict.update({'debtor_address':debtor_address})
-                elif 'secured' in tr.find('span').get_text().lower():                
-                    secured_party_name = " ".join(tr.find_all('td')[1].get_text().split())
-                    try:
-                        secured_party_address = " ".join(tr.find_all("td")[2].get_text().split())
-                    except IndexError:
-                        secured_party_address = 'N/A'
-                    result_dict.update({'secured_party_name':secured_party_name})
-                    result_dict.update({'secured_party_address':secured_party_address})
-                    
-                    # update all results dict
-                    for result_dict in results:
-                        result_dict.update({'secured_party_name':secured_party_name})
-                        result_dict.update({'secured_party_address':secured_party_address})
-                else:
-                    pass
+        debtor_name = " ".join(soup_table[1].find_all("td")[0].get_text().split())
+        try:
+            debtor_address = " ".join(soup_table[1].find_all("td")[1].get_text().split())
+        except IndexError:
+            debtor_address = 'N/A'
+        result_dict.update({'debtor_name':debtor_name})
+        result_dict.update({'debtor_address':debtor_address})
+    
+        secured_party_name = " ".join(soup_table[2].find_all("td")[0].get_text().split())
+        try:
+            secured_party_address = " ".join(soup_table[2].find_all("td")[1].get_text().split())
+        except IndexError:
+            secured_party_address = 'N/A'
+        result_dict.update({'secured_party_name':secured_party_name})
+        result_dict.update({'secured_party_address':secured_party_address})
+        
+        # update all results dict
+        for result_dict in results:
+            result_dict.update({'secured_party_name':secured_party_name})
+            result_dict.update({'secured_party_address':secured_party_address})
 
 
-                print(result_dict)
+        print(result_dict)
 
-                results.append(result_dict)
+        results.append(result_dict)
 
         return results
 
@@ -173,14 +118,15 @@ class Scraper54:
     
     
     
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',end_char = 'U',last_interrupted_page=0):
+    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',end_char = 'Z',last_interrupted_page=1):
         
         def get_page_links(soup):
             table = soup.find("table")
             tr_elements = table.find_all('tr')
             
             print(f'tr length: {len(tr_elements)}')
-            page_results = [f'{tr.find('a')['href']}' for tr in tr_elements if tr.find('a')]
+            page_results = [tr.find('a')['href'] for tr in tr_elements[1:] if tr.find('a')]
+
             return page_results
         
         def num_generator(last_interrupt_page):
@@ -189,9 +135,6 @@ class Scraper54:
                 yield num
                 num += 1
                 
-
-        result = self.scrape_single(self.baseurl)
-        print(f'Sample result: {result}')
 
         
         # 1 letter search; Loop all uppercase
@@ -203,29 +146,32 @@ class Scraper54:
             last_interrupt_char_index = ascii_uppercase.index(last_interrupt_char)
 
         # Start of loop
-        for char_index in ascii_uppercase[last_interrupt_char_index:end_char_index]:
+        for char in ascii_uppercase[last_interrupt_char_index:end_char_index]:
             print(f"Extract search results for '{last_interrupt_char}'")
 
             headers = {
-                'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-                'accept-encoding': 'gzip, deflate, br',
-                'accept-language': 'en-us,en;q=0.5',
-                'connection': 'keep-alive',
-                'content-length': '67',
-                'content-type': 'application/x-www-form-urlencoded',
-                # 'cookie': 'ts017bf281=0102f3c9809678bdef7ab014e3b4192411c77bbe220ac8b927584449534b4418cecbbecd22400fc040b26cd04712586475d08e77ea',
-                'dnt': '1',
-                'host': 'dnr.alaska.gov',
-                'origin': 'https://dnr.alaska.gov',
-                'referer': 'https://dnr.alaska.gov/ssd/recoff/ucc/search/namemenu',
-                'sec-fetch-dest': 'document',
-                'sec-fetch-mode': 'navigate',
-                'sec-fetch-site': 'same-origin',
-                'sec-fetch-user': '?1',
-                'sec-gpc': '1',
-                'upgrade-insecure-requests': '1',
-                'user-agent': self.ua.random
+                'Accept': '*/*',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Accept-Language': 'en-US,en;q=0.5',
+                'Cache-Control': 'no-cache',
+                'Connection': 'keep-alive',
+                'Content-Length': '471',
+                'Content-Type': 'application/json; charset=utf-8',
+                # 'Cookie': 'ASP.NET_SessionId=kx1y2czpavpgpeqnjl1lmhzu; nmstat=438e7bf1-1a01-14c2-299a-06b764fb7c58',
+                'DNT': '1',
+                'Host': 'cis.scc.virginia.gov',
+                'Origin': 'https://cis.scc.virginia.gov',
+                'Pragma': 'no-cache',
+                'Referer': 'https://cis.scc.virginia.gov/UCCOnlineSearch/UCCSearch',
+                'Sec-Fetch-Dest': 'empty',
+                'Sec-Fetch-Mode': 'no-cors',
+                'Sec-Fetch-Site': 'same-origin',
+                'Sec-GPC': '1',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
+                'X-Requested-With': 'XMLHttpRequest',
             }
+
+
 
             num_gen = num_generator(last_interrupted_page)
 
@@ -237,19 +183,50 @@ class Scraper54:
             while True:
                 num = next(num_gen)
                 print(f'Current page:{num}')
+
                 data = {
-                    "saved_name": "value?+Model.namesList[Model.namesList.Count+-1]+:+null)",
-                    "District": "500",
-                    "page_num": f"{num}",
-                    "starting_name": f"{char_index}",
-                    "sort_desc": "false",
-                    "Next": ""
+                    "search": {
+                        "advancedSearch": {
+                            "City": "",
+                            "Country": "",
+                            "County": "",
+                            "FilingDateFrom": "",
+                            "FilingDateTo": "",
+                            "LapseDateFrom": "",
+                            "LapseDateTo": "",
+                            "State": "",
+                            "Status": "",
+                            "StatusID": "",
+                            "StreetAddress1": "",
+                            "StreetAddress2": "",
+                            "Zip4": ""
+                        },
+                        "IsOnline": True,
+                        "quickSearch": {
+                            "Contains": 0,
+                            "ExactMatch": 0,
+                            "FirstName": "",
+                            "IsIndividual": True,
+                            "LastName": f"{char}",
+                            "MiddleName": "",
+                            "Name": "zundefined",
+                            "OrganizationName": "",
+                            "StartsWith": "2",
+                            "Suffix": ""
+                        },
+                        "SearchCriteria": "2",
+                        "SearchType": "DebtorName"
+                    }
                 }
-                current_url = self.baseurl
-                response = requests.post(current_url,data=data,headers=headers)
+                
+                current_url = self.searchurl
+                print("Sending post requests.")
+                response = requests.post(current_url,data=json.dumps(data),headers=headers,proxies={'https':'47.243.92.199:3128'},verify=False)
+                # response = requests.get(current_url,headers=headers,proxies={'https':'47.243.92.199:3128'})
                 print(f'Scraping entries in url: {current_url}')
+                print(response.headers)
                 print(f'Status code: {response.status_code}')
-                # print(response.text)
+                print(response.text)
 
                 # Get page results
                 # Parse the HTML content with BeautifulSoup
@@ -257,18 +234,18 @@ class Scraper54:
                 
 
                 # Get first page results and store
-                urls = get_page_links(soup)
+                page_links = get_page_links(soup)
 
-                if len(urls) == 0:
+                if len(page_links) == 0:
                     print("No more pages found. Exiting.")
                     break
                 else:
-                    for url in urls:
-                        print(f'result url: {url}')
+                    for link in page_links:
+                        print(f'link result: {link}')
                 
                 
                 # scrape info using multithread
                 with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-                    for i in range(0,len(urls),batch_size):
-                        batch_results = [item for results in executor.map(self.scrape_single,urls[i:i+batch_size]) for item in results]
+                    for i in range(0,len(page_links),batch_size):
+                        batch_results = [item for results in executor.map(self.scrape_single,page_links[i:i+batch_size]) for item in results]
                         yield batch_results
