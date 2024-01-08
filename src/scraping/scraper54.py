@@ -1,4 +1,4 @@
-import requests, execjs,json#,time, json, re
+import requests,json,time#, json, re
 # from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 # requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -48,7 +48,7 @@ class Scraper54:
 
 
         print(f'Extracting info from url: {url}')
-        response = requests.post(url,headers=headers,allow_redirects=True,verify=False)
+        response = requests.get(url,headers=headers,proxies={'https':'47.243.92.199:3128'},allow_redirects=True,verify=False)
         print(f'Status code: {response.status_code}')
         # print(f'Content: {response.text}')
 
@@ -63,43 +63,46 @@ class Scraper54:
         if len(soup_table) < 1:
             return
 
-
-
         
         results = [] # store results here
 
      
     
-        # for table in soup_table:
-            
         # define empty result set 
         result_dict = {'debtor_name':'','debtor_address':'','secured_party_name':'','secured_party_address':''}
 
-        debtor_name = " ".join(soup_table[1].find_all("td")[0].get_text().split())
         try:
-            debtor_address = " ".join(soup_table[1].find_all("td")[1].get_text().split())
+            soup_tr = soup_table[1].find_all('tr')
         except IndexError:
-            debtor_address = 'N/A'
-        result_dict.update({'debtor_name':debtor_name})
-        result_dict.update({'debtor_address':debtor_address})
-    
-        secured_party_name = " ".join(soup_table[2].find_all("td")[0].get_text().split())
-        try:
-            secured_party_address = " ".join(soup_table[2].find_all("td")[1].get_text().split())
-        except IndexError:
-            secured_party_address = 'N/A'
-        result_dict.update({'secured_party_name':secured_party_name})
-        result_dict.update({'secured_party_address':secured_party_address})
+            print(f'Error getting table rows. Table count: {len(soup_table)}')
+            return
         
+        for tr in soup_tr[1:]:
+            debtor_name = " ".join(tr.find_all("td")[0].get_text().split())
+            try:
+                debtor_address = " ".join(tr.find_all("td")[1].get_text().split())
+            except IndexError:
+                debtor_address = 'N/A'
+            result_dict.update({'debtor_name':debtor_name})
+            result_dict.update({'debtor_address':debtor_address})
+    
+            secured_party_name = " ".join(soup_table[2].find_all("td")[0].get_text().split())
+            try:
+                secured_party_address = " ".join(soup_table[2].find_all("td")[1].get_text().split())
+            except IndexError:
+                secured_party_address = 'N/A'
+            result_dict.update({'secured_party_name':secured_party_name})
+            result_dict.update({'secured_party_address':secured_party_address})
+        
+            print(result_dict)
+            results.append(result_dict)
+
+
+
         # update all results dict
         for result_dict in results:
             result_dict.update({'secured_party_name':secured_party_name})
             result_dict.update({'secured_party_address':secured_party_address})
-
-
-        print(result_dict)
-
-        results.append(result_dict)
 
         return results
 
@@ -118,14 +121,14 @@ class Scraper54:
     
     
     
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',end_char = 'Z',last_interrupted_page=1):
+    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='Y',end_char = 'Z',last_interrupted_page=1):
         
         def get_page_links(soup):
             table = soup.find("table")
             tr_elements = table.find_all('tr')
             
             print(f'tr length: {len(tr_elements)}')
-            page_results = [tr.find('a')['href'] for tr in tr_elements[1:] if tr.find('a')]
+            page_results = list(set([f'{self.baseurl}{tr.find('a')['href']}' for tr in tr_elements[1:] if tr.find('a')]))
 
             return page_results
         
@@ -212,21 +215,32 @@ class Scraper54:
                             "Name": "zundefined",
                             "OrganizationName": "",
                             "StartsWith": "2",
-                            "Suffix": ""
+                            "Suffix": "",
+                            "pidx": f"{num}"
                         },
                         "SearchCriteria": "2",
                         "SearchType": "DebtorName"
                     }
                 }
+
+                data2 = {
+                    "undefined": "",
+                    "sortby": "",
+                    "stype": "a",
+                    "pidx": f"{num}"
+                }
                 
                 current_url = self.searchurl
                 print("Sending post requests.")
-                response = requests.post(current_url,data=json.dumps(data),headers=headers,proxies={'https':'47.243.92.199:3128'},verify=False)
-                # response = requests.get(current_url,headers=headers,proxies={'https':'47.243.92.199:3128'})
-                print(f'Scraping entries in url: {current_url}')
+                # response = requests.post(current_url,data=json.dumps(data),headers=headers,proxies={'https':'47.243.92.199:3128'},verify=False)
+                response = requests.post(current_url,data=json.dumps(data),headers=headers,proxies={'https':'32.223.6.94:80'},verify=False)
+                
+                # print(f'Scraping entries in url: {current_url}')
+                # print(response.text)
                 print(response.headers)
                 print(f'Status code: {response.status_code}')
-                print(response.text)
+
+                # time.sleep(100)
 
                 # Get page results
                 # Parse the HTML content with BeautifulSoup
@@ -234,7 +248,10 @@ class Scraper54:
                 
 
                 # Get first page results and store
-                page_links = get_page_links(soup)
+                if soup:
+                    page_links = get_page_links(soup)
+                else:
+                    print("table for results not visible. check requests")
 
                 if len(page_links) == 0:
                     print("No more pages found. Exiting.")
