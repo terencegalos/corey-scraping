@@ -3,9 +3,10 @@ from bs4 import BeautifulSoup
 import concurrent.futures
 from fake_useragent import UserAgent
 
+
 # from scraping import name_generator
 # from scraping import name_generator_large_file as name_generator
-from config.db_config_local import DB_CONFIG
+from config.db_config import DB_CONFIG
 from scraping import get_us_state
 from database.database_handler_california_zip_codes import DatabaseHandler
 from database.md_specialty import specialties_dict
@@ -85,7 +86,7 @@ class Scraper57:
         }
         
     
-    def scrape_with_zipcodes(self,batch_size=10,num_threads=3):
+    def scrape_with_zipcodes(self,last_interrupt_zipcode=None,last_interrupt_specialty=None,batch_size=10,num_threads=3):
 
         db_handler = DatabaseHandler(
                     host=DB_CONFIG['DBHOST'],
@@ -188,51 +189,25 @@ class Scraper57:
             return results
                 
 
+        sp_keys = list(specialties_dict.keys())
+        last_interrupt_zip_index = zip_codes.index(last_interrupt_zipcode)
+        last_interrrupt_sp_index = sp_keys.index(last_interrupt_specialty)
 
-        for code in zip_codes: # loop zip codes
+        for code in zip_codes[last_interrupt_zip_index:]: # loop zip codes
             print(f'Current zip: {code}')
-            for sp in specialties_dict.keys(): # loop specialties
-                specialty = specialties_dict[sp] # extract value using dictionary key
-                print(f'Specialty: {specialty}')
-                batch_results = get_page_results(sp,code,specialty)
-                yield batch_results
 
-                
-        
-        # with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads) as executor:
-               
-        #     while True:
-        #         try:
-        #             for name in next(names_generator):
+            # for sp in sp_keys[last_interrrupt_sp_index:]: # loop specialties
+            #     specialty = specialties_dict[sp] # extract value using dictionary key
+            #     print(f'Specialty: {specialty}')
+            #     batch_results = get_page_results(sp,code,specialty)
+            #     yield batch_results
 
-        #                 num_generator = generate_numbers()
-        #                 continue_to_next_name = False
-                        
-        #                 while True:
-        #                     futures = [executor.submit(scrape_single_with_increment, name.replace("'","").replace("/","").replace(")","").replace("(","").replace("[",""), num) for num in [next(num_generator) for _ in range(3)] ]
-                            
-        #                     for future in concurrent.futures.as_completed(futures):
-        #                         result = future.result()
-        #                         if result is not None:
-        #                             print(result)
-        #                             results.append(result)
+            with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads) as executor:
+                args = [(sp,code,specialties_dict[sp]) for sp in list(specialties_dict.keys())[last_interrrupt_sp_index:]]
+                futures = [executor.submit(get_page_results,*arg) for arg in args]
 
-        #                             # Yield results in batches
-        #                             if len(results) % batch_size == 0:
-        #                                 yield results
-        #                                 results = []  # Clear the results list after yielding
-        #                         else:
-        #                             print(f'Not available. Stopping...')
-        #                             continue_to_next_name = True
-        #                             break
-                                
-        #                     if continue_to_next_name:
-        #                     # if next(num_generator) > 100:
-        #                         break
-        #         except:
-        #             print("Scraping successful.")
-        #             break
-                        
-        # # Yield any remaining results
-        # if results:
-        #     yield result
+                for future in concurrent.futures.as_completed(futures):
+                    page_result = future.result()
+                    yield page_result
+
+            last_interrrupt_sp_index = 0 # reset sp key index

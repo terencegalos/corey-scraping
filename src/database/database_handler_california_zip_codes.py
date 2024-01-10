@@ -11,6 +11,15 @@ class DatabaseHandler:
         )
         # Create a cursor to interact with the db
         self.cursor = self.conn.cursor()
+
+        for table in table_names:
+            self.cursor.execute(f'''
+                                    CREATE TABLE IF NOT EXISTS {table} (
+                                        id int primary key auto_increment,
+                                        zip_codes VARCHAR(255)
+                                    )
+                                    ''')
+        self.conn.commit()
     
 
 

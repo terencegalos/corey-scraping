@@ -15145,3 +15145,71 @@ Traceback (most recent call last):
     row_result.update({'miles':" ".join(row_tds[3].get_text().split())})
                                         ~~~~~~~^^^
 IndexError: list index out of range
+2024-01-10 18:58:16,740 [ERROR]: An error occurred: 1146 (42S02): Table 'scraped_data.california_zip_codes' doesn't exist
+Traceback (most recent call last):
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'scraped_data.california_zip_codes' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_qme_scraper.py", line 34, in main
+    for batch_results in scraper.scrape_with_zipcodes():
+  File "/root/projects/corey/src/scraping/scraper57.py", line 99, in scrape_with_zipcodes
+    zip_codes = db_handler.get_all_codes('california_zip_codes')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/database/database_handler_california_zip_codes.py", line 18, in get_all_codes
+    self.cursor.execute(f'''
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'scraped_data.california_zip_codes' doesn't exist
+2024-01-10 18:59:39,720 [ERROR]: An error occurred: 1146 (42S02): Table 'scraped_data.california_zip_codes' doesn't exist
+Traceback (most recent call last):
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'scraped_data.california_zip_codes' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_qme_scraper.py", line 34, in main
+    for batch_results in scraper.scrape_with_zipcodes():
+  File "/root/projects/corey/src/scraping/scraper57.py", line 99, in scrape_with_zipcodes
+    zip_codes = db_handler.get_all_codes('california_zip_codes')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/corey/src/database/database_handler_california_zip_codes.py", line 18, in get_all_codes
+    self.cursor.execute(f'''
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'scraped_data.california_zip_codes' doesn't exist
+2024-01-10 19:07:38,325 [INFO]: Scraping and storing data completed successfully.
+2024-01-10 19:07:55,959 [INFO]: Scraping and storing data completed successfully.
+2024-01-10 19:22:46,528 [ERROR]: An error occurred: None is not in list
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_qme_scraper.py", line 34, in main
+    for batch_results in scraper.scrape_with_zipcodes():
+  File "/root/projects/corey/src/scraping/scraper57.py", line 193, in scrape_with_zipcodes
+    last_interrupt_zip_index = zip_codes.index(last_interrupt_zipcode)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: None is not in list
+2024-01-10 19:23:33,388 [ERROR]: An error occurred: 'dict_keys' object is not subscriptable
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_qme_scraper.py", line 34, in main
+    for batch_results in scraper.scrape_with_zipcodes('90714','MOG'):
+  File "/root/projects/corey/src/scraping/scraper57.py", line 206, in scrape_with_zipcodes
+    args = [(sp,code,specialties_dict[sp]) for sp in list(specialties_dict.keys()[last_interrrupt_sp_index:])]
+                                                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'dict_keys' object is not subscriptable
