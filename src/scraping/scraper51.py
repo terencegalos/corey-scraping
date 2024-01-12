@@ -42,21 +42,25 @@ class Scraper51:
 
 
 
-
+        
         print(f'Extracting doc links from URL: {self.searchurl+url}')
         try:
-            response = requests.get(self.searchurl+url,headers=headers,proxies=proxy_dict)
+            response = requests.get(self.searchurl+url,headers=headers)
         except requests.exceptions.ConnectionError:
             print(f'Connecting failed to url {self.searchurl+url}. Reconnecting in 20 secs')
             time.sleep(20)
             response = requests.get(self.searchurl+url,headers=headers)
+        except requests.exceptions.HTTPError:
+            print(f'HTTP Error connecting on {url}')
+            return None
+
         print(f'Status code: {response.status_code}')
         # print(f'Content: {response.text}')
 
 
 
         # raise for failed requests
-        response.raise_for_status()
+        # response.raise_for_status()
         
         # if response.status_code == 200:
         # Parse the HTML content with BeautifulSoup
@@ -68,7 +72,7 @@ class Scraper51:
         soup_table = soup.find('table')
         if not soup_table:
             # print(response.text)
-            return
+            return None
 
 
 
@@ -97,19 +101,22 @@ class Scraper51:
         for link in info_links:
             print(f"Extracting info. URL: {self.searchurl+link}")
             try:
-                response = requests.get(self.searchurl+link,headers=header,proxies=proxy_dict)
+                response = requests.get(self.searchurl+link,headers=header)
             except requests.exceptions.ConnectionError:
                 print(f'Connecting failed to url {self.searchurl+link}. Retrying in 20 secs')
                 time.sleep(20)
                 response = requests.get(self.searchurl+link,headers=header)
+            except requests.exceptions.HTTPError:
+                print(f'Invalid/forbidden url {url}')
+                return None
                 
             soup = BeautifulSoup(response.text, 'html.parser')
 
             table = soup.find('table')
-            tr_elements = table.find_all('tr')
-            # for tr in tr_elements:
-            #     print("***")
-            #     print(tr.contents)
+            if table:
+                tr_elements = table.find_all('tr')
+            else:
+                return
 
 
 
@@ -171,15 +178,17 @@ class Scraper51:
     
     
     
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',end_char = 'U',last_interrupted_page=0):
+    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='V',end_char = 'U',last_interrupted_page=351):
         
         def get_page_links(soup):
             table = soup.find("table")
-            tr_elements = table.find_all('tr')
+            if table:
+                tr_elements = table.find_all('tr')
             
-            print(f'tr length: {len(tr_elements)}')
-            page_results = [f'{tr.find('a')['href']}' for tr in tr_elements if tr.find('a')]
-            return page_results
+                print(f'tr length: {len(tr_elements)}')
+                page_results = [f'{tr.find('a')['href']}' for tr in tr_elements if tr.find('a')]
+                return page_results
+            return []
         
         def num_generator(last_interrupt_page):
             num = last_interrupt_page
@@ -225,9 +234,11 @@ class Scraper51:
                 'user-agent': self.ua.random
             }
 
-            num_gen = num_generator(last_interrupted_page)
-
-            last_interrupted_page = 0 # reset 
+            if last_interrupted_page > 1:
+                num_gen = num_generator(last_interrupted_page)
+                last_interrupted_page = 0 # reset
+            else:
+                num_gen = num_generator()
             
   
 
@@ -244,7 +255,11 @@ class Scraper51:
                     "Next": ""
                 }
                 current_url = self.baseurl
-                response = requests.post(current_url,data=data,headers=headers,proxies=proxy_dict)
+                try:
+                    response = requests.post(current_url,data=data,headers=headers)
+                except requests.exceptions.HTTPError:
+                    print(f"Invalid/forbidden url {url}")
+
                 print(f'Scraping entries in url: {current_url}')
                 print(f'Status code: {response.status_code}')
                 # print(response.text)
@@ -268,5 +283,5 @@ class Scraper51:
                 # scrape info using multithread
                 with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
                     for i in range(0,len(urls),batch_size):
-                        batch_results = [item for results in executor.map(self.scrape_single,urls[i:i+batch_size]) for item in results]
+                        batch_results = [item for results in executor.map(self.scrape_single,urls[i:i+batch_size]) if results for item in results]
                         yield batch_results

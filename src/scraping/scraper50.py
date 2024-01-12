@@ -2,11 +2,11 @@ import requests,time, json, re
 from bs4 import BeautifulSoup
 import concurrent.futures
 from fake_useragent import UserAgent
-# from scraping import code_generator
+from scraping import code_generator
 from string import ascii_uppercase
 from config.proxies import proxy_dict
 
-class Scraper51:
+class Scraper50:
     def __init__(self):
         # https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=1521a398-e075-402c-a94b-005ec6badfc2
         # ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$OrganizationNameInput
@@ -14,7 +14,8 @@ class Scraper51:
         # https://arc-sos.state.al.us/cgi/uccname.mbr/input
         # self.baseurl = 'https://arc-sos.state.al.us/'
         self.baseurl = 'https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-nonstand/portal.aspx'
-        self.table_name = "scraper51_info"
+        self.table_name = "scraper50_info"
+        self.session = requests.Session()
         self.ua = UserAgent()
         self.extracted_cookies = 'mailer-sessions=s%3A-xmOYnkEUpr5_faMgi-HKzN7AhNZNnUc.fgKPMZ%2B3eKVo%2Br4%2FUUYO%2FyVxUHLjk5Z43CnLjxXq5PU; wc_visitor=78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+'
         print(f"Scraping: {self.baseurl}")
@@ -80,7 +81,10 @@ class Scraper51:
 
         # get info
         print(f'URL: {url}')
-        debtor_name = divs[8].find_all('span')[0].get_text()
+        try:
+            debtor_name = divs[8].find_all('span')[0].get_text()
+        except:
+            debtor_name = 'n/a'
         try:
             debtor_address = divs[8].find_all('span')[1].get_text()
         except IndexError:
@@ -124,7 +128,7 @@ class Scraper51:
     
     
     
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char=None):
+    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A', last_interrupt_debtor=None):
         
         def get_page_links(soup):
             tr_elements = soup.find_all("tr")
@@ -133,8 +137,8 @@ class Scraper51:
             return page_results
                 
 
-        result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=be5c804e-19b5-4a5f-bdd4-0065cf431c9e")
-        print(f'Sample result: {result}')
+        # result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=be5c804e-19b5-4a5f-bdd4-0065cf431c9e")
+        # print(f'Sample result: {result}')
 
         
         # 1 letter search; Loop all uppercase
@@ -204,42 +208,9 @@ class Scraper51:
             # Get first page results and store
             urls = get_page_links(soup)
             
-            
+            last_interrupt_debtor_index = urls.index(last_interrupt_debtor) if last_interrupt_debtor is not None else 0
             # scrape info using multithread
             with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-                for i in range(0,len(urls),batch_size):
+                for i in range(last_interrupt_debtor_index,len(urls),batch_size):
                     batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
                     yield batch_results
-
-
-
-
-
-
-
-    # def scrape_with_refcodes(self,batch_size=10,num_threads=3):
-
-            
-        # results = []
-        
-        # def scrape_single_thread(code):
-        #     print(f"code : {code}")
-        #     data = {'code':code}
-        #     results = self.scrape_single(self.url,data)
-        #     print(results)
-        #     if results:
-        #         print("Skipping 'None' values.")
-        #     return results
-            
-        # with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads) as executor:
-        #     for i in range(1,codes,batch_size):
-        #         # batch_results = [results for results in list(executor.map(scrape_single_thread,list(range(i,i+batch_size)))) if len(results) > 0]
-        #         batch_results = [item for sublist in executor.map(scrape_single_thread, range(725, i+batch_size)) if sublist is not None for item in sublist if len(sublist) > 0]
-        #         yield batch_results
-
-        # for char in ascii_uppercase:
-        # data = {"search":"a","type":"ALL"}
-
-        # self.scrape_pages(batch_size)
-
-        # self.scrape_single(self.url,data)

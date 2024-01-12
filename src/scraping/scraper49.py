@@ -104,8 +104,8 @@ class Scraper49:
         
         
         # Check if any value is None, if yes, return None
-        # if any(value is None for value in [name, address, secured_party_name, secured_party_address]):
-        #     return None        
+        if any(value is None for value in [name, address, secured_party_name, secured_party_address]):
+            return None        
             
             
         
@@ -116,7 +116,7 @@ class Scraper49:
     
     
     
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char=None):
+    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='F',starting_page=951):
         
         def get_page_links(soup):
             tr_elements = soup.find_all("tr")
@@ -126,9 +126,10 @@ class Scraper49:
 
 
         # 1 letter search; Loop all uppercase
-        for char in ascii_uppercase[last_interrupt_char:]:
-            print(f"Extract search results for '{char}'")
-            starting_page = 1
+        last_interrupt_index = ascii_uppercase.index(last_interrupt_char)
+        for char in ascii_uppercase[last_interrupt_index:]:
+            print(f"Extract search results for '{char}' and starting page in {starting_page}")
+            starting_page = starting_page
 
             current_page = starting_page
             
@@ -166,3 +167,35 @@ class Scraper49:
                 if not next_page_link:
                     print('No more pages. Exiting.')
                     break
+
+
+
+
+
+
+    # def scrape_with_refcodes(self,batch_size=10,num_threads=3):
+
+            
+        # results = []
+        
+        # def scrape_single_thread(code):
+        #     print(f"code : {code}")
+        #     data = {'code':code}
+        #     results = self.scrape_single(self.url,data)
+        #     print(results)
+        #     if results:
+        #         print("Skipping 'None' values.")
+        #     return results
+            
+        # with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads) as executor:
+        #     for i in range(1,codes,batch_size):
+        #         # batch_results = [results for results in list(executor.map(scrape_single_thread,list(range(i,i+batch_size)))) if len(results) > 0]
+        #         batch_results = [item for sublist in executor.map(scrape_single_thread, range(725, i+batch_size)) if sublist is not None for item in sublist if len(sublist) > 0]
+        #         yield batch_results
+
+        # for char in ascii_uppercase:
+        # data = {"search":"a","type":"ALL"}
+
+        # self.scrape_pages(batch_size)
+
+        # self.scrape_single(self.url,data)
