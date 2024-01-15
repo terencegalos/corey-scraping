@@ -19,29 +19,6 @@ class Scraper48:
     
     def scrape_single(self,url,data):
         
-        headers = {
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Languffage': 'en-US,en;q=0.9',
-            'Cache-Control': 'max-age=0',
-            'Connection': 'keep-alive',
-            'Content-Length': '17',
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Cookie': self.extracted_cookies,
-            'Host': 'mobilendloan.com',
-            'Origin': 'https://mobilendloan.com',
-            'Referer': 'https://mobilendloan.com/',
-            'Sec-Ch-Ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
-            'Sec-Ch-Ua-Mobile': '?0',
-            'Sec-Ch-Ua-Platform': '"Windows"',
-            'Sec-Fetch-Dest': 'document',
-            'Sec-Fetch-Mode': 'navigate',
-            'Sec-Fetch-Site': 'same-origin',
-            'Sec-Fetch-User': '?1',
-            'Upgrade-Insecure-Requests': '1',
-            'User-Agent': self.ua.random
-        }
-
 
         response = requests.get(f'{url}{data['code']}/false')
         print(f'{url}{data['code']}/false')
@@ -108,12 +85,12 @@ class Scraper48:
     
     
     
-    def scrape_with_refcodes(self,batch_size=10,num_threads=3):
+    def scrape_with_refcodes(self,start=1,batch_size=10,num_threads=3):
 
             
         # refcodes = code_generator.invite_codes_with_prefix # last code before error JO0000013
         # codes = code_generator.generate_code(1,200000000,'',6)
-        codes = 2000000
+        # code_gen = code_generator.num_generator()
         # print(f"There are {len(codes)} codes to rotate!")
         # results = []
         
@@ -122,12 +99,24 @@ class Scraper48:
             data = {'code':code}
             results = self.scrape_single(self.url,data)
             print(results)
+
+            # Store current code to txt file
+            with open('last_code_scraper48.txt','w') as f:
+                f.write(str(code))
+
             if results:
-                print("Skipping 'None' values.")
-            return results
+                return results
+            return None
             
         with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads) as executor:
-            for i in range(1,codes,batch_size):
-                # batch_results = [results for results in list(executor.map(scrape_single_thread,list(range(i,i+batch_size)))) if len(results) > 0]
+            i = start
+            # stop = 0
+            while True:
                 batch_results = [item for sublist in executor.map(scrape_single_thread, range(i, i+batch_size)) if sublist is not None for item in sublist if len(sublist) > 0]
+                if len(batch_results) < 1:
+                    break
                 yield batch_results
+                i += batch_size
+                # stop += 1
+                # if stop > 3:
+                #     raise ValueError('Simulated error raised')

@@ -43,6 +43,7 @@ class DatabaseHandler:
 
         # Commit changes
         self.conn.commit()
+
         
     def close_connection(self):
         # Close the db connection

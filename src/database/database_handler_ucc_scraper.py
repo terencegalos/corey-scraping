@@ -10,7 +10,7 @@ class DatabaseHandler:
             database=database
         )
         # Create a cursor to interact with the db
-        self.cursor = self.conn.cursor()
+        self.cursor = self.conn.cursor(buffered=True)
         
         for table in table_names:        
             # Create a table
@@ -40,6 +40,19 @@ class DatabaseHandler:
 
         # Commit changes
         self.conn.commit()
+
+    def data_exists(self,table_name,data):
+        # Create a SQL query that checks if a record exists
+        query = f'SELECT * FROM {table_name} WHERE debtor_name = %s AND debtor_address = %s AND secured_party_name = %s AND secured_party_address = %s'
+
+        # Execute the query
+        self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+
+        # Fetch the result 
+        result = self.cursor.fetchone()
+
+        # If a record was found, return True. Otherwise, return False.
+        return result is not None
 
         
     def close_connection(self):

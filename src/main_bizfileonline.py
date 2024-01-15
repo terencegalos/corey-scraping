@@ -1,4 +1,6 @@
 import sys,importlib
+import schedule
+import time
 
 num_scraper = sys.argv[1]
 
@@ -33,13 +35,14 @@ def main():
         )
         
         # Scrape data in batches
-        # for batch_results in scraper.scrape():
-        for batch_results in scraper.scrape_with_refcodes():
-        # for batch_results in scraper.scrape_with_names():
+        with open('last_code_scraper48.txt','r') as f:
+            last_code = int(f.read())
+
+        for batch_results in scraper.scrape_with_refcodes(start=last_code):
             # Store data in the db
-            print(batch_results)
+            print(f'batch results: {batch_results}')
             print("Storing batch to database...")
-            db_handler.store_data(scraper.table_name,batch_results)
+            db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
         
         logger.info("Scraping and storing data completed successfully.")
     except Exception as e:
@@ -49,5 +52,11 @@ def main():
         # Close the db connection
         db_handler.close_connection()
         
-if __name__ == "__main__":
-    main()
+# Schedule the job every day
+schedule.every.day.at("00:00").do(main)
+
+
+while True:
+    # Run pending tasks
+    schedule.run_pending()
+    time.sleep(1)

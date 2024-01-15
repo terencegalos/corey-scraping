@@ -37,7 +37,8 @@ def main():
             # Store data in the db
             print(batch_results)
             print("Storing batch to database...")
-            db_handler.store_data(scraper.table_name,batch_results)
+            # db_handler.store_data(scraper.table_name,batch_results)
+            db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
         
         logger.info("Scraping and storing data completed successfully.")
     except Exception as e:

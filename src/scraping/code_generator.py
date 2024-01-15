@@ -60,6 +60,14 @@ def generate_code_gen(start,end,prefix,width=7,batch_size=100):
         if codes:
             yield codes
 
+def num_generator(last_interrupt = 1):
+
+     num = last_interrupt
+
+     while True:
+          yield num
+          num += 1
+
 
 
 

@@ -10,9 +10,6 @@ class Scraper50:
     def __init__(self):
         # https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=1521a398-e075-402c-a94b-005ec6badfc2
         # ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$OrganizationNameInput
-        # https://arc-sos.state.al.us/cgi/uccdetail.mbr/detail?ucc=20-7799272&page=name
-        # https://arc-sos.state.al.us/cgi/uccname.mbr/input
-        # self.baseurl = 'https://arc-sos.state.al.us/'
         self.baseurl = 'https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-nonstand/portal.aspx'
         self.table_name = "scraper50_info"
         self.session = requests.Session()
