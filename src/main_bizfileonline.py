@@ -35,15 +35,17 @@ def main():
         )
         
         # Scrape data in batches
-        with open('last_code_scraper48.txt','r') as f:
+        with open(scraper.last_interrupt_txt,'r') as f:
             last_code = int(f.read())
+            if len(last_code) < 1:
+                last_code = 'A'
 
         for batch_results in scraper.scrape_with_refcodes(start=last_code):
             # Store data in the db
             print(f'batch results: {batch_results}')
             print("Storing batch to database...")
-            db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
-        
+            db_handler.store_data(scraper.table_name,batch_results) # adding db check if result is already in db
+
         logger.info("Scraping and storing data completed successfully.")
     except Exception as e:
         logger.error(f"An error occurred: {str(e)}",exc_info=True)
@@ -53,7 +55,7 @@ def main():
         db_handler.close_connection()
         
 # Schedule the job every day
-schedule.every.day.at("00:00").do(main)
+schedule.every().day.at("00:44").do(main)
 
 
 while True:

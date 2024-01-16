@@ -9,6 +9,7 @@ class Scraper48:
         # https://bizfileonline.sos.ca.gov/api/FilingDetail/ucc/487504/false
         self.url = f'https://bizfileonline.sos.ca.gov/api/FilingDetail/ucc/'
         self.table_name = "scraper48_info"
+        self.last_interrupt_txt = 'last_code_scraper48.txt'
         self.session = requests.Session()
         self.ua = UserAgent()
         self.extracted_cookies = 'mailer-sessions=s%3A-xmOYnkEUpr5_faMgi-HKzN7AhNZNnUc.fgKPMZ%2B3eKVo%2Br4%2FUUYO%2FyVxUHLjk5Z43CnLjxXq5PU; wc_visitor=78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+'
@@ -45,6 +46,7 @@ class Scraper48:
                     result_list.append(result_entry)
                 elif label == 'Secured Party Name':
                     current_secured_party = {'secured_party_name': value}
+                    current_secured_party['secured_party_address'] = ''
                 elif label == 'Secured Party Address':
                     current_secured_party['secured_party_address'] = value
                     
@@ -59,29 +61,14 @@ class Scraper48:
 
         # raise for failed requests
         response.raise_for_status()
-        
-        # if response.status_code == 200:
-        # Parse the HTML content with BeautifulSoup
-        
-        
-        # Check if any value is None, if yes, return None
-        # if any(value is None for value in [name, address, secured_party_name, secured_party_address]):
-        #     return None        
-            
-            
-        # Return the scraped data as dictionary        
-        # return {
-        #     'debtor_name' : name,
-        #     'debtor_address' : address,
-        #     'secured_party_name' : secured_party_name,
-        #     'secured_party_address' : secured_party_address
-        # }
+
+        # Save current code to txt file
+        with open(self.last_interrupt_txt,'w') as f:
+            f.write(str(data['code']))
+    
 
         return result_list
             
-        # else :
-        #     raise Exception(f"Failed to retrieve data. Status code: {response.status_code}")
-    
     
     
     
@@ -100,9 +87,6 @@ class Scraper48:
             results = self.scrape_single(self.url,data)
             print(results)
 
-            # Store current code to txt file
-            with open('last_code_scraper48.txt','w') as f:
-                f.write(str(code))
 
             if results:
                 return results

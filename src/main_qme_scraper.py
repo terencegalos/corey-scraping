@@ -31,7 +31,7 @@ def main():
         )
         
         # Scrape data in batches
-        for batch_results in scraper.scrape_with_zipcodes('90714','MOG'):
+        for batch_results in scraper.scrape_with_zipcodes():
             print(batch_results)
             print("Storing batch to database...")
             db_handler.store_data(scraper.table_name,batch_results)

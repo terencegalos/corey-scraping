@@ -28,8 +28,8 @@ class DatabaseHandler:
                             SELECT zip_codes from {table_name}
                             ''')
         rows = self.cursor.fetchall()
-        result_list = [row[0] for row in rows if row[0] is not None]
-        return result_list
+        zip_codes_list = [row[0] for row in rows if row[0] is not None]
+        return zip_codes_list
 
         
     def close_connection(self):

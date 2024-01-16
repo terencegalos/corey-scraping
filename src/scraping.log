@@ -15550,3 +15550,353 @@ Traceback (most recent call last):
   File "/root/venv/corey/lib/python3.12/site-packages/requests/adapters.py", line 517, in send
     raise SSLError(e, request=request)
 requests.exceptions.SSLError: SOCKSHTTPSConnectionPool(host='arc-sos.state.al.us', port=443): Max retries exceeded with url: /cgi/uccdetail.mbr/detail?ucc=11-7231823&page=name (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)')))
+2024-01-15 23:41:35,688 [ERROR]: An error occurred: 1054 (42S22): Unknown column 'debtor_name' in 'where clause'
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'debtor_name' in 'where clause'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 45, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'debtor_name' in 'where clause'
+2024-01-16 00:06:49,040 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 45, in main
+    print(batch_results)
+                         
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-01-16 00:07:37,962 [ERROR]: An error occurred: 'type' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_bizfileonline.py", line 41, in main
+    for batch_results in scraper.scrape_with_refcodes(start=last_code):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper48.py", line 98, in scrape_with_refcodes
+    batch_results = [item for sublist in executor.map(scrape_single_thread, range(i, i+batch_size)) if sublist is not None for item in sublist if len(sublist) > 0]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'type' object is not iterable
+2024-01-16 00:42:07,998 [ERROR]: An error occurred: 'type' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_bizfileonline.py", line 41, in main
+    for batch_results in scraper.scrape_with_refcodes(start=last_code):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper48.py", line 99, in scrape_with_refcodes
+    batch_results = [item for sublist in executor.map(scrape_single_thread, range(i, i+batch_size)) if sublist is not None for item in sublist if len(sublist) > 0]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'type' object is not iterable
+2024-01-16 01:04:27,993 [ERROR]: An error occurred: can only concatenate str (not "int") to str
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 41, in main
+    for batch_results in scraper.scrape_with_refcodes(last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 158, in scrape_with_refcodes
+    current_page += 25
+TypeError: can only concatenate str (not "int") to str
+2024-01-16 01:08:02,558 [ERROR]: An error occurred: can only concatenate str (not "int") to str
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 41, in main
+    for batch_results in scraper.scrape_with_refcodes(last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 131, in scrape_with_refcodes
+    f.write(str(last_interrupt_char+"_"+current_page))
+                ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+TypeError: can only concatenate str (not "int") to str
+2024-01-16 01:09:00,228 [ERROR]: An error occurred: not enough values to unpack (expected 2, got 1)
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 37, in main
+    last_char,last_page = str(f.read()).split("_")
+    ^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+2024-01-16 01:23:17,502 [INFO]: Scraping and storing data completed successfully.
+2024-01-16 01:57:41,544 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 46, in main
+    # Store data in the db
+                           
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-01-16 02:57:00,985 [ERROR]: An error occurred: Scraper50.scrape_with_refcodes() got an unexpected keyword argument 'starting_page'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 45, in main
+    for batch_results in scraper.scrape_with_refcodes(last_interrupt_char=last_char,starting_page=last_page):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scraper50.scrape_with_refcodes() got an unexpected keyword argument 'starting_page'
+2024-01-16 03:32:15,505 [ERROR]: An error occurred: 500 Server Error: Internal Server Error for url: https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=4735b4d0-04b6-4654-86ab-4a6390560df2
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 45, in main
+    for batch_results in scraper.scrape_with_refcodes(last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 204, in scrape_with_refcodes
+    urls = get_page_links(soup)
+                        ^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper50.py", line 58, in scrape_single
+    response.raise_for_status()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=4735b4d0-04b6-4654-86ab-4a6390560df2
+2024-01-16 22:50:44,642 [ERROR]: An error occurred: 'MOG' is not in list
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_qme_scraper.py", line 34, in main
+    for batch_results in scraper.scrape_with_zipcodes('90714','MOG'):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 194, in scrape_with_zipcodes
+    last_interrrupt_sp_index = sp_keys.index(last_interrupt_specialty)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: 'MOG' is not in list
+2024-01-16 22:52:51,899 [ERROR]: An error occurred: 90001 is not in list
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_qme_scraper.py", line 34, in main
+    for batch_results in scraper.scrape_with_zipcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 193, in scrape_with_zipcodes
+    last_interrupt_zip_index = zip_codes.index(last_interrupt_zipcode)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: 90001 is not in list
+2024-01-16 22:57:18,908 [ERROR]: An error occurred: 90001 is not in list
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_qme_scraper.py", line 34, in main
+    for batch_results in scraper.scrape_with_zipcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 194, in scrape_with_zipcodes
+    last_interrupt_zip_index = zip_codes.index(last_interrupt_zipcode)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: 90001 is not in list
+2024-01-16 22:58:27,419 [ERROR]: An error occurred: HTTPSConnectionPool(host='www.dir.ca.gov', port=443): Max retries exceeded with url: /databases/dwc/qmeN.asp (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f810b679a60>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f810b679a60>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.dir.ca.gov', port=443): Max retries exceeded with url: /databases/dwc/qmeN.asp (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f810b679a60>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_qme_scraper.py", line 34, in main
+    for batch_results in scraper.scrape_with_zipcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 211, in scrape_with_zipcodes
+    page_result = future.result()
+                  ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 145, in get_page_results
+    response  = requests.post(self.searchurl,headers=headers,data=data)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='www.dir.ca.gov', port=443): Max retries exceeded with url: /databases/dwc/qmeN.asp (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f810b679a60>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-16 23:38:36,412 [ERROR]: An error occurred: 'tuple' object has no attribute 'append'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_qme_scraper.py", line 34, in main
+    for batch_results in scraper.scrape_with_zipcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 170, in scrape_with_zipcodes
+    futures = [executor.submit(get_page_results,*arg.append(search_by_other)) for arg in args]
+                                                 ^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'append'
+2024-01-16 23:41:23,056 [ERROR]: An error occurred: Scraper57.scrape_with_zipcodes.<locals>.get_page_results() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_qme_scraper.py", line 34, in main
+    for batch_results in scraper.scrape_with_zipcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 173, in scrape_with_zipcodes
+    page_result = future.result()
+                  ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scraper57.scrape_with_zipcodes.<locals>.get_page_results() takes 3 positional arguments but 4 were given
+2024-01-16 23:42:44,885 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_qme_scraper.py", line 34, in main
+    for batch_results in scraper.scrape_with_zipcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 173, in scrape_with_zipcodes
+    page_result = future.result()
+                  ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 145, in get_page_results
+    row_result.update({'phone':" ".join(row_tds[2].get_text().split()) if not searchby_other else " ".join(row_tds[3].get_text().split())})
+                                                                                                           ~~~~~~~^^^
+IndexError: list index out of range
+2024-01-16 23:46:13,854 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_qme_scraper.py", line 34, in main
+    for batch_results in scraper.scrape_with_zipcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 180, in scrape_with_zipcodes
+    page_result = future.result()
+                  ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 152, in get_page_results
+    row_result.update({'phone':" ".join(row_tds[2].get_text().split()) if not searchby_other else " ".join(row_tds[3].get_text().split())})
+                                                                                                           ~~~~~~~^^^
+IndexError: list index out of range
+2024-01-16 23:47:21,413 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_qme_scraper.py", line 34, in main
+    for batch_results in scraper.scrape_with_zipcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 180, in scrape_with_zipcodes
+    page_result = future.result()
+                  ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 152, in get_page_results
+    row_result.update({'phone':" ".join(row_tds[2].get_text().split()) if not searchby_other else " ".join(row_tds[3].get_text().split())})
+                                                                                                           ~~~~~~~^^^
+IndexError: list index out of range
+2024-01-16 23:48:12,316 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_qme_scraper.py", line 37, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_qme_scraper.py", line 33, in store_data
+    for data in data_list:
+TypeError: 'NoneType' object is not iterable
+2024-01-16 23:58:41,572 [ERROR]: An error occurred: exceptions must derive from BaseException
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 145, in get_page_results
+    row_tds[3].get_text()
+    ~~~~~~~^^^
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_qme_scraper.py", line 34, in main
+    for batch_results in scraper.scrape_with_zipcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 181, in scrape_with_zipcodes
+    page_result = future.result()
+                  ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 147, in get_page_results
+    raise("Index error: empty result found")
+TypeError: exceptions must derive from BaseException
+2024-01-16 23:59:43,693 [ERROR]: An error occurred: Index error: empty result found.
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 145, in get_page_results
+    row_tds[3].get_text()
+    ~~~~~~~^^^
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_qme_scraper.py", line 34, in main
+    for batch_results in scraper.scrape_with_zipcodes():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 181, in scrape_with_zipcodes
+    page_result = future.result()
+                  ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 147, in get_page_results
+    raise Exception("Index error: empty result found.")
+Exception: Index error: empty result found.

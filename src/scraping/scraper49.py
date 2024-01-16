@@ -9,11 +9,10 @@ from config.proxies import proxy_dict
 class Scraper49:
     def __init__(self):
         # https://arc-sos.state.al.us/cgi/uccdetail.mbr/detail?ucc=20-7799272&page=name
-        # https://arc-sos.state.al.us/cgi/uccname.mbr/input
-        # self.baseurl = 'https://arc-sos.state.al.us/'
         self.baseurl = 'https://arc-sos.state.al.us/cgi/uccname.mbr/'
         self.url = 'https://arc-sos.state.al.us'
         self.table_name = "scraper49_info"
+        self.last_interrupt_txt = 'last_char_scraper49.txt'
         self.session = requests.Session()
         self.ua = UserAgent()
         self.extracted_cookies = 'mailer-sessions=s%3A-xmOYnkEUpr5_faMgi-HKzN7AhNZNnUc.fgKPMZ%2B3eKVo%2Br4%2FUUYO%2FyVxUHLjk5Z43CnLjxXq5PU; wc_visitor=78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+'
@@ -43,6 +42,7 @@ class Scraper49:
 
 
         print(f'Extracting info. URL: {url}')
+
         try:
             response = requests.get(f"{url}", headers=headers,proxies=proxy_dict)
         except requests.exceptions.ConnectionError:
@@ -60,11 +60,14 @@ class Scraper49:
         # raise for failed requests
         response.raise_for_status()
         
-        # if response.status_code == 200:
+        
+        
+        
         # Parse the HTML content with BeautifulSoup
-
         soup = BeautifulSoup(response.content,'html.parser')
 
+        
+        
         result_dict = {'debtor_name':'','debtor_address':'','secured_party_name':'','secured_party_address':''}
 
         # Extract debtor info
@@ -75,9 +78,7 @@ class Scraper49:
         else:
             print('Elements not found.')
             return
-
-        # for d in debtor_info:
-        #     print(f'info: {d.get_text(separator='\n').split('\n')}')
+        
 
         if debtor_info:
             debtor = debtor_info[0].get_text(separator='\n')
@@ -87,10 +88,13 @@ class Scraper49:
             result_dict.update({'debtor_address':debtor_address})
 
         print(result_dict)
+
         # Extract secured party info
         secured_party_info = soup.find_all('td',class_='aiSosDetailValue')[8:9]
         print(f'len: {len(secured_party_info)}')
         secured_party = secured_party_info[0].get_text(separator='\n')
+
+        
         if secured_party_info:
             secured_party_name = secured_party.split("\n")[0]
             secured_party_address = ' '.join(secured_party.split("\n")[1:])
@@ -102,21 +106,10 @@ class Scraper49:
         return result_dict
 
         
-        
-        # Check if any value is None, if yes, return None
-        if any(value is None for value in [name, address, secured_party_name, secured_party_address]):
-            return None        
-            
-            
-        
-            
-        # else :
-        #     raise Exception(f"Failed to retrieve data. Status code: {response.status_code}")
     
     
     
-    
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='C',starting_page=501):
+    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',starting_page=1):
         
         def get_page_links(soup):
             tr_elements = soup.find_all("tr")
@@ -130,13 +123,18 @@ class Scraper49:
         for char in ascii_uppercase[last_interrupt_index:]:
             print(f"Extract search results for '{char}' and starting page in {starting_page}")
 
-            current_page = starting_page
+            current_page = int(starting_page)
             
             while True:
                 current_url = f'{self.baseurl}output?s={current_page}&search={char}&type=ALL&status=&order=default&hld=&dir=&page=Y'
                 response = requests.get(current_url)
                 print(f'Scraping entries in url: {current_url}')
                 print(f'Status code: {response.status_code}')
+
+                # store current char to txt file
+                with open(self.last_interrupt_txt,'w') as f:
+                    f.write(str(char+"_"+str(current_page)))
+
 
                 # Get page results
                 # Parse the HTML content with BeautifulSoup
@@ -154,10 +152,6 @@ class Scraper49:
                     batch_results = [results for results in executor.map(self.scrape_single,urls)]
                     yield batch_results
 
-                # for url in urls:
-                #     result = self.scrape_single(url)
-                #     print(result)
-                #     yield result
                 
                 # add 25 to current_page to get next page
                 current_page += 25
