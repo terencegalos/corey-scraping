@@ -9,6 +9,7 @@ from config.proxies import proxy_dict
 class Scraper49:
     def __init__(self):
         # https://arc-sos.state.al.us/cgi/uccdetail.mbr/detail?ucc=20-7799272&page=name
+        # https://arc-sos.state.al.us/cgi/uccname.mbr/output?s=1&search=A&type=ALL&status=&order=default&hld=&dir=&page=Y
         self.baseurl = 'https://arc-sos.state.al.us/cgi/uccname.mbr/'
         self.url = 'https://arc-sos.state.al.us'
         self.table_name = "scraper49_info"
@@ -109,7 +110,7 @@ class Scraper49:
     
     
     
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',starting_page=1):
+    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',last_interrupt_debtor=None,starting_page=1):
         
         def get_page_links(soup):
             tr_elements = soup.find_all("tr")
@@ -127,9 +128,17 @@ class Scraper49:
             
             while True:
                 current_url = f'{self.baseurl}output?s={current_page}&search={char}&type=ALL&status=&order=default&hld=&dir=&page=Y'
-                response = requests.get(current_url)
+                try:
+                    response = requests.get(current_url)
+                except requests.exceptions.ConnectionError:
+                    print("Connection failed. Retrying after 20 secs.")
+                    time.sleep(20)
+                    response = requests.get(current_url)
+
                 print(f'Scraping entries in url: {current_url}')
                 print(f'Status code: {response.status_code}')
+                print(response.headers)
+                time.sleep(100)
 
                 # store current char to txt file
                 with open(self.last_interrupt_txt,'w') as f:
@@ -149,13 +158,13 @@ class Scraper49:
                 
                 # scrape info using multithread
                 with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-                    batch_results = [results for results in executor.map(self.scrape_single,urls)]
+                    batch_results = [results for results in executor.map(self.scrape_single,urls) if results is not None]
                     yield batch_results
 
                 
                 # add 25 to current_page to get next page
                 current_page += 25
-                next_page_link = re.search(r'>>',requests.get(current_url).text)
+                next_page_link = re.search(r'>>',requests.get(current_url,proxies=proxy_dict).text)
 
                 if not next_page_link:
                     print('No more pages. Exiting.')
