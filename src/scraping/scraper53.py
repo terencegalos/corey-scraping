@@ -13,6 +13,7 @@ class Scraper53:
         self.baseurl = 'https://corp.sec.state.ma.us/'
         self.searchurl = 'https://corp.sec.state.ma.us/CorpWeb/UCCSearch/UCCSearch.aspx'
         self.table_name = "scraper53_info"
+        self.last_interrupt_txt = 'last_char_scraper53.txt'
         # self.session = requests.Session()
         self.jar = RequestsCookieJar()
         self.ua = UserAgent()
@@ -177,7 +178,7 @@ class Scraper53:
     
     
     
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='Y',end_char='Z',last_interrupted_page=1):
+    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='Y',end_char='Z',last_interrupted_page=1,starting_page=1):
         
         def get_page_links(soup):
             table = soup.find("table")

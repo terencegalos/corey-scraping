@@ -40,6 +40,8 @@ def main():
                 # set to default if empty txt file
                 last_char,last_page = ['A','1']
 
+        # state = scraper.load_state()
+
             
         # Scrape data in batches
         for batch_results in scraper.scrape_with_refcodes(last_interrupt_char=last_char,starting_page=last_page):

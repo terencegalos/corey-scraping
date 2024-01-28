@@ -37,8 +37,8 @@ def main():
         # Scrape data in batches
         with open(scraper.last_interrupt_txt,'r') as f:
             last_code = int(f.read())
-            if len(last_code) < 1:
-                last_code = 'A'
+            if last_code < 1:
+                last_code = '1'
 
         for batch_results in scraper.scrape_with_refcodes(start=last_code):
             # Store data in the db
