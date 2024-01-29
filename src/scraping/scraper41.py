@@ -38,11 +38,14 @@ class Scraper41:
     
         
         try:
-            response = requests.get(f"https://{url}", headers=headers, allow_redirects=True)
-        except ConnectionError as e:
+            response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
+        except requests.exceptions.ConnectionError as e:
             print(f'Connecting failed to {url}. Error: {e}\nReconnecting in 20 secs...')
             time.sleep(20)
-            response = requests.get(f"https://{url}", headers=headers, allow_redirects=True)
+            response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
+        except requests.exceptions.InvalidURL:
+            print("Invalid url")
+            return
 
         # print(response.text)
         
@@ -79,9 +82,9 @@ class Scraper41:
         }
         
     
-    def scrape_with_names(self,batch_size=100,num_threads=3):
+    def scrape_with_names(self,batch_size=10,num_threads=3):
         
-        names_generator = name_generator.generate_names()#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
+        names_generator = name_generator.generate_names('aissa','vindiola')#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
         
         results = []
         
@@ -109,7 +112,7 @@ class Scraper41:
                         continue_to_next_name = False
                         
                         while True:
-                            futures = [executor.submit(scrape_single_with_increment, name.replace("'",""), num) for num in [next(num_generator) for _ in range(3)] ]
+                            futures = [executor.submit(scrape_single_with_increment, name.replace("'","").replace("/","").replace(")","").replace("(","").replace("[",""), num) for num in [next(num_generator) for _ in range(3)] ]
                             
                             for future in concurrent.futures.as_completed(futures):
                                 result = future.result()

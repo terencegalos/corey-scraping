@@ -49,7 +49,7 @@ class Scraper54:
 
 
         print(f'Extracting info from url: {url}')
-        response = requests.get(url,headers=headers,proxies={'https':'47.243.92.199:3128'},allow_redirects=True,verify=False)
+        response = requests.get(url,headers=headers,allow_redirects=True,verify=False)#proxies={'https':'47.243.92.199:3128'},allow_redirects=True,verify=False)
         print(f'Status code: {response.status_code}')
         # print(f'Content: {response.text}')
 
@@ -126,6 +126,9 @@ class Scraper54:
         
         def get_page_links(soup):
             table = soup.find("table")
+            if  not table:
+                print("Table not found. Skipping")
+                return
             tr_elements = table.find_all('tr')
             
             print(f'tr length: {len(tr_elements)}')
@@ -233,7 +236,7 @@ class Scraper54:
                 
                 current_url = self.searchurl
                 print("Sending post requests.")
-                response = requests.post(current_url,data=json.dumps(data),headers=headers,proxies={'https':'47.243.92.199:3128'},verify=False)
+                response = requests.post(current_url,data=json.dumps(data),headers=headers,verify=False)#proxies={'https':'47.243.92.199:3128'},verify=False)
                 # response = requests.post(current_url,data=json.dumps(data),headers=headers,proxies={'https':'32.223.6.94:80'},verify=False)
                 
                 # print(f'Scraping entries in url: {current_url}')
@@ -265,5 +268,5 @@ class Scraper54:
                 # scrape info using multithread
                 with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
                     for i in range(0,len(page_links),batch_size):
-                        batch_results = [item for results in executor.map(self.scrape_single,page_links[i:i+batch_size]) for item in results]
+                        batch_results = [item for results in executor.map(self.scrape_single,page_links[i:i+batch_size]) for item in results if item is not None]
                         yield batch_results
