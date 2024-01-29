@@ -48,7 +48,8 @@ class Scraper54:
 
 
         print(f'Extracting info from url: {url}')
-        response = requests.get(url,headers=headers,proxies={'https':'47.243.92.199:3128'},allow_redirects=True,verify=False)
+        # response = requests.get(url,headers=headers,proxies={'https':'47.243.92.199:3128'},allow_redirects=True,verify=False)
+        response = requests.get(url,headers=headers,allow_redirects=True,verify=False)
         print(f'Status code: {response.status_code}')
         # print(f'Content: {response.text}')
 
@@ -233,7 +234,8 @@ class Scraper54:
                 current_url = self.searchurl
                 print("Sending post requests.")
                 # response = requests.post(current_url,data=json.dumps(data),headers=headers,proxies={'https':'47.243.92.199:3128'},verify=False)
-                response = requests.post(current_url,data=json.dumps(data),headers=headers,proxies={'https':'32.223.6.94:80'},verify=False)
+                # response = requests.post(current_url,data=json.dumps(data),headers=headers,proxies={'https':'32.223.6.94:80'},verify=False)
+                response = requests.post(current_url,data=json.dumps(data),headers=headers,verify=False)
                 
                 # print(f'Scraping entries in url: {current_url}')
                 # print(response.text)

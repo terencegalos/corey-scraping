@@ -15900,3 +15900,278 @@ Traceback (most recent call last):
   File "/home/terence/projects/corey-scraping/src/scraping/scraper57.py", line 147, in get_page_results
     raise Exception("Index error: empty result found.")
 Exception: Index error: empty result found.
+2024-01-28 23:56:39,822 [ERROR]: An error occurred: 'Scraper54' object has no attribute 'last_interrupt_txt'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_ucc_scraper.py", line 36, in main
+    with open(scraper.last_interrupt_txt,'r') as f:
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper54' object has no attribute 'last_interrupt_txt'
+2024-01-29 00:12:11,787 [ERROR]: An error occurred: name 'headers' is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_ucc_scraper.py", line 45, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/root/projects/corey/src/scraping/scraper53.py", line 336, in scrape_with_refcodes
+    response = requests.post(current_url,data=data,cookies=self.jar,headers=headers)
+                                                                            ^^^^^^^
+NameError: name 'headers' is not defined. Did you mean: 'headers1'?
+2024-01-29 00:31:19,341 [INFO]: Browser listening on: ws://127.0.0.1:43113/devtools/browser/7c3f978a-5632-4a6d-93f6-3688372d97f5
+2024-01-29 00:31:44,545 [INFO]: terminate chrome process...
+2024-01-29 00:31:44,548 [INFO]: connection closed
+2024-01-29 00:32:39,000 [INFO]: Browser listening on: ws://127.0.0.1:40769/devtools/browser/28605364-d421-47c3-a801-ce449ff8fac8
+2024-01-29 00:32:49,114 [INFO]: terminate chrome process...
+2024-01-29 00:32:49,117 [INFO]: connection closed
+2024-01-29 00:33:30,848 [INFO]: Browser listening on: ws://127.0.0.1:52353/devtools/browser/5a622b11-932e-4144-b9a4-a2afb98df29e
+2024-01-29 00:33:40,843 [INFO]: terminate chrome process...
+2024-01-29 00:33:40,845 [INFO]: connection closed
+2024-01-29 00:34:13,036 [INFO]: Browser listening on: ws://127.0.0.1:33551/devtools/browser/0fe0ee80-c128-4438-b35e-d2959856a9b1
+2024-01-29 00:34:18,706 [INFO]: terminate chrome process...
+2024-01-29 00:34:18,708 [INFO]: connection closed
+2024-01-29 00:35:52,879 [INFO]: Browser listening on: ws://127.0.0.1:60809/devtools/browser/8b4f026e-198a-4a39-9f90-3964173dbd9b
+2024-01-29 00:36:14,508 [INFO]: terminate chrome process...
+2024-01-29 00:36:14,510 [INFO]: connection closed
+2024-01-29 00:36:30,069 [INFO]: Browser listening on: ws://127.0.0.1:34793/devtools/browser/86f61b12-acaa-485a-9852-de2e3842f334
+2024-01-29 00:36:35,429 [INFO]: terminate chrome process...
+2024-01-29 00:36:35,431 [INFO]: connection closed
+2024-01-29 00:37:29,035 [INFO]: Browser listening on: ws://127.0.0.1:60067/devtools/browser/6c99b2fb-abc2-4509-8606-c56792f70e1c
+2024-01-29 00:58:50,370 [INFO]: Browser listening on: ws://127.0.0.1:59033/devtools/browser/1ffa15df-6e17-4696-8613-8fc160a37e22
+2024-01-29 00:59:07,485 [INFO]: terminate chrome process...
+2024-01-29 00:59:07,488 [INFO]: connection closed
+2024-01-29 00:59:08,213 [INFO]: terminate chrome process...
+2024-01-29 01:08:36,606 [ERROR]: An error occurred: SOCKSHTTPSConnectionPool(host='corp.sec.state.ma.us', port=443): Max retries exceeded with url: /CorpWeb/UCCSearch/UCCSearch.aspx (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7fb922abd880>: Failed to establish a new connection: Connection closed unexpectedly'))
+Traceback (most recent call last):
+  File "/root/venv/corey/lib/python3.12/site-packages/socks.py", line 809, in connect
+    negotiate(self, dest_addr, dest_port)
+  File "/root/venv/corey/lib/python3.12/site-packages/socks.py", line 443, in _negotiate_SOCKS5
+    self.proxy_peername, self.proxy_sockname = self._SOCKS5_request(
+                                               ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/socks.py", line 524, in _SOCKS5_request
+    resp = self._readall(reader, 3)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/socks.py", line 278, in _readall
+    raise GeneralProxyError("Connection closed unexpectedly")
+socks.GeneralProxyError: Connection closed unexpectedly
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/contrib/socks.py", line 96, in _new_conn
+    conn = socks.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/socks.py", line 209, in create_connection
+    raise err
+  File "/root/venv/corey/lib/python3.12/site-packages/socks.py", line 199, in create_connection
+    sock.connect((remote_host, remote_port))
+  File "/root/venv/corey/lib/python3.12/site-packages/socks.py", line 47, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/socks.py", line 814, in connect
+    raise GeneralProxyError("Socket error", error)
+socks.GeneralProxyError: Socket error: Connection closed unexpectedly
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/contrib/socks.py", line 127, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7fb922abd880>: Failed to establish a new connection: Connection closed unexpectedly
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='corp.sec.state.ma.us', port=443): Max retries exceeded with url: /CorpWeb/UCCSearch/UCCSearch.aspx (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7fb922abd880>: Failed to establish a new connection: Connection closed unexpectedly'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_ucc_scraper.py", line 45, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/root/projects/corey/src/scraping/scraper53.py", line 322, in scrape_with_refcodes
+    _ = self.session.post(current_url,proxies=proxy_dict,allow_redirects=True)#,headers=headers1,allow_redirects=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: SOCKSHTTPSConnectionPool(host='corp.sec.state.ma.us', port=443): Max retries exceeded with url: /CorpWeb/UCCSearch/UCCSearch.aspx (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7fb922abd880>: Failed to establish a new connection: Connection closed unexpectedly'))
+2024-01-29 01:09:31,017 [INFO]: Browser listening on: ws://127.0.0.1:43497/devtools/browser/eea96777-7d97-4807-aabf-4da8187b2958
+2024-01-29 01:09:43,357 [INFO]: terminate chrome process...
+2024-01-29 01:09:43,359 [INFO]: connection closed
+2024-01-29 01:27:44,768 [INFO]: Browser listening on: ws://127.0.0.1:46329/devtools/browser/5f30a765-a038-4d3a-9124-98cf753b934c
+2024-01-29 01:27:54,794 [INFO]: terminate chrome process...
+2024-01-29 01:27:54,796 [INFO]: connection closed
+2024-01-29 01:41:23,678 [ERROR]: An error occurred: 'Response' object has no attribute 'html'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_ucc_scraper.py", line 45, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/root/projects/corey/src/scraping/scraper53.py", line 336, in scrape_with_refcodes
+    response_.html.render()
+    ^^^^^^^^^^^^^^
+AttributeError: 'Response' object has no attribute 'html'
+2024-01-29 01:41:37,815 [INFO]: Browser listening on: ws://127.0.0.1:35321/devtools/browser/9ea41def-cb78-4524-a24b-8dd5681c4ad2
+2024-01-29 01:41:46,901 [INFO]: terminate chrome process...
+2024-01-29 01:41:46,904 [INFO]: connection closed
+2024-01-29 01:41:47,957 [INFO]: terminate chrome process...
+2024-01-29 01:49:05,734 [INFO]: terminate chrome process...
+2024-01-29 01:49:05,735 [INFO]: terminate chrome process...
+2024-01-29 01:49:05,737 [INFO]: terminate chrome process...
+2024-01-29 01:49:05,738 [INFO]: terminate chrome process...
+2024-01-29 01:49:05,738 [INFO]: terminate chrome process...
+2024-01-29 01:49:05,738 [INFO]: terminate chrome process...
+2024-01-29 01:49:05,740 [INFO]: terminate chrome process...
+2024-01-29 01:49:05,745 [INFO]: terminate chrome process...
+2024-01-29 01:49:05,746 [ERROR]: An error occurred: cannot access local variable 'response' where it is not associated with a value
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_ucc_scraper.py", line 45, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/root/projects/corey/src/scraping/scraper53.py", line 364, in scrape_with_refcodes
+    #     os.remove(temp_file_path)
+                       ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-01-29 01:49:05,754 [INFO]: terminate chrome process...
+2024-01-29 01:49:05,768 [INFO]: terminate chrome process...
+2024-01-29 01:49:05,800 [ERROR]: connection unexpectedly closed
+2024-01-29 01:49:05,802 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-42' coro=<Connection._async_send() done, defined at /root/venv/corey/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/root/venv/corey/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/root/venv/corey/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/root/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/venv/corey/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/root/venv/corey/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/root/venv/corey/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/root/venv/corey/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/root/venv/corey/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/venv/corey/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/root/venv/corey/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/root/venv/corey/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-01-29 01:49:05,844 [INFO]: connection closed
+2024-01-29 01:49:05,845 [INFO]: terminate chrome process...
+2024-01-29 01:49:05,846 [ERROR]: An error occurred: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_ucc_scraper.py", line 45, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/root/projects/corey/src/scraping/scraper53.py", line 338, in scrape_with_refcodes
+    time.sleep(100)
+  File "/root/projects/corey/src/scraping/scraper53.py", line 26, in renew_cookies
+    def renew_cookies(self,response):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+2024-01-29 01:49:05,852 [INFO]: terminate chrome process...
+2024-01-29 01:49:05,802 [ERROR]: An error occurred: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_ucc_scraper.py", line 45, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/root/projects/corey/src/scraping/scraper53.py", line 338, in scrape_with_refcodes
+    time.sleep(100)
+  File "/root/projects/corey/src/scraping/scraper53.py", line 26, in renew_cookies
+    def renew_cookies(self,response):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+2024-01-29 01:49:05,819 [ERROR]: An error occurred: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_ucc_scraper.py", line 45, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/root/projects/corey/src/scraping/scraper53.py", line 338, in scrape_with_refcodes
+    time.sleep(100)
+  File "/root/projects/corey/src/scraping/scraper53.py", line 26, in renew_cookies
+    def renew_cookies(self,response):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+2024-01-29 01:49:05,823 [ERROR]: An error occurred: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_ucc_scraper.py", line 45, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/root/projects/corey/src/scraping/scraper53.py", line 338, in scrape_with_refcodes
+    time.sleep(100)
+  File "/root/projects/corey/src/scraping/scraper53.py", line 26, in renew_cookies
+    def renew_cookies(self,response):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+2024-01-29 01:49:05,821 [ERROR]: An error occurred: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_ucc_scraper.py", line 45, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/root/projects/corey/src/scraping/scraper53.py", line 338, in scrape_with_refcodes
+    time.sleep(100)
+  File "/root/projects/corey/src/scraping/scraper53.py", line 26, in renew_cookies
+    def renew_cookies(self,response):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+2024-01-29 01:49:05,820 [ERROR]: An error occurred: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_ucc_scraper.py", line 45, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/root/projects/corey/src/scraping/scraper53.py", line 338, in scrape_with_refcodes
+    time.sleep(100)
+  File "/root/projects/corey/src/scraping/scraper53.py", line 26, in renew_cookies
+    def renew_cookies(self,response):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+2024-01-29 01:49:05,821 [ERROR]: An error occurred: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_ucc_scraper.py", line 45, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/root/projects/corey/src/scraping/scraper53.py", line 338, in scrape_with_refcodes
+    time.sleep(100)
+  File "/root/projects/corey/src/scraping/scraper53.py", line 26, in renew_cookies
+    def renew_cookies(self,response):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error

@@ -33,16 +33,16 @@ def main():
         )
         
         # Get last interrupt txt file value
-        with open(scraper.last_interrupt_txt,'r') as f:
-            try:
-                last_char,last_page = str(f.read()).split("_")
-            except ValueError:
-                # set to default if empty txt file
-                last_char,last_page = ['A','1']
+        # with open(scraper.last_interrupt_txt,'r') as f:
+        #     try:
+        #         last_char,last_page = str(f.read()).split("_")
+        #     except ValueError:
+        #         # set to default if empty txt file
+        #         last_char,last_page = ['A','1']
 
             
         # Scrape data in batches
-        for batch_results in scraper.scrape_with_refcodes(last_interrupt_char=last_char,starting_page=last_page):
+        for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
             # Store data in the db
             print(batch_results)
             print("Storing batch to database...")
@@ -61,9 +61,11 @@ def main():
         db_handler.close_connection()
 
 
-schedule.every().day.at("03:31").do(main)
+# schedule.every().day.at("20:11").do(main)
 
 
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+# while True:
+#     schedule.run_pending()
+#     time.sleep(1)
+
+main()
