@@ -16868,3 +16868,9 @@ Traceback (most recent call last):
   File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
     raise ConnectionError(e, request=request)
 requests.exceptions.ConnectionError: HTTPSConnectionPool(host='cis.scc.virginia.gov', port=443): Max retries exceeded with url: /UCCOnlineSearch/UCCSearch (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f307b986f30>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-29 21:38:40,111 [ERROR]: An error occurred: 'Scraper32' object has no attribute 'scrape_with_refcodes'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper32' object has no attribute 'scrape_with_refcodes'. Did you mean: 'scrape_with_names'?

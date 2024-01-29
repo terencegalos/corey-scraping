@@ -10,5 +10,3 @@ def getdb(host,user,password,database,table):
     )
 
     return conn
-
-def get_city_by_zip():
