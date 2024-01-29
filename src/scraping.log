@@ -16175,3 +16175,22 @@ Traceback (most recent call last):
     def renew_cookies(self,response):
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 OSError: [Errno 5] Input/output error
+2024-01-29 16:37:16,758 [INFO]: Browser listening on: ws://127.0.0.1:53255/devtools/browser/c8f0a5a5-62ba-4f2c-98b1-ec2df8e24aa5
+2024-01-29 16:37:22,516 [INFO]: terminate chrome process...
+2024-01-29 16:37:22,519 [INFO]: connection closed
+2024-01-29 17:27:59,137 [ERROR]: An error occurred: name 'response_' is not defined
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_ucc_scraper.py", line 45, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/root/projects/corey/src/scraping/scraper53.py", line 336, in scrape_with_refcodes
+    response_.html.render()
+    ^^^^^^^^^
+NameError: name 'response_' is not defined
+2024-01-29 17:28:14,098 [INFO]: Browser listening on: ws://127.0.0.1:46457/devtools/browser/8d773076-6c07-4760-a064-0fa7e3b299a0
+2024-01-29 17:28:19,028 [INFO]: terminate chrome process...
+2024-01-29 17:28:19,030 [INFO]: connection closed
+2024-01-29 17:29:23,500 [INFO]: Browser listening on: ws://127.0.0.1:39265/devtools/browser/d4245fee-07b1-4247-97b8-c5d372cbcbb0
+2024-01-29 17:34:19,707 [INFO]: Browser listening on: ws://127.0.0.1:38747/devtools/browser/a49bba4a-7d9c-4587-a533-794617410745
+2024-01-29 17:34:37,481 [INFO]: Browser listening on: ws://127.0.0.1:33845/devtools/browser/034b4491-b10f-4c56-a344-ac25d2c80d3f
+2024-01-29 17:35:23,717 [INFO]: Browser listening on: ws://127.0.0.1:45207/devtools/browser/525fc342-cac2-4cac-8e69-f65eeafe2641
+2024-01-29 17:40:05,937 [INFO]: Browser listening on: ws://127.0.0.1:47549/devtools/browser/cac43e22-4c94-4cdc-8e4b-fd4a247fc856

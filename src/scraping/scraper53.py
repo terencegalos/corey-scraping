@@ -47,7 +47,7 @@ class Scraper53:
             'Sec-GPC': '1',
             'TE': 'trailers',
             'Upgrade-Insecure-Requests': '1',
-            'User-Agent': self.ua.random#'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0'
         }
 
 
@@ -99,7 +99,7 @@ class Scraper53:
             "Sec-Fetch-Site": "none",
             "Sec-Fetch-User": "?1",
             "Upgrade-Insecure-Requests": "1",
-            "User-Agent": self.ua.random#'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0'
+            "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0'
         }
 
         for link in info_links:
@@ -229,7 +229,7 @@ class Scraper53:
                     'Sec-GPC': '1',
                     'TE': 'trailers',
                     'Upgrade-Insecure-Requests': '1',
-                    'User-Agent': self.ua.random#'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
                 }
 
                 headers2 = {
@@ -248,7 +248,7 @@ class Scraper53:
                     'Sec-Fetch-User': '?1',
                     'TE': 'trailers',
                     'Upgrade-Insecure-Requests': '1',
-                    'User-Agent': self.ua.random#'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
                 }
 
 
@@ -320,22 +320,22 @@ class Scraper53:
 
                     # Get new cookies
                     # response = requests.get(current_url,headers=headers1,proxies=proxy_dict,allow_redirects=True)
-                    _ = self.session.post(current_url)
+                    _ = self.session.post(current_url,headers=headers2)
                     time.sleep(1)
-                    response_ = self.session.post(current_url,headers=headers2,data=data)
-                    # print(response_.text)
-                    # time.sleep(100)
+                    response_ = self.session.post(current_url,headers=headers2,data=data1)
+                    print(response_.text)
+                    time.sleep(100)
 
 
-                    # response = self.session.post(f'{current_url}',data=data)#,headers=headers2,cookies=self.jar,allow_redirects=True)
+                    # response_ = self.session.post(f'{current_url}',data=data)#,headers=headers2,cookies=self.jar,allow_redirects=True)
 
                     # print(response.text)
                     # print(f'status_code: {response.status_code}')
                     # print(f"response_headers:{response.headers}")
                     
-                    response_.html.render()
-                    print(response_.html.raw_html)
-                    time.sleep(100)
+                    # response_.html.render()
+                    # print(response_.html.raw_html)
+                    # time.sleep(100)
 
                     # self.renew_cookies(response)
 
