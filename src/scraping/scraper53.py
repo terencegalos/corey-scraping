@@ -184,10 +184,14 @@ class Scraper53:
     
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',end_char='Z',last_interrupted_page=1):
 =======
     def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='Y',end_char='Z',last_interrupted_page=1,starting_page=1):
 >>>>>>> 479b4ffb96f82a9b69956901cc0fd6593ed7d2bf
+=======
+    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',end_char='Z',last_interrupted_page=1,starting_page=1):
+>>>>>>> ad916e975305d75cf3f183e814056c6471e636cf
         
         def get_page_links(soup):
             table = soup.find("table")

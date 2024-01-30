@@ -1,4 +1,4 @@
-import requests
+import requests,time
 from bs4 import BeautifulSoup
 import concurrent.futures
 from fake_useragent import UserAgent
@@ -35,7 +35,15 @@ class Scraper11:
 
     
         
-        response = requests.get(f"https://{url}", headers=headers, allow_redirects=True)
+        try:
+            response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
+        except requests.exceptions.ConnectionError as e:
+            print(f'Connecting failed to {url}. Error: {e}\nReconnecting in 20 secs...')
+            time.sleep(20)
+            response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
+        except requests.exceptions.InvalidURL:
+            print("Invalid url")
+            return
         # print(response.text)
         
         
@@ -64,8 +72,7 @@ class Scraper11:
         return {
             'first_name' : first_name_el,
             'last_name' : last_name_el,
-            'address' : address_el,
-            'city' : city_el,
+            'address' : address_el,'city' : city_el,
             'state' : state,
             'zip_code' : zip_code_el
         }
@@ -73,7 +80,7 @@ class Scraper11:
     
     def scrape_with_names(self,batch_size=10,num_threads=3):
         
-        names_generator = name_generator.generate_names()#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
+        names_generator = name_generator.generate_names('aletia','tiangco')#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
         # print(names)
         # print(f"There {len(names)} names to rotate!")
         results = []
@@ -100,7 +107,7 @@ class Scraper11:
                         continue_to_next_name = False
                         
                         while True:
-                            futures = [executor.submit(scrape_single_with_increment, name.replace("'","").replace("/",""), num) for num in [next(num_generator) for _ in range(3)] ]
+                            futures = [executor.submit(scrape_single_with_increment, name.replace("'","").replace("/","").replace(")","").replace("(","").replace("[",""), num) for num in [next(num_generator) for _ in range(3)] ]
                             
                             for future in concurrent.futures.as_completed(futures):
                                 result = future.result()

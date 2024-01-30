@@ -1,4 +1,4 @@
-import requests
+import requests,time
 from bs4 import BeautifulSoup
 import concurrent.futures
 from fake_useragent import UserAgent
@@ -37,7 +37,16 @@ class Scraper7:
 
     
         
-        response = requests.get(f"https://{url}", headers=headers, allow_redirects=True)
+        try:
+            response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
+        except requests.exceptions.ConnectionError as e:
+            print(f'Connecting failed to {url}. Error: {e}\nReconnecting in 20 secs...')
+            time.sleep(20)
+            response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
+        except requests.exceptions.InvalidURL:
+            print("Invalid url")
+            return
+
         # print(response.text)
         
         
@@ -77,7 +86,7 @@ class Scraper7:
     
     def scrape_with_names(self,batch_size=10,num_threads=3):
         
-        names_generator = name_generator.generate_names()
+        names_generator = name_generator.generate_names('ajay','lazoltek')
         # print(f"There {len(names)} names to rotate!")
         results = []
         
@@ -103,7 +112,7 @@ class Scraper7:
                         continue_to_next_name = False
                         
                         while True:
-                            futures = [executor.submit(scrape_single_with_increment, name.replace("'","").replace("/",""), num) for num in [next(num_generator) for _ in range(3)] ]
+                            futures = [executor.submit(scrape_single_with_increment, name.replace("'","").replace("/","").replace(")","").replace("(","").replace("[",""), num) for num in [next(num_generator) for _ in range(3)] ]
                             
                             for future in concurrent.futures.as_completed(futures):
                                 result = future.result()

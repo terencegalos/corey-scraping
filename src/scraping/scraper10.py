@@ -1,4 +1,4 @@
-import requests
+import requests,time
 from bs4 import BeautifulSoup
 import concurrent.futures
 from fake_useragent import UserAgent
@@ -73,7 +73,7 @@ class Scraper10:
     
     def scrape_with_names(self,batch_size=10,num_threads=3):
         
-        names_generator = name_generator.generate_names()#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
+        names_generator = name_generator.generate_names('alesso','vanhese')#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
         # print(names)
         # print(f"There {len(names)} names to rotate!")
         results = []
@@ -100,7 +100,7 @@ class Scraper10:
                         continue_to_next_name = False
                         
                         while True:
-                            futures = [executor.submit(scrape_single_with_increment, name.replace("'","").replace("/",""), num) for num in [next(num_generator) for _ in range(3)] ]
+                            futures = [executor.submit(scrape_single_with_increment, name.replace("'","").replace("/","").replace(")","").replace("(","").replace("[",""), num) for num in [next(num_generator) for _ in range(3)] ]
                             
                             for future in concurrent.futures.as_completed(futures):
                                 result = future.result()

@@ -34,8 +34,8 @@ def main():
         
         # Scrape data in batches
         # for batch_results in scraper.scrape():
-        for batch_results in scraper.scrape_with_refcodes():
-        # for batch_results in scraper.scrape_with_names():
+        # for batch_results in scraper.scrape_with_refcodes():
+        for batch_results in scraper.scrape_with_names():
             # Store data in the db
             print(batch_results)
             print("Storing batch to database...")
