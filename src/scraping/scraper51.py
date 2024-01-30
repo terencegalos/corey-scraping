@@ -12,6 +12,7 @@ class Scraper51:
         self.baseurl = 'https://dnr.alaska.gov/ssd/recoff/ucc/search/Name'
         self.searchurl = 'https://dnr.alaska.gov/ssd/recoff/ucc/search/'
         self.table_name = "scraper51_info"
+        self.last_interrupt_txt = 'last_char_scraper51.txt'
         self.session = requests.Session()
         self.ua = UserAgent()
         self.extracted_cookies = 'mailer-sessions=s%3A-xmOYnkEUpr5_faMgi-HKzN7AhNZNnUc.fgKPMZ%2B3eKVo%2Br4%2FUUYO%2FyVxUHLjk5Z43CnLjxXq5PU; wc_visitor=78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+'
@@ -178,7 +179,7 @@ class Scraper51:
     
     
     
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='V',end_char = 'U',last_interrupted_page=351):
+    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',end_char = 'Z',starting_page=1):
         
         def get_page_links(soup):
             table = soup.find("table")
@@ -190,8 +191,8 @@ class Scraper51:
                 return page_results
             return []
         
-        def num_generator(last_interrupt_page):
-            num = last_interrupt_page
+        def num_generator(starting_page):
+            num = int(starting_page)
             while True:
                 yield num
                 num += 1
@@ -202,10 +203,11 @@ class Scraper51:
 
         
         # 1 letter search; Loop all uppercase
-        last_interrupt_char_index = 0
+        last_interrupt_char_index = 0 # set initial char index value to 0
         end_char_index = ascii_uppercase.index(end_char)
 
 
+        # Update starting char index if specified
         if last_interrupt_char:
             last_interrupt_char_index = ascii_uppercase.index(last_interrupt_char)
 
@@ -234,11 +236,11 @@ class Scraper51:
                 'user-agent': self.ua.random
             }
 
-            if last_interrupted_page > 1:
-                num_gen = num_generator(last_interrupted_page)
-                last_interrupted_page = 0 # reset
+            if int(starting_page) > 1:
+                num_gen = num_generator(starting_page)
+                starting_page = 0 # reset
             else:
-                num_gen = num_generator()
+                num_gen = num_generator(starting_page)
             
   
 
@@ -246,6 +248,7 @@ class Scraper51:
             while True:
                 num = next(num_gen)
                 print(f'Current page:{num}')
+
                 data = {
                     "saved_name": "value?+Model.namesList[Model.namesList.Count+-1]+:+null)",
                     "District": "500",
@@ -254,7 +257,13 @@ class Scraper51:
                     "sort_desc": "false",
                     "Next": ""
                 }
+
                 current_url = self.baseurl
+
+                # store current char to txt file
+                with open(self.last_interrupt_txt,'w') as f:
+                    f.write(str(char_index+"_"+str(num)))
+                
                 try:
                     response = requests.post(current_url,data=data,headers=headers)
                 except requests.exceptions.HTTPError:

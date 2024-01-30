@@ -17,6 +17,7 @@ class Scraper54:
         self.baseurl = 'https://cis.scc.virginia.gov/'
         self.searchurl = 'https://cis.scc.virginia.gov/UCCOnlineSearch/UCCSearch'
         self.table_name = "scraper54_info"
+        self.last_interrupt_txt = 'last_char_scraper54.txt'
         self.session = requests.Session()
         self.ua = UserAgent()
         self.extracted_cookies = 'mailer-sessions=s%3A-xmOYnkEUpr5_faMgi-HKzN7AhNZNnUc.fgKPMZ%2B3eKVo%2Br4%2FUUYO%2FyVxUHLjk5Z43CnLjxXq5PU; wc_visitor=78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+'
@@ -122,7 +123,7 @@ class Scraper54:
     
     
     
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='Y',end_char = 'Z',last_interrupted_page=1):
+    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',end_char = 'Z',last_interrupted_page=1,starting_page=1):
         
         def get_page_links(soup):
             table = soup.find("table")
@@ -233,9 +234,14 @@ class Scraper54:
                 
                 current_url = self.searchurl
                 print("Sending post requests.")
+<<<<<<< HEAD
                 # response = requests.post(current_url,data=json.dumps(data),headers=headers,proxies={'https':'47.243.92.199:3128'},verify=False)
                 # response = requests.post(current_url,data=json.dumps(data),headers=headers,proxies={'https':'32.223.6.94:80'},verify=False)
                 response = requests.post(current_url,data=json.dumps(data),headers=headers,verify=False)
+=======
+                response = requests.post(current_url,data=json.dumps(data),headers=headers,proxies={'https':'47.243.92.199:3128'},verify=False)
+                # response = requests.post(current_url,data=json.dumps(data),headers=headers,proxies={'https':'32.223.6.94:80'},verify=False)
+>>>>>>> 479b4ffb96f82a9b69956901cc0fd6593ed7d2bf
                 
                 # print(f'Scraping entries in url: {current_url}')
                 # print(response.text)

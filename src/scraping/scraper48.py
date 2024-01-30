@@ -46,7 +46,6 @@ class Scraper48:
                     result_list.append(result_entry)
                 elif label == 'Secured Party Name':
                     current_secured_party = {'secured_party_name': value}
-                    current_secured_party['secured_party_address'] = ''
                 elif label == 'Secured Party Address':
                     current_secured_party['secured_party_address'] = value
                     
@@ -55,7 +54,7 @@ class Scraper48:
                         entry.update(current_secured_party)
         except KeyError as e:
             print(f'KeyError: {e}')
-            return
+            return KeyError
 
 
 

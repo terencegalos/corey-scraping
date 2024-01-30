@@ -4,7 +4,7 @@ import concurrent.futures
 # from scraping import code_generator
 from fake_useragent import UserAgent
 from string import ascii_uppercase
-# from config.proxies_1 import proxy_list
+from config.proxies import proxy_dict
 
 class Scraper52:
     def __init__(self):
@@ -12,7 +12,8 @@ class Scraper52:
         self.baseurl = 'https://apps.ilsos.gov/uccsearch/'
         self.searchurl = 'https://apps.ilsos.gov/uccsearch/'
         self.table_name = "scraper52_info"
-        self.session = requests.Session()
+        self.last_interrupt_txt = 'last_char_scraper52.txt'
+        # self.session = requests.Session()
         self.ua = UserAgent()
         self.extracted_cookies = 'mailer-sessions=s%3A-xmOYnkEUpr5_faMgi-HKzN7AhNZNnUc.fgKPMZ%2B3eKVo%2Br4%2FUUYO%2FyVxUHLjk5Z43CnLjxXq5PU; wc_visitor=78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+'
         print(f"Scraping: {self.baseurl}")
@@ -42,7 +43,7 @@ class Scraper52:
 
 
         print(f'Extracting doc links from URL: {url}')
-        response = requests.get(url,headers=headers,allow_redirects=True)
+        response = requests.get(url,headers=headers,proxies=proxy_dict,allow_redirects=True)
         # for proxy in proxy_list:
         #     try:
         #         response = requests.get(url,proxies=proxy,allow_redirects=True)
@@ -99,11 +100,11 @@ class Scraper52:
         for link in info_links:
             print(f"Extracting info. URL: {self.searchurl+link}")
             try:
-                response = requests.get(self.searchurl+link,headers=header)
+                response = requests.get(self.searchurl+link,headers=headers,proxies=proxy_dict)
             except requests.exceptions.ConnectionError:
                 print(f'Connecting failed to url {self.searchurl+link}. Retrying in 20 secs')
                 time.sleep(20)
-                response = requests.get(self.searchurl+link,headers=header)
+                response = requests.get(self.searchurl+link,headers=headers,proxies=proxy_dict)
                 
             soup = BeautifulSoup(response.text, 'html.parser')
 
@@ -173,7 +174,7 @@ class Scraper52:
     
     
     
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',end_char = 'Z',last_interrupted_page=1):
+    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',end_char = 'Z',last_interrupted_page=1,starting_page=1):
         
         def get_page_links(soup):
             table = soup.find("table")
@@ -250,7 +251,7 @@ class Scraper52:
                 }
                 current_url = self.baseurl
                 # response = requests.post(current_url,data=data,headers=headers)
-                response = requests.get('https://apps.ilsos.gov/uccsearch/',headers=headers)
+                response = requests.get('https://apps.ilsos.gov/uccsearch/',headers=headers,proxies=proxy_dict)
                 print(f'Scraping entries in url: {current_url}')
                 print(f'Status code: {response.status_code}')
                 print(response.text)
