@@ -37,11 +37,14 @@ class Scraper16:
     
         
         try:
-            response = requests.get(f"https://{url}", headers=headers, allow_redirects=True)
+            response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
         except requests.exceptions.ConnectionError as e:
             print(f'Connecting failed to {url}. Error: {e}\nReconnecting in 20 secs...')
             time.sleep(20)
-            response = requests.get(f"https://{url}", headers=headers, allow_redirects=True)
+            response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
+        except requests.exceptions.InvalidURL:
+            print("Invalid url")
+            return
 
         # print(response.text)
         
@@ -78,9 +81,9 @@ class Scraper16:
         }
         
     
-    def scrape_with_names(self,batch_size=100,num_threads=3):
+    def scrape_with_names(self,batch_size=10,num_threads=3):
         
-        names_generator = name_generator.generate_names()#'/root/scraping/corey-scraping/src/scraping/CommonFirstandLast.xlsx','John','MUNGUIA')
+        names_generator = name_generator.generate_names('alena','zaibel')#'/root/scraping/corey-scraping/src/scraping/CommonFirstandLast.xlsx','John','MUNGUIA')
         # names_foreign = name_generator.generate_names('/root/scraping/corey-scraping/src/scraping/ForeignFirstandLast.ods')
         # print(names)
         # print(f"There {len(names)} names to rotate!")

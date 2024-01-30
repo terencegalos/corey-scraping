@@ -62,7 +62,7 @@ class Scraper54:
         # return in no results found
         soup_table = soup.find_all('table')
         if len(soup_table) < 1:
-            return
+            return []
 
         
         results = [] # store results here
@@ -126,9 +126,9 @@ class Scraper54:
         
         def get_page_links(soup):
             table = soup.find("table")
-            if  not table:
+            if not table:
                 print("Table not found. Skipping")
-                return
+                return []
             tr_elements = table.find_all('tr')
             
             print(f'tr length: {len(tr_elements)}')
@@ -174,7 +174,7 @@ class Scraper54:
                 'Sec-Fetch-Mode': 'no-cors',
                 'Sec-Fetch-Site': 'same-origin',
                 'Sec-GPC': '1',
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
+                'User-Agent': self.ua.random,#'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
                 'X-Requested-With': 'XMLHttpRequest',
             }
 
@@ -236,18 +236,8 @@ class Scraper54:
                 
                 current_url = self.searchurl
                 print("Sending post requests.")
-<<<<<<< HEAD
-<<<<<<< HEAD
-                # response = requests.post(current_url,data=json.dumps(data),headers=headers,proxies={'https':'47.243.92.199:3128'},verify=False)
-                # response = requests.post(current_url,data=json.dumps(data),headers=headers,proxies={'https':'32.223.6.94:80'},verify=False)
-                response = requests.post(current_url,data=json.dumps(data),headers=headers,verify=False)
-=======
-                response = requests.post(current_url,data=json.dumps(data),headers=headers,proxies={'https':'47.243.92.199:3128'},verify=False)
-=======
                 response = requests.post(current_url,data=json.dumps(data),headers=headers,verify=False)#proxies={'https':'47.243.92.199:3128'},verify=False)
->>>>>>> ad916e975305d75cf3f183e814056c6471e636cf
                 # response = requests.post(current_url,data=json.dumps(data),headers=headers,proxies={'https':'32.223.6.94:80'},verify=False)
->>>>>>> 479b4ffb96f82a9b69956901cc0fd6593ed7d2bf
                 
                 # print(f'Scraping entries in url: {current_url}')
                 # print(response.text)
@@ -259,6 +249,7 @@ class Scraper54:
                 # Get page results
                 # Parse the HTML content with BeautifulSoup
                 soup = BeautifulSoup(response.content,'html.parser')
+                print(soup.contents)
                 
 
                 # Get first page results and store
@@ -278,5 +269,9 @@ class Scraper54:
                 # scrape info using multithread
                 with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
                     for i in range(0,len(page_links),batch_size):
-                        batch_results = [item for results in executor.map(self.scrape_single,page_links[i:i+batch_size]) for item in results if item is not None]
-                        yield batch_results
+                        results = executor.map(self.scrape_single,page_links[i:i+batch_size])
+                        if results is not None:
+                            batch_results = [item for results in results for item in results if item is not None]
+                            yield batch_results
+                        else:
+                            print("results is None")
