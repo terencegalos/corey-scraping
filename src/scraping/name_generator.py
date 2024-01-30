@@ -10,8 +10,8 @@ def generate_names(file_path='~/projects/corey-scraping/src/scraping/CommonFirst
             return []
         
         # Extract names from dataframes
-        first_names = df_first_names[0].tolist()
-        last_names = df_last_names[0].tolist()
+        first_names = [fname.lower() for fname in df_first_names[0].tolist()]
+        last_names = [lname.lower() for lname in df_last_names[0].tolist()]
         
         start_index = 0
         start_index_last = 0

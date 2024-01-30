@@ -17165,3 +17165,15 @@ Traceback (most recent call last):
                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'Scraper32' object has no attribute 'scrape_with_refcodes'. Did you mean: 'scrape_with_names'?
 >>>>>>> ad916e975305d75cf3f183e814056c6471e636cf
+2024-01-30 13:20:34,718 [ERROR]: An error occurred: 'Scraper5' object has no attribute 'scrape_with_refcodes'
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper5' object has no attribute 'scrape_with_refcodes'. Did you mean: 'scrape_with_names'?
+2024-01-30 13:24:44,313 [ERROR]: An error occurred: Scraper5.scrape_with_names() takes from 1 to 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "/root/projects/corey/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names('~/projects/corey/src/scraping/CommonFirstandLast.xlsx','jon','jones'):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scraper5.scrape_with_names() takes from 1 to 3 positional arguments but 4 were given

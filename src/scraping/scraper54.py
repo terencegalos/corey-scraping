@@ -49,12 +49,7 @@ class Scraper54:
 
 
         print(f'Extracting info from url: {url}')
-<<<<<<< HEAD
-        # response = requests.get(url,headers=headers,proxies={'https':'47.243.92.199:3128'},allow_redirects=True,verify=False)
-        response = requests.get(url,headers=headers,allow_redirects=True,verify=False)
-=======
         response = requests.get(url,headers=headers,allow_redirects=True,verify=False)#proxies={'https':'47.243.92.199:3128'},allow_redirects=True,verify=False)
->>>>>>> ad916e975305d75cf3f183e814056c6471e636cf
         print(f'Status code: {response.status_code}')
         # print(f'Content: {response.text}')
 
