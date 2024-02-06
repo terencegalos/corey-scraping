@@ -17177,3 +17177,640 @@ Traceback (most recent call last):
     for batch_results in scraper.scrape_with_names('~/projects/corey/src/scraping/CommonFirstandLast.xlsx','jon','jones'):
                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: Scraper5.scrape_with_names() takes from 1 to 3 positional arguments but 4 were given
+2024-01-31 23:03:41,601 [ERROR]: An error occurred: 'Scraper42' object has no attribute 'scrape_with_refcodes'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 37, in main
+    for batch_results in scraper.scrape_with_refcodes():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper42' object has no attribute 'scrape_with_refcodes'. Did you mean: 'scrape_with_names'?
+2024-02-06 19:51:35,566 [ERROR]: An error occurred: [Errno 2] No such file or directory: '~Desktop/corey/TV Links.xlsx'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 206, in scrape
+    urls = get_page_links()
+           ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 171, in get_page_links
+    data = pd.read_excel(path)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 504, in read_excel
+    io = ExcelFile(
+         ^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 1563, in __init__
+    ext = inspect_excel_format(
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 1419, in inspect_excel_format
+    with get_handle(
+         ^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/common.py", line 872, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '~Desktop/corey/TV Links.xlsx'
+2024-02-06 19:52:13,008 [ERROR]: An error occurred: [Errno 2] No such file or directory: '/home/terence/Desktop/corey/TV Links.xlsx'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 206, in scrape
+    urls = get_page_links()
+           ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 171, in get_page_links
+    data = pd.read_excel(path)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 504, in read_excel
+    io = ExcelFile(
+         ^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 1563, in __init__
+    ext = inspect_excel_format(
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 1419, in inspect_excel_format
+    with get_handle(
+         ^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/common.py", line 872, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/terence/Desktop/corey/TV Links.xlsx'
+2024-02-06 19:53:38,671 [ERROR]: An error occurred: [Errno 2] No such file or directory: '~/Desktop/corey/'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 209, in scrape
+    urls = get_page_links()
+           ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 172, in get_page_links
+    os.listdir("~/Desktop/corey/")
+FileNotFoundError: [Errno 2] No such file or directory: '~/Desktop/corey/'
+2024-02-06 19:55:51,878 [ERROR]: An error occurred: [Errno 2] No such file or directory: '/home/Terence/Desktop/corey'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 209, in scrape
+    urls = get_page_links()
+           ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 172, in get_page_links
+    os.listdir("/home/Terence/Desktop/corey")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/Terence/Desktop/corey'
+2024-02-06 19:57:22,314 [ERROR]: An error occurred: [Errno 2] No such file or directory: '/home/Terence/Desktop/corey/TV Links.xlsx'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 209, in scrape
+    urls = get_page_links()
+           ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 174, in get_page_links
+    data = pd.read_excel(path)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 504, in read_excel
+    io = ExcelFile(
+         ^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 1563, in __init__
+    ext = inspect_excel_format(
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 1419, in inspect_excel_format
+    with get_handle(
+         ^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/common.py", line 872, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/Terence/Desktop/corey/TV Links.xlsx'
+2024-02-06 19:57:49,038 [ERROR]: An error occurred: [Errno 2] No such file or directory: '/home/Terence/Desktop/corey/TV Links.xlsx'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 209, in scrape
+    urls = get_page_links()
+           ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 174, in get_page_links
+    data = pd.read_excel(path)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 504, in read_excel
+    io = ExcelFile(
+         ^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 1563, in __init__
+    ext = inspect_excel_format(
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 1419, in inspect_excel_format
+    with get_handle(
+         ^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/common.py", line 872, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/Terence/Desktop/corey/TV Links.xlsx'
+2024-02-06 19:58:27,182 [ERROR]: An error occurred: [Errno 2] No such file or directory: '/home/terence/Desktop/corey/TV Links.xlsx'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 209, in scrape
+    urls = get_page_links()
+           ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 174, in get_page_links
+    data = pd.read_excel(path)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 504, in read_excel
+    io = ExcelFile(
+         ^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 1563, in __init__
+    ext = inspect_excel_format(
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 1419, in inspect_excel_format
+    with get_handle(
+         ^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/io/common.py", line 872, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/terence/Desktop/corey/TV Links.xlsx'
+2024-02-06 20:00:08,371 [ERROR]: An error occurred: 'Column1'
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3790, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Column1'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 209, in scrape
+    urls = get_page_links()
+           ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 176, in get_page_links
+    return [row['Column1'] for index,row in data.iterrows()]
+            ~~~^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/core/series.py", line 1040, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/core/series.py", line 1156, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3797, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Column1'
+2024-02-06 20:03:14,810 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2024-02-06 22:03:53,636 [ERROR]: An error occurred: 403 Client Error: Forbidden for url: https://www.ispot.tv/brands/BoN/tax-relief-refund
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 163, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 67, in scrape_single
+    response.raise_for_status()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://www.ispot.tv/brands/BoN/tax-relief-refund
+2024-02-06 22:05:59,646 [WARNING]: Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2024-02-06 22:05:59,648 [ERROR]: An error occurred: 'NoneType' object has no attribute 'a'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 163, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 78, in scrape_single
+    brand = parag.a.text
+            ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'a'
+2024-02-06 22:06:28,891 [WARNING]: Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2024-02-06 22:06:28,894 [ERROR]: An error occurred: 'NoneType' object has no attribute 'a'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 163, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 78, in scrape_single
+    brand = parag.a.text
+            ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'a'
+2024-02-06 22:07:07,394 [WARNING]: Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2024-02-06 22:07:07,410 [ERROR]: An error occurred: 'NoneType' object has no attribute 'a'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 163, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 78, in scrape_single
+    brand = parag.a.text
+            ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'a'
+2024-02-06 22:10:55,226 [ERROR]: An error occurred: 'NoneType' object has no attribute 'a'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 163, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 78, in scrape_single
+    brand = parag.a.text
+            ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'a'
+2024-02-06 22:12:11,470 [ERROR]: An error occurred: 'bytes' object has no attribute 'decor'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 163, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 62, in scrape_single
+    print(f'Content: {response.content.decor('utf-8','replace')}')
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'bytes' object has no attribute 'decor'. Did you mean: 'decode'?
+2024-02-06 22:12:25,269 [ERROR]: An error occurred: 'NoneType' object has no attribute 'a'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 163, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 78, in scrape_single
+    brand = parag.a.text
+            ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'a'
+2024-02-06 22:14:29,917 [ERROR]: An error occurred: 'NoneType' object has no attribute 'a'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 163, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 78, in scrape_single
+    brand = parag.a.text
+            ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'a'
+2024-02-06 22:15:15,651 [ERROR]: An error occurred: 'NoneType' object has no attribute 'a'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 164, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 79, in scrape_single
+    brand = parag.a.text
+            ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'a'
+2024-02-06 22:22:12,245 [ERROR]: An error occurred: 'NoneType' object has no attribute 'a'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 165, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 80, in scrape_single
+    brand = parag.a.text
+            ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'a'
+2024-02-06 22:22:32,582 [ERROR]: An error occurred: 'NoneType' object has no attribute 'a'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 165, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 80, in scrape_single
+    brand = parag.a.text
+            ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'a'
+2024-02-06 22:23:36,045 [ERROR]: An error occurred: 'NoneType' object has no attribute 'a'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 165, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 80, in scrape_single
+    brand = parag.a.text
+            ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'a'
+2024-02-06 22:25:36,919 [ERROR]: An error occurred: 'utf-8' codec can't decode byte 0x86 in position 2: invalid start byte
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 165, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 61, in scrape_single
+    print(f'Content: {response.content.decode('utf-8')}')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x86 in position 2: invalid start byte
+2024-02-06 22:30:47,721 [ERROR]: An error occurred: BrotliDecompress failed
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 168, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 63, in scrape_single
+    decompressed_content = brotli.decompress(content)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+brotli.error: BrotliDecompress failed
+2024-02-06 22:32:56,432 [ERROR]: An error occurred: BrotliDecompress failed
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 168, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 63, in scrape_single
+    decompressed_content = brotli.decompress(content)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+brotli.error: BrotliDecompress failed
+2024-02-06 22:39:15,199 [ERROR]: An error occurred: BrotliDecompress failed
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 171, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 66, in scrape_single
+    decompressed_content = brotli.decompress(content)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+brotli.error: BrotliDecompress failed
+2024-02-06 22:40:02,205 [ERROR]: An error occurred: 'NoneType' object has no attribute 'a'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 172, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 87, in scrape_single
+    brand = parag.a.text
+            ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'a'
+2024-02-06 22:43:14,184 [ERROR]: An error occurred: 'NoneType' object has no attribute 'a'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 172, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 87, in scrape_single
+    brand = parag.a.text
+            ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'a'
+2024-02-06 22:44:50,153 [ERROR]: An error occurred: 'NoneType' object has no attribute 'a'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 173, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 88, in scrape_single
+    brand = parag.a.text
+            ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'a'
+2024-02-06 22:45:58,234 [ERROR]: An error occurred: 'NoneType' object has no attribute 'a'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 173, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 88, in scrape_single
+    brand = parag.a.text
+            ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'a'
+2024-02-06 22:46:21,118 [ERROR]: An error occurred: 'NoneType' object has no attribute 'a'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 173, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 88, in scrape_single
+    brand = parag.a.text
+            ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'a'
+2024-02-06 22:48:50,308 [ERROR]: An error occurred: 'NoneType' object has no attribute 'a'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 173, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 88, in scrape_single
+    brand = parag.a.text
+            ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'a'
+2024-02-06 22:52:22,566 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2024-02-06 22:54:58,403 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2024-02-06 23:00:51,428 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2024-02-06 23:06:04,829 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2024-02-06 23:12:23,529 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2024-02-06 23:13:44,783 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2024-02-06 23:13:59,535 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2024-02-06 23:17:57,874 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2024-02-06 23:19:13,289 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2024-02-06 23:31:14,638 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2024-02-06 23:41:57,747 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2024-02-06 23:42:36,669 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2024-02-06 23:43:00,437 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2024-02-06 23:47:33,488 [ERROR]: An error occurred: expected string or bytes-like object, got 're.Match'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+                         ^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 194, in scrape
+    result = self.scrape_single(urls[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 121, in scrape_single
+    social_media_links = re.findall(r'<a href="(http[^"]+)"', social_media_info)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/re/__init__.py", line 217, in findall
+    return _compile(pattern, flags).findall(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 're.Match'
+2024-02-06 23:51:08,294 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2024-02-06 23:51:39,808 [ERROR]: An error occurred: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+TypeError: 'NoneType' object is not iterable
+2024-02-06 23:58:20,612 [ERROR]: An error occurred: 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 36, in main
+    for batch_results in scraper.scrape():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 194, in scrape
+    batch_results = [item for results in executor.map(self.scrape_single,urls[i:i+batch_size]) for item in results]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper90.py", line 121, in scrape_single
+    social_media_links = re.findall(r'<a href="(http[^"]+)"', social_media_info.group(1))
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'group'
+2024-02-07 00:00:36,356 [ERROR]: An error occurred: 'first_name'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main.py", line 42, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler.py", line 45, in store_data
+    ''', (data['first_name'], data['last_name'], data['address'], data['city'], data['state'], data['zip_code']))
+          ~~~~^^^^^^^^^^^^^^
+KeyError: 'first_name'
+2024-02-07 00:01:29,076 [ERROR]: An error occurred: Python type list cannot be converted
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ispot.py", line 41, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ispot.py", line 38, in store_data
+    self.cursor.execute(f'''
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 317, in execute
+    prepared = self._cnx.prepare_for_mysql(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 808, in prepare_for_mysql
+    result = self._cmysql.convert_to_mysql(*params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_mysql_connector.MySQLInterfaceError: Python type list cannot be converted
+2024-02-07 00:03:31,458 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ispot.py", line 41, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ispot.py", line 41, in store_data
+    ''', (data['brand'],data['industry'], data['phone'], data['competition'], data['airing_number'], data['air_ranking'], data['spend_ranking'], data['social_media']))
+          ~~~~^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-07 00:06:53,924 [ERROR]: An error occurred: Python type list cannot be converted
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ispot.py", line 41, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ispot.py", line 38, in store_data
+    self.cursor.execute(f'''
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 317, in execute
+    prepared = self._cnx.prepare_for_mysql(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 808, in prepare_for_mysql
+    result = self._cmysql.convert_to_mysql(*params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_mysql_connector.MySQLInterfaceError: Python type list cannot be converted
+2024-02-07 00:09:16,902 [ERROR]: An error occurred: Python type list cannot be converted
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ispot.py", line 41, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ispot.py", line 39, in store_data
+    self.cursor.execute(f'''
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 317, in execute
+    prepared = self._cnx.prepare_for_mysql(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 808, in prepare_for_mysql
+    result = self._cmysql.convert_to_mysql(*params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_mysql_connector.MySQLInterfaceError: Python type list cannot be converted
+2024-02-07 00:12:07,825 [ERROR]: An error occurred: Python type list cannot be converted
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ispot.py", line 41, in main
+    db_handler.store_data(scraper.table_name,batch_results)
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ispot.py", line 39, in store_data
+    self.cursor.execute(f'''
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 317, in execute
+    prepared = self._cnx.prepare_for_mysql(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 808, in prepare_for_mysql
+    result = self._cmysql.convert_to_mysql(*params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_mysql_connector.MySQLInterfaceError: Python type list cannot be converted
+2024-02-07 00:34:22,216 [INFO]: Scraping and storing data completed successfully.
