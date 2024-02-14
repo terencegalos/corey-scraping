@@ -63,22 +63,12 @@ def main():
         db_handler.close_connection()
 
 
-<<<<<<< HEAD
-# schedule.every().day.at("20:11").do(main)
-=======
 
 main()
 
 # schedule.every().day.at("23:22").do(main)
->>>>>>> 479b4ffb96f82a9b69956901cc0fd6593ed7d2bf
 
 
 # while True:
 #     schedule.run_pending()
-<<<<<<< HEAD
 #     time.sleep(1)
-
-main()
-=======
-#     time.sleep(1)
->>>>>>> 479b4ffb96f82a9b69956901cc0fd6593ed7d2bf

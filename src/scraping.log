@@ -17814,3 +17814,1593 @@ Traceback (most recent call last):
              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 _mysql_connector.MySQLInterfaceError: Python type list cannot be converted
 2024-02-07 00:34:22,216 [INFO]: Scraping and storing data completed successfully.
+2024-02-08 22:19:33,436 [INFO]: Starting Chromium download.
+2024-02-08 22:20:18,949 [INFO]: Beginning extraction
+2024-02-08 22:20:28,801 [INFO]: Chromium extracted to: /home/terence/.local/share/pyppeteer/local-chromium/588429
+2024-02-08 22:20:29,141 [INFO]: Browser listening on: ws://127.0.0.1:43097/devtools/browser/4c398451-1163-4695-8608-7ef3385274a8
+2024-02-08 22:20:32,816 [ERROR]: An error occurred: cannot access local variable 'response' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 333, in scrape_with_refcodes
+    print(f'status_code: {response_.status_code}')
+                          ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-02-08 22:20:32,820 [INFO]: terminate chrome process...
+2024-02-08 22:21:11,030 [INFO]: Browser listening on: ws://127.0.0.1:39847/devtools/browser/fa09874b-cacc-4e5c-bd4a-7f5bcc98f918
+2024-02-08 22:21:22,805 [INFO]: terminate chrome process...
+2024-02-08 22:21:22,811 [INFO]: connection closed
+2024-02-08 22:28:11,216 [INFO]: Browser listening on: ws://127.0.0.1:44677/devtools/browser/1c83ecc3-c811-4048-9916-4262e107686d
+2024-02-08 22:31:13,534 [INFO]: terminate chrome process...
+2024-02-08 22:31:13,579 [INFO]: connection closed
+2024-02-08 22:31:13,892 [ERROR]: An error occurred: cannot access local variable 'response' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 364, in scrape_with_refcodes
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-02-08 22:39:29,640 [INFO]: Browser listening on: ws://127.0.0.1:56983/devtools/browser/90f1c35a-6dd8-4412-89e2-2296d6a532fa
+2024-02-08 22:49:24,149 [ERROR]: An error occurred: 'Response' object has no attribute 'html'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 308, in scrape_with_refcodes
+    response_.html.render()
+    ^^^^^^^^^^^^^^
+AttributeError: 'Response' object has no attribute 'html'
+2024-02-08 22:50:05,741 [INFO]: Browser listening on: ws://127.0.0.1:39825/devtools/browser/97fbc726-16fc-426f-a0f9-343092331782
+2024-02-08 22:53:22,527 [INFO]: Browser listening on: ws://127.0.0.1:33309/devtools/browser/ee84cd42-4c7a-4f02-a94a-f72e6610921b
+2024-02-08 22:54:11,533 [INFO]: Browser listening on: ws://127.0.0.1:52871/devtools/browser/a2b9eeab-f65d-4863-8e02-bfd78a784d76
+2024-02-08 22:59:54,933 [ERROR]: An error occurred: cannot access local variable 'response' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 314, in scrape_with_refcodes
+    print(response.text)
+          ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-02-08 23:02:45,481 [INFO]: Browser listening on: ws://127.0.0.1:57871/devtools/browser/e9120d45-ef13-427b-bf18-fe755eb34c64
+2024-02-08 23:03:01,561 [INFO]: terminate chrome process...
+2024-02-08 23:03:01,566 [INFO]: connection closed
+2024-02-08 23:03:22,070 [INFO]: Browser listening on: ws://127.0.0.1:43697/devtools/browser/30a98b01-076d-455a-b973-d0cd52cdf958
+2024-02-08 23:08:17,603 [ERROR]: An error occurred: cannot access local variable 'response' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 316, in scrape_with_refcodes
+    print(f"response history:{response.history}")
+                              ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-02-08 23:11:50,370 [ERROR]: An error occurred: cannot access local variable 'response' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 340, in scrape_with_refcodes
+    self.renew_cookies(response)
+                       ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-02-08 23:39:04,201 [ERROR]: An error occurred: 'NoneType' object has no attribute 'content'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 314, in scrape_with_refcodes
+    soup = BeautifulSoup(response_.content,'html.parser')
+                         ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'content'
+2024-02-09 00:08:58,944 [INFO]: Browser listening on: ws://127.0.0.1:45741/devtools/browser/15c3fe2e-3fab-45a8-8447-f07ea471fb18
+2024-02-09 00:09:07,825 [INFO]: terminate chrome process...
+2024-02-09 00:09:07,834 [INFO]: connection closed
+2024-02-09 00:17:52,191 [INFO]: Browser listening on: ws://127.0.0.1:59421/devtools/browser/c2dc6030-b9fa-4597-a980-3e14e56877d1
+2024-02-09 00:19:15,768 [INFO]: Browser listening on: ws://127.0.0.1:40335/devtools/browser/36a1db0d-e4b1-4637-b4a2-caefcc470e44
+2024-02-09 00:19:33,948 [INFO]: terminate chrome process...
+2024-02-09 00:19:33,952 [INFO]: connection closed
+2024-02-09 00:42:39,695 [INFO]: Browser listening on: ws://127.0.0.1:43865/devtools/browser/15f7abf5-bd0b-4352-a698-7f8acd434b80
+2024-02-09 00:58:19,513 [INFO]: Browser listening on: ws://127.0.0.1:58393/devtools/browser/0b57ac92-5cf2-4c08-97c6-2117715f767c
+2024-02-09 00:59:44,610 [INFO]: Browser listening on: ws://127.0.0.1:37899/devtools/browser/7242b720-d37a-4088-ba7d-e1aa5b292d5b
+2024-02-09 01:00:03,824 [INFO]: terminate chrome process...
+2024-02-09 01:00:03,829 [INFO]: connection closed
+2024-02-09 01:00:12,131 [INFO]: Browser listening on: ws://127.0.0.1:56667/devtools/browser/74816372-4a38-409d-a10e-49fe36cb3706
+2024-02-09 01:00:47,825 [INFO]: Browser listening on: ws://127.0.0.1:43439/devtools/browser/2b8b53db-1033-4728-90aa-603c68dec256
+2024-02-09 01:01:02,352 [INFO]: terminate chrome process...
+2024-02-09 01:01:02,362 [INFO]: connection closed
+2024-02-09 01:01:46,960 [INFO]: Browser listening on: ws://127.0.0.1:43661/devtools/browser/98b9326b-7255-4aed-bcfe-ff33551b7101
+2024-02-09 01:05:11,640 [ERROR]: An error occurred: cannot access local variable 'response' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 369, in scrape_with_refcodes
+    self.renew_cookies(response)
+                       ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-02-09 01:05:11,644 [INFO]: terminate chrome process...
+2024-02-09 01:07:48,883 [INFO]: Browser listening on: ws://127.0.0.1:34013/devtools/browser/6c35aac3-47fa-4e61-8752-3d8a8628efec
+2024-02-09 01:08:59,465 [INFO]: Browser listening on: ws://127.0.0.1:60239/devtools/browser/20193cd3-4b1b-4afb-96f4-89c3c4c348bb
+2024-02-09 01:13:27,531 [INFO]: Browser listening on: ws://127.0.0.1:47517/devtools/browser/17cfb284-ef32-4261-ba58-9c9e8f227ecf
+2024-02-09 01:13:56,419 [INFO]: Browser listening on: ws://127.0.0.1:47681/devtools/browser/c32dc38c-707f-4968-8514-55b239d74aba
+2024-02-09 01:14:23,190 [INFO]: Browser listening on: ws://127.0.0.1:38251/devtools/browser/c5cd7586-2788-4486-8263-20b847279b50
+2024-02-09 01:50:28,127 [INFO]: Browser listening on: ws://127.0.0.1:43043/devtools/browser/80191a04-440f-4c3b-bf18-75cdc7358949
+2024-02-09 01:54:01,720 [INFO]: Browser listening on: ws://127.0.0.1:56937/devtools/browser/e3bc93f8-713f-4d8c-8a1d-609c54177127
+2024-02-09 01:54:09,049 [INFO]: terminate chrome process...
+2024-02-09 01:54:09,053 [INFO]: connection closed
+2024-02-09 01:56:05,922 [INFO]: Browser listening on: ws://127.0.0.1:34337/devtools/browser/3734b7b7-4265-426a-9a05-2f4e47c2c0f7
+2024-02-09 01:56:34,923 [INFO]: Browser listening on: ws://127.0.0.1:59683/devtools/browser/7a6c9d1e-28a8-4b68-9d69-765a44c449a7
+2024-02-09 01:57:08,572 [INFO]: Browser listening on: ws://127.0.0.1:53079/devtools/browser/e84ab3aa-e346-4019-9805-924ccc5ca5a4
+2024-02-09 01:59:18,910 [INFO]: Browser listening on: ws://127.0.0.1:38495/devtools/browser/95c79e05-ad0e-46df-ad38-83f3d01b57d6
+2024-02-09 02:11:39,046 [INFO]: Browser listening on: ws://127.0.0.1:41111/devtools/browser/ad0b4bea-145e-434e-a955-96595bb9af2f
+2024-02-09 02:12:39,218 [INFO]: Browser listening on: ws://127.0.0.1:40061/devtools/browser/c3f6af70-4aff-44ce-ac2d-2a6dbb8852bd
+2024-02-09 02:13:03,345 [INFO]: Browser listening on: ws://127.0.0.1:51987/devtools/browser/2510a8a3-90d5-4c11-ab22-3a5baf6bb3bb
+2024-02-09 02:15:59,183 [INFO]: Browser listening on: ws://127.0.0.1:51017/devtools/browser/8c21e13c-1fa0-4441-ba2d-7e48825333b1
+2024-02-09 02:19:22,126 [ERROR]: An error occurred: cannot access local variable 'response' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 349, in scrape_with_refcodes
+    self.renew_cookies(response)
+                       ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-02-09 02:19:22,129 [INFO]: terminate chrome process...
+2024-02-09 03:20:49,504 [INFO]: terminate chrome process...
+2024-02-09 03:20:49,485 [INFO]: terminate chrome process...
+2024-02-09 03:20:50,471 [INFO]: connection closed
+2024-02-09 03:20:49,676 [INFO]: terminate chrome process...
+2024-02-09 03:20:50,232 [INFO]: terminate chrome process...
+2024-02-09 03:20:50,519 [INFO]: terminate chrome process...
+2024-02-09 03:20:50,665 [INFO]: terminate chrome process...
+2024-02-09 03:20:49,814 [INFO]: terminate chrome process...
+2024-02-09 03:20:50,563 [INFO]: terminate chrome process...
+2024-02-09 03:20:50,831 [INFO]: terminate chrome process...
+2024-02-09 03:20:51,275 [INFO]: terminate chrome process...
+2024-02-09 03:20:51,533 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:51,067 [INFO]: terminate chrome process...
+2024-02-09 03:20:50,745 [INFO]: terminate chrome process...
+2024-02-09 03:20:50,838 [INFO]: terminate chrome process...
+2024-02-09 03:20:51,694 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:51,512 [INFO]: terminate chrome process...
+2024-02-09 03:20:51,079 [INFO]: terminate chrome process...
+2024-02-09 03:20:50,841 [INFO]: terminate chrome process...
+2024-02-09 03:20:51,279 [INFO]: terminate chrome process...
+2024-02-09 03:20:51,295 [INFO]: terminate chrome process...
+2024-02-09 03:20:51,993 [INFO]: connection closed
+2024-02-09 03:20:52,038 [INFO]: connection closed
+2024-02-09 03:20:50,757 [INFO]: terminate chrome process...
+2024-02-09 03:20:51,978 [INFO]: terminate chrome process...
+2024-02-09 03:20:52,235 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:50,940 [INFO]: terminate chrome process...
+2024-02-09 03:20:52,273 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:52,442 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:50,989 [INFO]: terminate chrome process...
+2024-02-09 03:20:51,697 [INFO]: terminate chrome process...
+2024-02-09 03:20:53,032 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:53,054 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:53,008 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:53,155 [INFO]: connection closed
+2024-02-09 03:20:53,179 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:53,216 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:52,310 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-42' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:51,908 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-43' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:53,609 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:52,049 [INFO]: terminate chrome process...
+2024-02-09 03:20:53,788 [INFO]: connection closed
+2024-02-09 03:20:53,937 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:53,916 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:54,090 [INFO]: connection closed
+2024-02-09 03:20:51,601 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-42' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:52,705 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-42' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:54,306 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:54,395 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:53,433 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-39' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:54,556 [INFO]: connection closed
+2024-02-09 03:20:54,561 [INFO]: connection closed
+2024-02-09 03:20:53,146 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-39' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:54,671 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:53,271 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-42' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:52,803 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-42' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:54,800 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:54,824 [INFO]: connection closed
+2024-02-09 03:20:54,842 [INFO]: connection closed
+2024-02-09 03:20:53,828 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-42' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:53,599 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-42' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:55,012 [INFO]: connection closed
+2024-02-09 03:20:55,012 [ERROR]: connection unexpectedly closed
+2024-02-09 03:20:55,114 [INFO]: connection closed
+2024-02-09 03:20:55,134 [INFO]: connection closed
+2024-02-09 03:20:53,750 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-42' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:55,191 [INFO]: connection closed
+2024-02-09 03:20:54,198 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-42' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:55,349 [INFO]: connection closed
+2024-02-09 03:20:55,440 [INFO]: connection closed
+2024-02-09 03:20:54,514 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-42' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:54,382 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-42' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:54,674 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-42' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:54,790 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-39' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:55,595 [INFO]: connection closed
+2024-02-09 03:20:55,599 [INFO]: connection closed
+2024-02-09 03:20:55,629 [INFO]: terminate chrome process...
+2024-02-09 03:20:55,631 [INFO]: connection closed
+2024-02-09 03:20:55,631 [INFO]: connection closed
+2024-02-09 03:20:55,036 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-42' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:55,278 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-41' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-09 03:20:55,903 [INFO]: connection closed
+2024-02-09 03:20:55,907 [INFO]: connection closed
+2024-02-13 22:24:33,002 [ERROR]: An error occurred: SOCKSHTTPSConnectionPool(host='apps.ilsos.gov', port=443): Max retries exceeded with url: /uccsearch/ (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7fccf75d5ee0>: Failed to establish a new connection: Connection closed unexpectedly'))
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/socks.py", line 809, in connect
+    negotiate(self, dest_addr, dest_port)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/socks.py", line 443, in _negotiate_SOCKS5
+    self.proxy_peername, self.proxy_sockname = self._SOCKS5_request(
+                                               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/socks.py", line 524, in _SOCKS5_request
+    resp = self._readall(reader, 3)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/socks.py", line 278, in _readall
+    raise GeneralProxyError("Connection closed unexpectedly")
+socks.GeneralProxyError: Connection closed unexpectedly
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/contrib/socks.py", line 96, in _new_conn
+    conn = socks.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/socks.py", line 209, in create_connection
+    raise err
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/socks.py", line 199, in create_connection
+    sock.connect((remote_host, remote_port))
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/socks.py", line 47, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/socks.py", line 814, in connect
+    raise GeneralProxyError("Socket error", error)
+socks.GeneralProxyError: Socket error: Connection closed unexpectedly
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/contrib/socks.py", line 127, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7fccf75d5ee0>: Failed to establish a new connection: Connection closed unexpectedly
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='apps.ilsos.gov', port=443): Max retries exceeded with url: /uccsearch/ (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7fccf75d5ee0>: Failed to establish a new connection: Connection closed unexpectedly'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 254, in scrape_with_refcodes
+    response = requests.get('https://apps.ilsos.gov/uccsearch/',headers=headers,proxies=proxy_dict)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: SOCKSHTTPSConnectionPool(host='apps.ilsos.gov', port=443): Max retries exceeded with url: /uccsearch/ (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7fccf75d5ee0>: Failed to establish a new connection: Connection closed unexpectedly'))
+2024-02-13 22:25:50,046 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 267, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 181, in get_page_links
+    tr_elements = table.find_all('tr')
+                  ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-13 22:26:43,514 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 267, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 181, in get_page_links
+    tr_elements = table.find_all('tr')
+                  ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-13 22:44:29,097 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 287, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 181, in get_page_links
+    tr_elements = table.find_all('tr')
+                  ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-13 22:44:59,036 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 287, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 181, in get_page_links
+    tr_elements = table.find_all('tr')
+                  ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-13 22:46:59,459 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 288, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 181, in get_page_links
+    tr_elements = table.find_all('tr')
+                  ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-13 22:49:10,939 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 288, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 181, in get_page_links
+    tr_elements = table.find_all('tr')
+                  ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-13 23:03:58,366 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 265, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 158, in get_page_links
+    tr_elements = table.find_all('tr')
+                  ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-13 23:05:30,549 [ERROR]: An error occurred: 'latin-1' codec can't encode character '\u2026' in position 512: ordinal not in range(256)
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 252, in scrape_with_refcodes
+    response = self.session.post(current_url,data=data,allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 244, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1319, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1360, in _send_request
+    self.putheader(hdr, value)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 224, in putheader
+    _HTTPConnection.putheader(self, header, *values)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1292, in putheader
+    values[i] = one_value.encode('latin-1')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'latin-1' codec can't encode character '\u2026' in position 512: ordinal not in range(256)
+2024-02-13 23:08:26,177 [ERROR]: An error occurred: 'dict' object has no attribute 'encode'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 252, in scrape_with_refcodes
+    response = self.session.post(current_url,data=data.encode('utf-8'),allow_redirects=True)
+                                                  ^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'encode'
+2024-02-13 23:12:08,301 [ERROR]: An error occurred: 'latin-1' codec can't encode character '\u2026' in position 512: ordinal not in range(256)
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 254, in scrape_with_refcodes
+    response = self.session.post(current_url,data=encoded_data.encode('utf-8'),allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 244, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1319, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1360, in _send_request
+    self.putheader(hdr, value)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 224, in putheader
+    _HTTPConnection.putheader(self, header, *values)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1292, in putheader
+    values[i] = one_value.encode('latin-1')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'latin-1' codec can't encode character '\u2026' in position 512: ordinal not in range(256)
+2024-02-13 23:17:15,597 [ERROR]: An error occurred: 'latin-1' codec can't encode character '\u2026' in position 512: ordinal not in range(256)
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 254, in scrape_with_refcodes
+    response = self.session.post(current_url,data=encoded_data.encode('utf-8'),allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 244, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1319, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1360, in _send_request
+    self.putheader(hdr, value)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 224, in putheader
+    _HTTPConnection.putheader(self, header, *values)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1292, in putheader
+    values[i] = one_value.encode('latin-1')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'latin-1' codec can't encode character '\u2026' in position 512: ordinal not in range(256)
+2024-02-13 23:19:54,071 [ERROR]: An error occurred: 'latin-1' codec can't encode character '\u2026' in position 512: ordinal not in range(256)
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 254, in scrape_with_refcodes
+    response = self.session.post(current_url,data=encoded_data.encode('utf-8'),allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 244, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1319, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1360, in _send_request
+    self.putheader(hdr, value)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 224, in putheader
+    _HTTPConnection.putheader(self, header, *values)
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1292, in putheader
+    values[i] = one_value.encode('latin-1')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'latin-1' codec can't encode character '\u2026' in position 512: ordinal not in range(256)
+2024-02-13 23:54:39,874 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 275, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 167, in get_page_links
+    tr_elements = table.find_all('tr')
+                  ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-13 23:56:33,524 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 275, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 167, in get_page_links
+    tr_elements = table.find_all('tr')
+                  ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-14 00:07:07,472 [ERROR]: An error occurred: SOCKSHTTPSConnectionPool(host='apps.ilsos.gov', port=443): Max retries exceeded with url: /uccsearch/ (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7fc7a95a0d10>: Failed to establish a new connection: Connection closed unexpectedly'))
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/socks.py", line 809, in connect
+    negotiate(self, dest_addr, dest_port)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/socks.py", line 443, in _negotiate_SOCKS5
+    self.proxy_peername, self.proxy_sockname = self._SOCKS5_request(
+                                               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/socks.py", line 524, in _SOCKS5_request
+    resp = self._readall(reader, 3)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/socks.py", line 278, in _readall
+    raise GeneralProxyError("Connection closed unexpectedly")
+socks.GeneralProxyError: Connection closed unexpectedly
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/contrib/socks.py", line 96, in _new_conn
+    conn = socks.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/socks.py", line 209, in create_connection
+    raise err
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/socks.py", line 199, in create_connection
+    sock.connect((remote_host, remote_port))
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/socks.py", line 47, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/socks.py", line 814, in connect
+    raise GeneralProxyError("Socket error", error)
+socks.GeneralProxyError: Socket error: Connection closed unexpectedly
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/contrib/socks.py", line 127, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7fc7a95a0d10>: Failed to establish a new connection: Connection closed unexpectedly
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='apps.ilsos.gov', port=443): Max retries exceeded with url: /uccsearch/ (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7fc7a95a0d10>: Failed to establish a new connection: Connection closed unexpectedly'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 262, in scrape_with_refcodes
+    response = requests.post(current_url,data=data,cookies=self.jar,allow_redirects=True,proxies=proxy_dict)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: SOCKSHTTPSConnectionPool(host='apps.ilsos.gov', port=443): Max retries exceeded with url: /uccsearch/ (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7fc7a95a0d10>: Failed to establish a new connection: Connection closed unexpectedly'))
+2024-02-14 00:41:01,183 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 280, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 167, in get_page_links
+    tr_elements = table.find_all('tr')
+                  ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-14 02:25:57,409 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 280, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 167, in get_page_links
+    tr_elements = table.find_all('tr')
+                  ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-14 02:29:50,134 [INFO]: Browser listening on: ws://127.0.0.1:36349/devtools/browser/df322686-e10b-4c1d-a123-7e612624820c
+2024-02-14 02:29:54,756 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 284, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 169, in get_page_links
+    tr_elements = table.find_all('tr')
+                  ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-14 02:29:54,759 [INFO]: terminate chrome process...
+2024-02-14 03:20:38,304 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 284, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 169, in get_page_links
+    tr_elements = table.find_all('tr')
+                  ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-14 03:23:32,936 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 284, in scrape_with_refcodes
+    urls = get_page_links(soup)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 169, in get_page_links
+    tr_elements = table.find_all('tr')
+                  ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-14 03:26:15,432 [ERROR]: An error occurred: No connection adapters were found for "javascript:sumbitForm('027370497');"
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 297, in scrape_with_refcodes
+    batch_results = [item for results in executor.map(self.scrape_single,urls[i:i+batch_size]) for item in results]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 56, in scrape_single
+    response = requests.get(url,headers=headers,allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 697, in send
+    adapter = self.get_adapter(url=request.url)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 794, in get_adapter
+    raise InvalidSchema(f"No connection adapters were found for {url!r}")
+requests.exceptions.InvalidSchema: No connection adapters were found for "javascript:sumbitForm('027370497');"
+2024-02-14 03:43:40,471 [ERROR]: An error occurred: No connection adapters were found for "javascript:sumbitForm('027370497');"
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 297, in scrape_with_refcodes
+    batch_results = [item for results in executor.map(self.scrape_single,urls[i:i+batch_size]) for item in results]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 56, in scrape_single
+    response = requests.get(url,headers=headers,allow_redirects=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 697, in send
+    adapter = self.get_adapter(url=request.url)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 794, in get_adapter
+    raise InvalidSchema(f"No connection adapters were found for {url!r}")
+requests.exceptions.InvalidSchema: No connection adapters were found for "javascript:sumbitForm('027370497');"

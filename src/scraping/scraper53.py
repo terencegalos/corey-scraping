@@ -1,4 +1,4 @@
-import requests,time,subprocess,tempfile,os#execjs, json, re
+import requests,time#,subprocess,tempfile,os#execjs, json, re
 from requests_html import HTMLSession
 from requests.cookies import RequestsCookieJar
 from bs4 import BeautifulSoup
@@ -14,11 +14,8 @@ class Scraper53:
         self.baseurl = 'https://corp.sec.state.ma.us/'
         self.searchurl = 'https://corp.sec.state.ma.us/CorpWeb/UCCSearch/UCCSearch.aspx'
         self.table_name = "scraper53_info"
-<<<<<<< HEAD
-        self.session = HTMLSession()
-=======
         self.last_interrupt_txt = 'last_char_scraper53.txt'
->>>>>>> 479b4ffb96f82a9b69956901cc0fd6593ed7d2bf
+        self.session = HTMLSession()
         # self.session = requests.Session()
         self.jar = RequestsCookieJar()
         self.ua = UserAgent()
@@ -90,21 +87,7 @@ class Scraper53:
         # print(f'doc links:{info_links}')
         
         results = [] # store results here
-
-        header = {
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Accept-Language": "en-US,en;q=0.5",
-            "Connection": "keep-alive",
-            # "Cookie": "TS017bf281=0102f3c98045bf1a8fdcb62af56beaf558a84e0a0b599344109ff95baadb34f0ad419e1faf9737cb9024a0540a5eef294ff7a1f42b",
-            "Host": "dnr.alaska.gov",
-            "Sec-Fetch-Dest": "document",
-            "Sec-Fetch-Mode": "navigate",
-            "Sec-Fetch-Site": "none",
-            "Sec-Fetch-User": "?1",
-            "Upgrade-Insecure-Requests": "1",
-            "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0'
-        }
+        
 
         for link in info_links:
             print(f"Extracting info. URL: {self.searchurl+link}")
@@ -169,29 +152,10 @@ class Scraper53:
         return results
 
         
-        
-        # Check if any value is None, if yes, return None
-        # if any(value is None for value in [name, address, secured_party_name, secured_party_address]):
-        #     return None        
-            
-            
-        
-            
-        # else :
-        #     raise Exception(f"Failed to retrieve data. Status code: {response.status_code}")
+
     
     
-    
-    
-<<<<<<< HEAD
-<<<<<<< HEAD
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',end_char='Z',last_interrupted_page=1):
-=======
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='Y',end_char='Z',last_interrupted_page=1,starting_page=1):
->>>>>>> 479b4ffb96f82a9b69956901cc0fd6593ed7d2bf
-=======
     def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',end_char='Z',last_interrupted_page=1,starting_page=1):
->>>>>>> ad916e975305d75cf3f183e814056c6471e636cf
         
         def get_page_links(soup):
             table = soup.find("table")
@@ -239,7 +203,6 @@ class Scraper53:
                     'Sec-Fetch-Site': 'none',
                     'Sec-Fetch-User': '?1',
                     'Sec-GPC': '1',
-                    'TE': 'trailers',
                     'Upgrade-Insecure-Requests': '1',
                     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
                 }
@@ -249,7 +212,7 @@ class Scraper53:
                     'Accept-Encoding': 'gzip, deflate, br',
                     'Accept-Language': 'en-US,en;q=0.5',
                     'Connection': 'keep-alive',
-                    'Content-Length': '9183',
+                    'Content-Length': '999999',
                     'Content-Type': 'application/x-www-form-urlencoded',
                     'Host': 'corp.sec.state.ma.us',
                     'Origin': 'https://corp.sec.state.ma.us',
@@ -262,6 +225,28 @@ class Scraper53:
                     'Upgrade-Insecure-Requests': '1',
                     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
                 }
+
+                headers3 = {
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+                    "Accept-Language": "en-US,en;q=0.5",
+                    "Accept-Encoding": "gzip, deflate, br",
+                    "Connection": "keep-alive",
+                    "Content-Length": "999999",
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Host": "corp.sec.state.ma.us",
+                    "Origin": "https://corp.sec.state.ma.us",
+                    "Referer": "https://corp.sec.state.ma.us/CorpWeb/UCCSearch/UCCSearch.aspx",
+                    "Sec-Fetch-Dest": "document",
+                    "Sec-Fetch-Mode": "navigate",
+                    "Sec-Fetch-Site": "same-origin",
+                    "Sec-Fetch-User": "?1",
+                    "TE": "trailers",
+                    "Upgrade-Insecure-Requests": "1",
+                    "DNT": "1",
+                    "Sec-GPC": "1",
+                    "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:122.0) Gecko/20100101 Firefox/122.0",
+                }
+
 
 
 
@@ -302,14 +287,14 @@ class Scraper53:
                         "ctl00$MainContent$HiddenSearchOption_SearchLapsed": "False"
                     }
                     data1 = {
-                        "__EVENTTARGET": "",
+                        "__EVENTTARGET": "ctl00$MainContent$UCCSearchMethodI",
                         "__EVENTARGUMENT": "",
                         "__LASTFOCUS": "",
                         "__VIEWSTATE": "/wEPDwULLTE0MTkxODA2NTYPZBYCZg9kFgICBg9kFgICAQ9kFhYCAQ9kFgJmD2QWAgIBDw8WAh4EVGV4dAUTVUNDIFB1YmxpYyBTZWFyY2ggIGRkAgMPDxYEHwBlHgdWaXNpYmxlaGRkAgUPZBYCAgEPZBYEAgEPDxYCHwAFakZpbmFuY2luZyBzdGF0ZW1lbnRzIHJlbWFpbiBpbiB0aGlzIFVDQyBpbmZvcm1hdGlvbiBtYW5hZ2VtZW50IHN5c3RlbSB1bnRpbCBhdCBsZWFzdCBvbmUgeWVhciBhZnRlciBsYXBzZS5kZAIFDw8WBB8ABUYgVGhpcyBFeGFjdCBNYXRjaCBTZWFyY2ggaXMgcHJvdmlkZWQgZm9yIGluZm9ybWF0aW9uYWwgcHVycG9zZXMgb25seS4gHwFoZGQCBg8QDxYCHgdDaGVja2VkZ2RkZGQCCQ8WAh4Fc3R5bGUFPndpZHRoOjEwMCU7YmFja2dyb3VuZC1jb2xvcjp3aGl0ZTtib3JkZXItdG9wOjFwdCBzb2xpZCBzaWx2ZXI7FgQCAQ9kFgQCAQ9kFgICAQ8PZBYCHg1hcmlhLXJlcXVpcmVkBQR0cnVlZAICD2QWAgIBDw8WBB4MRXJyb3JNZXNzYWdlBRxSZXF1aXJlZDogZW50ZXIgYSBsYXN0IG5hbWUuHgdFbmFibGVkZ2RkAgIPZBYCAgMPZBYCAgEPEA8WBh4NRGF0YVRleHRGaWVsZAUJU3RhdGVOYW1lHg5EYXRhVmFsdWVGaWVsZAUJU3RhdGVDb2RlHgtfIURhdGFCb3VuZGdkEBU0CkFsbCBTdGF0ZXMHQWxhYmFtYQZBbGFza2EHQXJpem9uYQhBcmthbnNhcwpDYWxpZm9ybmlhCENvbG9yYWRvC0Nvbm5lY3RpY3V0CERlbGF3YXJlFERpc3RyaWN0IG9mIENvbHVtYmlhB0Zsb3JpZGEHR2VvcmdpYQZIYXdhaWkFSWRhaG8ISWxsaW5vaXMHSW5kaWFuYQRJb3dhBkthbnNhcwhLZW50dWNreQlMb3Vpc2lhbmEFTWFpbmUITWFyeWxhbmQNTWFzc2FjaHVzZXR0cwhNaWNoaWdhbglNaW5uZXNvdGELTWlzc2lzc2lwcGkITWlzc291cmkHTW9udGFuYQhOZWJyYXNrYQZOZXZhZGENTmV3IEhhbXBzaGlyZQpOZXcgSmVyc2V5Ck5ldyBNZXhpY28ITmV3IFlvcmsOTm9ydGggQ2Fyb2xpbmEMTm9ydGggRGFrb3RhBE9oaW8IT2tsYWhvbWEGT3JlZ29uDFBlbm5zeWx2YW5pYQxSaG9kZSBJc2xhbmQOU291dGggQ2Fyb2xpbmEMU291dGggRGFrb3RhCVRlbm5lc3NlZQVUZXhhcwRVdGFoB1Zlcm1vbnQIVmlyZ2luaWEKV2FzaGluZ3Rvbg1XZXN0IFZpcmdpbmlhCVdpc2NvbnNpbgdXeW9taW5nFTQAAkFMAkFLAkFaAkFSAkNBAkNPAkNUAkRFAkRDAkZMAkdBAkhJAklEAklMAklOAklBAktTAktZAkxBAk1FAk1EAk1BAk1JAk1OAk1TAk1PAk1UAk5FAk5WAk5IAk5KAk5NAk5ZAk5DAk5EAk9IAk9LAk9SAlBBAlJJAlNDAlNEAlROAlRYAlVUAlZUAlZBAldBAldWAldJAldZFCsDNGdnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dkZAIKDxYCHwMFS3dpZHRoOjEwMCU7YmFja2dyb3VuZC1jb2xvcjp3aGl0ZTtib3JkZXItdG9wOjFwdCBzb2xpZCBzaWx2ZXI7ZGlzcGxheTpub25lOxYEAgEPZBYCAgIPZBYCAgEPDxYCHwUFJVJlcXVpcmVkOiBlbnRlciBhbiBvcmdhbml6YXRpb24gbmFtZS5kZAICD2QWAgIDD2QWAgIBDxAPFgYfBwUJU3RhdGVOYW1lHwgFCVN0YXRlQ29kZR8JZ2QQFTQKQWxsIFN0YXRlcwdBbGFiYW1hBkFsYXNrYQdBcml6b25hCEFya2Fuc2FzCkNhbGlmb3JuaWEIQ29sb3JhZG8LQ29ubmVjdGljdXQIRGVsYXdhcmUURGlzdHJpY3Qgb2YgQ29sdW1iaWEHRmxvcmlkYQdHZW9yZ2lhBkhhd2FpaQVJZGFobwhJbGxpbm9pcwdJbmRpYW5hBElvd2EGS2Fuc2FzCEtlbnR1Y2t5CUxvdWlzaWFuYQVNYWluZQhNYXJ5bGFuZA1NYXNzYWNodXNldHRzCE1pY2hpZ2FuCU1pbm5lc290YQtNaXNzaXNzaXBwaQhNaXNzb3VyaQdNb250YW5hCE5lYnJhc2thBk5ldmFkYQ1OZXcgSGFtcHNoaXJlCk5ldyBKZXJzZXkKTmV3IE1leGljbwhOZXcgWW9yaw5Ob3J0aCBDYXJvbGluYQxOb3J0aCBEYWtvdGEET2hpbwhPa2xhaG9tYQZPcmVnb24MUGVubnN5bHZhbmlhDFJob2RlIElzbGFuZA5Tb3V0aCBDYXJvbGluYQxTb3V0aCBEYWtvdGEJVGVubmVzc2VlBVRleGFzBFV0YWgHVmVybW9udAhWaXJnaW5pYQpXYXNoaW5ndG9uDVdlc3QgVmlyZ2luaWEJV2lzY29uc2luB1d5b21pbmcVNAACQUwCQUsCQVoCQVICQ0ECQ08CQ1QCREUCREMCRkwCR0ECSEkCSUQCSUwCSU4CSUECS1MCS1kCTEECTUUCTUQCTUECTUkCTU4CTVMCTU8CTVQCTkUCTlYCTkgCTkoCTk0CTlkCTkMCTkQCT0gCT0sCT1ICUEECUkkCU0MCU0QCVE4CVFgCVVQCVlQCVkECV0ECV1YCV0kCV1kUKwM0Z2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2RkAgsPFgIfAwVLd2lkdGg6MTAwJTtiYWNrZ3JvdW5kLWNvbG9yOndoaXRlO2JvcmRlci10b3A6MXB0IHNvbGlkIHNpbHZlcjtkaXNwbGF5Om5vbmU7FgJmD2QWAgICD2QWBAIBDw8WAh8FBSBSZXF1aXJlZDogZW50ZXIgYSBmaWxpbmcgbnVtYmVyLmRkAgMPDxYCHwUFfUZpbGUgTnVtYmVyIG11c3QgYmUgOCBvciAxMiBjaGFyYWN0ZXJzIGxvbmc6ICBleDogOTkxMjM0NTYgZm9yIHByZSBhcnRpY2xlIDkgZmlsaW5ncywgMjAwMDEyMzQ1NjAxIGZvciBwb3N0IEFydGljbGUgOSBmaWxpbmdzZGQCDA8WAh8DBT53aWR0aDoxMDAlO2JhY2tncm91bmQtY29sb3I6d2hpdGU7Ym9yZGVyLXRvcDoxcHQgc29saWQgc2lsdmVyOxYGAgEPZBYCAgEPZBYEAgEPEA8WAh8BaBYCHwMFDWRpc3BsYXk6bm9uZTtkFgFmZAIDDxAPFgIfAWcWAh8DBQ9kaXNwbGF5OmlubGluZTtkFgECAWQCAg9kFgICAg9kFgICAQ8PFgIfBQU/SW52YWxpZCBkYXRlIGZvcm1hdCEgIE5vdGU6IHRoZSB2YWxpZCBmb3JtYXQgaXMgaW4gTU0vREQvWVlZWS4gZGQCAw9kFgICAQ9kFgoCAQ8PFgQfBQU1Q2hlY2sgYXQgbGVhc3Qgb25lIG5hbWUgdHlwZSB0byBpbmNsdWRlOiBlLmcuOiBEZWJ0b3IfBmhkZAIDDw8WAh8FBTVDaGVjayBhdCBsZWFzdCBvbmUgbmFtZSB0eXBlIHRvIGluY2x1ZGU6IGUuZy46IERlYnRvcmRkAgUPEA8WAh8GZ2RkZGQCBw8QDxYCHwZnZGRkZAIJDxAPFgIfBmdkZGRkAg4PEGRkFgFmZAISDw8WAh8ABc8CIFdlIGhhdmUgY2hhbmdlZCBvdXIgZGVmYXVsdCBzZWFyY2ggdG8gYW4gQXJ0aWNsZSA5IHNlYXJjaC4gQW4gQXJ0aWNsZSA5IHNlYXJjaCBpcyBkb25lIGluIGFjY29yZGFuY2Ugd2l0aCBvdXIgUnVsZXMgYW5kIFJlZ3VsYXRpb25zLCA5NTAgQ01SIDE0MC4wMC4gUGxlYXNlIGNsaWNrIGJlbG93IHRvIHJldmlldyB0aGUgcmVndWxhdGlvbnMuIElmIHlvdSBhcmUgdW5zdXJlIG9mIHlvdXIgZGVidG9yJ3MgY29ycmVjdCBsZWdhbCBuYW1lLCB5b3UgbWF5IGJlIGJlc3Qgc2VydmVkIHRvIHJ1biBhICdiZWdpbnMgd2l0aCcgc2VhcmNoIGZpcnN0IHRvIGlkZW50aWZ5IHlvdXIgZGVidG9yLiBkZAITDw8WAh8ABbQDIFNlY3JldGFyeSBHYWx2aW4ncyBVQ0MgRGl2aXNpb24gaGFzIGFkZGVkIGEgbmV3IHNlYXJjaCBmdW5jdGlvbiwgZm9yIGluZm9ybWF0aW9uYWwgcHVycG9zZXMuIFRoZSBpbmZvcm1hdGlvbmFsIEV4YWN0IE1hdGNoIFNlYXJjaCBhbGxvd3Mgc2VhcmNoZXJzIHRvIHNlYXJjaCBhbiBvcmdhbml6YXRpb25hbCBuYW1lIGV4YWN0bHksIGluY2x1ZGluZyBpdHMgY29ycG9yYXRlIGVuZGluZy4gTm9pc2Ugd29yZHMgKHN1Y2ggYXMgJ0NvcnBvcmF0aW9uJywgJ0NvcnAuJywgJ0xpbWl0ZWQgTGlhYmlsaXR5IENvbXBhbnknLCBvciAnTExDJykgYXJlIG5vdCBpZ25vcmVkIGJ5IHRoZSBFeGFjdCBNYXRjaCBzZWFyY2ggbG9naWMsIGl0IGFwcGxpZXMgdGhlIGxvZ2ljIGRlZmluZWQgaW4gOTUwIENNUiAxNDAuNDksIHdpdGggdGhlIGV4Y2VwdGlvbiBvZiAxNDAuNDkoNSkuIGRkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYIBRxjdGwwMCRNYWluQ29udGVudCRyZG9TZWFyY2hJBRxjdGwwMCRNYWluQ29udGVudCRyZG9TZWFyY2hPBRxjdGwwMCRNYWluQ29udGVudCRyZG9TZWFyY2hPBRxjdGwwMCRNYWluQ29udGVudCRyZG9TZWFyY2hGBRxjdGwwMCRNYWluQ29udGVudCRyZG9TZWFyY2hGBRtjdGwwMCRNYWluQ29udGVudCRjaGtEZWJ0b3IFIWN0bDAwJE1haW5Db250ZW50JGNoa1NlY3VyZWRQYXJ0eQUdY3RsMDAkTWFpbkNvbnRlbnQkY2hrQXNzaWduZWW8MYYc4mhXLHM40Afeyznx+arFfxvST0GCtuEPxH5Zpw==",
                         "__VIEWSTATEGENERATOR": "CB1FA542",
                         "__EVENTVALIDATION": "/wEdAIQBusP8pyNqiXuz/RlEvpmSmshW3vWZS2FkUZlKTivDJLDt209UhFEUht4aOjjGYclfpS+TCjynNTaOp9Ht9kGe9OBgWAn+1hycEupbddmf3bd+r61JHNw3TUZax8VUmULh9DSaNU7Fy1uA2vs3aonPBoaKEcHTK2Sr35oxArjRLF7DVw1Y459Usi8Nsf6oH7jXJGcA1jJgLl6r2txrNFFQzL4oMifc2Jg0D9Ctc48dB98QdBhHXgkIcxcHQ9T5HF5RSfNVGXGA6M6PNEpnL/t9qHRrkYQ9g85XhRAeoJqkJZ0IeAPBZEAj99Ix63o3XqcBPNz4ZP3TGexMi9rq/xnAYEieRqVPj1zLsbhXY437sXX4XQg0IODVTlv/gnbbkw1XLKa8jdgPwb6ncAq+4oR3UYVD/gw7FMXqIDfoNdCkxzkyKiolUN+fTaHUP6XNlxdd9cviGxYk0xVjQ0ouc8aHsMNdBtlodSbS338i3rQ1a7yGmNtAN5CDapOnMdruV8PczG2W+72NvlEhSDzC5aA/gFKiCBArG4flhOxNmXOe4Aw9uQr3c+MAuVZqgi1sFt/eXOTNETXVsthMqyYk7PJlcSmsWW6V1B/LKAsCix6LKR5+uyXnE4tj/MqWrUeQk+Pj/y7PoGPYKbLTLVYwDFTQ/mbtrUjCC0QIQr37KB8POKbj6e5g6aj1tOmIfpU/4ZBtn234bk4Dfh++WRLmeEaZbUyNTQM9Oj51b4Q7cbtOKjbUL7MEFqAUZ1Ya/ort4OLQ4QTCSUV5gIidoSqnoiJ4rZWgm/yV6WkInGONMKxSNLmKWsBTrjaIjmXgs9Ob1ArdCDCw7ARfCf7eMqeiQvIN9TUCOz7PAOOWXNiu3sn+JPRHDWuSQo47jgF08VyYpP/NLGlOkSxTU+WnhMteaENGcHwyNO9bTJ4uJPDct4tQFxHiIVKwr4GjlDgMMIsWv91IMBaV1P0rVgSwQaFbHEKgxmjufiq61LvFG6lxeskP8k9AEXno6akyckcKFmrnIQsEdJ5RIOJV/bbaAtuTLme3xwZzrJRXg6TybZgRnwKlkKvZ5SelRMDNL0kv6bkyE0fPH70288D/Nk14GZb6HJI9A4ixyDavrM+zo3QxB7hsue3XSXc/MzIim9poFO/NBKQoBIWYiijDnkVuRnT1D171OFfoQxWjrlzneZbghXZ5erWE+F/Nx95Iy7krv8eQVXAIdq+/w3CtxaMachfFzxPer8lXE2zhvDWBI6M1eo/jxSyYt4FTbXDNwdG/DePAVPeApVy+8BTlMHLDCgnaPRq1ctG8Ozk5dDXWuh3t+BqmefJlJOzUHb2fNgUWIv0221lq9IaQf7xa1sQsMdt1FfIdWxVNGMyykXXq8lAovWVuo5g5POsU7ixQmUi2+dQIJYcW0WmeNKE3M+Kn29pqWgyIWndGz6VJ2hfnxT9ZEvO+Y5BTWaof3QK9vgA3x4Pc/DA422QpqS8LzqYKiDx2z/+gK0Zeaz0jGttuHDhTSWgTJzCC+lP2ZSootkd56tknn/OW2mGeo3JGEs4tQe4ukofswlyqVecfQYyGXcRY5lRSZbdmfsPv9e7207DqxUNkujulfbGAPDDlmA6PO7DuSnVCIXZ1xBtbQDpO5eW6NWDZiTUFt9UK9x7fjqyZ7gs8HDdqZJZbKswd6wP3MRECRuBduTShKfmE19aFhDXKohFUft5T2PoTZNl77B8PWml9kCj7YO+O9J+dm94KO7XQb1XmEH+bQpcM0vRdgygAH6dE9nKY+UHWBunwEUKrSst15en+ICfXSFHZB1SBIjus+o8MbIWZ1QdrooN0y9xdo11xlkJasvgNwDwzrID3f1Yh3kLrGgHmxPLyYxysSiFxgcHayaOlQMeDtV1wDMLNjdeNUTQqE/BKv2CpPQDglcq5pTkjtrXCiM07Vi6814nY+n87VpLd+CCUEF7m6UDGpNyjDFHPuRvfXyb4muvJPr43b0csU7wLupBvkcNjHyIJas3IZyxkdVmvj5z/Y+wfAsy3GjrQllBT8HbCCgFhq/lPeNWC2/57FGz/6ZOMyVNwTv2rlOohml8lNpqUxPr6uBZB87zoYo9N6I0Jc/VOd/3+JVZ456Y/qBxXzRWzFhsIaGQojqQqhS8KU7rjrttjhKA5sr1jF/lwcv5/fBSBVk+Hk06It5M+0UjppwOGfIqffP63xIiXkOhdgFZKB12SImYlXJAWZBi00JhYuxQ92wnVQt5Ngc6F+zsjN8KiGtduDgsUoGJC+PKsbliKaqAAUwwNwp0TfNqyHt0Dcplset6xExdx+jqzSDm8C3RKIa/4SNdhA8Xd4NCj8pshhLGdaqRBXmR/OMoUnQS7cWMaMh2YfY4jx2YzVm8Bnix0gYl4Vfa8RANzZAe3kVciLCheEqBVqk9/8kvy025N/Aaw9Y5r8Sm1SvOQ5wlvmRq92peYDXymy1cDgIbfkTdaei+PiP1T67R4rh+2TUaiactpzavwUgjQOAnvOstWb3yjY3KQMK4ffLTHQUsOtCm016frWJPZlANk8Iz+UJLI0Ah3ysJSsKNOyRa/ySQ1ncgMLxGyJFWqqMpUiTx/9Sj5l6kkw8xMK+qUX8zTvDIuwgJqXY69d36VlUfZxr0Vt4QtAccdmnyZ/nBjo5F7i+66aBHoltIUBVRKuhs6Sj6RZrFxkJF2n4K1ypbY4i6RvxIcnVPnRLh38n1Cv2ftgnpubZp+/yFp36NvkcgjmmswKovllW5xwOdrfUcG52CTvZBpZMcnpgvDXp+I/HPZ86NEZcbXwR9jxA7lX/XciWwH6s0uJy0ndQ+5REsqLL45PgtFRHTBMKtM+Mf9fMxBBL+sTXjfZXThIcg=",
                         "ctl00$MainContent$UccSearch": "rdoSearchI",
-                        "ctl00$MainContent$txtLastName": "",
+                        "ctl00$MainContent$txtLastName": "aa",
                         "ctl00$MainContent$txtFirstName": "",
                         "ctl00$MainContent$txtMiddleName": "",
                         "ctl00$MainContent$txtSuffix": "",
@@ -330,50 +315,35 @@ class Scraper53:
 
                     current_url = self.searchurl
 
-                    # Get new cookies
-                    # response = requests.get(current_url,headers=headers1,proxies=proxy_dict,allow_redirects=True)
-                    _ = self.session.post(current_url,headers=headers2)
+                    # Get new cookies and set headers
+                    _ = self.session.get(current_url,headers=headers1)
+
                     time.sleep(1)
-                    response_ = self.session.post(current_url,headers=headers2,data=data1)
-                    print(response_.text)
+
+                    # Send post requests
+                    response_ = self.session.post(current_url,headers=headers3,data=data1,allow_redirects=True)
+
+
+                    # Update headers
+                    # self.session.headers.update(headers3)
+                    
+                    # Send post requests with data
+                    # response_ = self.session.post(current_url,data=data1,allow_redirects=True)
+
+
+
+                    
+                    response_.html.render()
+                    # print(response_.html.raw_html)
+
+                    soup = BeautifulSoup(response_.content,'html.parser')
+                    print(soup.get_text())
+                    # print(response_.text)
+                    print(f'status_code: {response_.status_code}')
+                    print(f"response_headers:{response_.headers}")
+                    print(f"response history:{response_.history}")
                     time.sleep(100)
 
-
-                    # response_ = self.session.post(f'{current_url}',data=data)#,headers=headers2,cookies=self.jar,allow_redirects=True)
-
-                    # print(response.text)
-                    # print(f'status_code: {response.status_code}')
-                    # print(f"response_headers:{response.headers}")
-                    
-                    # response_.html.render()
-                    # print(response_.html.raw_html)
-                    # time.sleep(100)
-
-                    # self.renew_cookies(response)
-
-                    # response = requests.post(current_url,headers=headers1,data=data)
-                    # print(response.headers)
-                    # print(response.text)
-
-
-                    # soup = BeautifulSoup(response.content,'html.parser')
-                    # soup_js = soup.find('script')
-                    # print(soup_js['src'])
-                    # response = requests.get(self.baseurl+soup_js['src'])
-
-                    # js_code = response.text
-
-                    # with tempfile.NamedTemporaryFile(mode='w',delete=False) as temp_file:
-                    #     temp_file.write(js_code)
-                    #     temp_file_path = temp_file.name
-
-                    # try:
-                    #     with subprocess.Popen(["node","-e", temp_file_path], stdout=subprocess.PIPE,  text=True) as process:
-                    #         result, _ = process.communicate()
-
-                    #     print(f'result:{result}')
-                    # finally:
-                    #     os.remove(temp_file_path)
 
                     time.sleep(100)
                     self.renew_cookies(response)
