@@ -31,134 +31,31 @@ class Scraper52:
     
     
     
-    def scrape_single(self,url):
-
-        headers = {
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Language': 'en-US,en;q=0.5',
-            'Connection': 'keep-alive',
-            'Host': 'appas.ilsos.gov',
-            'Sec-Fetch-Dest': 'document',
-            'Sec-Fetch-Mode': 'navigate',
-            'Sec-Fetch-Site': 'none',
-            'Sec-Fetch-User': '?1',
-            'Upgrade-Insecure-Requests': '1',
-            'User-Agent': self.ua.random
-        }
-
-
-
-
-
-
-        print(f'Extracting doc links from URL: {url}')
-        response = requests.get(url,headers=headers,allow_redirects=True)
-        print(f'Status code: {response.status_code}')
-        print(f'Content: {response.text}')
-
-
-
-        # raise for failed requests
-        # response.raise_for_status()
-        
-        # if response.status_code == 200:
-        # Parse the HTML content with BeautifulSoup
-
-        soup = BeautifulSoup(response.content,'html.parser')
-        # print(soup.contents)
-
-        # return in no results found
-        soup_table = soup.find('table')
-        if not soup_table:
-            # print(response.text)
-            return
-
-
-
-        # find all links that contains the info
-        info_links = [a.attrs['href'] for a in soup_table.find_all("a") if 'href' in a.attrs and 'selecteddoc' in a.attrs['href'].lower()]
-
-        # print(f'doc links:{info_links}')
-        
-        results = [] # store results here
-
-        headers = {
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Language': 'en-US,en;q=0.5',
-            'Connection': 'keep-alive',
-            'Host': 'apps.ilsos.gov',
-            'Sec-Fetch-Dest': 'document',
-            'Sec-Fetch-Mode': 'navigate',
-            'Sec-Fetch-Site': 'none',
-            'Sec-Fetch-User': '?1',
-            'Upgrade-Insecure-Requests': '1',
-            'User-Agent': self.ua.random
-        }
-
-
-        for link in info_links:
-            print(f"Extracting info. URL: {self.searchurl+link}")
-            try:
-                response = requests.get(self.searchurl+link,headers=headers)
-            except requests.exceptions.ConnectionError:
-                print(f'Connecting failed to url {self.searchurl+link}. Retrying in 20 secs')
-                time.sleep(20)
-                response = requests.get(self.searchurl+link,headers=headers)
+    def scrape_single(self,tr_soup):
+            
                 
-            soup = BeautifulSoup(response.text, 'html.parser')
+        # define empty result set 
+        result_dict = {'debtor_name':'','debtor_address':'','secured_party_name':'','secured_party_address':''}
+        tds = tr_soup.find_all('td')
 
-            table = soup.find('table')
-            tr_elements = table.find_all('tr')
-            # for tr in tr_elements:
-            #     print("***")
-            #     print(tr.contents)
+        debtor_info = tds[2].get_text()
+        debtor_name = " ".join(debtor_info.splitlines()[1].split())
+        debtor_address = " ".join([" ".join(line.split()) for line in debtor_info.splitlines()[2:-1]])
 
+        result_dict.update({'debtor_name':debtor_name,'debtor_address':debtor_address})
+        
+        secured_party_info = tds[3].get_text()
+        # print(secured_party_info)
+        secured_party_name = " ".join(secured_party_info.splitlines()[1].split())
+        secured_party_address = " ".join([" ".join(line.split()) for line in secured_party_info.splitlines()[2:]])
 
-
-    
-            for tr in tr_elements[1:]:
-                # print(tr.contents)
-                # print(tr.find('span').get_text())
-                
-                # define empty result set 
-                result_dict = {'debtor_name':'','debtor_address':'','secured_party_name':'','secured_party_address':''}
-                # print(result_dict)
-                if 'debtor' in tr.find('span').get_text().lower():
-
-                    # get info
-                    # print(tr.contents)
-                    # print(tr.find_all('td')[1].get_text())
-                    debtor_name = " ".join(tr.find_all("td")[1].get_text().split())
-                    try:
-                        debtor_address = " ".join(tr.find_all("td")[2].get_text().split())
-                    except IndexError:
-                        debtor_address = 'N/A'
-                    result_dict.update({'debtor_name':debtor_name})
-                    result_dict.update({'debtor_address':debtor_address})
-                elif 'secured' in tr.find('span').get_text().lower():                
-                    secured_party_name = " ".join(tr.find_all('td')[1].get_text().split())
-                    try:
-                        secured_party_address = " ".join(tr.find_all("td")[2].get_text().split())
-                    except IndexError:
-                        secured_party_address = 'N/A'
-                    result_dict.update({'secured_party_name':secured_party_name})
-                    result_dict.update({'secured_party_address':secured_party_address})
-                    
-                    # update all results dict
-                    for result_dict in results:
-                        result_dict.update({'secured_party_name':secured_party_name})
-                        result_dict.update({'secured_party_address':secured_party_address})
-                else:
-                    pass
+        result_dict.update({'secured_party_name':secured_party_name,'secured_party_address':secured_party_address})
 
 
-                print(result_dict)
+        # print(result_dict)
 
-                results.append(result_dict)
 
-        return results
+        return result_dict
     
     
     
@@ -166,20 +63,12 @@ class Scraper52:
         
         def get_page_rows(soup):
             table = soup.find("table")
-            tr_elements = table.find_all('tr')
+            trs_soup = table.find_all('tr')[1:]
             
-            print(f'tr length: {len(tr_elements)}')
+            print(f'tr length: {len(trs_soup)}')
 
-            row_tds = [f'{tr.find_all('td')}' for tr in tr_elements]
-            {'debtor_name':'','debtor_address':'','secured_party_name':'','secured_party_address':''}
-            debtor_info = row_tds[2].get_text()
-            debtor_name = debtor_info.splitlines()[0]
-            debtor_address = "/n".join(debtor_info.splitlines()[1:])
             
-            secured_party_info = row_tds[3].get_text()
-            secured_party_name = secured_party_info.splitlines()[0]
-            secured_party_address = "/n".join(secured_party_info.splitlines()[1:])
-            return page_results
+            return trs_soup
         
         def num_generator(last_interrupt_page):
             num = last_interrupt_page
@@ -213,15 +102,16 @@ class Scraper52:
             }
 
 
-            num_gen = num_generator(last_interrupted_page)
+            page_num = 0#num_generator(last_interrupted_page) # page number generator
 
             last_interrupted_page = 0 # reset 
             
   
 
             
+            # walk pagination
             while True:
-                num = next(num_gen)
+                # num = next(num_gen)
                 print(f'Current page:{num}')
                 data = {
                     'command': 'index',
@@ -238,6 +128,103 @@ class Scraper52:
                     'lienNumber': '',
                     'lienName': '',
                     'submitIt': ['Submit', 'Submit']
+                }
+                {
+                    "command": "uccsearchresults",
+                    "method": "uccsearchresults",
+                    "page": "WEB-INF/pages/uccsearchresults.jsp",
+                    "moreRecords": "Y",
+                    "history": "N",
+                    "fileNbr": "",
+                    "userInField": "",
+                    "from": "0", # range
+                    "to": "50",
+                    "totalRecords": "4093", # total
+                    "comStartName": "",
+                    "comStartDate": "0",
+                    "comStartTime": "0",
+                    "comStartFileNum": "30249089", # file num
+                    "comStartDbtNum": "0",
+                    "searchType": "P",
+                    "inField": "SMITH", # keyword
+                    "comFirstName": "",
+                    "comMiddleName": "",
+                    "comLastName": "",
+                    "firstName": "",
+                    "lastName": "SMITH", # keyword
+                    "middleName": "",
+                    "more": "More+Results"
+                }
+                {
+                    "command": "uccsearchresults",
+                    "method": "uccsearchresults",
+                    "page": "WEB-INF/pages/uccsearchresults.jsp",
+                    "moreRecords": "Y",
+                    "history": "N",
+                    "fileNbr": "",
+                    "userInField": "",
+                    "from": "50",
+                    "to": "100",
+                    "totalRecords": "4093",
+                    "comStartName": "",
+                    "comStartDate": "0",
+                    "comStartTime": "0",
+                    "comStartFileNum": "30141407",
+                    "comStartDbtNum": "0",
+                    "searchType": "P",
+                    "inField": "SMITH",
+                    "comFirstName": "",
+                    "comMiddleName": "",
+                    "comLastName": "",
+                    "firstName": "",
+                    "lastName": "SMITH",
+                    "middleName": "",
+                    "more": "More+Results"
+                }
+                {
+                    "command": "index",
+                    "method": "index",
+                    "page": "index.jsp",
+                    "searchType": "U",
+                    "uccSearch": "P",
+                    "lastName": "johnson",
+                    "firstName": "",
+                    "middleName": "",
+                    "orgName": "",
+                    "searchWord": "",
+                    "fileNum": "",
+                    "lienNumber": "",
+                    "lienName": "",
+                    "submitIt": [
+                        "Submit",
+                        "Submit"
+                    ]
+                }
+                {
+                    "command": "uccsearchresults",
+                    "method": "uccsearchresults",
+                    "page": "WEB-INF/pages/uccsearchresults.jsp",
+                    "moreRecords": "Y",
+                    "history": "N",
+                    "fileNbr": "",
+                    "userInField": "",
+                    "from": "0",
+                    "to": "50",
+                    "totalRecords": "3774",
+                    "comStartName": "",
+                    "comStartDate": "0",
+                    "comStartTime": "0",
+                    "comStartFileNum": "30289102",
+                    "comStartDbtNum": "1",
+                    "searchType": "P",
+                    "inField": "JOHNSON",
+                    "comFirstName": "",
+                    "comMiddleName": "",
+                    "comLastName": "",
+                    "firstName": "",
+                    "lastName": "JOHNSON",
+                    "middleName": "",
+                    "more": "More+Results"
                 }
 
 
@@ -276,32 +263,23 @@ class Scraper52:
 
 
                 response = self.session.post(self.searchurl,data=data,headers=headers1,allow_redirects=True)
-                # response.html.render()
-                # print(response.html.raw_html)
 
                 # Get page results
                 # Parse the HTML content with BeautifulSoup
                 soup = BeautifulSoup(response.content,'html.parser')
-                # print(f'Scraping entries in url: {current_url}')
-                # print(soup.get_text())
-                # print(f'Status code: {response.status_code}')
-                # print(f'History: {response.history}')
-                # print(f'Headers: {response.headers.items()}')
+                print(f'Scraping entries in url: {current_url}')
                 
 
                 # Get first page results and store
-                rows_soup = get_page_rows(soup)
+                trs_soup = get_page_rows(soup)
 
-                if len(rows_soup) == 0:
+                if len(trs_soup) == 0:
                     print("No more pages found. Exiting.")
                     break
-                else:
-                    for row in rows_soup:
-                        print(f'result url: {url}')
                 
                 
                 # scrape info using multithread
                 with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-                    for i in range(0,len(urls),batch_size):
-                        batch_results = [item for results in executor.map(self.scrape_single,urls[i:i+batch_size]) for item in results]
+                    for i in range(0,len(trs_soup),batch_size):
+                        batch_results = [results for results in executor.map(self.scrape_single,trs_soup[i:i+batch_size])]# for item in results]
                         yield batch_results

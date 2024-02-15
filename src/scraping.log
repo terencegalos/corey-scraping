@@ -19404,3 +19404,250 @@ Traceback (most recent call last):
   File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 794, in get_adapter
     raise InvalidSchema(f"No connection adapters were found for {url!r}")
 requests.exceptions.InvalidSchema: No connection adapters were found for "javascript:sumbitForm('027370497');"
+2024-02-15 00:07:03,055 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 238, in scrape_with_refcodes
+    batch_results = [item for results in executor.map(self.scrape_single,trs_soup[i:i+batch_size]) for item in results]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 41, in scrape_single
+    debtor_info = tds[2].get_text()
+                  ~~~^^^
+IndexError: list index out of range
+2024-02-15 00:13:51,807 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 00:16:53,739 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 00:17:41,031 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 00:18:50,221 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 00:20:17,436 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 00:21:57,915 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 00:22:33,986 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 00:27:31,395 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 00:28:16,019 [ERROR]: An error occurred: 'list' object has no attribute 'items'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 241, in scrape_with_refcodes
+    batch_results = [item for results in executor.map(self.scrape_single,trs_soup[i:i+batch_size]) for item in results]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 44, in scrape_single
+    print(f'debtor_info:{debtor_info.splitlines().items()}')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'items'
+2024-02-15 00:42:16,464 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 00:51:28,203 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 01:16:00,587 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 01:18:15,442 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 01:27:36,623 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 01:28:16,852 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 01:28:52,873 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 01:29:38,458 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 01:31:20,094 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 01:31:44,938 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 01:31:54,020 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 01:44:03,955 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-02-15 01:44:32,235 [ERROR]: An error occurred: name 'item' is not defined
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 239, in scrape_with_refcodes
+    batch_results = [item for results in executor.map(self.scrape_single,trs_soup[i:i+batch_size])]# for item in results]
+                     ^^^^
+NameError: name 'item' is not defined. Did you mean: 'iter'?
+2024-02-15 01:51:48,254 [ERROR]: An error occurred: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
