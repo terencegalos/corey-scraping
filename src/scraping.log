@@ -19750,3 +19750,14 @@ Traceback (most recent call last):
     trs_soup = table.find_all('tr')[1:]
                ^^^^^^^^^^^^^^
 AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-15 23:05:45,319 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 249, in scrape_with_refcodes
+    trs_soup = get_page_rows(soup)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 71, in get_page_rows
+    tr_data_soup = table.find_all('tr')[0]
+                   ~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range

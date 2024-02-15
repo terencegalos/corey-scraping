@@ -2,7 +2,8 @@ import requests,time#, json, re
 import urllib.parse
 from bs4 import BeautifulSoup
 import concurrent.futures
-# from scraping import code_generator
+
+# import scraping.name_generator_large_file as name_generator
 from requests_html import HTMLSession
 from requests.cookies import RequestsCookieJar
 from fake_useragent import UserAgent
@@ -67,12 +68,19 @@ class Scraper52:
         def get_page_rows(soup):
             table = soup.find("table")
             trs_soup = table.find_all('tr')[1:]
-            tr_data_soup = table.find_all('tr')[0]
+            try:
+                tr_data_soup = table.find_all('tr')[0]
+            except IndexError:
+                return []
             inputs_soup = tr_data_soup.find_all('input')
 
             # get all data parameters for next post requests
             if inputs_soup:
                 self.data_param.update({input.get('name'): input.get('value') for input in inputs_soup})
+                self.data_param['command'] = 'uccsearchresults'
+                self.data_param['method'] = 'uccsearchresults'
+                self.data_param['page'] = 'WEB-INF/pages/uccsearchresults.jsp'
+                self.data_param['moreRecords'] = 'Y'
                 if "" in self.data_param['history']:
                     self.data_param.update({'history':'N'})
                 if self.data_param['fileNbr'] == None:
@@ -97,7 +105,8 @@ class Scraper52:
         # result = self.scrape_single(self.baseurl)
         # print(f'Sample result: {result}')
                 
-        last_names = ['smith','johnson','xavier']
+        last_names = ['xavier','smith','johnson']
+        # last_names = name_generator.get_last_names()
 
         # Start of loop
         for lname in last_names:
@@ -151,11 +160,12 @@ class Scraper52:
                     "method": "uccsearchresults",
                     "page": "WEB-INF/pages/uccsearchresults.jsp",
                     "moreRecords": "Y",
+
                     "history": "N",
                     "fileNbr": "",
                     "userInField": "",
-                    "from": f"{num}", # range
-                    "to": f"{num+50}",
+                    "from": "0",
+                    "to": "50",
                     "totalRecords": "4093", # total
                     "comStartName": "",
                     "comStartDate": "0",
@@ -163,15 +173,38 @@ class Scraper52:
                     "comStartFileNum": "30249089", # file num
                     "comStartDbtNum": "0",
                     "searchType": "P",
-                    "inField": f"{lname}", # keyword
+                    "inField": "smith",
                     "comFirstName": "",
                     "comMiddleName": "",
                     "comLastName": "",
                     "firstName": "",
-                    "lastName": f"{lname}", # keyword
+                    "lastName": "SMITH",
                     "middleName": "",
+
                     "more": "More+Results"
                 }
+                {
+                    'history': 'N',
+                    'fileNbr': '',
+                    'userInField': '',
+                    'from': '50',
+                    'to': '100',
+                    'totalRecords': '4093',
+                    'comStartName': '',
+                    'comStartDate': '0',
+                    'comStartTime': '0',
+                    'comStartFileNum': '30141407',
+                    'comStartDbtNum': '0',
+                    'searchType': 'P',
+                    'inField': 'SMITH',
+                    'comFirstName': '',
+                    'comMiddleName': '',
+                    'comLastName': '',
+                    'firstName': '',
+                    'lastName': 'SMITH',
+                    'middleName': ''
+                }
+                
 
                 
                 current_url = self.baseurl
