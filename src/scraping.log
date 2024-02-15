@@ -19651,3 +19651,102 @@ Traceback (most recent call last):
     self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
                                ~~~~^^^^^^^^^^^^^^^
 TypeError: string indices must be integers, not 'str'
+2024-02-15 15:11:25,057 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "C:\Users\USER\Projects\corey-scraping\src\main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 278, in scrape_with_refcodes
+    trs_soup = get_page_rows(soup)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 66, in get_page_rows
+    trs_soup = table.find_all('tr')[1:]
+               ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-15 15:20:01,194 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "C:\Users\USER\Projects\corey-scraping\src\main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 278, in scrape_with_refcodes
+    trs_soup = get_page_rows(soup)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 66, in get_page_rows
+    trs_soup = table.find_all('tr')[1:]
+               ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-15 15:22:28,540 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "C:\Users\USER\Projects\corey-scraping\src\main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 278, in scrape_with_refcodes
+    trs_soup = get_page_rows(soup)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 66, in get_page_rows
+    trs_soup = table.find_all('tr')[1:]
+               ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-15 15:56:06,175 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "C:\Users\USER\Projects\corey-scraping\src\main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 212, in scrape_with_refcodes
+    trs_soup = get_page_rows(soup)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 67, in get_page_rows
+    trs_soup = table.find_all('tr')[1:]
+               ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-15 16:12:30,639 [ERROR]: An error occurred: 'str' object has no attribute 'update'
+Traceback (most recent call last):
+  File "C:\Users\USER\Projects\corey-scraping\src\main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 217, in scrape_with_refcodes
+    trs_soup = get_page_rows(soup)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 77, in get_page_rows
+    self.data_param['history'].update({'history':'N'})
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'update'
+2024-02-15 16:13:09,972 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "C:\Users\USER\Projects\corey-scraping\src\main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 217, in scrape_with_refcodes
+    trs_soup = get_page_rows(soup)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 69, in get_page_rows
+    trs_soup = table.find_all('tr')[1:]
+               ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-15 16:15:25,698 [ERROR]: An error occurred: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "C:\Users\USER\Projects\corey-scraping\src\main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 219, in scrape_with_refcodes
+    trs_soup = get_page_rows(soup)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 78, in get_page_rows
+    if None in self.data_param['fileNbr']:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'NoneType' is not iterable
+2024-02-15 16:17:00,884 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "C:\Users\USER\Projects\corey-scraping\src\main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 219, in scrape_with_refcodes
+    trs_soup = get_page_rows(soup)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 69, in get_page_rows
+    trs_soup = table.find_all('tr')[1:]
+               ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2024-02-15 16:17:36,237 [ERROR]: An error occurred: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "C:\Users\USER\Projects\corey-scraping\src\main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 219, in scrape_with_refcodes
+    trs_soup = get_page_rows(soup)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Projects\corey-scraping\src\scraping\scraper52.py", line 69, in get_page_rows
+    trs_soup = table.find_all('tr')[1:]
+               ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_all'

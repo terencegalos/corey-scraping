@@ -20,6 +20,8 @@ class Scraper52:
         self.session = HTMLSession()
         self.jar = RequestsCookieJar()
         self.ua = UserAgent()
+        self.data_param = {}
+        self.done = 0
         print(f"Scraping: {self.baseurl}")
     
     def renew_cookies(self,response):
@@ -39,13 +41,14 @@ class Scraper52:
         tds = tr_soup.find_all('td')
 
         debtor_info = tds[2].get_text()
+
         debtor_name = " ".join(debtor_info.splitlines()[1].split())
         debtor_address = " ".join([" ".join(line.split()) for line in debtor_info.splitlines()[2:-1]])
 
         result_dict.update({'debtor_name':debtor_name,'debtor_address':debtor_address})
         
         secured_party_info = tds[3].get_text()
-        # print(secured_party_info)
+        
         secured_party_name = " ".join(secured_party_info.splitlines()[1].split())
         secured_party_address = " ".join([" ".join(line.split()) for line in secured_party_info.splitlines()[2:]])
 
@@ -59,11 +62,25 @@ class Scraper52:
     
     
     
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',end_char = 'Z',last_interrupted_page=1,starting_page=1):
+    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',end_char = 'Z',last_interrupted_page=0,starting_page=1):
         
         def get_page_rows(soup):
             table = soup.find("table")
             trs_soup = table.find_all('tr')[1:]
+            tr_data_soup = table.find_all('tr')[0]
+            inputs_soup = tr_data_soup.find_all('input')
+
+            # get all data parameters for next post requests
+            if inputs_soup:
+                self.data_param.update({input.get('name'): input.get('value') for input in inputs_soup})
+                if "" in self.data_param['history']:
+                    self.data_param.update({'history':'N'})
+                if self.data_param['fileNbr'] == None:
+                    self.data_param.update({'fileNbr':''})
+            else:
+                self.done = 1
+
+            print(self.data_param)
             
             print(f'tr length: {len(trs_soup)}')
 
@@ -74,13 +91,13 @@ class Scraper52:
             num = last_interrupt_page
             while True:
                 yield num
-                num += 1
+                num += 50
                 
 
         # result = self.scrape_single(self.baseurl)
         # print(f'Sample result: {result}')
                 
-        last_names = ['xavier','smith']
+        last_names = ['smith','johnson','xavier']
 
         # Start of loop
         for lname in last_names:
@@ -102,7 +119,7 @@ class Scraper52:
             }
 
 
-            page_num = 0#num_generator(last_interrupted_page) # page number generator
+            num_gen = num_generator(last_interrupted_page) # page number generator
 
             last_interrupted_page = 0 # reset 
             
@@ -110,8 +127,8 @@ class Scraper52:
 
             
             # walk pagination
-            while True:
-                # num = next(num_gen)
+            while self.done == 0:
+                num = next(num_gen)
                 print(f'Current page:{num}')
                 data = {
                     'command': 'index',
@@ -129,7 +146,7 @@ class Scraper52:
                     'lienName': '',
                     'submitIt': ['Submit', 'Submit']
                 }
-                {
+                data1 = {
                     "command": "uccsearchresults",
                     "method": "uccsearchresults",
                     "page": "WEB-INF/pages/uccsearchresults.jsp",
@@ -137,8 +154,8 @@ class Scraper52:
                     "history": "N",
                     "fileNbr": "",
                     "userInField": "",
-                    "from": "0", # range
-                    "to": "50",
+                    "from": f"{num}", # range
+                    "to": f"{num+50}",
                     "totalRecords": "4093", # total
                     "comStartName": "",
                     "comStartDate": "0",
@@ -146,87 +163,15 @@ class Scraper52:
                     "comStartFileNum": "30249089", # file num
                     "comStartDbtNum": "0",
                     "searchType": "P",
-                    "inField": "SMITH", # keyword
+                    "inField": f"{lname}", # keyword
                     "comFirstName": "",
                     "comMiddleName": "",
                     "comLastName": "",
                     "firstName": "",
-                    "lastName": "SMITH", # keyword
+                    "lastName": f"{lname}", # keyword
                     "middleName": "",
                     "more": "More+Results"
                 }
-                {
-                    "command": "uccsearchresults",
-                    "method": "uccsearchresults",
-                    "page": "WEB-INF/pages/uccsearchresults.jsp",
-                    "moreRecords": "Y",
-                    "history": "N",
-                    "fileNbr": "",
-                    "userInField": "",
-                    "from": "50",
-                    "to": "100",
-                    "totalRecords": "4093",
-                    "comStartName": "",
-                    "comStartDate": "0",
-                    "comStartTime": "0",
-                    "comStartFileNum": "30141407",
-                    "comStartDbtNum": "0",
-                    "searchType": "P",
-                    "inField": "SMITH",
-                    "comFirstName": "",
-                    "comMiddleName": "",
-                    "comLastName": "",
-                    "firstName": "",
-                    "lastName": "SMITH",
-                    "middleName": "",
-                    "more": "More+Results"
-                }
-                {
-                    "command": "index",
-                    "method": "index",
-                    "page": "index.jsp",
-                    "searchType": "U",
-                    "uccSearch": "P",
-                    "lastName": "johnson",
-                    "firstName": "",
-                    "middleName": "",
-                    "orgName": "",
-                    "searchWord": "",
-                    "fileNum": "",
-                    "lienNumber": "",
-                    "lienName": "",
-                    "submitIt": [
-                        "Submit",
-                        "Submit"
-                    ]
-                }
-                {
-                    "command": "uccsearchresults",
-                    "method": "uccsearchresults",
-                    "page": "WEB-INF/pages/uccsearchresults.jsp",
-                    "moreRecords": "Y",
-                    "history": "N",
-                    "fileNbr": "",
-                    "userInField": "",
-                    "from": "0",
-                    "to": "50",
-                    "totalRecords": "3774",
-                    "comStartName": "",
-                    "comStartDate": "0",
-                    "comStartTime": "0",
-                    "comStartFileNum": "30289102",
-                    "comStartDbtNum": "1",
-                    "searchType": "P",
-                    "inField": "JOHNSON",
-                    "comFirstName": "",
-                    "comMiddleName": "",
-                    "comLastName": "",
-                    "firstName": "",
-                    "lastName": "JOHNSON",
-                    "middleName": "",
-                    "more": "More+Results"
-                }
-
 
                 
                 current_url = self.baseurl
@@ -262,10 +207,10 @@ class Scraper52:
                 
 
 
-                response = self.session.post(self.searchurl,data=data,headers=headers1,allow_redirects=True)
+                response = self.session.post(self.searchurl,data=(data if num == 0 else self.data_param),headers=headers1,allow_redirects=True)
+                print(f"Status code: {response.status_code}")
 
-                # Get page results
-                # Parse the HTML content with BeautifulSoup
+                # Get page results using Beautifulsoup
                 soup = BeautifulSoup(response.content,'html.parser')
                 print(f'Scraping entries in url: {current_url}')
                 
@@ -283,3 +228,5 @@ class Scraper52:
                     for i in range(0,len(trs_soup),batch_size):
                         batch_results = [results for results in executor.map(self.scrape_single,trs_soup[i:i+batch_size])]# for item in results]
                         yield batch_results
+                
+                continue
