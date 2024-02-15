@@ -1,9 +1,8 @@
-import requests,time#, json, re
-import urllib.parse
+import requests,time, json
 from bs4 import BeautifulSoup
 import concurrent.futures
 
-# import scraping.name_generator_large_file as name_generator
+import scraping.name_generator_large_file as name_generator
 from requests_html import HTMLSession
 from requests.cookies import RequestsCookieJar
 from fake_useragent import UserAgent
@@ -17,6 +16,7 @@ class Scraper52:
         self.searchurl = 'https://apps.ilsos.gov/uccsearch/UCCSearch'
         self.table_name = "scraper52_info"
         self.last_interrupt_txt = 'last_char_scraper52.txt'
+        self.state_json = 'state_scraper52.json'
         # self.session = requests.Session()
         self.session = HTMLSession()
         self.jar = RequestsCookieJar()
@@ -24,6 +24,21 @@ class Scraper52:
         self.data_param = {}
         self.done = 0
         print(f"Scraping: {self.baseurl}")
+
+
+    def save_state(self,last_name):
+        with open(self.state_json,'w') as file:
+            json.dump({'last_name':last_name},file)
+
+    def load_state(self):
+        try:
+            with open(self.state_json,'r') as file:
+                content = file.read()
+                return json.loads(content)
+        except FileNotFoundError:
+            print("Save state json file not found.")
+            return None
+        
     
     def renew_cookies(self,response):
         print('Renewing cookies...')
@@ -102,15 +117,24 @@ class Scraper52:
                 num += 50
                 
 
-        # result = self.scrape_single(self.baseurl)
-        # print(f'Sample result: {result}')
-                
-        last_names = ['xavier','smith','johnson']
-        # last_names = name_generator.get_last_names()
+
+        last_interrupt_lname_idx = 0
+        
+        state = self.load_state()
+        
+        # last_names = ['xavier','smith','johnson']
+        last_names = name_generator.get_last_names()
+
+        if state:
+            last_interrupt_lname = state['last_name']
+            last_interrupt_lname_idx = last_names.index(last_interrupt_lname)
+        
 
         # Start of loop
-        for lname in last_names:
+        for lname in last_names[last_interrupt_lname_idx:]:
             print(f"Extract search results for '{lname}'")
+
+            self.save_state(lname)
 
             headers = {
                 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
