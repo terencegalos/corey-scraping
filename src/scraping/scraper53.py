@@ -92,11 +92,11 @@ class Scraper53:
         for link in info_links:
             print(f"Extracting info. URL: {self.searchurl+link}")
             try:
-                response = requests.get(self.searchurl+link,headers=header)
+                response = requests.get(self.searchurl+link,headers=headers)
             except requests.exceptions.ConnectionError:
                 print(f'Connecting failed to url {self.searchurl+link}. Retrying in 20 secs')
                 time.sleep(20)
-                response = requests.get(self.searchurl+link,headers=header)
+                response = requests.get(self.searchurl+link,headers=headers)
                 
             soup = BeautifulSoup(response.text, 'html.parser')
 
@@ -204,47 +204,49 @@ class Scraper53:
                     'Sec-Fetch-User': '?1',
                     'Sec-GPC': '1',
                     'Upgrade-Insecure-Requests': '1',
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
-                }
+                    "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:122.0) Gecko/20100101 Firefox/122.0",
 
+                }
                 headers2 = {
-                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-                    'Accept-Encoding': 'gzip, deflate, br',
-                    'Accept-Language': 'en-US,en;q=0.5',
-                    'Connection': 'keep-alive',
-                    'Content-Length': '999999',
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'Host': 'corp.sec.state.ma.us',
-                    'Origin': 'https://corp.sec.state.ma.us',
-                    'Referer': 'https://corp.sec.state.ma.us/CorpWeb/UCCSearch/UCCSearch.aspx',
-                    'Sec-Fetch-Dest': 'document',
-                    'Sec-Fetch-Mode': 'navigate',
-                    'Sec-Fetch-Site': 'same-origin',
-                    'Sec-Fetch-User': '?1',
-                    'TE': 'trailers',
-                    'Upgrade-Insecure-Requests': '1',
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
-                }
-
-                headers3 = {
+                    "Host": "corp.sec.state.ma.us",
+                    "Content-Length":"9191",
+                    "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:122.0) Gecko/20100101 Firefox/122.0",
                     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
                     "Accept-Language": "en-US,en;q=0.5",
                     "Accept-Encoding": "gzip, deflate, br",
-                    "Connection": "keep-alive",
-                    "Content-Length": "999999",
                     "Content-Type": "application/x-www-form-urlencoded",
-                    "Host": "corp.sec.state.ma.us",
                     "Origin": "https://corp.sec.state.ma.us",
+                    "DNT": "1",
+                    "Sec-GPC": "1",
+                    "Connection": "keep-alive",
                     "Referer": "https://corp.sec.state.ma.us/CorpWeb/UCCSearch/UCCSearch.aspx",
+                    "Upgrade-Insecure-Requests": "1",
                     "Sec-Fetch-Dest": "document",
                     "Sec-Fetch-Mode": "navigate",
                     "Sec-Fetch-Site": "same-origin",
                     "Sec-Fetch-User": "?1",
-                    "TE": "trailers",
-                    "Upgrade-Insecure-Requests": "1",
+                    "TE": "trailers"
+                }
+
+                headers3 = {                    
+                    "Host": "corp.sec.state.ma.us",
+                    "Content-Length":"9298",
+                    "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:122.0) Gecko/20100101 Firefox/122.0",
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+                    "Accept-Language": "en-US,en;q=0.5",
+                    "Accept-Encoding": "gzip, deflate, br",
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Origin": "https://corp.sec.state.ma.us",
                     "DNT": "1",
                     "Sec-GPC": "1",
-                    "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:122.0) Gecko/20100101 Firefox/122.0",
+                    "Connection": "keep-alive",
+                    "Referer": "https://corp.sec.state.ma.us/CorpWeb/UCCSearch/UCCSearch.aspx",
+                    "Upgrade-Insecure-Requests": "1",
+                    "Sec-Fetch-Dest": "document",
+                    "Sec-Fetch-Mode": "navigate",
+                    "Sec-Fetch-Site": "same-origin",
+                    "Sec-Fetch-User": "?1",
+                    "TE": "trailers"
                 }
 
 
@@ -269,7 +271,7 @@ class Scraper53:
                         "__VIEWSTATEGENERATOR": "CB1FA542",
                         "__EVENTVALIDATION": "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",
                         "ctl00$MainContent$UccSearch": "rdoSearchI",
-                        "ctl00$MainContent$txtLastName": f"{char}{char2}",
+                        "ctl00$MainContent$txtLastName": "",
                         "ctl00$MainContent$txtFirstName": "",
                         "ctl00$MainContent$txtMiddleName": "",
                         "ctl00$MainContent$txtSuffix": "",
@@ -282,7 +284,7 @@ class Scraper53:
                         "ctl00$MainContent$UCCSearchMethodI": "B",
                         "ctl00$MainContent$txtStartDate": "",
                         "ctl00$MainContent$chkDebtor": "on",
-                        "ctl00$MainContent$UCCSearchMethod": "B",
+                        "ctl00$MainContent$UCCSearchMethod": "M",
                         "ctl00$MainContent$ddRecordsPerPage": "100000",
                         "ctl00$MainContent$HiddenSearchOption_SearchLapsed": "False"
                     }
@@ -294,7 +296,7 @@ class Scraper53:
                         "__VIEWSTATEGENERATOR": "CB1FA542",
                         "__EVENTVALIDATION": "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",
                         "ctl00$MainContent$UccSearch": "rdoSearchI",
-                        "ctl00$MainContent$txtLastName": "aa",
+                        "ctl00$MainContent$txtLastName": f"{char}{char2}",
                         "ctl00$MainContent$txtFirstName": "",
                         "ctl00$MainContent$txtMiddleName": "",
                         "ctl00$MainContent$txtSuffix": "",
@@ -316,37 +318,33 @@ class Scraper53:
                     current_url = self.searchurl
 
                     # Get new cookies and set headers
-                    _ = self.session.get(current_url,headers=headers1)
+                    self.session.headers.update(headers1)
+                    response_ = self.session.get(current_url,headers=headers1)
+                    print(f"Headers0: {self.session.headers.items()}")
 
-                    time.sleep(1)
+                    self.session.headers.update(headers2)
+                    response_ = self.session.post(current_url,data=data)
+                    print(f"Headers2: {self.session.headers.items()}")
 
                     # Send post requests
-                    response_ = self.session.post(current_url,headers=headers3,data=data1,allow_redirects=True)
-
-
-                    # Update headers
-                    # self.session.headers.update(headers3)
-                    
-                    # Send post requests with data
-                    # response_ = self.session.post(current_url,data=data1,allow_redirects=True)
+                    self.session.headers.update(headers3)
+                    response_ = self.session.post(current_url,data=data1,allow_redirects=True)
+                    print(f"Headers3: {self.session.headers.items()}")
 
 
 
                     
                     response_.html.render()
-                    # print(response_.html.raw_html)
+                    print(response_.html.raw_html)
 
                     soup = BeautifulSoup(response_.content,'html.parser')
-                    print(soup.get_text())
-                    # print(response_.text)
+                    # print(soup.get_text())
+                    print(response_.text)
                     print(f'status_code: {response_.status_code}')
                     print(f"response_headers:{response_.headers}")
                     print(f"response history:{response_.history}")
-                    time.sleep(100)
-
 
                     time.sleep(100)
-                    self.renew_cookies(response)
 
                     response = requests.post(current_url,data=data,cookies=self.jar,headers=headers2)
 

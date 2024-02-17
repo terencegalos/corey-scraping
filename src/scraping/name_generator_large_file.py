@@ -1,5 +1,5 @@
 from database.database_handler_names import DatabaseHandler
-from config.db_config import DB_CONFIG
+from config.db_config_local import DB_CONFIG
 from itertools import product,islice
 
 

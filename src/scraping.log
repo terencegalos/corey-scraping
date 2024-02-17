@@ -19761,3 +19761,148 @@ Traceback (most recent call last):
     tr_data_soup = table.find_all('tr')[0]
                    ~~~~~~~~~~~~~~~~~~~~^^^
 IndexError: list index out of range
+2024-02-16 22:32:46,381 [ERROR]: An error occurred: name 'name_generator' is not defined
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 131, in scrape_with_refcodes
+    last_names = name_generator.get_last_names()
+                 ^^^^^^^^^^^^^^
+NameError: name 'name_generator' is not defined
+2024-02-16 22:33:10,893 [ERROR]: An error occurred: cannot access local variable 'last_interrupted_page' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 140, in scrape_with_refcodes
+    batch_result = [result for result in executor.map(self.scraped_with_last_name,last_names[i:i+batch_size])]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 170, in scraped_with_last_name
+    num_gen = self.num_generator(last_interrupted_page) # page number generator
+                                 ^^^^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'last_interrupted_page' where it is not associated with a value
+2024-02-16 22:36:46,819 [ERROR]: An error occurred: 'Scraper52' object has no attribute 'scrape_single'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 140, in scrape_with_refcodes
+    batch_result = [result for result in executor.map(self.scraped_with_last_name,last_names[i:i+batch_size])]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 249, in scraped_with_last_name
+    page_result = [self.scrape_single(row) for row in trs_soup]
+                   ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper52' object has no attribute 'scrape_single'. Did you mean: 'scrape_single_row'?
+2024-02-16 22:37:31,843 [ERROR]: An error occurred: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2024-02-16 22:47:06,261 [ERROR]: An error occurred: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                               ~~~~^^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2024-02-16 23:03:46,979 [ERROR]: An error occurred: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 128, in scrape_with_refcodes
+    state = self.load_state()
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 36, in load_state
+    return json.loads(content)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2024-02-16 23:04:02,865 [ERROR]: An error occurred: 'amadi' is not in list
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 135, in scrape_with_refcodes
+    last_interrupt_lname_idx = last_names.index(last_interrupt_lname)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: 'amadi' is not in list
+2024-02-16 23:40:40,991 [INFO]: Scraping and storing data completed successfully.
+2024-02-17 01:37:39,442 [ERROR]: An error occurred: 'CaseInsensitiveDict' object has no attribute 'updated'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 327, in scrape_with_refcodes
+    self.session.headers.updated(headers3)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CaseInsensitiveDict' object has no attribute 'updated'. Did you mean: 'update'?
+2024-02-17 01:44:32,868 [INFO]: Browser listening on: ws://127.0.0.1:34543/devtools/browser/0675a6b4-1857-47ca-82fd-7a92dd2b42f1
+2024-02-17 01:44:44,415 [INFO]: terminate chrome process...
+2024-02-17 01:44:44,422 [INFO]: connection closed
+2024-02-17 01:51:01,090 [INFO]: Browser listening on: ws://127.0.0.1:59659/devtools/browser/71071b7c-4a2f-4161-a28f-2b93cc35221f
+2024-02-17 01:51:09,620 [INFO]: terminate chrome process...
+2024-02-17 01:51:09,629 [INFO]: connection closed
+2024-02-17 01:58:11,390 [INFO]: Browser listening on: ws://127.0.0.1:53627/devtools/browser/4c413235-768f-427f-9232-fed755efbea5
+2024-02-17 01:58:38,518 [INFO]: terminate chrome process...
+2024-02-17 01:58:38,524 [INFO]: connection closed
+2024-02-17 03:34:48,439 [ERROR]: An error occurred: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 362, in scrape_with_refcodes
+    # Get first page results and store
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 164, in get_page_links
+    print(f'tr length: {len(tr_elements)}')
+OSError: [Errno 5] Input/output error
+2024-02-17 03:34:49,814 [ERROR]: An error occurred: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 351, in scrape_with_refcodes
+    print(f'Scraping entries in url: {current_url}')
+OSError: [Errno 5] Input/output error
+2024-02-17 03:34:50,651 [ERROR]: An error occurred: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 351, in scrape_with_refcodes
+    print(f'Scraping entries in url: {current_url}')
+OSError: [Errno 5] Input/output error
