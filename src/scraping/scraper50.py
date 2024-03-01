@@ -135,11 +135,7 @@ class Scraper50:
     
     
     
-<<<<<<< HEAD
     def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A', last_interrupt_debtor=None,searchby_start=0,starting_page=1): # starting page is a dummy and is always 1
-=======
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',last_interrupt_char2 ='A', last_interrupt_debtor=None,searchby_start=0,starting_page=1): # starting page is a dummy and is always 1
->>>>>>> 479b4ffb96f82a9b69956901cc0fd6593ed7d2bf
         
         def get_page_links(soup):
             tr_elements = soup.find_all("tr")

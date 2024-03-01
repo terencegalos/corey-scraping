@@ -66,4 +66,5 @@ def generate_names(last_interrupted_first=None,last_interrupted_last=None,exclud
     # To manage system resources we loop every first name not everything at once
     for idx in range(start_index_first,len(first_names)):
         batch = [" ".join(name) for name in list(iter(product([first_names[idx]],last_names[start_index_last:])))]
+        start_index_last = 0 # reset last name index after looping current first name
         yield batch

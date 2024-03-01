@@ -6,6 +6,7 @@ from fake_useragent import UserAgent
 # from scraping import name_generator
 from scraping import name_generator_large_file as name_generator
 from scraping import get_us_state
+from config.proxies import proxy_dict_http
 
 class Scraper55:
     def __init__(self):
@@ -37,11 +38,11 @@ class Scraper55:
     
         
         try:
-            response = requests.get(f"https://{url}", headers=headers, allow_redirects=True)
+            response = requests.get(f"https://{url}", headers=headers,proxies=proxy_dict_http, allow_redirects=True)
         except requests.exceptions.ConnectionError as e:
             print(f'Connecting failed to {url}. Error: {e}\nReconnecting in 20 secs...')
             time.sleep(20)
-            response = requests.get(f"https://{url}", headers=headers, allow_redirects=True)
+            response = requests.get(f"https://{url}", headers=headers,proxies=proxy_dict_http, allow_redirects=True)
         except requests.exceptions.InvalidURL:
             print("Invalid url")
             return
@@ -81,7 +82,7 @@ class Scraper55:
         }
         
     
-    def scrape_with_names(self,batch_size=100,num_threads=3):
+    def scrape_with_names(self,batch_size=10,num_threads=3):
         
         names_generator = name_generator.generate_names(exclude_old_names=False)#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
         

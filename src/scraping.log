@@ -19906,3 +19906,891 @@ Traceback (most recent call last):
   File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 351, in scrape_with_refcodes
     print(f'Scraping entries in url: {current_url}')
 OSError: [Errno 5] Input/output error
+2024-02-19 23:15:25,792 [INFO]: Scraping and storing data completed successfully.
+2024-02-19 23:15:38,465 [INFO]: Scraping and storing data completed successfully.
+2024-02-20 22:03:14,595 [INFO]: Browser listening on: ws://127.0.0.1:51917/devtools/browser/12f5dd11-e127-494b-aea9-219b5f1f9f2d
+2024-02-20 22:03:41,545 [INFO]: terminate chrome process...
+2024-02-20 22:03:41,551 [INFO]: connection closed
+2024-02-21 00:21:14,152 [INFO]: Browser listening on: ws://127.0.0.1:60267/devtools/browser/6b6d1792-c3bf-4d68-82c8-cd8ab4be0784
+2024-02-21 00:21:27,609 [INFO]: terminate chrome process...
+2024-02-21 00:21:27,614 [INFO]: connection closed
+2024-02-21 00:21:57,776 [INFO]: Browser listening on: ws://127.0.0.1:43581/devtools/browser/f0411095-09ae-4261-8a4f-8644afa97810
+2024-02-21 00:21:59,889 [ERROR]: An error occurred: This event loop is already running
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 366, in scrape_with_refcodes
+    response_.html.render()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests_html.py", line 598, in render
+    content, result, page = self.session.loop.run_until_complete(self._async_render(url=self.url, script=script, sleep=sleep, wait=wait, content=self.html, reload=reload, scrolldown=scrolldown, timeout=timeout, keep_page=keep_page))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/base_events.py", line 651, in run_until_complete
+    self.run_forever()
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/base_events.py", line 618, in run_forever
+    self._run_once()
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/base_events.py", line 1913, in _run_once
+    event_list = self._selector.select(timeout)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/selectors.py", line 468, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/launcher.py", line 153, in _close_process
+    self._loop.run_until_complete(self.killChrome())
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/base_events.py", line 640, in run_until_complete
+    self._check_running()
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/base_events.py", line 599, in _check_running
+    raise RuntimeError('This event loop is already running')
+RuntimeError: This event loop is already running
+2024-02-21 00:21:59,916 [INFO]: terminate chrome process...
+2024-02-21 00:21:59,917 [ERROR]: connection unexpectedly closed
+2024-02-21 00:21:59,917 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-33' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-21 00:21:59,924 [INFO]: connection closed
+2024-02-21 04:17:14,383 [INFO]: terminate chrome process...
+2024-02-21 04:17:17,398 [ERROR]: An error occurred: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 351, in scrape_with_refcodes
+    response_ = self.session.post(current_url,data=data1,allow_redirects=False)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+2024-02-21 04:17:17,532 [ERROR]: An error occurred: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 378, in scrape_with_refcodes
+    response = requests.post(current_url,data=data,cookies=self.jar,headers=headers2)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+2024-02-21 04:17:17,689 [INFO]: terminate chrome process...
+2024-02-23 01:47:30,378 [ERROR]: An error occurred: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+                       ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1411, in getresponse
+    response.begin()
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 324, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 293, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+                       ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1411, in getresponse
+    response.begin()
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 324, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 293, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper54.py", line 292, in scrape_with_refcodes
+    if results is not None:
+                        ^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper54.py", line 66, in scrape_single
+    response = self.session.get(url,headers=headers,allow_redirects=True,verify=False)#proxies={'https':'47.243.92.199:3128'},allow_redirects=True,verify=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2024-02-23 01:47:55,008 [ERROR]: An error occurred: 'char'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper54.py", line 169, in scrape_with_refcodes
+    last_interrupt_char_index = ascii_uppercase.index(state['char'])
+                                                      ~~~~~^^^^^^^^
+KeyError: 'char'
+2024-02-23 01:53:26,222 [ERROR]: An error occurred: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+                       ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1411, in getresponse
+    response.begin()
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 324, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 293, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+                       ^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 1411, in getresponse
+    response.begin()
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 324, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/http/client.py", line 293, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper54.py", line 293, in scrape_with_refcodes
+    batch_results = [item for results in results for item in results if item is not None]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper54.py", line 66, in scrape_single
+    response = self.session.get(url,headers=headers,allow_redirects=True,verify=False)#proxies={'https':'47.243.92.199:3128'},allow_redirects=True,verify=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2024-02-23 02:01:10,820 [ERROR]: An error occurred: cannot access local variable 'char2' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper54.py", line 170, in scrape_with_refcodes
+    last_interrupt_char2_index = ascii_uppercase.index(state[char2])
+                                                             ^^^^^
+UnboundLocalError: cannot access local variable 'char2' where it is not associated with a value
+2024-02-23 22:20:08,206 [ERROR]: An error occurred: 'Scraper54' object has no attribute 'renew_cookies'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper54.py", line 264, in scrape_with_refcodes
+    self.renew_cookies(response)
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper54' object has no attribute 'renew_cookies'
+2024-02-23 22:20:54,159 [ERROR]: An error occurred: 'Scraper54' object has no attribute 'jar'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper54.py", line 269, in scrape_with_refcodes
+    self.renew_cookies(response)
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper54.py", line 30, in renew_cookies
+    self.jar.set(name,value)
+    ^^^^^^^^
+AttributeError: 'Scraper54' object has no attribute 'jar'
+2024-02-23 22:25:04,739 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper54.py", line 289, in scrape_with_refcodes
+    page_info = soup.find('li',class_='pageinfo').get_text().split(",")[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2024-02-23 22:28:23,944 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper54.py", line 289, in scrape_with_refcodes
+    page_info = soup.find(class_='pageinfo').get_text().split(",")[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2024-02-23 22:30:37,466 [ERROR]: An error occurred: cannot access local variable 'page_info' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper54.py", line 290, in scrape_with_refcodes
+    if page_info:
+       ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'page_info' where it is not associated with a value
+2024-02-23 23:25:37,296 [ERROR]: An error occurred: 'secured_party_name'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 52, in main
+    db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/database/database_handler_ucc_scraper.py", line 49, in data_exists
+    self.cursor.execute(query,(data['debtor_name'],data['debtor_address'],data['secured_party_name'],data['secured_party_address']))
+                                                                          ~~~~^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'secured_party_name'
+2024-02-24 01:21:48,827 [ERROR]: An error occurred: 'NoneType' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper54.py", line 326, in scrape_with_refcodes
+    page_info = page_info_soup.get_text().split(",")[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2024-02-27 19:33:15,268 [ERROR]: An error occurred: 'list' object is not an iterator
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper15.py", line 109, in scrape_with_names
+    for name in next(names_generator):
+                ^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'list' object is not an iterator
+2024-02-28 20:38:42,469 [ERROR]: An error occurred: 'list' object has no attribute 'replace'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper31.py", line 114, in scrape_with_names
+    futures = [executor.submit(scrape_single_with_increment, name.replace("'","").replace("/","").replace(")","").replace("(","").replace("[",""), num) for num in [next(num_generator) for _ in range(3)] ]
+                                                             ^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'replace'
+2024-02-28 20:39:51,818 [ERROR]: An error occurred: 'list' object has no attribute 'replace'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_test.py", line 38, in main
+    for batch_results in scraper.scrape_with_names():
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper31.py", line 114, in scrape_with_names
+    futures = [executor.submit(scrape_single_with_increment, name.replace("'","").replace("/","").replace(")","").replace("(","").replace("[",""), num) for num in [next(num_generator) for _ in range(3)] ]
+                                                             ^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'replace'
+2024-02-29 00:50:04,232 [INFO]: Browser listening on: ws://127.0.0.1:50647/devtools/browser/6ae2d1f7-afaa-43c4-b903-f9ef499ba557
+2024-02-29 00:52:20,237 [INFO]: terminate chrome process...
+2024-02-29 00:52:20,455 [ERROR]: connection unexpectedly closed
+2024-02-29 00:52:20,487 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-39' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-29 00:52:20,757 [INFO]: connection closed
+2024-02-29 01:20:36,350 [ERROR]: An error occurred: substring not found
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 182, in scrape_with_refcodes
+    end_char_index = ascii_lowercase.index(end_char)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: substring not found
+2024-02-29 01:37:27,152 [INFO]: Browser listening on: ws://127.0.0.1:47811/devtools/browser/ee310e50-f9f9-4a10-951f-8977a7004628
+2024-02-29 01:38:23,765 [INFO]: Browser listening on: ws://127.0.0.1:36135/devtools/browser/57f4d0ce-e132-4cbf-993b-abf90da41b8c
+2024-02-29 01:39:34,102 [INFO]: Browser listening on: ws://127.0.0.1:49883/devtools/browser/c0e5cfe8-cd52-4258-9790-3e222c067ab1
+2024-02-29 02:19:40,738 [INFO]: terminate chrome process...
+2024-02-29 02:19:40,738 [INFO]: terminate chrome process...
+2024-02-29 02:19:40,761 [INFO]: terminate chrome process...
+2024-02-29 02:19:41,134 [ERROR]: connection unexpectedly closed
+2024-02-29 02:19:41,170 [ERROR]: connection unexpectedly closed
+2024-02-29 02:19:41,197 [ERROR]: connection unexpectedly closed
+2024-02-29 02:19:41,009 [INFO]: terminate chrome process...
+2024-02-29 02:19:41,240 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-41' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-29 02:19:41,178 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-42' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-29 02:19:41,254 [ERROR]: Task exception was never retrieved
+future: <Task finished name='Task-42' coro=<Connection._async_send() done, defined at /home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/framing.py", line 69, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/asyncio/streams.py", line 732, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 647, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1214, in write_frame
+    await self.drain()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1203, in drain
+    await self.ensure_open()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/terence/venvs/scraping/lib/python3.12/site-packages/pyppeteer/connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2024-02-29 02:19:41,637 [INFO]: connection closed
+2024-02-29 02:19:41,641 [INFO]: connection closed
+2024-02-29 02:19:41,675 [INFO]: connection closed
+2024-02-29 02:19:42,301 [ERROR]: An error occurred: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 363, in scrape_with_refcodes
+    soup = BeautifulSoup(response.content,'html.parser')
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 164, in get_page_links
+    print(f'tr length: {len(tr_elements)}')
+OSError: [Errno 5] Input/output error
+2024-02-29 02:19:43,004 [INFO]: terminate chrome process...
+2024-02-29 02:19:43,552 [ERROR]: An error occurred: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 356, in scrape_with_refcodes
+    print(f'Status code: {response.status_code}')
+OSError: [Errno 5] Input/output error
+2024-02-29 02:19:43,554 [ERROR]: An error occurred: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 355, in scrape_with_refcodes
+    print(f'Scraping entries in url: {current_url}')
+OSError: [Errno 5] Input/output error
+2024-02-29 02:19:43,608 [INFO]: terminate chrome process...
+2024-02-29 02:19:43,611 [INFO]: terminate chrome process...
+2024-02-29 02:19:43,643 [ERROR]: An error occurred: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 355, in scrape_with_refcodes
+    print(f'Scraping entries in url: {current_url}')
+OSError: [Errno 5] Input/output error
+2024-02-29 02:19:43,751 [INFO]: terminate chrome process...
+2024-02-29 22:17:37,759 [ERROR]: An error occurred: 'Scraper49' object has no attribute 'state_json'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 133, in scrape_with_refcodes
+    state = self.load_state()
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 28, in load_state
+    with open(self.state_json,'r') as file:
+              ^^^^^^^^^^^^^^^
+AttributeError: 'Scraper49' object has no attribute 'state_json'
+2024-02-29 22:18:29,700 [ERROR]: An error occurred: 'Scraper49' object has no attribute 'state_json'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 133, in scrape_with_refcodes
+    state = self.load_state()
+            ^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 28, in load_state
+    with open(self.state_json,'r') as file:
+              ^^^^^^^^^^^^^^^
+AttributeError: 'Scraper49' object has no attribute 'state_json'
+2024-02-29 22:21:04,697 [ERROR]: An error occurred: 'Scraper49' object has no attribute 'last_interrupt_txt'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 163, in scrape_with_refcodes
+    with open(self.last_interrupt_txt,'w') as f:
+              ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scraper49' object has no attribute 'last_interrupt_txt'
+2024-02-29 22:43:32,474 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 181, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls) if results is not None]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 109, in scrape_single
+    secured_party = secured_party_info[0].get_text(separator='\n')
+                    ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2024-02-29 22:44:16,892 [ERROR]: An error occurred: list index out of range
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 181, in scrape_with_refcodes
+    batch_results = [results for results in executor.map(self.scrape_single,urls) if results is not None]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/terence/.pyenv/versions/3.12.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper49.py", line 109, in scrape_single
+    secured_party = secured_party_info[0].get_text(separator='\n')
+                    ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2024-03-02 00:21:42,242 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 279, in scrape_with_refcodes
+    viewstate = soup.find('input',id_='__VIEWSTATE')['value']
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-03-02 00:22:31,268 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 280, in scrape_with_refcodes
+    viewstate = soup.find('input',id_='__VIEWSTATE')['value']
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-03-02 00:28:37,074 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 280, in scrape_with_refcodes
+    viewstate = soup.find('input',id_='__VIEWSTATE')['value']
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-03-02 00:31:29,060 [ERROR]: An error occurred: cannot access local variable 'data' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 278, in scrape_with_refcodes
+    response_ = self.session.post(current_url,data=data)
+                                                   ^^^^
+UnboundLocalError: cannot access local variable 'data' where it is not associated with a value
+2024-03-02 00:32:46,548 [ERROR]: An error occurred: cannot access local variable 'data' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 282, in scrape_with_refcodes
+    response_ = self.session.post(current_url,data=data)
+                                                   ^^^^
+UnboundLocalError: cannot access local variable 'data' where it is not associated with a value
+2024-03-02 00:33:36,567 [INFO]: Browser listening on: ws://127.0.0.1:38167/devtools/browser/74edfc19-1e7f-4c19-a33b-1f4c05e20656
+2024-03-02 00:33:50,370 [ERROR]: An error occurred: cannot access local variable 'data' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 286, in scrape_with_refcodes
+    response_ = self.session.post(current_url,data=data)
+                                                   ^^^^
+UnboundLocalError: cannot access local variable 'data' where it is not associated with a value
+2024-03-02 00:33:50,372 [INFO]: terminate chrome process...
+2024-03-02 00:34:09,694 [INFO]: Browser listening on: ws://127.0.0.1:33747/devtools/browser/724960e4-2648-4226-ba45-90d7ad110ec0
+2024-03-02 00:34:13,522 [ERROR]: An error occurred: cannot access local variable 'data' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 286, in scrape_with_refcodes
+    response_ = self.session.post(current_url,data=data)
+                                                   ^^^^
+UnboundLocalError: cannot access local variable 'data' where it is not associated with a value
+2024-03-02 00:34:13,523 [INFO]: terminate chrome process...
+2024-03-02 00:35:08,743 [ERROR]: An error occurred: 'function' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 274, in scrape_with_refcodes
+    response_ = requests.session.get(current_url,headers=headers1)
+                ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'function' object has no attribute 'get'
+2024-03-02 00:35:33,150 [ERROR]: An error occurred: 'Response' object has no attribute 'html'
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 276, in scrape_with_refcodes
+    response_.html.render()
+    ^^^^^^^^^^^^^^
+AttributeError: 'Response' object has no attribute 'html'
+2024-03-02 00:36:22,095 [ERROR]: An error occurred: cannot access local variable 'data' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 309, in scrape_with_refcodes
+    response_ = self.session.post(current_url,data=data)
+                                                   ^^^^
+UnboundLocalError: cannot access local variable 'data' where it is not associated with a value
+2024-03-02 00:37:04,880 [ERROR]: An error occurred: cannot access local variable 'soup' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 313, in scrape_with_refcodes
+    viewstate = soup.find('input',id_='__VIEWSTATE')['value']
+                ^^^^
+UnboundLocalError: cannot access local variable 'soup' where it is not associated with a value
+2024-03-02 00:37:31,563 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 313, in scrape_with_refcodes
+    viewstate = soup.find('input',id_='__VIEWSTATE')['value']
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-03-02 00:42:43,088 [ERROR]: An error occurred: cannot access local variable 'data' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 283, in scrape_with_refcodes
+    response_ = self.session.post(current_url,data=data)
+                                                   ^^^^
+UnboundLocalError: cannot access local variable 'data' where it is not associated with a value
+2024-03-02 00:42:56,652 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 287, in scrape_with_refcodes
+    viewstate = soup.find('input',id_='__VIEWSTATE')['value']
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-03-02 00:43:09,894 [ERROR]: An error occurred: name 'viewstate' is not defined
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 294, in scrape_with_refcodes
+    "__VIEWSTATE": f"{viewstate}",
+                      ^^^^^^^^^
+NameError: name 'viewstate' is not defined
+2024-03-02 00:44:30,735 [ERROR]: An error occurred: Session.get() takes 2 positional arguments but 3 were given
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 274, in scrape_with_refcodes
+    response_ = self.session.get(current_url,headers1)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Session.get() takes 2 positional arguments but 3 were given
+2024-03-02 00:49:15,926 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 315, in scrape_with_refcodes
+    viewstate = soup.find('input',id_='__VIEWSTATE')['value']
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-03-02 01:12:03,059 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 283, in scrape_with_refcodes
+    viewstate = soup.find('input',id_='__VIEWSTATE')['value']
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-03-02 01:12:51,814 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 283, in scrape_with_refcodes
+    viewstate = soup.find('input',id_='__VIEWSTATE')['value']
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-03-02 01:13:33,105 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 284, in scrape_with_refcodes
+    viewstate = soup.find('input',id_='__VIEWSTATE')['value']
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-03-02 01:17:40,851 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 285, in scrape_with_refcodes
+    eventvalidation = soup.find('input',id_='__EVENTVALIDATION')['value']
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-03-02 01:19:38,836 [ERROR]: An error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper53.py", line 285, in scrape_with_refcodes
+    eventvalidation = soup.find('input',id_='__EVENTVALIDATION')['value']
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable

@@ -4,8 +4,10 @@ from bs4 import BeautifulSoup
 import concurrent.futures
 from fake_useragent import UserAgent
 
-from scraping import name_generator_large_file as name_generator
+# from scraping import name_generator_large_file as name_generator
+from scraping import name_generator
 from scraping import get_us_state
+from config.proxies import proxy_dict_http
 
 class Scraper31:
     def __init__(self):
@@ -37,11 +39,11 @@ class Scraper31:
     
         
         try:
-            response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
+            response = requests.get(f"http://{url}", headers=headers, allow_redirects=True,proxies=proxy_dict_http)
         except requests.exceptions.ConnectionError as e:
             print(f'Connecting failed to {url}. Error: {e}\nReconnecting in 20 secs...')
             time.sleep(20)
-            response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
+            response = requests.get(f"http://{url}", headers=headers, allow_redirects=True,proxies=proxy_dict_http)
         except requests.exceptions.InvalidURL:
             print("Invalid url")
             return
@@ -52,6 +54,7 @@ class Scraper31:
         # if response.status_code == 200:
         # Parse the HTML content with BeautifulSoup        
         soup = BeautifulSoup(response.content, 'html.parser')
+        print(soup.get_text())
         
         #Extract relevant data from the HTML using BeautifulSoup methods
         first_name_el = soup.find(attrs={'name':'first_name'})['value'] if soup.find(attrs={'name':'first_name'}) else None
@@ -83,7 +86,7 @@ class Scraper31:
     
     def scrape_with_names(self,batch_size=10,num_threads=3):
         
-        names_generator = name_generator.generate_names('aabidammar','ralph')#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
+        names_generator = name_generator.generate_names()#'aabidammar','ralph')#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
         # names_foreign = name_generator.generate_names('/root/scraping/corey-scraping/src/scraping/ForeignFirstandLast.ods')
         # print(names)
         # print(f"There {len(names)} names to rotate!")
@@ -106,7 +109,7 @@ class Scraper31:
                
             while True:
                 try:
-                    for name in next(names_generator):
+                    for name in names_generator:#next(names_generator):
                         num_generator = generate_numbers()
                         continue_to_next_name = False
                         

@@ -3,7 +3,8 @@ from bs4 import BeautifulSoup
 import concurrent.futures
 from fake_useragent import UserAgent
 
-from scraping import name_generator_large_file as name_generator
+# from scraping import name_generator_large_file as name_generator
+from scraping import name_generator
 from scraping import get_us_state
 
 class Scraper14:
@@ -82,7 +83,7 @@ class Scraper14:
     
     def scrape_with_names(self,batch_size=10,num_threads=3):
         
-        names_generator = name_generator.generate_names('caoimhin','whinnery')#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
+        names_generator = name_generator.generate_names()#'caoimhin','whinnery')#'/root/projects/corey/src/scraping/CommonFirstandLast.xlsx','David','DAVIS')
         # print(names)
         # print(f"There {len(names)} names to rotate!")
         results = []
@@ -104,7 +105,8 @@ class Scraper14:
                
             while True:
                 try:
-                    for name in next(names_generator):
+                    # for name in next(names_generator):
+                    for name in names_generator:
                         num_generator = generate_numbers()
                         continue_to_next_name = False
                         
