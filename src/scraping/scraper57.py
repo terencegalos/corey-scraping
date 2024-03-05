@@ -25,7 +25,7 @@ class Scraper57:
     
     
     
-    def scrape_with_zipcodes(self,last_interrupt_zipcode=90001,last_interrupt_specialty='MOS',search_by_other=True,batch_size=10,num_threads=3):
+    def scrape_with_zipcodes(self,last_interrupt_zipcode=90001,last_interrupt_specialty='ACA',search_by_other=True,batch_size=10,num_threads=3):
 
         db_handler = DatabaseHandler(
                     host=DB_CONFIG['DBHOST'],
@@ -61,7 +61,6 @@ class Scraper57:
                 "Connection": "keep-alive",
                 "Content-Length": "31",
                 "Content-Type": "application/x-www-form-urlencoded",
-                # "Cookie": "_ga_69TD0KNT0F=GS1.1.1704731783.1.1.1704733797.0.0.0; _ga=GA1.2.1344870777.1704731783; _ga_9C30LB4KFJ=GS1.1.1704731783.1.1.1704733800.0.0.0; _gid=GA1.2.1457700408.1704731784; _ga_75V2BNQ3DR=GS1.1.1704732099.1.1.1704733752.0.0.0; _gat_gtag_UA_3419582_30=1; _gat_gtag_UA_3419582_2=1; _gat_gtag_UA_5092920_1=1",
                 "Host": "www.dir.ca.gov",
                 "Origin": "https://www.dir.ca.gov",
                 "Referer": "https://www.dir.ca.gov/databases/dwc/qmestartnew.asp",
@@ -108,14 +107,15 @@ class Scraper57:
             }
 
             # send post requests
-            response  = requests.post(self.searchurl_1,headers=headers_1,data=data_1,proxies=proxy_dict)
+            response  = requests.post(self.searchurl_1,headers=headers_1,data=data_1)#,proxies=proxy_dict)
+            # response  = requests.post(self.searchurl,headers=headers,data=data)#,proxies=proxy_dict)
 
             print(f'status code: {response.status_code}')
 
             # use beautifulsoup to parse html
             soup = BeautifulSoup(response.text,'html.parser')
-            print(soup.get_text())
-            time.sleep(1)
+            # print(soup.get_text())
+            # time.sleep(1)
 
             # find table to extract results
             table = soup.find('table')
@@ -165,6 +165,11 @@ class Scraper57:
 
             return results
                 
+
+
+
+
+        # ********************************
 
         sp_keys = list(specialties_dict.keys())
         last_interrupt_zip_index = zip_codes.index(str(last_interrupt_zipcode))

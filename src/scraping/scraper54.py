@@ -228,7 +228,7 @@ class Scraper54:
 
                 num_gen = num_generator(state['page'])
 
-                state['page'] = 1 # reset page           
+                state['page'] = 1 # reset page
 
                 
                 # Rotate pages
@@ -355,7 +355,7 @@ class Scraper54:
                             page_info_soup = self.soup.find(class_='pageinfo')
                             page_info = page_info_soup.get_text().split(",")[0]
                             print("Success getting page info.")
-                            time.sleep(5)
+                            # time.sleep(1)
 
                             current_page = int(page_info.split()[1])
                             total_page = int(page_info.split()[3])
@@ -394,6 +394,9 @@ class Scraper54:
                             except json.decoder.JSONDecodeError:
                                 pass # ignore if not json
                             # print(response.status_code)
+                            except IndexError:
+                                print("Get requests return None. Breaking")
+                                break
 
                             continue
                     
