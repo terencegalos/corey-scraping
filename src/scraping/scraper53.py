@@ -1,4 +1,4 @@
-import requests,time#,subprocess,tempfile,os#execjs, json, re
+import json, requests, time
 from requests_html import HTMLSession
 from requests.cookies import RequestsCookieJar
 from bs4 import BeautifulSoup
@@ -15,6 +15,7 @@ class Scraper53:
         self.searchurl = 'https://corp.sec.state.ma.us/CorpWeb/UCCSearch/UCCSearch.aspx'
         self.table_name = "scraper53_info"
         self.last_interrupt_txt = 'last_char_scraper53.txt'
+        self.state_json = 'state_scraper53.json'
         self.session = HTMLSession()
         # self.session = requests.Session()
         self.jar = RequestsCookieJar()
@@ -29,35 +30,32 @@ class Scraper53:
         print(response.cookies.items())
         for name,value in response.cookies.items():
             self.jar.set(name,value)
+
+    def save_state(self,last_char,last_char2,search):
+        with open(self.state_json,'w') as file:
+            json.dump({"char":last_char,"char2":last_char2,"search":search},file)
+
+
+
+    def load_state(self):
+        try:
+            with open(self.state_json,'r') as file:
+                content = file.read()
+                return json.loads(content)
+        except FileNotFoundError:
+            return None
     
     
     
     def scrape_single(self,url):
 
-        headers = {
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Language': 'en-US,en;q=0.5',
-            'Connection': 'keep-alive',
-            'DNT': '1',
-            'Host': 'corp.sec.state.ma.us',
-            'Sec-Fetch-Dest': 'document',
-            'Sec-Fetch-Mode': 'navigate',
-            'Sec-Fetch-Site': 'none',
-            'Sec-Fetch-User': '?1',
-            'Sec-GPC': '1',
-            'TE': 'trailers',
-            'Upgrade-Insecure-Requests': '1',
-            'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0'
-        }
-
         headers1 = {
             "Host": "corp.sec.state.ma.us",
-            "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0",
+            "User-Agent": self.ua.random,
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
             "Accept-Language": "en-US,en;q=0.5",
             "Accept-Encoding": "gzip, deflate, br",
-            "Referer":f'{self.baseurl}{url}',
+            "Referer": 'https://corp.sec.state.ma.us/CorpWeb/UCCSearch/UCCSearchResults.aspx?sysvalue=ORIhMVYRub09EF9n4TWp2YHrUO62ErYNEY2LWxdD8P4-',
             "DNT": "1",
             "Sec-GPC": "1",
             "Connection": "keep-alive",
@@ -79,11 +77,18 @@ class Scraper53:
 
 
         print(f'Extracting doc links from URL: {url}')
+        time.sleep(3) # pause to avoid rate limit
 
-        response = self.session.get(f'{self.baseurl}{url}', headers=headers1)
+        for item in self.session.cookies.items():
+            print(item)
+        # time.sleep(10)
+            
+        self.session.headers.update(headers1)
+        # self.session.headers.update({"Referer":'https://corp.sec.state.ma.us/CorpWeb/UCCSearch/UCCSearchResults.aspx?sysvalue=ORIhMVYRub09EF9n4TWp2YHrUO62ErYNEY2LWxdD8P4-'})
+        response = self.session.get(f'{self.baseurl}{url}')
 
         print(f'Status code: {response.status_code}')
-        # print(f'Content: {response.text}')
+        # print(f'response headers: {response.headers.items()}')
 
 
 
@@ -92,53 +97,66 @@ class Scraper53:
 
         soup = BeautifulSoup(response.content,'html.parser')
         # print(soup.contents)
-        print(soup.get_text())
+        # print(soup.get_text())
 
 
-        table = soup.find('table',id_='MainContent_tblFilingHistory')
-        debtor_tr = table.find_all('tr')[7]
-        secured_party_tr = table.find_all('tr')[7]
+        table = soup.select_one('table table:nth-child(4)')
         
-        '#MainContent_tblFilingHistory > tbody:nth-child(1) > tr:nth-child(5) > td:nth-child(1)'
-        '#MainContent_tblFilingHistory > tbody:nth-child(1) > tr:nth-child(7) > td:nth-child(1)'
+        '#MainContent_tblFilingHistory > tbody:nth-child(1) > tr > td:nth-child(1)'
 
+        # Loop tr tags
+        tr_soup = table.find_all('tr')
 
-
-
+        count = 0 # check if row is odd or even (odd is debtor info even is secured party info)
+        result_dict_list = [] # store dictionaries here if multiple
         result_dict = {'debtor_name':'','debtor_address':'','secured_party_name':'','secured_party_address':''}
 
+        for tr in tr_soup[1:]:
+
+
+            # check if tr has 2 td children and no more
+            if tr.select_one('td:nth-child(2)') and not tr.select_one('td:nth-child(3)'):
+
+                count += 1
+                if count % 2 == 0: 
+                    # secured party
+                    secured_party_info = tr.select_one('td:nth-child(1)').get_text(separator='\n')
+                    # print(secured_party_info.splitlines())
+                    result_dict.update({'secured_party_name':secured_party_info.splitlines()[0]})
+                    result_dict.update({'secured_party_address':' '.join(secured_party_info.splitlines()[1:])})
+                    
+                    result_dict_list.append(result_dict)
+                    result_dict = {'debtor_name':'','debtor_address':'','secured_party_name':'','secured_party_address':''} # reset
+                else: 
+                    # debtor
+                    debtor_info = tr.select_one('td:nth-child(1)').get_text(separator='\n')
+                    result_dict.update({'debtor_name':debtor_info.splitlines()[0]})
+                    result_dict.update({'debtor_address':' '.join(debtor_info.splitlines()[1:])})
+
+                
+
+
+
+
+
         # get info
-        # print(tr.contents)
-        # print(tr.find_all('td')[1].get_text())
-        debtor_name = debtor_tr.find_all("td")[0].get_text().splitlines()[0]
-        try:
-            debtor_address = " ".join(debtor_tr.find_all("td")[0].get_text().splitlines()[1:])
-        except IndexError:
-            debtor_address = 'N/A'
-
-        result_dict.update({'debtor_name':debtor_name})
-        result_dict.update({'debtor_address':debtor_address})
-    
-        secured_party_name = secured_party_tr.find_all('td')[0].get_text().splitlines()[0]
-        try:
-            secured_party_address = " ".join(secured_party_tr.find_all("td")[0].get_text().splitlines()[1:])
-        except IndexError:
-            secured_party_address = 'N/A'
-
-        result_dict.update({'secured_party_name':secured_party_name})
-        result_dict.update({'secured_party_address':secured_party_address})
+                    
 
 
-        print(result_dict)
+        print(result_dict_list)
 
 
-        return result_dict
+        return result_dict_list
 
         
 
     
     
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='X',end_char='Z',last_interrupted_page=1,starting_page=1):
+    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',end_char='Z',last_interrupted_page=1,starting_page=1):
+
+
+
+        state = self.load_state()
         
         def get_page_links(soup):
             table = soup.find("table")
@@ -153,154 +171,85 @@ class Scraper53:
             while True:
                 yield num
                 num += 1
+
+        def get_viewstate(soup):
+            viewstate = soup.find('input',{'name':'__VIEWSTATE'})
+            return viewstate['value'] if viewstate else None
+                
+        def get_eventvalidation(soup):
+            eventvalidation = soup.find('input',{'name':'__EVENTVALIDATION'})
+            return eventvalidation['value'] if eventvalidation else None
                 
 
         
         # 1 letter search; Loop all uppercase
+
+        print(f"Searching character: {state['char']}{state['char2']}, search:{state['search']}")
                 
         # Get index of start ascii char
-        last_interrupt_char_index = 0
+        last_interrupt_char_index = ascii_uppercase.index(state['char'])
+        last_interrupt_char2_index = ascii_uppercase.index(state['char2'])
         
         # Get index of end ascii char
-        end_char_index = ascii_uppercase.index(end_char)
+        # end_char_index = ascii_uppercase.index(end_char)
 
 
-        if last_interrupt_char:
-            print(f'Interruption specified: {last_interrupt_char}\nGetting index..')
-            last_interrupt_char_index = ascii_uppercase.index(last_interrupt_char)
+
+
+
+
 
         # Start of loop
-        for char in ascii_uppercase[last_interrupt_char_index:end_char_index]:
-            for char2 in ascii_uppercase:
-                print(f"Extract search results for '{char}{char2}'")
+        search = ['I','O']
+        search_index = search.index(state['search'])
+        
+        for uccsearch in search[search_index:]:
+            for char in ascii_uppercase[last_interrupt_char_index:]:
+                for char2 in ascii_uppercase[last_interrupt_char2_index:]:
 
-                headers1 = {
-                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-                    'Accept-Encoding': 'gzip, deflate, br',
-                    'Accept-Language': 'en-US,en;q=0.5',
-                    'Connection': 'keep-alive',
-                    'DNT': '1',
-                    'Host': 'corp.sec.state.ma.us',
-                    'Sec-Fetch-Dest': 'document',
-                    'Sec-Fetch-Mode': 'navigate',
-                    'Sec-Fetch-Site': 'cross-site',
-                    'TE': 'trailers',
-                    'Upgrade-Insecure-Requests': '1',
-                    "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:122.0) Gecko/20100101 Firefox/122.0",
+                    print(f"Extract search results for '{char}{char2} search:{uccsearch}'")
+            
 
-                }
+                    # num_gen = num_generator(last_interrupted_page)
 
-                headers2 = {
-                    "Host": "corp.sec.state.ma.us",
-                    "Content-Length":"999999",
-                    "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:122.0) Gecko/20100101 Firefox/122.0",
-                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-                    "Accept-Language": "en-US,en;q=0.5",
-                    "Accept-Encoding": "gzip, deflate, br",
-                    "Content-Type": "application/x-www-form-urlencoded",
-                    "Origin": "https://corp.sec.state.ma.us",
-                    "DNT": "1",
-                    "Sec-GPC": "1",
-                    "Connection": "keep-alive",
-                    "Referer": "https://corp.sec.state.ma.us/CorpWeb/UCCSearch/UCCSearch.aspx",
-                    "Upgrade-Insecure-Requests": "1",
-                    "Sec-Fetch-Dest": "document",
-                    "Sec-Fetch-Mode": "navigate",
-                    "Sec-Fetch-Site": "same-origin",
-                    "Sec-Fetch-User": "?1",
-                    "TE": "trailers"
-                }
+                    last_interrupt_char_index = 0 # reset 
 
-
-                headers3 = { 
+                    self.save_state(char,char2,uccsearch)
                     
-                    "Accept": "text/html:application/xhtml+xml:application/xml:q=0.9:image/avif:image/webp:*/*:q=0.8",			
-                    "Accept-Encoding":"gzip: deflate: br",			
-                    "Accept-Language": "en-US:en:q=0.5",			
-                    "Connection": "keep-alive",			
-                    "Content-Length": "9303", 			
-                    "Content-Type": "application/x-www-form-urlencoded",
-                    "DNT": "1",			
-                    "Host": "corp.sec.state.ma.us",			
-                    "Origin": "https://corp.sec.state.ma.us",			
-                    "Referer": "https://corp.sec.state.ma.us/CorpWeb/UCCSearch/UCCSearch.aspx",			
-                    "Sec-Fetch-Dest": "document",			
-                    "Sec-Fetch-Mode": "navigate",			
-                    "Sec-Fetch-Site": "same-origin",		
-                    "Sec-Fetch-User": "?1",			
-                    "Sec-GPC": "1",
-                    "Upgrade-Insecure-Requests": "1",			
-                    "User-Agent": "Mozilla/5.0 (X11: Ubuntu: Linux x86_64: rv:123.0) Gecko/20100101 Firefox/123.0"
-                    }
-
-                
 
 
-
-
-
-                num_gen = num_generator(last_interrupted_page)
-
-                last_interrupted_page = 0 # reset 
-                
-    
-
-                
-                while True:
-
-
-                    num = next(num_gen)
-                    print(f'Current page:{num}')                  
+                    # set url
                     current_url = self.searchurl
 
 
-
                     # Get new cookies and set headers
-                    response_ = self.session.get(current_url)
-                    response_ = self.session.post(current_url,headers=headers1)
 
-                    soup = BeautifulSoup(response_.text,'html.parser')
-                    print(soup.contents)
-                    print(response_.status_code)
-                    # print("Does it return initial requests?")
+                    while True:
+                        response_ = self.session.get(current_url)
 
-                    time.sleep(1)
+                        
+                                            
+                        # Get VIEWSTATE AND EVENT VALIDATION
+                        soup = BeautifulSoup(response_.text,'html.parser')
+                        # print(soup.get_text())
+                        print(response_.status_code)
+
+
+                        viewstate = get_viewstate(soup)
+                        eventvalidation = get_eventvalidation(soup)
+                        if viewstate and eventvalidation:
+                            # print({'viewstate':viewstate,'eventvalidation':eventvalidation}.items())
+                            break
+                        else:
+                            print("viewstate/eventvalidation extraction failed. Retrying in 120 secs.")
+                            print(f"viewstate:{viewstate}, eventvalidation:{eventvalidation}")
+                            time.sleep(120)
+                            continue
+
+
+
+
                     
-                    
-
-
-                    
-
-
-                    viewstate = soup.find('input',{'name':'__VIEWSTATE'})['value']
-                    eventvalidation = soup.find('input',{'name':'__EVENTVALIDATION'})['value']
-                    # print({'viewstate':viewstate,'eventvalidation':eventvalidation}.items())
-
-                    data = {
-                        "__EVENTTARGET": "ctl00$MainContent$UCCSearchMethodI",
-                        "__EVENTARGUMENT": "",
-                        "__LASTFOCUS": "",
-                        "__VIEWSTATE": f"{viewstate}",
-                        "__VIEWSTATEGENERATOR": "CB1FA542",
-                        "__EVENTVALIDATION": f"{eventvalidation}",
-                        "ctl00$MainContent$UccSearch": "rdoSearchI",
-                        "ctl00$MainContent$txtLastName": f"{char.lower()}{char2.lower()}",
-                        "ctl00$MainContent$txtFirstName": "",
-                        "ctl00$MainContent$txtMiddleName": "",
-                        "ctl00$MainContent$txtSuffix": "",
-                        "ctl00$MainContent$txtICity": "",
-                        "ctl00$MainContent$cboIState": "",
-                        "ctl00$MainContent$txtName": "",
-                        "ctl00$MainContent$txtOCity": "",
-                        "ctl00$MainContent$cboOState": "",
-                        "ctl00$MainContent$txtFilingNumber": "",
-                        "ctl00$MainContent$UCCSearchMethodI": "B",
-                        "ctl00$MainContent$txtStartDate": "",
-                        "ctl00$MainContent$chkDebtor": "on",
-                        "ctl00$MainContent$UCCSearchMethod": "M",
-                        "ctl00$MainContent$ddRecordsPerPage": "100000",
-                        "ctl00$MainContent$HiddenSearchOption_SearchLapsed": "False"
-                    }
                     data1 = {
                         "__EVENTTARGET": "ctl00$MainContent$UCCSearchMethodI",
                         "__EVENTARGUMENT": "",
@@ -308,7 +257,7 @@ class Scraper53:
                         "__VIEWSTATE": f"{viewstate}",
                         "__VIEWSTATEGENERATOR": "CB1FA542",
                         "__EVENTVALIDATION": f"{eventvalidation}",
-                        "ctl00$MainContent$UccSearch": "rdoSearchI",
+                        "ctl00$MainContent$UccSearch": f"rdoSearch{uccsearch}",
                         "ctl00$MainContent$txtLastName": f"{char.lower()}{char2.lower()}",
                         "ctl00$MainContent$txtFirstName": "",
                         "ctl00$MainContent$txtMiddleName": "",
@@ -327,47 +276,26 @@ class Scraper53:
                         "ctl00$MainContent$btnSearch": "Search",
                         "ctl00$MainContent$HiddenSearchOption_SearchLapsed": "False"
                     }
-                    # time.sleep(3)
 
-                    # self.session.headers.update(headers2)
-                    while True:
-                        response_ = self.session.post(current_url,data=data1)
-                        if 'robots' in response_.text.lower():
-                            print(response_.text)
-                            print("Bot trap detected. Retrying..")
-                            time.sleep(1)
-                            continue
-                        else:
-                            print(response_.text)
-                            break
+                    # Send post requests with data param
+                    response_ = self.session.post(current_url,data=data1)
 
 
-
-                    
 
 
                     # Get page results
-                    # Parse the HTML content with BeautifulSoup
+
                     soup = BeautifulSoup(response_.content,'html.parser')
-                    # print(soup.contents)
-                    print(soup.get_text())
+
                     print(f'status_code: {response_.status_code}')
                     print(f"response history:{response_.history}")
-
-                    print("Results displayed?")
-                    # time.sleep(100)
                     
 
-                    # Get first page results and store
+                    # Get page results and store
                     urls = get_page_links(soup)
 
-                    # Break while loop if no more page results
-                    if len(urls) == 0:
-                        print("No more pages found. Exiting.")
-                        break
-                    else:
-                        for url in urls:
-                            print(f'result url: {self.baseurl}{url}')
+                    for url in urls:
+                        print(f'result url: {self.baseurl}{url}')
                     
                     
                     # scrape info using multithread
@@ -375,3 +303,5 @@ class Scraper53:
                         for i in range(0,len(urls),batch_size):
                             batch_results = [item for results in executor.map(self.scrape_single,urls[i:i+batch_size]) for item in results]
                             yield batch_results
+
+        self.save_state('A','A','I')

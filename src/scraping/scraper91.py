@@ -23,6 +23,11 @@ def renew_cookies(response):
     for name,value in response.cookies.items():
         jar.set(name,value)
 
+
+
+
+
+
 ##########################
         
 
@@ -135,11 +140,12 @@ with open(csvfile,'w',newline='') as file:
 print("Data has been saved to",csvfile)
 
 
-with open(textfile,'w') as file:
-    for data in skipped_data:
-        json_data = json.dumps(data)
+if len(skipped_data) > 0:
+    with open(textfile,'w') as file:
+        for data in skipped_data:
+            json_data = json.dumps(data)
 
-print("Data has been saved to",csvfile)
+    print("Skipped data has been saved to",textfile)
 
     # if page_num >= 1:
     #     print("breaking...")

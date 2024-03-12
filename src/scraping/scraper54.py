@@ -34,9 +34,9 @@ class Scraper54:
         for name,value in response.cookies.items():
             self.jar.set(name,value)
 
-    def save_state(self,char,char2,page):
+    def save_state(self,char,char2,page,search):
         with open(self.state_json,'w') as file:
-            json.dump({'char':char,'char2':char2,'page':page},file)
+            json.dump({'char':char,'char2':char2,'page':page,'search':search},file)
 
     def load_state(self):
         try:
@@ -82,7 +82,7 @@ class Scraper54:
         # Parse the HTML content with BeautifulSoup
         self.soup = BeautifulSoup(response.content,'html.parser')
         # print(soup.contents)
-# 
+
         # return in no results found
         soup_table = self.soup.find_all('table')
         if len(soup_table) < 1:
@@ -132,17 +132,7 @@ class Scraper54:
         return results
 
         
-        
-        # Check if any value is None, if yes, return None
-        # if any(value is None for value in [name, address, secured_party_name, secured_party_address]):
-        #     return None        
-            
-            
-        
-            
-        # else :
-        #     raise Exception(f"Failed to retrieve data. Status code: {response.status_code}")
-    
+
     
     
     
@@ -195,233 +185,245 @@ class Scraper54:
         last_interrupt_char2_index = ascii_uppercase.index(state['char2'])
 
 
+        search = ['I','O']
+        search_index = search.index(state['search'])
 
         # Start of loop
-        for char in ascii_uppercase[last_interrupt_char_index:]:
-            for char2 in ascii_uppercase[last_interrupt_char2_index:]:
-                
-                print(f"Extract search results for '{char}{char2}'")
-
-                headers = {
-                    'Accept': '*/*',
-                    'Accept-Encoding': 'gzip, deflate, br',
-                    'Accept-Language': 'en-US,en;q=0.5',
-                    'Cache-Control': 'no-cache',
-                    'Connection': 'keep-alive',
-                    'Content-Length': '471',
-                    'Content-Type': 'application/json; charset=utf-8',
-                    # 'Cookie': 'ASP.NET_SessionId=kx1y2czpavpgpeqnjl1lmhzu; nmstat=438e7bf1-1a01-14c2-299a-06b764fb7c58',
-                    'DNT': '1',
-                    'Host': 'cis.scc.virginia.gov',
-                    'Origin': 'https://cis.scc.virginia.gov',
-                    'Pragma': 'no-cache',
-                    'Referer': 'https://cis.scc.virginia.gov/UCCOnlineSearch/UCCSearch',
-                    'Sec-Fetch-Dest': 'empty',
-                    'Sec-Fetch-Mode': 'no-cors',
-                    'Sec-Fetch-Site': 'same-origin',
-                    'Sec-GPC': '1',
-                    'User-Agent': self.ua.random,#'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
-                    'X-Requested-With': 'XMLHttpRequest',
-                }
-
-
-
-                num_gen = num_generator(state['page'])
-
-                state['page'] = 1 # reset page
-
-                
-                # Rotate pages
-                while True:
-                    num = next(num_gen)
-                    print(f'Current page:{num}')
-                    self.save_state(char,char2,num)
-                    # self.session.close()
-
-                    data = {
-                        "search": {
-                            "advancedSearch": {
-                                "City": "",
-                                "Country": "",
-                                "County": "",
-                                "FilingDateFrom": "",
-                                "FilingDateTo": "",
-                                "LapseDateFrom": "",
-                                "LapseDateTo": "",
-                                "State": "",
-                                "Status": "",
-                                "StatusID": "",
-                                "StreetAddress1": "",
-                                "StreetAddress2": "",
-                                "Zip4": ""
-                            },
-                            "IsOnline": True,
-                            "quickSearch": {
-                                "Contains": 0,
-                                "ExactMatch": 0,
-                                "FirstName": "",
-                                "IsIndividual": True,
-                                "LastName": f"{char}{char2}",
-                                "MiddleName": "",
-                                "Name": "zundefined",
-                                "OrganizationName": "",
-                                "StartsWith": "2",
-                                "Suffix": "",
-                                "pidx": f"{num}"
-                            },
-                            "SearchCriteria": "2",
-                            "SearchType": "DebtorName"
-                        }
-                    }
-
-                    data2 = {
-                        "undefined": "",
-                        "sortby": "",
-                        "stype": "a",
-                        "pidx": f"{num}"
-                    }
-
-                    data_org = {
-                        "search": {
-                            "advancedSearch": {
-                                "City": "",
-                                "Country": "",
-                                "County": "",
-                                "FilingDateFrom": "",
-                                "FilingDateTo": "",
-                                "LapseDateFrom": "",
-                                "LapseDateTo": "",
-                                "State": "",
-                                "Status": "",
-                                "StatusID": "",
-                                "StreetAddress1": "",
-                                "StreetAddress2": "",
-                                "Zip4": ""
-                            },
-                            "IsOnline": True,
-                            "quickSearch": {
-                                "Contains": 0,
-                                "ExactMatch": 0,
-                                "FirstName": "",
-                                "IsIndividual": False,
-                                "LastName": "",
-                                "MiddleName": "",
-                                "Name": "ab",
-                                "OrganizationName": f"{char}{char2}",
-                                "StartsWith": "2",
-                                "Suffix": ""
-                            },
-                            "SearchCriteria": "2",
-                            "SearchType": "DebtorName"
-                        }
-                    }
+        for s in search[search_index:]:
+            for char in ascii_uppercase[last_interrupt_char_index:]:
+                for char2 in ascii_uppercase[last_interrupt_char2_index:]:
                     
+                    print(f"Extract search results for '{char}{char2}'")
 
-                    current_url = self.searchurl
-                    print("Sending post requests.")
+                    headers = {
+                        'Accept': '*/*',
+                        'Accept-Encoding': 'gzip, deflate, br',
+                        'Accept-Language': 'en-US,en;q=0.5',
+                        'Cache-Control': 'no-cache',
+                        'Connection': 'keep-alive',
+                        'Content-Length': '471',
+                        'Content-Type': 'application/json; charset=utf-8',
+                        # 'Cookie': 'ASP.NET_SessionId=kx1y2czpavpgpeqnjl1lmhzu; nmstat=438e7bf1-1a01-14c2-299a-06b764fb7c58',
+                        'DNT': '1',
+                        'Host': 'cis.scc.virginia.gov',
+                        'Origin': 'https://cis.scc.virginia.gov',
+                        'Pragma': 'no-cache',
+                        'Referer': 'https://cis.scc.virginia.gov/UCCOnlineSearch/UCCSearch',
+                        'Sec-Fetch-Dest': 'empty',
+                        'Sec-Fetch-Mode': 'no-cors',
+                        'Sec-Fetch-Site': 'same-origin',
+                        'Sec-GPC': '1',
+                        'User-Agent': self.ua.random,#'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
+                        'X-Requested-With': 'XMLHttpRequest',
+                    }
 
 
 
-                    param = data_org if num < 2 else data2
-                    print(param)
-                    response = requests.post(current_url,headers=headers,data=json.dumps(param),verify=False)
-                    # self.renew_cookies(response)
+                    num_gen = num_generator(state['page'])
+
+                    state['page'] = 1 # reset page
+
                     
-
-
-                    print(response.headers)
-                    print(f'Status code: {response.status_code}')
-
-
-
-                    # Get page results
-
-                    # Parse the HTML content with BeautifulSoup
-                    self.soup = BeautifulSoup(response.content,'html.parser')
-                    print(self.soup.get_text())
-
-                    page_links = []
-                    current_page = 0
-                    total_page = 0
-
-
-
-
-
-
-                    # Get pages info
+                    # Rotate pages
                     while True:
+                        num = next(num_gen)
+                        print(f'Current page:{num}')
+                        self.save_state(char,char2,num,s)
+
+                        data_indv = {
+                            "search": {
+                                "advancedSearch": {
+                                    "City": "",
+                                    "Country": "",
+                                    "County": "",
+                                    "FilingDateFrom": "",
+                                    "FilingDateTo": "",
+                                    "LapseDateFrom": "",
+                                    "LapseDateTo": "",
+                                    "State": "",
+                                    "Status": "",
+                                    "StatusID": "",
+                                    "StreetAddress1": "",
+                                    "StreetAddress2": "",
+                                    "Zip4": ""
+                                },
+                                "IsOnline": True,
+                                "quickSearch": {
+                                    "Contains": 0,
+                                    "ExactMatch": 0,
+                                    "FirstName": "",
+                                    "IsIndividual": True,
+                                    "LastName": f"{char}{char2}",
+                                    "MiddleName": "",
+                                    "Name": "zundefined",
+                                    "OrganizationName": "",
+                                    "StartsWith": "2",
+                                    "Suffix": "",
+                                    "pidx": f"{num}"
+                                },
+                                "SearchCriteria": "2",
+                                "SearchType": "DebtorName"
+                            }
+                        }
+
+                        data2 = {
+                            "undefined": "",
+                            "sortby": "",
+                            "stype": "a",
+                            "pidx": f"{num}"
+                        }
+
+                        data_org = {
+                            "search": {
+                                "advancedSearch": {
+                                    "City": "",
+                                    "Country": "",
+                                    "County": "",
+                                    "FilingDateFrom": "",
+                                    "FilingDateTo": "",
+                                    "LapseDateFrom": "",
+                                    "LapseDateTo": "",
+                                    "State": "",
+                                    "Status": "",
+                                    "StatusID": "",
+                                    "StreetAddress1": "",
+                                    "StreetAddress2": "",
+                                    "Zip4": ""
+                                },
+                                "IsOnline": True,
+                                "quickSearch": {
+                                    "Contains": 0,
+                                    "ExactMatch": 0,
+                                    "FirstName": "",
+                                    "IsIndividual": False,
+                                    "LastName": "",
+                                    "MiddleName": "",
+                                    "Name": "zundefined",
+                                    "OrganizationName": f"{char}{char2}",
+                                    "StartsWith": "2",
+                                    "Suffix": ""
+                                },
+                                "SearchCriteria": "2",
+                                "SearchType": "DebtorName"
+                            }
+                        }
+                        
+
+                        current_url = self.searchurl
+                        print("Sending post requests.")
+
+
+
+                        if 'I' in s:
+                            print(s)
+                            print('Individual search?')
+                        else:
+                            print('Organization search?')
+                        param = (data_indv if 'I' in s else data_org) if num < 2 else data2
+                        print(param)
                         try:
-                            page_info_soup = self.soup.find(class_='pageinfo')
-                            page_info = page_info_soup.get_text().split(",")[0]
-                            print("Success getting page info.")
-                            # time.sleep(1)
+                            response = requests.post(current_url,headers=headers,data=json.dumps(param),verify=False)
+                        except requests.exceptions.ConnectionError:
+                            print("Connection failed. Retrying in 20 secs.")
+                            time.sleep(20)
+                            response = requests.post(current_url,headers=headers,data=json.dumps(param),verify=False)
+                        # self.renew_cookies(response)
+                        
 
-                            current_page = int(page_info.split()[1])
-                            total_page = int(page_info.split()[3])
 
-                            # Get first page links
-                            if self.soup:
-                                page_links.extend(get_page_links(self.soup))
+                        print(response.headers)
+                        print(f'Status code: {response.status_code}')
 
-                            break
 
-                        except:
-                            if num < 2:
-                                print("Page 1 no results. Breaking...")
-                                break
-                            print("Page info not found. Retrying")
-                            time.sleep(1)
-                            # self.session.close()
-                            response_ = requests.get(self.searchurl)
-                            self.renew_cookies(response_)
 
-                            response = requests.post(current_url,headers=headers,cookies=self.jar,data=json.dumps(data),verify=False)
-                            self.renew_cookies(response)
+                        # Get page results
 
-                            response = requests.post(current_url,headers=headers,cookies=self.jar,data=json.dumps(param),verify=False)
+                        # Parse the HTML content with BeautifulSoup
+                        self.soup = BeautifulSoup(response.content,'html.parser')
+                        print(self.soup.get_text())
 
-                            self.soup = BeautifulSoup(response.content,'html.parser')
-                            # print(f"Updated content: {self.soup.contents[0]}")
+                        page_links = []
+                        current_page = 0
+                        total_page = 0
 
-                            # Check if response returns a json instead of html
+
+
+
+
+
+                        # Get pages info
+                        while True:
                             try:
-                                response_status_json = json.loads(self.soup.contents[0])
+                                page_info_soup = self.soup.find(class_='pageinfo')
+                                page_info = page_info_soup.get_text().split(",")[0]
+                                print("Success getting page info.")
+                                # time.sleep(1)
 
-                                if not response_status_json['success']:
-                                    print("No more results. Breaking")
-                                    break
-                            except json.decoder.JSONDecodeError:
-                                pass # ignore if not json
-                            # print(response.status_code)
-                            except IndexError:
-                                print("Get requests return None. Breaking")
+                                current_page = int(page_info.split()[1])
+                                total_page = int(page_info.split()[3])
+
+                                # Get first page links
+                                if self.soup:
+                                    page_links.extend(get_page_links(self.soup))
+
                                 break
 
-                            continue
-                    
+                            except:
+                                if num < 2:
+                                    print("Page 1 no results. Breaking...")
+                                    break
+                                print("Page info not found. Retrying")
+                                time.sleep(1)
+                                # self.session.close()
+                                response_ = requests.get(self.searchurl)
+                                self.renew_cookies(response_)
 
-                    # current_page = int(page_info.split()[1])
-                    # total_page = int(page_info.split()[3])
+                                response = requests.post(current_url,headers=headers,cookies=self.jar,data=json.dumps(data),verify=False)
+                                self.renew_cookies(response)
+
+                                response = requests.post(current_url,headers=headers,cookies=self.jar,data=json.dumps(param),verify=False)
+
+                                self.soup = BeautifulSoup(response.content,'html.parser')
+                                # print(f"Updated content: {self.soup.contents[0]}")
+
+                                # Check if response returns a json instead of html
+                                try:
+                                    response_status_json = json.loads(self.soup.contents[0])
+
+                                    if not response_status_json['success']:
+                                        print("No more results. Breaking")
+                                        break
+                                except json.decoder.JSONDecodeError:
+                                    pass # ignore if not json
+                                # print(response.status_code)
+                                except IndexError:
+                                    print("Get requests return None. Breaking")
+                                    break
+
+                                continue
+                        
+
+                        # current_page = int(page_info.split()[1])
+                        # total_page = int(page_info.split()[3])
 
 
-                    # scrape info using multithread
-                    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
-                        for i in range(0,len(page_links),batch_size):
-                            results = executor.map(self.scrape_single,page_links[i:i+batch_size])
-                            if results is not None:
-                                batch_results = [item for results in results for item in results if item is not None]
-                                yield batch_results
-                            else:
-                                print("thread results: None")
+                        # scrape info using multithread
+                        with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
+                            for i in range(0,len(page_links),batch_size):
+                                results = executor.map(self.scrape_single,page_links[i:i+batch_size])
+                                if results is not None:
+                                    batch_results = [item for results in results for item in results if item is not None]
+                                    yield batch_results
+                                else:
+                                    print("thread results: None")
 
 
-                    if current_page >= total_page:
-                        print("No more pages found. Next search..")
-                        # self.session.close()
-                        break
+                        if current_page >= total_page:
+                            print("No more pages found. Next search..")
+                            # self.session.close()
+                            break
         
-        self.save_state('A','A',"1") # reset state once done
+        self.save_state('A','A',"1","I") # reset state once done
 
 
 

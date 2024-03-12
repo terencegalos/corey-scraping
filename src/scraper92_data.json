@@ -1,0 +1,1077 @@
+data = {
+        "active": false,
+        "allow_link": "true",
+        "canCreate": false,
+        "color": "default",
+        "color_dv": "Default",
+        "column_labels": {
+            "business_address": "Business Address",
+            "business_name": "Business Name",
+            "contact_business_address": "Contact Business Address",
+            "contact_department": "Contact Department",
+            "contact_telephone_number": "Contact Telephone Number",
+            "contact_title": "Contact Title",
+            "foreign_voice_provider": "Foreign Voice Service Provider",
+            "frn": "FCC Registration Number (FRN)",
+            "gateway_provider_choice": "Gateway Provider",
+            "implementation": "Implementation",
+            "intermediate_provider_choice": "Non-Gateway Intermediate Provider",
+            "other_dba_names": "Other DBA Name(s)",
+            "pdf": "PDF",
+            "previous_dba_names": "Previous Business Names",
+            "robocall_mitigation_contact_name": "Robocall Mitigation Contact Name",
+            "voice_service_provider_choice": "Voice Service Provider"
+        },
+        "column_types": {
+            "business_address": "string",
+            "business_name": "string",
+            "contact_business_address": "string",
+            "contact_department": "string",
+            "contact_telephone_number": "string",
+            "contact_title": "string",
+            "foreign_voice_provider": "string",
+            "frn": "reference",
+            "gateway_provider_choice": "string",
+            "implementation": "string",
+            "intermediate_provider_choice": "string",
+            "other_dba_names": "string",
+            "pdf": "file_attachment",
+            "previous_dba_names": "string",
+            "robocall_mitigation_contact_name": "string",
+            "voice_service_provider_choice": "string"
+        },
+        "css": "\n#x61108f231be6649089df9796bc4bcb22 .panel {\n\tpadding: 0;\n}\n\n#x61108f231be6649089df9796bc4bcb22 .panel-heading .panel-title {\n\tfont-size: 32px;\n\tfont-weight: 300;\n}\n\n#x61108f231be6649089df9796bc4bcb22 .table > thead:first-child > tr:first-child > th {\n\tborder-left: 0;\n}\n\n#x61108f231be6649089df9796bc4bcb22 .panel-heading .dropdown-toggle {\n\tdisplay: none;\n}",
+        "d": "desc",
+        "display_field": "business_address",
+        "enable_filter": false,
+        "exportQuery": "status=Published",
+        "exportQueryEncoded": "status%3DPublished",
+        "fields": "business_name,frn,previous_dba_names,business_address,other_dba_names,foreign_voice_provider,implementation,voice_service_provider_choice,gateway_provider_choice,intermediate_provider_choice,robocall_mitigation_contact_name,contact_title,contact_department,contact_business_address,contact_telephone_number,pdf",
+        "fields_array": [
+            "business_name",
+            "frn",
+            "previous_dba_names",
+            "business_address",
+            "other_dba_names",
+            "foreign_voice_provider",
+            "implementation",
+            "voice_service_provider_choice",
+            "gateway_provider_choice",
+            "intermediate_provider_choice",
+            "robocall_mitigation_contact_name",
+            "contact_title",
+            "contact_department",
+            "contact_business_address",
+            "contact_telephone_number",
+            "pdf"
+        ],
+        "filter": "status=Published",
+        "filterBreadcrumbs": {
+            "_server_time": "0.004",
+            "client_script": "function ($scope, $timeout, $element){\n\tvar eventNames = {\n\t\tsetBreadcrumbs: 'widget-filter-breadcrumbs.setBreadcrumbs'\n\t};\n\t$scope.adjustFilter = function(breadcrumb, remove){\n\t\tvar newQuery = remove ? breadcrumb.ifRemoved : breadcrumb.value;\n\t\t$scope.$emit('widget-filter-breadcrumbs.queryModified', newQuery);\n\t}\n\t$scope.$on(eventNames.setBreadcrumbs, function(e, data, newQuery){\n\t\t$scope.data = data;\n\t\t$scope.$broadcast(\"snfilter:initialize_query\", massageEncodedQuery(newQuery));\n\t});\n\t$scope.clickFilter = function() {\n\t\t$scope.showFilter = !$scope.showFilter;\n\t\t$scope.filterMsg = $scope.showFilter ? $scope.data.hideMsg: $scope.data.showMsg;\n\t}\n\t$scope.showFilter = false;\n\t$scope.filterMsg = $scope.data.showMsg;\n\t$scope.$on(\"snbreadcrumbs:toggle_filter\", function(e) {\n\t\te.stopPropagation();\n\t\te.preventDefault();\n\t\t$scope.showFilter = false;\n\t\t$scope.filterMsg = $scope.data.showMsg;\n\t\t$element.find('#filterToggle').focus();\n\t\t\n\t});\n\t$scope.$on(\"snfilter:update_query\", function(e, query) {\n\t\te.stopPropagation();\n\t\te.preventDefault();\n\t\t$scope.$emit('widget-filter-breadcrumbs.queryModified', massageEncodedQuery(query));\n\t\t$scope.showFilter = false;\n\t\t$scope.filterMsg = $scope.data.showMsg;\n\t});\n\t$scope.$on(\"snfilter:run_filter\", function(e) {\n\t\t$element.find('#filterToggle').focus();\n\t});\n\tfunction massageEncodedQuery(query) {\nreturn (query) ? query.replace(/CONTAINS/g, \"LIKE\").replace(/DOES NOT CONTAIN/g, \"NOT LIKE\") : query;\n\t}\n}\n",
+            "controller_as": "",
+            "css": "\n.v339a5c41d7201200b0b044580e61030d .breadcrumbs {\n\tmargin-left: 9px;\n\tmargin-bottom: 3px;\n}\n\n.v339a5c41d7201200b0b044580e61030d .icon-filter {\n\tfont-size: 20px;\n\ttext-decoration: inherit;\n}\n\n.v339a5c41d7201200b0b044580e61030d .ng-filter-widget {\n\tposition: static;\n}\n\n.v339a5c41d7201200b0b044580e61030d .ng-filter-widget .modal .manage-filters-button {\n\ttop: 15px;\n}\n\n.v339a5c41d7201200b0b044580e61030d .ng-filter-widget .modal .input-group-radio input {\n\tmargin-left: 0;\n}\n\n.v339a5c41d7201200b0b044580e61030d .ng-filter-widget .modal .input-group-transparent {\n\tposition: relative;\n}\n\n.v339a5c41d7201200b0b044580e61030d .ng-filter-widget .modal .input-group-transparent .input-group-addon-transparent {\n\tposition: absolute;\n\tfont-size: 18px;\n\ttop: 2px;\n\tleft: 8px;\n}\n\n.v339a5c41d7201200b0b044580e61030d .ng-filter-widget .modal .input-group-transparent input {\n\tborder-radius: 9999px;\n\tpadding-left: 28px;\n}\n\n.v339a5c41d7201200b0b044580e61030d .ng-filter-widget .modal ul {\n\tpadding: 0 5px 10px;\n}\n\n.v339a5c41d7201200b0b044580e61030d .ng-filter-widget .modal ul li button {\n\tbackground-color: inherit;\n}\n\n.v339a5c41d7201200b0b044580e61030d .ng-filter-widget .modal ul li a {\n\twidth: 100%;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n\twhite-space: nowrap;\n\tdisplay: block;\n\tpadding: 7px 20px;\n\ttext-decoration: none;\n\tcursor: pointer;\n}",
+            "data": {
+                "breadcrumbs": [
+                    {
+                        "ifRemoved": "",
+                        "isFixed": false,
+                        "label": "All",
+                        "value": ""
+                    },
+                    {
+                        "ifRemoved": "",
+                        "isFixed": false,
+                        "label": "Status = Published",
+                        "value": "status=Published"
+                    }
+                ],
+                "enable_filter": false,
+                "hideMsg": "Hide filter",
+                "showMsg": "Show filter"
+            },
+            "dependencies": [],
+            "field_list": "",
+            "id": "widget-filter-breadcrumbs",
+            "name": "Filter Breadcrumbs",
+            "option_schema": "[{\"hint\":\"Table to be used to generate breadcrumbs\",\"name\":\"table\",\"section\":\"Data\",\"label\":\"Table\",\"type\":\"string\"},{\"name\":\"query\",\"section\":\"Data\",\"label\":\"Query\",\"type\":\"string\"},{\"hint\":\"If enabled, a filter button prompt will be added to the breadcrumb list\",\"name\":\"enable_filter\",\"default_value\":\"false\",\"section\":\"Behavior\",\"label\":\"Enable Filter\",\"type\":\"boolean\"}]",
+            "options": {
+                "active": false,
+                "enable_filter": false,
+                "order": -1,
+                "query": "status=Published",
+                "sp_column_dv": "",
+                "sp_widget_dv": "",
+                "sys_tags": "",
+                "table": "x_g_fmc_rmd_robocall_mitigation_database"
+            },
+            "providers": [],
+            "public": true,
+            "roles": "",
+            "sys_class_name": "sp_widget",
+            "sys_id": "339a5c41d7201200b0b044580e61030d",
+            "sys_scope": "global",
+            "template": "<div class=\"breadcrumbs\"> \n <button type=\"button\" role=\"button\" id=\"filterToggle\" ng-show=\"data.enable_filter\" ng-click=\"clickFilter()\" title=\"{{filterMsg}}\" class=\"icon-filter btn btn-link\" tabindex=\"0\" data-original-title=\"{{filterMsg}}\" aria-expanded=\"{{showFilter}}\"><span class=\"sr-only\">{{filterMsg}}</span></button> \n <span ng-repeat=\"crumb in data.breadcrumbs track by crumb.value\"> <a href=\"javascript:void(0)\" ng-if=\"!$first\" class=\"sp-breadcrumb-link sp-breadcrumb-remove-condition\" ng-click=\"adjustFilter(crumb, true)\" aria-label=\"Remove next condition {{crumb.label}}\" title=\"Remove next condition\" data-toggle=\"tooltip\" data-placement=\"bottom\">&gt;</a> <a href=\"javascript:void(0)\" class=\"sp-breadcrumb-link\" ng-click=\"adjustFilter(crumb, false)\">{{crumb.label}}</a> </span> \n</div>\n<div ng-if=\"data.enable_filter\"> \n <span ng-show=\"showFilter\"> \n  <sp-widget widget=\"data.filterWidget\"></sp-widget> </span> \n</div>"
+        },
+        "hasTextIndex": true,
+        "headerTitle": "Robocall Mitigation Database",
+        "hide_header": false,
+        "inputMax": 4,
+        "inputSize": 2,
+        "keywords": null,
+        "list": [
+            {
+                "business_address": {
+                    "display_value": "713 W Jefferson Ave\nNaperville IL 60540",
+                    "label": "Business Address",
+                    "type": "string",
+                    "value": "713 W Jefferson Ave\nNaperville IL 60540"
+                },
+                "business_name": {
+                    "display_value": "Ubilynx LLC",
+                    "label": "Business Name",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Ubilynx LLC"
+                },
+                "contact_business_address": {
+                    "display_value": "2011 Gray Hawk Drive\nPlainfield IL 60586",
+                    "label": "Contact Business Address",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "2011 Gray Hawk Drive\nPlainfield IL 60586"
+                },
+                "contact_department": {
+                    "display_value": "Engineering",
+                    "label": "Contact Department",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Engineering"
+                },
+                "contact_telephone_number": {
+                    "display_value": "+1-630-853-6040",
+                    "label": "Contact Telephone Number",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "+1-630-853-6040"
+                },
+                "contact_title": {
+                    "display_value": "Engineer",
+                    "label": "Contact Title",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Engineer"
+                },
+                "foreign_voice_provider": {
+                    "display_value": "No",
+                    "label": "Foreign Voice Service Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "frn": {
+                    "display_value": "0029763240",
+                    "label": "FCC Registration Number (FRN)",
+                    "limit": "40",
+                    "type": "reference",
+                    "value": "7db770221b64ca10d44642e2b24bcbd6"
+                },
+                "gateway_provider_choice": {
+                    "display_value": "No",
+                    "label": "Gateway Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "implementation": {
+                    "display_value": "Complete STIR/SHAKEN Implementation",
+                    "label": "Implementation",
+                    "type": "string",
+                    "value": "Complete STIR/SHAKEN Implementation"
+                },
+                "intermediate_provider_choice": {
+                    "display_value": "No",
+                    "label": "Non-Gateway Intermediate Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "other_dba_names": {
+                    "display_value": "none",
+                    "label": "Other DBA Name(s)",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "none"
+                },
+                "pdf": {
+                    "display_value": "Ubilynx.pdf",
+                    "label": "PDF",
+                    "limit": "40",
+                    "type": "file_attachment",
+                    "value": "58a9199d87f042500c54a9b60cbb35ac"
+                },
+                "previous_dba_names": {
+                    "display_value": "none",
+                    "label": "Previous Business Names",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "none"
+                },
+                "robocall_mitigation_contact_name": {
+                    "display_value": "Tony Farley",
+                    "label": "Robocall Mitigation Contact Name",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Tony Farley"
+                },
+                "sys_id": "7418d55d87f042500c54a9b60cbb35ed",
+                "targetTable": "x_g_fmc_rmd_robocall_mitigation_database",
+                "voice_service_provider_choice": {
+                    "display_value": "Yes",
+                    "label": "Voice Service Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Yes"
+                }
+            },
+            {
+                "business_address": {
+                    "display_value": "440 East Grand Avenue\nP.O. Box 8045\nWisconsin Rapids WI 54495",
+                    "label": "Business Address",
+                    "type": "string",
+                    "value": "440 East Grand Avenue\nP.O. Box 8045\nWisconsin Rapids WI 54495"
+                },
+                "business_name": {
+                    "display_value": "Manawa Telephone Company, Inc.",
+                    "label": "Business Name",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Manawa Telephone Company, Inc."
+                },
+                "contact_business_address": {
+                    "display_value": "440 East Grand Avenue\nWisconsin Rapids WI 54494",
+                    "label": "Contact Business Address",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "440 East Grand Avenue\nWisconsin Rapids WI 54494"
+                },
+                "contact_department": {
+                    "display_value": "Executive",
+                    "label": "Contact Department",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Executive"
+                },
+                "contact_telephone_number": {
+                    "display_value": "7154218140",
+                    "label": "Contact Telephone Number",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "7154218140"
+                },
+                "contact_title": {
+                    "display_value": "CEO",
+                    "label": "Contact Title",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "CEO"
+                },
+                "foreign_voice_provider": {
+                    "display_value": "No",
+                    "label": "Foreign Voice Service Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "frn": {
+                    "display_value": "0002719474",
+                    "label": "FCC Registration Number (FRN)",
+                    "limit": "40",
+                    "type": "reference",
+                    "value": "f5363d17db27f600adcb750e0f9619f2"
+                },
+                "gateway_provider_choice": {
+                    "display_value": "No",
+                    "label": "Gateway Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "implementation": {
+                    "display_value": "Partial STIR/SHAKEN Implementation - Performing Robocall Mitigation",
+                    "label": "Implementation",
+                    "type": "string",
+                    "value": "Partial STIR/SHAKEN Implementation - Performing Robocall Mitigation"
+                },
+                "intermediate_provider_choice": {
+                    "display_value": "No",
+                    "label": "Non-Gateway Intermediate Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "other_dba_names": {
+                    "display_value": "Solarus",
+                    "label": "Other DBA Name(s)",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Solarus"
+                },
+                "pdf": {
+                    "display_value": "Solarus Robocall Mitigation Policy 2024-03-05.pdf",
+                    "label": "PDF",
+                    "limit": "40",
+                    "type": "file_attachment",
+                    "value": "117a0d95dbf8c250bf8e1b5813961940"
+                },
+                "previous_dba_names": {
+                    "display_value": "None",
+                    "label": "Previous Business Names",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "None"
+                },
+                "robocall_mitigation_contact_name": {
+                    "display_value": "Justin Huebner",
+                    "label": "Robocall Mitigation Contact Name",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Justin Huebner"
+                },
+                "sys_id": "7760a5df1b34305002beea82f54bcbd8",
+                "targetTable": "x_g_fmc_rmd_robocall_mitigation_database",
+                "voice_service_provider_choice": {
+                    "display_value": "Yes",
+                    "label": "Voice Service Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Yes"
+                }
+            },
+            {
+                "business_address": {
+                    "display_value": "440 East Grand Avenue\nP.O. Box 8045\nWisconsin Rapids WI 54495",
+                    "label": "Business Address",
+                    "type": "string",
+                    "value": "440 East Grand Avenue\nP.O. Box 8045\nWisconsin Rapids WI 54495"
+                },
+                "business_name": {
+                    "display_value": "Central Wisconsin Communications, LLC",
+                    "label": "Business Name",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Central Wisconsin Communications, LLC"
+                },
+                "contact_business_address": {
+                    "display_value": "440 East Grand Avenue\nWisconsin Rapids WI 54494",
+                    "label": "Contact Business Address",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "440 East Grand Avenue\nWisconsin Rapids WI 54494"
+                },
+                "contact_department": {
+                    "display_value": "Executive",
+                    "label": "Contact Department",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Executive"
+                },
+                "contact_telephone_number": {
+                    "display_value": "7154218140",
+                    "label": "Contact Telephone Number",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "7154218140"
+                },
+                "contact_title": {
+                    "display_value": "CEO",
+                    "label": "Contact Title",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "CEO"
+                },
+                "foreign_voice_provider": {
+                    "display_value": "No",
+                    "label": "Foreign Voice Service Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "frn": {
+                    "display_value": "0003740586",
+                    "label": "FCC Registration Number (FRN)",
+                    "limit": "40",
+                    "type": "reference",
+                    "value": "30fccd361b511c50c10f0face54bcbb9"
+                },
+                "gateway_provider_choice": {
+                    "display_value": "No",
+                    "label": "Gateway Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "implementation": {
+                    "display_value": "Partial STIR/SHAKEN Implementation - Performing Robocall Mitigation",
+                    "label": "Implementation",
+                    "type": "string",
+                    "value": "Partial STIR/SHAKEN Implementation - Performing Robocall Mitigation"
+                },
+                "intermediate_provider_choice": {
+                    "display_value": "No",
+                    "label": "Non-Gateway Intermediate Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "other_dba_names": {
+                    "display_value": "Solarus",
+                    "label": "Other DBA Name(s)",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Solarus"
+                },
+                "pdf": {
+                    "display_value": "Solarus Robocall Mitigation Policy 2024-03-05.pdf",
+                    "label": "PDF",
+                    "limit": "40",
+                    "type": "file_attachment",
+                    "value": "8bc90515dbf8c250bf8e1b581396199e"
+                },
+                "previous_dba_names": {
+                    "display_value": "None",
+                    "label": "Previous Business Names",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "None"
+                },
+                "robocall_mitigation_contact_name": {
+                    "display_value": "Justin Huebner",
+                    "label": "Robocall Mitigation Contact Name",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Justin Huebner"
+                },
+                "sys_id": "4871ad931b74305002beea82f54bcbee",
+                "targetTable": "x_g_fmc_rmd_robocall_mitigation_database",
+                "voice_service_provider_choice": {
+                    "display_value": "Yes",
+                    "label": "Voice Service Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Yes"
+                }
+            },
+            {
+                "business_address": {
+                    "display_value": "440 East Grand Avenue\nP.O. Box 8045\nWisconsin Rapids WI 54495",
+                    "label": "Business Address",
+                    "type": "string",
+                    "value": "440 East Grand Avenue\nP.O. Box 8045\nWisconsin Rapids WI 54495"
+                },
+                "business_name": {
+                    "display_value": "Wood County Telephone Company,  DBA",
+                    "label": "Business Name",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Wood County Telephone Company,  DBA"
+                },
+                "contact_business_address": {
+                    "display_value": "440 East Grand Avenue\nWisconsin Rapids WI 54495",
+                    "label": "Contact Business Address",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "440 East Grand Avenue\nWisconsin Rapids WI 54495"
+                },
+                "contact_department": {
+                    "display_value": "Executive",
+                    "label": "Contact Department",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Executive"
+                },
+                "contact_telephone_number": {
+                    "display_value": "7154218140",
+                    "label": "Contact Telephone Number",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "7154218140"
+                },
+                "contact_title": {
+                    "display_value": "CEO",
+                    "label": "Contact Title",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "CEO"
+                },
+                "foreign_voice_provider": {
+                    "display_value": "No",
+                    "label": "Foreign Voice Service Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "frn": {
+                    "display_value": "0003744141",
+                    "label": "FCC Registration Number (FRN)",
+                    "limit": "40",
+                    "type": "reference",
+                    "value": "b3147953db27f600adcb750e0f96194a"
+                },
+                "gateway_provider_choice": {
+                    "display_value": "No",
+                    "label": "Gateway Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "implementation": {
+                    "display_value": "Partial STIR/SHAKEN Implementation - Performing Robocall Mitigation",
+                    "label": "Implementation",
+                    "type": "string",
+                    "value": "Partial STIR/SHAKEN Implementation - Performing Robocall Mitigation"
+                },
+                "intermediate_provider_choice": {
+                    "display_value": "No",
+                    "label": "Non-Gateway Intermediate Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "other_dba_names": {
+                    "display_value": "Solarus",
+                    "label": "Other DBA Name(s)",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Solarus"
+                },
+                "pdf": {
+                    "display_value": "Solarus Robocall Mitigation Policy 2024-03-05.pdf",
+                    "label": "PDF",
+                    "limit": "40",
+                    "type": "file_attachment",
+                    "value": "0b190991dbf8c250bf8e1b5813961937"
+                },
+                "previous_dba_names": {
+                    "display_value": "None",
+                    "label": "Previous Business Names",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "None"
+                },
+                "robocall_mitigation_contact_name": {
+                    "display_value": "Justin Huebner",
+                    "label": "Robocall Mitigation Contact Name",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Justin Huebner"
+                },
+                "sys_id": "eac7599b1bf0305002beea82f54bcbd2",
+                "targetTable": "x_g_fmc_rmd_robocall_mitigation_database",
+                "voice_service_provider_choice": {
+                    "display_value": "Yes",
+                    "label": "Voice Service Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Yes"
+                }
+            },
+            {
+                "business_address": {
+                    "display_value": "1133 W. South Airport Rd\nSuite A\nTraverse City MI 49686",
+                    "label": "Business Address",
+                    "type": "string",
+                    "value": "1133 W. South Airport Rd\nSuite A\nTraverse City MI 49686"
+                },
+                "business_name": {
+                    "display_value": "Network Services Telecom Group LLC",
+                    "label": "Business Name",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Network Services Telecom Group LLC"
+                },
+                "contact_business_address": {
+                    "display_value": "1133 W. South Airport Rd\nSuite A\nTraverse City MI 49686",
+                    "label": "Contact Business Address",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "1133 W. South Airport Rd\nSuite A\nTraverse City MI 49686"
+                },
+                "contact_department": {
+                    "display_value": "Operations",
+                    "label": "Contact Department",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Operations"
+                },
+                "contact_telephone_number": {
+                    "display_value": "231-933-9744",
+                    "label": "Contact Telephone Number",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "231-933-9744"
+                },
+                "contact_title": {
+                    "display_value": "President",
+                    "label": "Contact Title",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "President"
+                },
+                "foreign_voice_provider": {
+                    "display_value": "No",
+                    "label": "Foreign Voice Service Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "frn": {
+                    "display_value": "0024370595",
+                    "label": "FCC Registration Number (FRN)",
+                    "limit": "40",
+                    "type": "reference",
+                    "value": "24676e0bdbddf3801d20309f7c96196f"
+                },
+                "gateway_provider_choice": {
+                    "display_value": "No",
+                    "label": "Gateway Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "implementation": {
+                    "display_value": "No STIR/SHAKEN Implementation - Performing Robocall Mitigation",
+                    "label": "Implementation",
+                    "type": "string",
+                    "value": "No STIR/SHAKEN Implementation - Performing Robocall Mitigation"
+                },
+                "intermediate_provider_choice": {
+                    "display_value": "No",
+                    "label": "Non-Gateway Intermediate Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "other_dba_names": {
+                    "display_value": "None",
+                    "label": "Other DBA Name(s)",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "None"
+                },
+                "pdf": {
+                    "display_value": "Robocall Mitigation Plan-reseller-Skyswitch 2024.pdf",
+                    "label": "PDF",
+                    "limit": "40",
+                    "type": "file_attachment",
+                    "value": "45b26d411b744250b861c844604bcbae"
+                },
+                "previous_dba_names": {
+                    "display_value": "None",
+                    "label": "Previous Business Names",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "None"
+                },
+                "robocall_mitigation_contact_name": {
+                    "display_value": "Michael Madsen",
+                    "label": "Robocall Mitigation Contact Name",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Michael Madsen"
+                },
+                "sys_id": "de81e1411b744250b861c844604bcbe3",
+                "targetTable": "x_g_fmc_rmd_robocall_mitigation_database",
+                "voice_service_provider_choice": {
+                    "display_value": "Yes",
+                    "label": "Voice Service Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Yes"
+                }
+            },
+            {
+                "business_address": {
+                    "display_value": "110 SE 6th Street, Floor 17\nFt. Lauderdale FL 33301",
+                    "label": "Business Address",
+                    "type": "string",
+                    "value": "110 SE 6th Street, Floor 17\nFt. Lauderdale FL 33301"
+                },
+                "business_name": {
+                    "display_value": "National Processing Alliance, Inc.",
+                    "label": "Business Name",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "National Processing Alliance, Inc."
+                },
+                "contact_business_address": {
+                    "display_value": "110 SE 6th Street, Floor 17\nFt. Lauderdale FL 33301",
+                    "label": "Contact Business Address",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "110 SE 6th Street, Floor 17\nFt. Lauderdale FL 33301"
+                },
+                "contact_department": {
+                    "display_value": "Operations",
+                    "label": "Contact Department",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Operations"
+                },
+                "contact_telephone_number": {
+                    "display_value": "9543204075",
+                    "label": "Contact Telephone Number",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "9543204075"
+                },
+                "contact_title": {
+                    "display_value": "President",
+                    "label": "Contact Title",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "President"
+                },
+                "foreign_voice_provider": {
+                    "display_value": "No",
+                    "label": "Foreign Voice Service Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "frn": {
+                    "display_value": "0026297275",
+                    "label": "FCC Registration Number (FRN)",
+                    "limit": "40",
+                    "type": "reference",
+                    "value": "784488c91bbaf01022e3a681f54bcb89"
+                },
+                "gateway_provider_choice": {
+                    "display_value": "No",
+                    "label": "Gateway Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "implementation": {
+                    "display_value": "Complete STIR/SHAKEN Implementation",
+                    "label": "Implementation",
+                    "type": "string",
+                    "value": "Complete STIR/SHAKEN Implementation"
+                },
+                "intermediate_provider_choice": {
+                    "display_value": "No",
+                    "label": "Non-Gateway Intermediate Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "other_dba_names": {
+                    "display_value": "NPA, FiberCall, NPAGlobal",
+                    "label": "Other DBA Name(s)",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "NPA, FiberCall, NPAGlobal"
+                },
+                "pdf": {
+                    "display_value": "Robocall Mitigation Plan 2024.pdf",
+                    "label": "PDF",
+                    "limit": "40",
+                    "type": "file_attachment",
+                    "value": "61db090d1bf04250b861c844604bcbc8"
+                },
+                "previous_dba_names": {
+                    "display_value": "None",
+                    "label": "Previous Business Names",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "None"
+                },
+                "robocall_mitigation_contact_name": {
+                    "display_value": "Val Vasserman",
+                    "label": "Robocall Mitigation Contact Name",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Val Vasserman"
+                },
+                "sys_id": "a854c0c51bf6f010544a404fe54bcb08",
+                "targetTable": "x_g_fmc_rmd_robocall_mitigation_database",
+                "voice_service_provider_choice": {
+                    "display_value": "Yes",
+                    "label": "Voice Service Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Yes"
+                }
+            },
+            {
+                "business_address": {
+                    "display_value": "1431 N 26th Street\nEscanaba MI 49829",
+                    "label": "Business Address",
+                    "type": "string",
+                    "value": "1431 N 26th Street\nEscanaba MI 49829"
+                },
+                "business_name": {
+                    "display_value": "DSTECH LLC",
+                    "label": "Business Name",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "DSTECH LLC"
+                },
+                "contact_business_address": {
+                    "display_value": "1431 N 26th Street\nEscanaba MI 49829",
+                    "label": "Contact Business Address",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "1431 N 26th Street\nEscanaba MI 49829"
+                },
+                "contact_department": {
+                    "display_value": "Operations",
+                    "label": "Contact Department",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Operations"
+                },
+                "contact_telephone_number": {
+                    "display_value": "9067863583",
+                    "label": "Contact Telephone Number",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "9067863583"
+                },
+                "contact_title": {
+                    "display_value": "President",
+                    "label": "Contact Title",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "President"
+                },
+                "foreign_voice_provider": {
+                    "display_value": "No",
+                    "label": "Foreign Voice Service Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "frn": {
+                    "display_value": "0018228429",
+                    "label": "FCC Registration Number (FRN)",
+                    "limit": "40",
+                    "type": "reference",
+                    "value": "ad2ba67cdb423380c4603889fc961975"
+                },
+                "gateway_provider_choice": {
+                    "display_value": "No",
+                    "label": "Gateway Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "implementation": {
+                    "display_value": "No STIR/SHAKEN Implementation - Performing Robocall Mitigation",
+                    "label": "Implementation",
+                    "type": "string",
+                    "value": "No STIR/SHAKEN Implementation - Performing Robocall Mitigation"
+                },
+                "intermediate_provider_choice": {
+                    "display_value": "No",
+                    "label": "Non-Gateway Intermediate Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "other_dba_names": {
+                    "display_value": "none",
+                    "label": "Other DBA Name(s)",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "none"
+                },
+                "pdf": {
+                    "display_value": "Robocall Mitigation Plan-reseller-Skyswitch 2024.pdf",
+                    "label": "PDF",
+                    "limit": "40",
+                    "type": "file_attachment",
+                    "value": "a1af3c0d1bf08250da74a644604bcb68"
+                },
+                "previous_dba_names": {
+                    "display_value": "Delcomp/SOFTEK",
+                    "label": "Previous Business Names",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Delcomp/SOFTEK"
+                },
+                "robocall_mitigation_contact_name": {
+                    "display_value": "Eric Wakkuri",
+                    "label": "Robocall Mitigation Contact Name",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Eric Wakkuri"
+                },
+                "sys_id": "692da0aa1bbaf410aa3cea41f54bcb87",
+                "targetTable": "x_g_fmc_rmd_robocall_mitigation_database",
+                "voice_service_provider_choice": {
+                    "display_value": "Yes",
+                    "label": "Voice Service Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Yes"
+                }
+            },
+            {
+                "business_address": {
+                    "display_value": "#105 8047 199 St\nBC V2Y 1S2 Langley, Canada",
+                    "label": "Business Address",
+                    "type": "string",
+                    "value": "#105 8047 199 St\nBC V2Y 1S2 Langley, Canada"
+                },
+                "business_name": {
+                    "display_value": "iHaul Freight Ltd",
+                    "label": "Business Name",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "iHaul Freight Ltd"
+                },
+                "contact_business_address": {
+                    "display_value": "#105 8047 199 St\nBC V2Y 1S2 Langley, Canada",
+                    "label": "Contact Business Address",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "#105 8047 199 St\nBC V2Y 1S2 Langley, Canada"
+                },
+                "contact_department": {
+                    "display_value": "IT",
+                    "label": "Contact Department",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "IT"
+                },
+                "contact_telephone_number": {
+                    "display_value": "+1-604-540-6800",
+                    "label": "Contact Telephone Number",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "+1-604-540-6800"
+                },
+                "contact_title": {
+                    "display_value": "Software Analyst",
+                    "label": "Contact Title",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Software Analyst"
+                },
+                "foreign_voice_provider": {
+                    "display_value": "Yes",
+                    "label": "Foreign Voice Service Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Yes"
+                },
+                "frn": {
+                    "display_value": "0031446537",
+                    "label": "FCC Registration Number (FRN)",
+                    "limit": "40",
+                    "type": "reference",
+                    "value": "6c2f832f1bc3b45016b49796bc4bcb53"
+                },
+                "gateway_provider_choice": {
+                    "display_value": "No",
+                    "label": "Gateway Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "implementation": {
+                    "display_value": "Complete STIR/SHAKEN Implementation",
+                    "label": "Implementation",
+                    "type": "string",
+                    "value": "Complete STIR/SHAKEN Implementation"
+                },
+                "intermediate_provider_choice": {
+                    "display_value": "No",
+                    "label": "Non-Gateway Intermediate Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "No"
+                },
+                "other_dba_names": {
+                    "display_value": "none",
+                    "label": "Other DBA Name(s)",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "none"
+                },
+                "pdf": {
+                    "display_value": "Robocall Mitigation Plan.pdf",
+                    "label": "PDF",
+                    "limit": "40",
+                    "type": "file_attachment",
+                    "value": "136a74c11bb4ce5048ce5395624bcb96"
+                },
+                "previous_dba_names": {
+                    "display_value": "none",
+                    "label": "Previous Business Names",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "none"
+                },
+                "robocall_mitigation_contact_name": {
+                    "display_value": "Kevin Sorensen",
+                    "label": "Robocall Mitigation Contact Name",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Kevin Sorensen"
+                },
+                "sys_id": "db7fc76f1b0b34505eb762cfe54bcb64",
+                "targetTable": "x_g_fmc_rmd_robocall_mitigation_database",
+                "voice_service_provider_choice": {
+                    "display_value": "Yes",
+                    "label": "Voice Service Provider",
+                    "limit": "40",
+                    "type": "string",
+                    "value": "Yes"
+                }
+            }
+        ],
+        "maximum_entries": 8,
+        "msg": {
+            "sortingByAsc": "Sorting by ascending",
+            "sortingByDesc": "Sorting by descending"
+        },
+        "newButtonUnsupported": false,
+        "num_pages": 1091,
+        "o": "sys_updated_on",
+        "order": -1,
+        "order_by": "sys_updated_on",
+        "order_direction": "desc",
+        "order_direction_dv": "Descending",
+        "p": "3",
+        "page_index": 0,
+        "roles": "public",
+        "row_count": 8724,
+        "sessionRotationTrigger": true,
+        "show_attachment_link": "true",
+        "show_breadcrumbs": false,
+        "show_keywords": "true",
+        "size": "md",
+        "size_dv": "Medium",
+        "sp_column": "a9f394611b566c1048c6ed7bbc4bcba2",
+        "sp_column_dv": "",
+        "sp_page": "rmd_form",
+        "sp_page_dv": "rmd_form",
+        "sp_widget": "75af76231be6649089df9796bc4bcbdd",
+        "sp_widget_dv": "",
+        "sys_class_name": "sp_instance_table",
+        "sys_class_name_dv": "Instance with Table",
+        "sys_name": "Robocall Mitigation Database",
+        "sys_tags": "",
+        "table": "x_g_fmc_rmd_robocall_mitigation_database",
+        "table_label": "Robocall Mitigation Database",
+        "table_plural": "Robocall Mitigation Databases",
+        "title": "Robocall Mitigation Database",
+        "view": "service_portal",
+        "widget_parameters": "{\n\t\"show_keywords\": {\n\t\t\"value\": \"true\",\n\t\t\"displayValue\": \"true\"\n\t},\n\t\"allow_link\": {\n\t\t\"value\": \"true\",\n\t\t\"displayValue\": \"true\"\n\t},\n\t\"view\": {\n\t\t\"value\": \"service_portal\",\n\t\t\"displayValue\": \"service_portal\"\n\t},\n\t\"show_attachment_link\": {\n\t\t\"value\": \"true\",\n\t\t\"displayValue\": \"true\"\n\t},\n\t\"show_breadcrumbs\": {\n\t\t\"value\": false,\n\t\t\"displayValue\": false\n\t},\n\t\"hide_header\": {\n\t\t\"value\": false,\n\t\t\"displayValue\": false\n\t}\n}",
+        "window_end": 8,
+        "window_size": 8,
+        "window_start": 0
+    }

@@ -120,15 +120,21 @@ class Scraper52:
             num += 50
 
 
-    def scrape_with_refcodes(self, batch_size=10):
+    def scrape_with_refcodes(self, batch_size=10,last_interrupt_char='A',starting_page='0'):
         
 
         last_interrupt_lname_idx = 0
         
-        state = self.load_state()
+        try:
+            state = self.load_state()
+        except json.decoder.JSONDecodeError:
+            state = {"last_name": ""}
+
+        f_names = name_generator.get_first_names()
+        l_names = name_generator.get_last_names()
         
-        last_names = ['xavier','smith','johnson']
-        # last_names = name_generator.get_last_names()
+        last_names = l_names + list(set(f_names) - set(l_names))
+        # last_names = name_generator.get_first_names()
 
         if state:
             last_interrupt_lname = state['last_name']
@@ -139,7 +145,7 @@ class Scraper52:
                 last_interrupt_lname_idx = 0
         
             
-        with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
             for i in range(last_interrupt_lname_idx,len(last_names),batch_size):
                 batch_result = [item for result in executor.map(self.scraped_with_last_name,last_names[i:i+batch_size]) for item in result]
                 yield batch_result
