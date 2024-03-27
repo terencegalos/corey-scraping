@@ -68,6 +68,7 @@ class Scraper49:
 
             try:
                 response = requests.get(f"{url}", headers=headers)
+                time.sleep(2) # sleep to avoid rate limit
             except requests.exceptions.ConnectionError:
                 print(f'Connecting failed to {url}.\nReconnecting in 20 secs...')
                 time.sleep(20)
@@ -158,6 +159,25 @@ class Scraper49:
                 
 
 
+        # get cookies and headers
+        headers1 = {
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Connection': 'keep-alive',
+            # 'Cache Control':'no-cache',
+            'DNT': '1',
+            'Host': 'arc-sos.state.al.us',
+            # 'Pragma':'no-cache',
+            'Sec-Fetch-Dest': 'document',
+            'Sec-Fetch-Mode': 'navigate',
+            'Sec-Fetch-Site': 'none',
+            'Sec-Fetch-User': '?1',
+            'Sec-GPC': '1',
+            'Upgrade-Insecure-Requests': '1',
+            'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0'
+        }
+
         # 1 letter search; Loop all uppercase
         last_interrupt_index = ascii_uppercase.index(state['char'])
         last_interrupt2_index = ascii_uppercase.index(state['char2'])
@@ -168,35 +188,37 @@ class Scraper49:
 
 
                 current_page = int(starting_page)
+
+                
                 
                 while True:
                     current_url = f'{self.baseurl}output?s={current_page}&search={char}{char2}&type=ALL&status=&order=default&hld=&dir=&page=Y'
                     try:
-                        response = requests.get(current_url)
+                        response = self.session.get(current_url,headers=headers1)
                     except requests.exceptions.ConnectionError:
                         print("Connection failed. Retrying after 20 secs.")
                         time.sleep(20)
-                        response = requests.get(current_url)
+                        response = self.session.get(current_url,headers=headers1)
 
                     print(f'Scraping entries in url: {current_url}')
                     print(f'Status code: {response.status_code}')
                     print(response.headers)
 
-                    # store current char to txt file
-                    # with open(self.last_interrupt_txt,'w') as f:
-                    #     f.write(str(char+"_"+str(current_page)))
+                    # store current char to json file
                     self.save_state(str(char),str(char2),str(current_page))
 
 
                     # Get page results
-                    # Parse the HTML content with BeautifulSoup
                     soup = BeautifulSoup(response.content,'html.parser')
                     
                     # urls = [] # Page results here
 
                     # Get first page results and store
+                    print(soup.get_text())
                     urls = get_page_links(soup)
                     print("\n".join(urls))
+
+                    time.sleep(1)
                     
                     
                     # scrape info using multithread

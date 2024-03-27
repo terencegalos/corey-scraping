@@ -1,12 +1,11 @@
 import requests, time
 import concurrent.futures
 from urllib.parse import quote
-from requests.exceptions import ConnectionError
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 
-# from scraping import name_generator_large_file as name_generator
-from scraping import name_generator
+from scraping import name_generator_large_file as name_generator
+# from scraping import name_generator
 from scraping import get_us_state
 
 class Scraper42:
@@ -50,6 +49,10 @@ class Scraper42:
                 print(f'Connecting failed to {url}. Error: {e}\nReconnecting in 20 secs...')
                 time.sleep(20)
                 response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
+            elif isinstance(e,requests.exceptions.SSLError):
+                print("SSL Error. Reconnecting in 20 secs")
+                time.sleep(20)
+                response = requests.get(f"http://{url}", headers=headers, allow_redirects=True)
             else:
                 print(f'An error occurred:{e}')
                 return None
@@ -61,6 +64,8 @@ class Scraper42:
         # if response.status_code == 200:
         # Parse the HTML content with BeautifulSoup        
         soup = BeautifulSoup(response.content, 'html.parser')
+        print(soup.get_text())
+        print(response.status_code)
         
         #Extract relevant data from the HTML using BeautifulSoup methods
         first_name_el = soup.find(attrs={'name':'firstname'})['value'] if soup.find(attrs={'name':'firstname'}) else None
@@ -99,12 +104,13 @@ class Scraper42:
     
     def scrape_with_names(self,batch_size=10,num_threads=3):
         
-        
-        names_generator = name_generator.generate_names()
-
+        # names_generator = name_generator.generate_names('/root/corey-scraping/src/scraping/CommonFirstandLast.xlsx')
+        names_generator = name_generator.generate_names()#'aaliana','blackmer')
+        # print(f"There {len(names)} names to rotate!")
         results = []
         
         def scrape_single_with_increment(name,num=''):
+            print(name)
             base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
             print(f"Base url: {base_url}")
             result = self.scrape_single(base_url)
@@ -118,15 +124,13 @@ class Scraper42:
                 
         
         with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads) as executor:
-                        
+               
             while True:
                 try:
-                    # Get names from generator function
-                    for name in names_generator:
+                    for name in next(names_generator):
                         num_generator = generate_numbers()
                         continue_to_next_name = False
                         
-                        # threading; concatenate name and num until not found
                         while True:
                             futures = [executor.submit(scrape_single_with_increment, name, num) for num in [next(num_generator) for _ in range(3)] ]
                             
@@ -141,15 +145,15 @@ class Scraper42:
                                         yield results
                                         results = []  # Clear the results list after yielding
                                 else:
-                                    # Break futures for loop and get next name
                                     print(f'Not available. Stopping...')
                                     continue_to_next_name = True
                                     break
                                 
                             if continue_to_next_name:
-                                break # if name not found go to name generator for loop and get a name
+                            # if next(num_generator) > 100:
+                                break
                 except StopIteration:
-                    print(f'Scraping successful.')
+                    print("Scraper successful.")
                     break
                         
         # Yield any remaining results

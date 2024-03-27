@@ -138,6 +138,9 @@ class Scraper54:
     
     def scrape_with_refcodes(self, batch_size=10,last_interrupt_char='A',starting_page=1):
 
+
+
+
         def get_page_rows(soup):
             table = soup.find("table")
 
@@ -151,6 +154,9 @@ class Scraper54:
 
             return page_results
         
+
+
+
         def get_page_links(soup):
             table = soup.find("table")
             if not table:
@@ -163,6 +169,9 @@ class Scraper54:
 
             return page_results
         
+
+
+
         def num_generator(starting_page):
             num = int(starting_page)
             while True:
@@ -170,6 +179,7 @@ class Scraper54:
                 num += 1
 
         state = self.load_state()
+        
         print(state)
                 
 
@@ -321,12 +331,13 @@ class Scraper54:
                             print('Organization search?')
                         param = (data_indv if 'I' in s else data_org) if num < 2 else data2
                         print(param)
+                        self.session.close() # reset session
                         try:
-                            response = requests.post(current_url,headers=headers,data=json.dumps(param),verify=False)
+                            response = self.session.post(current_url,headers=headers,data=json.dumps(param),verify=False)
                         except requests.exceptions.ConnectionError:
                             print("Connection failed. Retrying in 20 secs.")
                             time.sleep(20)
-                            response = requests.post(current_url,headers=headers,data=json.dumps(param),verify=False)
+                            response = self.session.post(current_url,headers=headers,data=json.dumps(param),verify=False)
                         # self.renew_cookies(response)
                         
 
@@ -375,13 +386,13 @@ class Scraper54:
                                 print("Page info not found. Retrying")
                                 time.sleep(1)
                                 # self.session.close()
-                                response_ = requests.get(self.searchurl)
-                                self.renew_cookies(response_)
+                                response_ = self.session.get(self.searchurl)
+                                # self.renew_cookies(response_)
 
-                                response = requests.post(current_url,headers=headers,cookies=self.jar,data=json.dumps(data),verify=False)
-                                self.renew_cookies(response)
+                                # response = self.session.post(current_url,headers=headers,cookies=self.jar,data=json.dumps(param),verify=False)
+                                # self.renew_cookies(response)
 
-                                response = requests.post(current_url,headers=headers,cookies=self.jar,data=json.dumps(param),verify=False)
+                                response = self.session.post(current_url,headers=headers,data=json.dumps(param),verify=False)
 
                                 self.soup = BeautifulSoup(response.content,'html.parser')
                                 # print(f"Updated content: {self.soup.contents[0]}")

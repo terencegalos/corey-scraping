@@ -109,3 +109,8 @@ class Scraper1:
             for i in range(0,len(refcodes),batch_size):
                 batch_results = [result for result in list(executor.map(scrape_single_thread,refcodes[i:i+batch_size])) if result is not None]
                 yield batch_results
+
+
+
+    def scrape(self):
+        yield self.scrape_with_refcodes()

@@ -31,9 +31,9 @@ class Scraper53:
         for name,value in response.cookies.items():
             self.jar.set(name,value)
 
-    def save_state(self,last_char,last_char2,search):
+    def save_state(self,last_char,last_char2,last_char3,search):
         with open(self.state_json,'w') as file:
-            json.dump({"char":last_char,"char2":last_char2,"search":search},file)
+            json.dump({"char":last_char,"char2":last_char2,"char3":last_char3,"search":search},file)
 
 
 
@@ -81,14 +81,27 @@ class Scraper53:
 
         for item in self.session.cookies.items():
             print(item)
-        # time.sleep(10)
             
         self.session.headers.update(headers1)
         # self.session.headers.update({"Referer":'https://corp.sec.state.ma.us/CorpWeb/UCCSearch/UCCSearchResults.aspx?sysvalue=ORIhMVYRub09EF9n4TWp2YHrUO62ErYNEY2LWxdD8P4-'})
-        response = self.session.get(f'{self.baseurl}{url}')
+        
+        # send get requests; if status code 403 loop until it is 200
+        while True:
+            try:
+                response = self.session.get(f'{self.baseurl}{url}')
+            except requests.exceptions.ConnectionError:
+                print("Connection failed. Retrying in 20 secs..")
+                time.sleep(20)
+                response = self.session.get(f'{self.baseurl}{url}')
 
-        print(f'Status code: {response.status_code}')
-        # print(f'response headers: {response.headers.items()}')
+            if response.status_code == 403:
+                print("Forbidden. Retrying in 120 secs")
+                time.sleep(120)
+                continue
+            elif response.status_code == 200 or response.status_code == 302:
+                break
+            else:
+                raise requests.HTTPError(f"Error: status code {response.status_code}")
 
 
 
@@ -96,8 +109,7 @@ class Scraper53:
         # Parse the HTML content with BeautifulSoup
 
         soup = BeautifulSoup(response.content,'html.parser')
-        # print(soup.contents)
-        # print(soup.get_text())
+        print(soup.get_text())
 
 
         table = soup.select_one('table table:nth-child(4)')
@@ -158,6 +170,7 @@ class Scraper53:
 
         state = self.load_state()
         
+
         def get_page_links(soup):
             table = soup.find("table")
             tr_elements = table.find_all('tr')
@@ -181,6 +194,13 @@ class Scraper53:
             return eventvalidation['value'] if eventvalidation else None
                 
 
+
+
+
+
+
+
+
         
         # 1 letter search; Loop all uppercase
 
@@ -189,6 +209,7 @@ class Scraper53:
         # Get index of start ascii char
         last_interrupt_char_index = ascii_uppercase.index(state['char'])
         last_interrupt_char2_index = ascii_uppercase.index(state['char2'])
+        last_interrupt_char3_index = ascii_uppercase.index(state['char3'])
         
         # Get index of end ascii char
         # end_char_index = ascii_uppercase.index(end_char)
@@ -200,108 +221,134 @@ class Scraper53:
 
 
         # Start of loop
-        search = ['I','O']
+        search = ['I']
         search_index = search.index(state['search'])
         
         for uccsearch in search[search_index:]:
             for char in ascii_uppercase[last_interrupt_char_index:]:
                 for char2 in ascii_uppercase[last_interrupt_char2_index:]:
+                    for char3 in ascii_uppercase:
 
-                    print(f"Extract search results for '{char}{char2} search:{uccsearch}'")
-            
+                        print(f"Extract search results for '{char}{char2}{char3} search:{uccsearch}'")
+                
 
-                    # num_gen = num_generator(last_interrupted_page)
+                        last_interrupt_char_index = 0 # reset 
 
-                    last_interrupt_char_index = 0 # reset 
-
-                    self.save_state(char,char2,uccsearch)
-                    
+                        self.save_state(char,char2,char3,uccsearch)                        
 
 
-                    # set url
-                    current_url = self.searchurl
+                        # set url
+                        current_url = self.searchurl
 
 
-                    # Get new cookies and set headers
+                        # Get new cookies and set headers
 
-                    while True:
-                        response_ = self.session.get(current_url)
+                        while True:
+                            
+                            
+                            # self.session.headers.update(headers)
+                            response_ = self.session.get(current_url)
+                            time.sleep(3)
+
+                            
+                                                
+                            # Get VIEWSTATE AND EVENT VALIDATION
+                            soup = BeautifulSoup(response_.text,'html.parser')
+                            print(soup.get_text())
+                            print(response_.status_code)
+                            # time.sleep(100)
+
+
+                            viewstate = get_viewstate(soup)
+                            eventvalidation = get_eventvalidation(soup)
+                            if viewstate and eventvalidation:
+                                # print({'viewstate':viewstate,'eventvalidation':eventvalidation}.items())
+                                break
+                            else:
+                                print("viewstate/eventvalidation extraction failed. Retrying in 120 secs.")
+                                print(f"viewstate:{viewstate}, eventvalidation:{eventvalidation}")
+                                time.sleep(120)
+                                continue
+
+
+
 
                         
-                                            
-                        # Get VIEWSTATE AND EVENT VALIDATION
-                        soup = BeautifulSoup(response_.text,'html.parser')
-                        # print(soup.get_text())
-                        print(response_.status_code)
+                        data1 = {
+                            "__EVENTTARGET": f"ctl00$MainContent$UCCSearchMethod{uccsearch}",
+                            "__EVENTARGUMENT": "",
+                            "__LASTFOCUS": "",
+                            "__VIEWSTATE": f"{viewstate}",
+                            "__VIEWSTATEGENERATOR": "CB1FA542",
+                            "__EVENTVALIDATION": f"{eventvalidation}",
+                            "ctl00$MainContent$UccSearch": f"rdoSearch{uccsearch}",
+                            "ctl00$MainContent$txtLastName": f"{char.lower()}{char2.lower()}{char3.lower()}" if "I" in uccsearch else "",
+                            "ctl00$MainContent$txtFirstName": "",
+                            "ctl00$MainContent$txtMiddleName": "",
+                            "ctl00$MainContent$txtSuffix": "",
+                            f"ctl00$MainContent$txt{uccsearch}City": "",
+                            f"ctl00$MainContent$cbo{uccsearch}State": "",
+                            "ctl00$MainContent$txtName": f"{char.lower()}{char2.lower()}{char3.lower()}" if "O" in uccsearch else "",
+                            "ctl00$MainContent$txtFilingNumber": "",
+                            f"ctl00$MainContent$UCCSearchMethod{uccsearch}": "B",
+                            "ctl00$MainContent$txtStartDate": "",
+                            "ctl00$MainContent$chkDebtor": "on",
+                            "ctl00$MainContent$UCCSearchMethod": "B",
+                            "ctl00$MainContent$ddRecordsPerPage": "100000",
+                            "ctl00$MainContent$btnSearch": "Search",
+                            "ctl00$MainContent$HiddenSearchOption_SearchLapsed": "False"
+                        }
 
+                        # Send post requests with data param
+                        try:
 
-                        viewstate = get_viewstate(soup)
-                        eventvalidation = get_eventvalidation(soup)
-                        if viewstate and eventvalidation:
-                            # print({'viewstate':viewstate,'eventvalidation':eventvalidation}.items())
-                            break
-                        else:
-                            print("viewstate/eventvalidation extraction failed. Retrying in 120 secs.")
-                            print(f"viewstate:{viewstate}, eventvalidation:{eventvalidation}")
-                            time.sleep(120)
+                            while True:
+                                response_ = self.session.post(current_url,data=data1)
+                                print(response_.status_code)
+
+                                # Check status code. Retry if it return 403
+                                if response_.status_code == 200 or response_.status_code == 302:
+                                    soup = BeautifulSoup(response_.content,'html.parser')
+                                    result_text = soup.get_text()
+                                    print(result_text)
+
+                                    # Retry if captcha or table not found
+                                    if 'requests unsuccessful' in result_text.lower() or not soup.find('table'):
+                                        continue
+                                        
+                                    break
+                                    
+                                else:
+                                    print("Forbidden. Retrying in 120 secs")
+                                    time.sleep(120)
+                                    continue
+                                    
+                        except requests.exceptions.ConnectionError:
+                            print("Connection failed. Retrying in 20 secs.")
+                            time.sleep(20)
+                            response_ = self.session.post(current_url,data=data1)
+                        except Exception as e:         
+                            print(f'Search failed: {e}. Chars: {char}{char2}{char3} search: {uccsearch}. Skipping..')
                             continue
 
+              
 
+                        # Get page results and store
+                        if soup:
+                            urls = get_page_links(soup)
+                        else:
+                            # Skip if soup return None
+                            print("page soup returns None. Skipping")
+                            continue
 
+                        for url in urls:
+                            print(f'result url: {self.baseurl}{url}')
+                        
+                        
+                        # scrape info using multithread
+                        with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+                            for i in range(0,len(urls),batch_size):
+                                batch_results = [item for results in executor.map(self.scrape_single,urls[i:i+batch_size]) for item in results]
+                                yield batch_results
 
-                    
-                    data1 = {
-                        "__EVENTTARGET": "ctl00$MainContent$UCCSearchMethodI",
-                        "__EVENTARGUMENT": "",
-                        "__LASTFOCUS": "",
-                        "__VIEWSTATE": f"{viewstate}",
-                        "__VIEWSTATEGENERATOR": "CB1FA542",
-                        "__EVENTVALIDATION": f"{eventvalidation}",
-                        "ctl00$MainContent$UccSearch": f"rdoSearch{uccsearch}",
-                        "ctl00$MainContent$txtLastName": f"{char.lower()}{char2.lower()}",
-                        "ctl00$MainContent$txtFirstName": "",
-                        "ctl00$MainContent$txtMiddleName": "",
-                        "ctl00$MainContent$txtSuffix": "",
-                        "ctl00$MainContent$txtICity": "",
-                        "ctl00$MainContent$cboIState": "",
-                        "ctl00$MainContent$txtName": "",
-                        "ctl00$MainContent$txtOCity": "",
-                        "ctl00$MainContent$cboOState": "",
-                        "ctl00$MainContent$txtFilingNumber": "",
-                        "ctl00$MainContent$UCCSearchMethodI": "B",
-                        "ctl00$MainContent$txtStartDate": "",
-                        "ctl00$MainContent$chkDebtor": "on",
-                        "ctl00$MainContent$UCCSearchMethod": "B",
-                        "ctl00$MainContent$ddRecordsPerPage": "100000",
-                        "ctl00$MainContent$btnSearch": "Search",
-                        "ctl00$MainContent$HiddenSearchOption_SearchLapsed": "False"
-                    }
-
-                    # Send post requests with data param
-                    response_ = self.session.post(current_url,data=data1)
-
-
-
-
-                    # Get page results
-
-                    soup = BeautifulSoup(response_.content,'html.parser')
-
-                    print(f'status_code: {response_.status_code}')
-                    print(f"response history:{response_.history}")
-                    
-
-                    # Get page results and store
-                    urls = get_page_links(soup)
-
-                    for url in urls:
-                        print(f'result url: {self.baseurl}{url}')
-                    
-                    
-                    # scrape info using multithread
-                    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-                        for i in range(0,len(urls),batch_size):
-                            batch_results = [item for results in executor.map(self.scrape_single,urls[i:i+batch_size]) for item in results]
-                            yield batch_results
-
-        self.save_state('A','A','I')
+        self.save_state('A','A','A','I')

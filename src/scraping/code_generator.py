@@ -73,7 +73,7 @@ def num_generator(last_interrupt = 1):
 
 
 # Example: Generate 10 invite codes with permutations of 2 characters from the alphabet
-# invite_codes_with_prefix = generate_codes_with_prefix('AA',101100,150000) # mobilendloan
+invite_codes_with_prefix = generate_codes_with_prefix('HA',101100,150000) # mobilendloan
 # invite_codes_with_prefix = generate_codes_with_prefix('AA',100,500) # myonlineloanpro
 
 # print(f"Total number of codes: {len(invite_codes_with_prefix)}")
