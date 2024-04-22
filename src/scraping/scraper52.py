@@ -125,17 +125,20 @@ class Scraper52:
 
         last_interrupt_lname_idx = 0
         
+        # load state
         try:
             state = self.load_state()
         except json.decoder.JSONDecodeError:
             state = {"last_name": ""}
 
+        # get first names and last names
         f_names = name_generator.get_first_names()
         l_names = name_generator.get_last_names()
         
+        # combine and remove duplicates
         last_names = l_names + list(set(f_names) - set(l_names))
-        # last_names = name_generator.get_first_names()
 
+        # get last_name value from state else start index 0
         if state:
             last_interrupt_lname = state['last_name']
             try:
@@ -255,6 +258,7 @@ class Scraper52:
 
             # Get page results using Beautifulsoup
             soup = BeautifulSoup(response.content,'html.parser')
+            print(soup.text)
             print(f'Scraping entries in url: {current_url}')
             
 
@@ -273,12 +277,3 @@ class Scraper52:
             
             
         return results
-    
-
-            # scrape info using multithread
-            # with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-            #     for i in range(0,len(trs_soup),batch_size):
-            #         batch_results = [results for results in executor.map(self.scrape_single_row,trs_soup[i:i+batch_size])]# for item in results]
-            #         yield batch_results
-            
-            # continue

@@ -120,9 +120,9 @@ class Scraper50:
             secured_party_address = 'n/a'
 
         # Update result set dict
-        result_dict.update({'debtor_name':debtor_name})
+        result_dict.update({'debtor_name':debtor_name[:255]})
         result_dict.update({'debtor_address':debtor_address})
-        result_dict.update({'secured_party_name':secured_party_name})
+        result_dict.update({'secured_party_name':secured_party_name[:255]})
         result_dict.update({'secured_party_address':secured_party_address})
 
         print(result_dict)
@@ -135,7 +135,7 @@ class Scraper50:
     
     
     
-    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A', last_interrupt_debtor=None,searchby_start=0,starting_page=1): # starting page is a dummy and is always 1
+    def scrape_with_refcodes(self, batch_size=10, last_interrupt_char='A',last_interrupt_char2 ='A', last_interrupt_debtor=None,searchby_start=0,starting_page=1): # starting page is a dummy and is always 1
         
         def get_page_links(soup):
             tr_elements = soup.find_all("tr")
@@ -251,34 +251,8 @@ class Scraper50:
                         "ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$SearchButton": "Search"
                     }
                 
-<<<<<<< HEAD
-                
-                data = {
-                    "__EVENTTARGET": "",
-                    "__EVENTARGUMENT": "",
-                    "__VIEWSTATE": "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",
-                    "__VIEWSTATEGENERATOR": "DE76B829",
-                    "__VIEWSTATEENCRYPTED": "",
-                    "ctl00$ContentPlaceHolder1$PortalPageControl1$ctl14$hiddenUserResponse": "",
-                    "ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$MatchType": "MatchStartingWithRadioButton",
-                    "ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$SearchBy": f"{searchby}",
-                    "ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$OrganizationNameInput": f"{char if searchby == search_by[0] else ''}",
-                    "ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$MailingAddressInput": "",
-                    "ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$CityInput": "",
-                    "ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$StateInput": "",
-                    "ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$ZipInput": "",
-                    "ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$LastNameTextBox": f"{char if searchby == search_by[1] else ''}",
-                    "ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$FirstNameTextBox": "",
-                    "ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$MiddleNameTextBox": "",
-                    "ctl00$ContentPlaceHolder1$PortalPageControl1$ctl24$SearchButton": "Search"
-                }
-                
-
-                # print(data)
-=======
 
                     # print((data if searchby in search_by[0] else data_1))
->>>>>>> 479b4ffb96f82a9b69956901cc0fd6593ed7d2bf
 
                     
                     
@@ -305,7 +279,8 @@ class Scraper50:
                     # scrape info using multithread
                     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
                         for i in range(last_interrupt_debtor_index,len(urls),batch_size):
-                            batch_results = [results for results in executor.map(self.scrape_single,urls[i:i+batch_size])]
+                            results = executor.map(self.scrape_single,urls[i:i+batch_size])
+                            batch_results = [result for result in results if result is not None]
                             yield batch_results
                             
                     last_interrupt_debtor = None # reset debtor
