@@ -331,7 +331,10 @@ class Scraper54:
                             print('Organization search?')
                         param = (data_indv if 'I' in s else data_org) if num < 2 else data2
                         print(param)
-                        self.session.close() # reset session
+
+                        if num < 2:
+                            self.session.cookies.clear()  # clear cookies 
+                            
                         try:
                             response = self.session.post(current_url,headers=headers,data=json.dumps(param),verify=False)
                         except requests.exceptions.ConnectionError:
@@ -379,7 +382,7 @@ class Scraper54:
 
                                 break
 
-                            except:
+                            except: # if cookies expired and not returning page info
                                 if num < 2:
                                     print("Page 1 no results. Breaking...")
                                     break
@@ -419,7 +422,7 @@ class Scraper54:
 
 
                         # scrape info using multithread
-                        with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
+                        with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
                             for i in range(0,len(page_links),batch_size):
                                 results = executor.map(self.scrape_single,page_links[i:i+batch_size])
                                 if results is not None:

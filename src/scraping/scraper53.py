@@ -8,6 +8,7 @@ from fake_useragent import UserAgent
 from string import ascii_uppercase
 from config.proxies import proxy_dict
 
+
 class Scraper53:
     def __init__(self):
         
@@ -19,6 +20,7 @@ class Scraper53:
         self.session = HTMLSession()
         # self.session = requests.Session()
         self.jar = RequestsCookieJar()
+
         self.ua = UserAgent()
         self.extracted_cookies = 'mailer-sessions=s%3A-xmOYnkEUpr5_faMgi-HKzN7AhNZNnUc.fgKPMZ%2B3eKVo%2Br4%2FUUYO%2FyVxUHLjk5Z43CnLjxXq5PU; wc_visitor=78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5; wc_client=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+; wc_client_current=direct+..+none+..++..++..++..++..+https%3A%2F%2Fmobilendloan.com%2F+..+78875-73be57c6-bcd2-cd6c-b8d7-445b47bba2c5+..+'
         print(f"Scraping: {self.baseurl}")
@@ -85,7 +87,7 @@ class Scraper53:
         self.session.headers.update(headers1)
         # self.session.headers.update({"Referer":'https://corp.sec.state.ma.us/CorpWeb/UCCSearch/UCCSearchResults.aspx?sysvalue=ORIhMVYRub09EF9n4TWp2YHrUO62ErYNEY2LWxdD8P4-'})
         
-        # send get requests; if status code 403 loop until it is 200
+        # send get requests; if status code 403 retry until it is 200
         while True:
             try:
                 response = self.session.get(f'{self.baseurl}{url}')
@@ -93,9 +95,18 @@ class Scraper53:
                 print("Connection failed. Retrying in 20 secs..")
                 time.sleep(20)
                 response = self.session.get(f'{self.baseurl}{url}')
+            except:
+                # Return None and discard current url
+                print('Invalid url. Skipping..')
+                return
+
 
             if response.status_code == 403:
-                print("Forbidden. Retrying in 120 secs")
+                print(f"Forbidden GET request for {self.baseurl}{url}. Skipping...")
+                # time.sleep(120)
+                return
+            elif response.status_code == 503:
+                print(f"Service unavailable for GET request: {self.baseurl}{url}. Retrying in 120 secs")
                 time.sleep(120)
                 continue
             elif response.status_code == 200 or response.status_code == 302:
@@ -117,7 +128,12 @@ class Scraper53:
         '#MainContent_tblFilingHistory > tbody:nth-child(1) > tr > td:nth-child(1)'
 
         # Loop tr tags
-        tr_soup = table.find_all('tr')
+        try:
+            tr_soup = table.find_all('tr')
+        except AttributeError:
+            print("Table rows not available. Skipping..")
+            return
+
 
         count = 0 # check if row is odd or even (odd is debtor info even is secured party info)
         result_dict_list = [] # store dictionaries here if multiple
@@ -176,7 +192,7 @@ class Scraper53:
             tr_elements = table.find_all('tr')
             
             print(f'tr length: {len(tr_elements)}')
-            page_results = [tr.find('a')['href'] for tr in tr_elements if tr.find('a') and 'UCCSearch.aspx?SearchLapsed=True' not in tr.find('a')['href']]
+            page_results = [tr.find('a')['href'] for tr in tr_elements if tr.find('a') and 'UCCSearch.aspx?SearchLapsed=True' not in tr.find('a')['href'] and ".pdf" not in tr.find('a')['href']]
             return page_results
         
         def num_generator(last_interrupt_page):
@@ -246,10 +262,8 @@ class Scraper53:
                         while True:
                             
                             
-                            # self.session.headers.update(headers)
                             response_ = self.session.get(current_url)
                             time.sleep(3)
-
                             
                                                 
                             # Get VIEWSTATE AND EVENT VALIDATION
@@ -306,10 +320,10 @@ class Scraper53:
                                 response_ = self.session.post(current_url,data=data1)
                                 print(response_.status_code)
 
+                                soup = BeautifulSoup(response_.content,'html.parser')
                                 # Check status code. Retry if it return 403
+                                result_text = soup.get_text()
                                 if response_.status_code == 200 or response_.status_code == 302:
-                                    soup = BeautifulSoup(response_.content,'html.parser')
-                                    result_text = soup.get_text()
                                     print(result_text)
 
                                     # Retry if captcha or table not found
@@ -319,9 +333,8 @@ class Scraper53:
                                     break
                                     
                                 else:
-                                    print("Forbidden. Retrying in 120 secs")
-                                    time.sleep(120)
-                                    continue
+                                    print(result_text)
+                                    raise Exception("Forbidden.")
                                     
                         except requests.exceptions.ConnectionError:
                             print("Connection failed. Retrying in 20 secs.")
@@ -346,7 +359,7 @@ class Scraper53:
                         
                         
                         # scrape info using multithread
-                        with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+                        with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
                             for i in range(0,len(urls),batch_size):
                                 batch_results = [item for results in executor.map(self.scrape_single,urls[i:i+batch_size]) for item in results]
                                 yield batch_results

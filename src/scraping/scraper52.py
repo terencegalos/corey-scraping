@@ -258,7 +258,6 @@ class Scraper52:
 
             # Get page results using Beautifulsoup
             soup = BeautifulSoup(response.content,'html.parser')
-            print(soup.text)
             print(f'Scraping entries in url: {current_url}')
             
 

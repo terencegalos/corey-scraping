@@ -47,7 +47,7 @@ class Scraper51:
         print(f'Extracting doc links from URL: {self.searchurl+url}')
         try:
             response = requests.get(self.searchurl+url,headers=headers)
-        except requests.exceptions.ConnectionError:
+        except (requests.exceptions.ConnectionError,requests.exceptions.ReadTimeout):
             print(f'Connecting failed to url {self.searchurl+url}. Reconnecting in 20 secs')
             time.sleep(20)
             response = requests.get(self.searchurl+url,headers=headers)
@@ -165,16 +165,6 @@ class Scraper51:
         return results
 
         
-        
-        # Check if any value is None, if yes, return None
-        # if any(value is None for value in [name, address, secured_party_name, secured_party_address]):
-        #     return None        
-            
-            
-        
-            
-        # else :
-        #     raise Exception(f"Failed to retrieve data. Status code: {response.status_code}")
     
     
     
@@ -197,9 +187,6 @@ class Scraper51:
                 yield num
                 num += 1
                 
-
-        # result = self.scrape_single("https://business.sos.ms.gov/star/portal/ucc/page/uccSearch-filingchain/portal.aspx?Id=be5c804e-19b5-4a5f-bdd4-0065cf431c9e")
-        # print(f'Sample result: {result}')
 
         
         # 1 letter search; Loop all uppercase
@@ -238,7 +225,7 @@ class Scraper51:
 
             if int(starting_page) > 1:
                 num_gen = num_generator(starting_page)
-                starting_page = 0 # reset
+                starting_page = 1 # reset
             else:
                 num_gen = num_generator(starting_page)
             
@@ -266,6 +253,10 @@ class Scraper51:
                 
                 try:
                     response = requests.post(current_url,data=data,headers=headers)
+                except requests.exceptions.ConnectionError:
+                    print("Connection aborted. Retrying in 20 secs")
+                    time.sleep(20)
+                    response = requests.post(current_url,data=data,headers=headers)
                 except requests.exceptions.HTTPError:
                     print(f"Invalid/forbidden url {url}")
 
@@ -290,7 +281,7 @@ class Scraper51:
                 
                 
                 # scrape info using multithread
-                with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+                with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
                     for i in range(0,len(urls),batch_size):
                         batch_results = [item for results in executor.map(self.scrape_single,urls[i:i+batch_size]) if results for item in results]
                         yield batch_results

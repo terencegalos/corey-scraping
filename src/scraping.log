@@ -25396,3 +25396,20 @@ Traceback (most recent call last):
     base_url = f"{"".join([text.lower().replace("'","") for text in name.split()])}{num if num > 0 else ''}.{self.url}"
                                                                     ^^^^^^^^^^
 AttributeError: 'list' object has no attribute 'split'
+2024-04-23 01:01:08,136 [ERROR]: An error occurred: name 'asyncio' is not defined
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 47, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 143, in scrape_with_refcodes
+    asyncio.run(notifier.send_telegram_message())
+    ^^^^^^^
+NameError: name 'asyncio' is not defined. Did you forget to import 'asyncio'
+2024-04-23 01:01:45,376 [ERROR]: An error occurred: name 'asyncio' is not defined
+Traceback (most recent call last):
+  File "/home/terence/projects/corey-scraping/src/main_ucc_scraper.py", line 49, in main
+    for batch_results in scraper.scrape_with_refcodes():#last_interrupt_char=last_char,starting_page=last_page):
+  File "/home/terence/projects/corey-scraping/src/scraping/scraper52.py", line 143, in scrape_with_refcodes
+    asyncio.run(notifier.send_telegram_message())
+    ^^^^^^^
+NameError: name 'asyncio' is not defined. Did you forget to import 'asyncio'
+2024-04-23 01:02:59,867 [INFO]: HTTP Request: POST https://api.telegram.org/bot7124421907:AAH-o9xnZiP7mF8dF0xRm0eVHzde0jqO3cw/sendMessage "HTTP/1.1 200 OK"

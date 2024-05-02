@@ -67,7 +67,15 @@ class Scraper50:
 
 
         print(f'Extracting info. URL: {url}')
-        response = requests.get(url)
+        try:
+            response = requests.get(url)
+        except requests.exceptions.ConnectionError:
+            print("Connection failed. Retrying in 20 secs...")
+            time.sleep(60)
+            response = requests.get(url)
+        except:
+            print("Invalid url. Skipping...")
+            return
         # print(f'Content: {response.text}')
         print(f'Status code: {response.status_code}')
 
@@ -76,7 +84,7 @@ class Scraper50:
         # Parse the HTML content with BeautifulSoup
 
         soup = BeautifulSoup(response.content,'html.parser')
-        # print(soup.contents)
+        # print(soup.text)
 
 
         # Extract debtor info from a table tag
@@ -277,7 +285,7 @@ class Scraper50:
                     
                     last_interrupt_debtor_index = urls.index(last_interrupt_debtor) if last_interrupt_debtor is not None else 0
                     # scrape info using multithread
-                    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+                    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
                         for i in range(last_interrupt_debtor_index,len(urls),batch_size):
                             results = executor.map(self.scrape_single,urls[i:i+batch_size])
                             batch_results = [result for result in results if result is not None]

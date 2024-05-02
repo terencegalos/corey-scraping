@@ -71,7 +71,14 @@ class Scraper48:
     
     
     
-    def scrape_with_refcodes(self,start=1,batch_size=10,num_threads=4):
+    def scrape_with_refcodes(self,start=1,batch_size=10,num_threads=8):
+
+            
+        # refcodes = code_generator.invite_codes_with_prefix # last code before error JO0000013
+        # codes = code_generator.generate_code(1,200000000,'',6)
+        # code_gen = code_generator.num_generator()
+        # print(f"There are {len(codes)} codes to rotate!")
+        # results = []
         
         def scrape_single_thread(code):
             print(f"code : {code}")

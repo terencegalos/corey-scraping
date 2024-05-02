@@ -68,7 +68,6 @@ class Scraper49:
 
             try:
                 response = requests.get(f"{url}", headers=headers)
-                time.sleep(2) # sleep to avoid rate limit
             except requests.exceptions.ConnectionError:
                 print(f'Connecting failed to {url}.\nReconnecting in 20 secs...')
                 time.sleep(20)
@@ -177,6 +176,13 @@ class Scraper49:
             'Upgrade-Insecure-Requests': '1',
             'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0'
         }
+        response_ = self.session.get('https://arc-sos.state.al.us/CGI/UCCNAME.MBR/INPUT',headers=headers1)
+        soup = BeautifulSoup(response_.text,'html.parser')
+        print(soup.get_text())
+        print(response_.cookies.items())
+        print(response_.status_code)
+        print('Displayed?')
+        time.sleep(100)
 
         # 1 letter search; Loop all uppercase
         last_interrupt_index = ascii_uppercase.index(state['char'])
@@ -218,7 +224,7 @@ class Scraper49:
                     urls = get_page_links(soup)
                     print("\n".join(urls))
 
-                    time.sleep(1)
+                    time.sleep(100)
                     
                     
                     # scrape info using multithread
