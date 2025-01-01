@@ -60,7 +60,7 @@ def main():
             # db_handlermysqld.store_data(scraper.table_name,batch_results)
             new_results = db_handler.batch_data_exists(scraper.table_name,batch_results)
             if new_results:
-                logger.info(f"Storing to results {new_results} to {scraper.table_name}.")
+                logger.info(f"Storing to results to {scraper.table_name}.")
                 # db_handler.store_data(scraper.table_name,[result for result in batch_results if not db_handler.data_exists(scraper.table_name,result)]) # adding db check if result is already in db
                 db_handler.store_data_batch(scraper.table_name,new_results)
             else:
